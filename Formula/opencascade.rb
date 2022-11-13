@@ -1,11 +1,10 @@
 class Opencascade < Formula
   desc "3D modeling and numerical simulation software for CAD/CAM/CAE"
   homepage "https://dev.opencascade.org/"
-  url "https://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h=refs/tags/V7_6_3;sf=tgz"
-  version "7.6.3"
-  sha256 "baae5b3a7a38825396fc45ef9d170db406339f5eeec62e21b21036afeda31200"
+  url "https://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h=refs/tags/V7_7_0;sf=tgz"
+  version "7.7.0"
+  sha256 "075ca1dddd9646fcf331a809904925055747a951a6afd07a463369b9b441b445"
   license "LGPL-2.1-only"
-  revision 1
 
   # The first-party download page (https://dev.opencascade.org/release)
   # references version 7.5.0 and hasn't been updated for later maintenance
@@ -42,13 +41,6 @@ class Opencascade < Formula
 
   on_linux do
     depends_on "mesa" # For OpenGL
-  end
-
-  # Fix compilation errors with oneTBB 2021
-  # Issue ref: https://tracker.dev.opencascade.org/view.php?id=0032697
-  patch do
-    url "https://git.dev.opencascade.org/gitweb/?p=occt.git;a=patch;h=740833a6a88e481f474783c426b6f6311ed586d3"
-    sha256 "04932bf0674906dbc8f9c4ff0702aad3147c5db9abd0262973e18a1e4cd73976"
   end
 
   def install
