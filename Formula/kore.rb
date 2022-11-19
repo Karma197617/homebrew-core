@@ -24,14 +24,14 @@ class Kore < Formula
 
   depends_on "pkg-config" => :build
   depends_on macos: :sierra # needs clock_gettime
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   def install
     ENV.deparallelize { system "make", "PREFIX=#{prefix}", "TASKS=1" }
     system "make", "install", "PREFIX=#{prefix}"
 
     # Remove openssl cellar references, which breaks kore on openssl updates
-    openssl = Formula["openssl@1.1"]
+    openssl = Formula["openssl@3"]
     inreplace [pkgshare/"features", pkgshare/"linker"], openssl.prefix.realpath, openssl.opt_prefix if OS.mac?
   end
 
