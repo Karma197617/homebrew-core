@@ -16,7 +16,7 @@ class Whatmp3 < Formula
   depends_on "flac"
   depends_on "lame"
   depends_on "mktorrent"
-  depends_on "python@3.10"
+  depends_on "python@3.11"
 
   def install
     system "make", "PREFIX=#{prefix}", "install"
