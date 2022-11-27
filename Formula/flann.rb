@@ -1,10 +1,9 @@
 class Flann < Formula
   desc "Fast Library for Approximate Nearest Neighbors"
   homepage "https://github.com/flann-lib/flann"
-  url "https://github.com/flann-lib/flann/archive/refs/tags/1.9.1.tar.gz"
-  sha256 "b23b5f4e71139faa3bcb39e6bbcc76967fbaf308c4ee9d4f5bfbeceaa76cc5d3"
+  url "https://github.com/flann-lib/flann/archive/refs/tags/1.9.2.tar.gz"
+  sha256 "e26829bb0017f317d9cc45ab83ddcb8b16d75ada1ae07157006c1e7d601c8824"
   license "BSD-3-Clause"
-  revision 13
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "c9820e001f854b3d5abe3b95b5e63c2b787bd4a7f85c4ba43c5a97300372a802"
@@ -18,9 +17,10 @@ class Flann < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "pkg-config" => :build
   depends_on "hdf5"
 
-  resource("dataset") do
+  resource "homebrew-dataset" do
     url "https://github.com/flann-lib/flann/files/6518483/dataset.zip"
     sha256 "169442be3e9d8c862eb6ae4566306c31ff18406303d87b4d101f367bc5d17afa"
   end
@@ -35,12 +35,16 @@ class Flann < Formula
   end
 
   def install
-    system "cmake", ".", *std_cmake_args, "-DBUILD_PYTHON_BINDINGS:BOOL=OFF", "-DBUILD_MATLAB_BINDINGS:BOOL=OFF"
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DBUILD_PYTHON_BINDINGS:BOOL=OFF",
+                    "-DBUILD_MATLAB_BINDINGS:BOOL=OFF",
+                    *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
-    resource("dataset").stage testpath
+    resource("homebrew-dataset").stage testpath
     system "#{bin}/flann_example_c"
     system "#{bin}/flann_example_cpp"
   end
