@@ -3,8 +3,8 @@ class Polynote < Formula
 
   desc "Polyglot notebook with first-class Scala support"
   homepage "https://polynote.org/"
-  url "https://github.com/polynote/polynote/releases/download/0.4.5/polynote-dist.tar.gz"
-  sha256 "32b02e7e0b42849b660c70f40afe42450eb60807327770c4c7f5a5269ccaebd4"
+  url "https://github.com/polynote/polynote/releases/download/0.5.0/polynote-dist.tar.gz"
+  sha256 "173feb74da99c87e7b658b6f5a6400b0ee8a7da9a5975cde196a3285f471e152"
   license "Apache-2.0"
 
   bottle do
@@ -23,8 +23,8 @@ class Polynote < Formula
   depends_on "python@3.11"
 
   resource "jep" do
-    url "https://files.pythonhosted.org/packages/19/6e/745f9805f5cec38e03e7fed70b8c66d4c4ec3997cd7de824d54df1dfb597/jep-4.0.0.tar.gz"
-    sha256 "fb27b1e95c58d1080dabbbc9eba9e99e69e4295f67df017b70df20f340c150bb"
+    url "https://files.pythonhosted.org/packages/b3/0c/d208bc8a86f032b9a9270876129aadb41fa1a4baa172d68a29c579950856/jep-4.1.1.tar.gz"
+    sha256 "5914a4d815a7e86819f55be3de840edc2d3fe0d0b3f67626e5cea73841b1d1c0"
   end
 
   def install
