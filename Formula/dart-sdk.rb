@@ -1,8 +1,8 @@
 class DartSdk < Formula
   desc "Dart Language SDK, including the VM, dart2js, core libraries, and more"
   homepage "https://dart.dev"
-  url "https://github.com/dart-lang/sdk/archive/refs/tags/2.18.5.tar.gz"
-  sha256 "81bbc28a148fe147676a8dde1dae4579cd7e760be60c332c2dfd3dcfbade0a93"
+  url "https://github.com/dart-lang/sdk/archive/refs/tags/2.18.6.tar.gz"
+  sha256 "7aa9de29e148ee93919e1ade801baabe8889a48f02c16c08568c464fe5c7d0e0"
   license "BSD-3-Clause"
 
   bottle do
