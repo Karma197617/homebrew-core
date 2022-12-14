@@ -1,8 +1,8 @@
 class CriTools < Formula
   desc "CLI and validation tools for Kubelet Container Runtime Interface (CRI)"
   homepage "https://github.com/kubernetes-sigs/cri-tools"
-  url "https://github.com/kubernetes-sigs/cri-tools/archive/v1.25.0.tar.gz"
-  sha256 "bd900fac00b3247fa601f7aca4e0e44825dfd67d399c2830cbc643b7d73dbe52"
+  url "https://github.com/kubernetes-sigs/cri-tools/archive/v1.26.0.tar.gz"
+  sha256 "adf6e710fcf9b40b2ca6dbe0f3bbbdb70ebf2b7df349175a67a11b2f79195fb9"
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/cri-tools.git", branch: "master"
 
