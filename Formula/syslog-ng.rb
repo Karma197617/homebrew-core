@@ -4,6 +4,7 @@ class SyslogNg < Formula
   url "https://github.com/syslog-ng/syslog-ng/releases/download/syslog-ng-3.38.1/syslog-ng-3.38.1.tar.gz"
   sha256 "5491f686d0b829b69b2e0fc0d66a62f51991aafaee005475bfa38fab399441f7"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
+  revision 1
 
   bottle do
     sha256 arm64_ventura:  "675d1a2a2b70a6ba65300a2b79aa6fb0ca593dcdcffae7f029b4b65b516a5b97"
