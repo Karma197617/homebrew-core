@@ -4,8 +4,8 @@ class Protobuf < Formula
   license "BSD-3-Clause"
 
   stable do
-    url "https://github.com/protocolbuffers/protobuf/releases/download/v21.11/protobuf-all-21.11.tar.gz"
-    sha256 "f045f136e61e367a9436571b6676b94e5e16631a06c864146688c3aaf7df794b"
+    url "https://github.com/protocolbuffers/protobuf/releases/download/v21.12/protobuf-all-21.12.tar.gz"
+    sha256 "2c6a36c7b5a55accae063667ef3c55f2642e67476d96d355ff0acb13dbb47f09"
 
     # Fix build with Python 3.11. Remove in the next release.
     patch do
