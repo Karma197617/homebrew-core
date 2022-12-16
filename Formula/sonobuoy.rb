@@ -1,8 +1,8 @@
 class Sonobuoy < Formula
   desc "Kubernetes component that generates reports on cluster conformance"
   homepage "https://github.com/vmware-tanzu/sonobuoy"
-  url "https://github.com/vmware-tanzu/sonobuoy/archive/v0.56.13.tar.gz"
-  sha256 "5567f60aba3346b77f022362382756b23127e5dedc6de5068e865cb5d9e3606f"
+  url "https://github.com/vmware-tanzu/sonobuoy/archive/v0.56.14.tar.gz"
+  sha256 "160591de1eb9b387504a9b3424ae5a27290b4ad25631846a76e96c83865748fc"
   license "Apache-2.0"
 
   bottle do
