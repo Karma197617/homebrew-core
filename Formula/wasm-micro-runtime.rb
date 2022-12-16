@@ -1,8 +1,8 @@
 class WasmMicroRuntime < Formula
   desc "WebAssembly Micro Runtime (WAMR)"
   homepage "https://github.com/bytecodealliance/wasm-micro-runtime"
-  url "https://github.com/bytecodealliance/wasm-micro-runtime/archive/refs/tags/WAMR-1.1.1.tar.gz"
-  sha256 "3bf621401e6f97f81c357ad019d17bdab8f3478b9b3adf1cfe8a4f243aef1769"
+  url "https://github.com/bytecodealliance/wasm-micro-runtime/archive/refs/tags/WAMR-1.1.2.tar.gz"
+  sha256 "976b928f420040a77e793051e4d742208adf157370b9ad0f5535e126adb31eb0"
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https://github.com/bytecodealliance/wasm-micro-runtime.git", branch: "main"
 
@@ -55,7 +55,7 @@ class WasmMicroRuntime < Formula
   test do
     resource("homebrew-fib_wasm").stage testpath
 
-    output = shell_output("#{bin}/iwasm -f fib #{testpath}/fib.c.wasm 2>&1")
+    output = shell_output("#{bin}/iwasm -f fib #{testpath}/fib.c.wasm 2>&1", 1)
     assert_match "Exception: invalid input argument count", output
 
     assert_match version.to_s, shell_output("#{bin}/iwasm --version")
