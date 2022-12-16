@@ -27,8 +27,7 @@ class Phpbrew < Formula
   end
 
   def install
-    chmod "+x", "phpbrew.phar"
-    bin.install "phpbrew.phar" => "phpbrew"
+    bin.install "phpbrew"
   end
 
   test do
