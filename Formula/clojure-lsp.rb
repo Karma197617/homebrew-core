@@ -2,9 +2,9 @@ class ClojureLsp < Formula
   desc "Language Server (LSP) for Clojure"
   homepage "https://github.com/clojure-lsp/clojure-lsp"
   url "https://github.com/clojure-lsp/clojure-lsp.git",
-      tag:      "2021.09.13-22.25.35",
-      revision: "d564f81e25c71cc370c33d745881af1187f97667"
-  version "20210913T222535"
+      tag:      "2022.12.09-15.51.10",
+      revision: "f2cc6919bed996ae377be2eec911490b4e3fd900"
+  version "20221209T155110"
   license "MIT"
   head "https://github.com/clojure-lsp/clojure-lsp.git", branch: "master"
 
