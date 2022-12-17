@@ -3,8 +3,8 @@ class Pylint < Formula
 
   desc "It's not just a linter that annoys you!"
   homepage "https://github.com/PyCQA/pylint"
-  url "https://files.pythonhosted.org/packages/1e/fa/690c4dcf3ade9ae0497413c788267eafa36228394099708bb0fd0b8a6949/pylint-2.15.8.tar.gz"
-  sha256 "ec4a87c33da054ab86a6c79afa6771dc8765cb5631620053e727fcf3ef8cbed7"
+  url "https://files.pythonhosted.org/packages/68/3a/1e61444eb8276ad962a7f300b6920b7ad391f4fbe551d34443f093a18899/pylint-2.15.9.tar.gz"
+  sha256 "18783cca3cfee5b83c6c5d10b3cdb66c6594520ffae61890858fe8d932e1c6b4"
   license "GPL-2.0-or-later"
 
   bottle do
@@ -41,8 +41,8 @@ class Pylint < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/cb/5f/dda8451435f17ed8043eab5ffe04e47d703debe8fe845eb074f42260e50a/platformdirs-2.5.4.tar.gz"
-    sha256 "1006647646d80f16130f052404c6b901e80ee4ed6bef6792e1f238a8969106f7"
+    url "https://files.pythonhosted.org/packages/ec/4c/9af851448e55c57b30a13a72580306e628c3b431d97fdae9e0b8d4fa3685/platformdirs-2.6.0.tar.gz"
+    sha256 "b46ffafa316e6b83b47489d240ce17173f123a9b9c83282141c3daf26ad9ac2e"
   end
 
   resource "tomlkit" do
