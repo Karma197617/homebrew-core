@@ -20,7 +20,6 @@ class Pypy < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on arch: :x86_64
   depends_on "gdbm"
   depends_on "openssl@1.1"
   depends_on "sqlite"
@@ -35,10 +34,15 @@ class Pypy < Formula
 
   resource "bootstrap" do
     on_macos do
-      url "https://downloads.python.org/pypy/pypy2.7-v7.3.4-osx64.tar.bz2"
-      sha256 "ee7bf42ce843596521e02c763408a5164d18f23c9617f1b8e032ce0675686582"
+      on_arm do
+        url "https://downloads.python.org/pypy/pypy2.7-v7.3.10-macos_arm64.tar.bz2"
+        sha256 "14b178f005603e3df6db7574b77b9c65ae79feda1a629214cafcb4eee7da679d"
+      end
+      on_intel do
+        url "https://downloads.python.org/pypy/pypy2.7-v7.3.4-osx64.tar.bz2"
+        sha256 "ee7bf42ce843596521e02c763408a5164d18f23c9617f1b8e032ce0675686582"
+      end
     end
-
     on_linux do
       url "https://downloads.python.org/pypy/pypy2.7-v7.3.4-linux64.tar.bz2"
       sha256 "d3f7b0625e770d9be62201765d7d2316febc463372fba9c93a12969d26ae03dd"
@@ -62,8 +66,6 @@ class Pypy < Formula
   # Build fixes:
   # - Disable Linux tcl-tk detection since the build script only searches system paths.
   #   When tcl-tk is not found, it uses unversioned `-ltcl -ltk`, which breaks build.
-  # - Disable building cffi imports with `--embed-dependencies`, which compiles and
-  #   statically links a specific OpenSSL version.
   patch :DATA
 
   def install
@@ -215,14 +217,3 @@ __END__
      # On some Linux distributions, the tcl and tk libraries are
      # stored in /usr/include, so we must check this case also
      libdirs = []
---- a/pypy/goal/targetpypystandalone.py
-+++ b/pypy/goal/targetpypystandalone.py
-@@ -354,7 +354,7 @@ class PyPyTarget(object):
-             ''' Use cffi to compile cffi interfaces to modules'''
-             filename = join(pypydir, '..', 'lib_pypy', 'pypy_tools',
-                                    'build_cffi_imports.py')
--            if sys.platform in ('darwin', 'linux', 'linux2'):
-+            if False: # disable building static openssl
-                 argv = [filename, '--embed-dependencies']
-             else:
-                 argv = [filename,]
