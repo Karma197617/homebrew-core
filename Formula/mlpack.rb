@@ -45,11 +45,11 @@ class Mlpack < Formula
         (include/"stb").install "#{r.name}.h"
       end
     end
-    cmake_args = std_cmake_args + %W[
+
+    args = %W[
       -DDEBUG=OFF
       -DPROFILE=OFF
       -DBUILD_TESTS=OFF
-      -DDISABLE_DOWNLOADS=ON
       -DUSE_OPENMP=OFF
       -DARMADILLO_INCLUDE_DIR=#{Formula["armadillo"].opt_include}
       -DENSMALLEN_INCLUDE_DIR=#{Formula["ensmallen"].opt_include}
@@ -57,10 +57,11 @@ class Mlpack < Formula
       -DSTB_IMAGE_INCLUDE_DIR=#{include/"stb"}
       -DCMAKE_INSTALL_RPATH=#{rpath}
     ]
-    mkdir "build" do
-      system "cmake", "..", *cmake_args
-      system "make", "install"
-    end
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+
     doc.install Dir["doc/*"]
     (pkgshare/"tests").install "src/mlpack/tests/data" # Includes test data.
   end
@@ -83,8 +84,8 @@ class Mlpack < Formula
         Log::Warn << "A false alarm!" << std::endl;
       }
     EOS
-    system ENV.cxx, "test.cpp", "-std=c++11", "-I#{include}", "-L#{Formula["armadillo"].opt_lib}",
-                    "-larmadillo", "-L#{lib}", "-lmlpack", "-o", "test"
+    system ENV.cxx, "test.cpp", "-std=c++14", "-I#{include}", "-L#{Formula["armadillo"].opt_lib}",
+                    "-larmadillo", "-L#{lib}", "-o", "test"
     system "./test", "--verbose"
   end
 end
