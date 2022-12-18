@@ -80,42 +80,27 @@ class Pypy < Formula
     python = buildpath/"bootstrap/bin/pypy"
 
     cd "pypy/goal" do
-      system python, buildpath/"rpython/bin/rpython",
-             "-Ojit", "--shared", "--cc", ENV.cc, "--verbose",
-             "--make-jobs", ENV.make_jobs, "targetpypystandalone.py"
-
-      with_env(PYTHONPATH: buildpath) do
-        system "./pypy-c", buildpath/"lib_pypy/pypy_tools/build_cffi_imports.py"
-      end
+      system python, "../../rpython/bin/rpython", "--opt", "jit",
+                                                  "--cc", ENV.cc,
+                                                  "--make-jobs", ENV.make_jobs,
+                                                  "--shared",
+                                                  "--verbose"
     end
 
+    system python, "pypy/tool/release/package.py", "--archive-name", "pypy",
+                                                   "--targetdir", ".",
+                                                   "--no-embedded-dependencies",
+                                                   "--no-keep-debug",
+                                                   "--no-make-portable"
     libexec.mkpath
-    cd "pypy/tool/release" do
-      package_args = %w[--archive-name pypy --targetdir . --no-make-portable --no-embedded-dependencies]
-      system python, "package.py", *package_args
-      system "tar", "-C", libexec.to_s, "--strip-components", "1", "-xf", "pypy.tar.bz2"
-    end
-
-    (libexec/"lib").install libexec/"bin/#{shared_library("libpypy-c")}"
-    if OS.mac?
-      MachO::Tools.change_install_name("#{libexec}/bin/pypy",
-                                       "@rpath/libpypy-c.dylib",
-                                       "#{libexec}/lib/libpypy-c.dylib")
-    end
+    system "tar", "-C", libexec.to_s, "--strip-components", "1", "-xf", "pypy.tar.bz2"
 
     # The PyPy binary install instructions suggest installing somewhere
     # (like /opt) and symlinking in binaries as needed. Specifically,
     # we want to avoid putting PyPy's Python.h somewhere that configure
     # scripts will find it.
     bin.install_symlink libexec/"bin/pypy"
-    lib.install_symlink libexec/"lib/#{shared_library("libpypy-c")}"
-
-    # Delete two files shipped which we do not want to deliver
-    # These files make patchelf fail
-    if OS.linux?
-      rm_f libexec/"bin/libpypy-c.so.debug"
-      rm_f libexec/"bin/pypy.debug"
-    end
+    lib.install_symlink libexec/"bin"/shared_library("libpypy-c")
   end
 
   def post_install
