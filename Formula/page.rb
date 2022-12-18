@@ -23,6 +23,11 @@ class Page < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
+
+    out_dir = Dir["target/release/build/page-*/out"].first
+    bash_completion.install "#{out_dir}/shell_completions/page.bash" => "page"
+    zsh_completion.install "#{out_dir}/shell_completions/_page"
+    fish_completion.install "#{out_dir}/shell_completions/page.fish"
   end
 
   test do
