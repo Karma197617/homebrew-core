@@ -35,11 +35,13 @@ class Proftpd < Formula
     inreplace "sample-configurations/basic.conf", "nogroup", "nobody"
 
     system "./configure", "--prefix=#{prefix}",
+                          "--sbindir=#{sbin}",
                           "--sysconfdir=#{etc}",
                           "--localstatedir=#{var}"
     ENV.deparallelize
     install_user = ENV["USER"]
     install_group = Utils.safe_popen_read("groups").split.first
+    system "make", "all"
     system "make", "INSTALL_USER=#{install_user}", "INSTALL_GROUP=#{install_group}", "install"
   end
 
@@ -52,6 +54,6 @@ class Proftpd < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{opt_sbin}/proftpd -v")
+    assert_match "ProFTPD Version #{version}", shell_output("#{opt_sbin}/proftpd -v")
   end
 end
