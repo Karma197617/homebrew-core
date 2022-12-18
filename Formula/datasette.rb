@@ -2,8 +2,8 @@ class Datasette < Formula
   include Language::Python::Virtualenv
   desc "Open source multi-tool for exploring and publishing data"
   homepage "https://docs.datasette.io/en/stable/"
-  url "https://files.pythonhosted.org/packages/58/9f/435751802df6d086c13e46b6ead0e8bdf1d72734d964600110895766664d/datasette-0.63.2.tar.gz"
-  sha256 "4b6c593e9d5b9aab3eb86bb0a18b5e4eaaec24bf17e7ddf1c763afcce8d23dac"
+  url "https://files.pythonhosted.org/packages/77/35/1e7aa435387dea9b30a4250f906796b33779ce2d3cedee647f5f4b0ee7b0/datasette-0.63.3.tar.gz"
+  sha256 "fc6a37c73d0d08e9240211a24893eb09886b84427be1ad2295a67be231175af3"
   license "Apache-2.0"
   head "https://github.com/simonw/datasette.git", branch: "main"
 
@@ -44,8 +44,8 @@ class Datasette < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/cb/a4/7de7cd59e429bd0ee6521ba58a75adaec136d32f91a761b28a11d8088d44/certifi-2022.9.24.tar.gz"
-    sha256 "0d9c601124e5a6ba9712dbc60d9c53c21e34f5f641fe83002317394311bdce14"
+    url "https://files.pythonhosted.org/packages/37/f7/2b1b0ec44fdc30a3d31dfebe52226be9ddc40cd6c0f34ffc8923ba423b69/certifi-2022.12.7.tar.gz"
+    sha256 "35824b4c3a97115964b408844d64aa14db1cc518f6562e8d7261699d1350a9e3"
   end
 
   resource "click" do
@@ -64,8 +64,8 @@ class Datasette < Formula
   end
 
   resource "httpcore" do
-    url "https://files.pythonhosted.org/packages/f9/1a/a2652d94e901308c33b9f17c329b0d327da73b30678a6618d4256a3ac2ae/httpcore-0.16.1.tar.gz"
-    sha256 "3d3143ff5e1656a5740ea2f0c167e8e9d48c5a9bbd7f00ad1f8cff5711b08543"
+    url "https://files.pythonhosted.org/packages/9b/20/26f6cc4fd00391f8f1c57b0020f5c6eec23904723db04b6f7608e222d815/httpcore-0.16.2.tar.gz"
+    sha256 "c35c5176dc82db732acfd90b581a3062c999a72305df30c0fc8fafd8e4aca068"
   end
 
   resource "httpx" do
@@ -134,8 +134,8 @@ class Datasette < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/7b/dd/e7d5d8a7018db6ec652c3412b1d5e328c8fbb0fe96947438937ac7dbe0b1/uvicorn-0.19.0.tar.gz"
-    sha256 "cf538f3018536edb1f4a826311137ab4944ed741d52aeb98846f52215de57f25"
+    url "https://files.pythonhosted.org/packages/95/3c/9f4650ff609370456f796bb96a355dcddef1ded67e05d1b4eb3481088329/uvicorn-0.20.0.tar.gz"
+    sha256 "a4e12017b940247f836bc90b72e725d7dfd0c8ed1c51eb365f5ba30d9f5127d8"
   end
 
   def install
