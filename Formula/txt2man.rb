@@ -5,7 +5,6 @@ class Txt2man < Formula
   sha256 "4d9b1bfa2b7a5265b4e5cb3aebc1078323b029aa961b6836d8f96aba6a9e434d"
   license "GPL-2.0-or-later"
 
-  depends_on "bash"
   depends_on "gawk"
 
   def install
