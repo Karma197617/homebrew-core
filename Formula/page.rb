@@ -1,8 +1,8 @@
 class Page < Formula
   desc "Use Neovim as pager"
   homepage "https://github.com/I60R/page"
-  url "https://github.com/I60R/page/archive/v3.1.2.tar.gz"
-  sha256 "18089dd86dbbf3b02d8b85412e76f9881a8e2cd957e7201dbbb2b8d71dd5074a"
+  url "https://github.com/I60R/page/archive/v4.5.0.tar.gz"
+  sha256 "c75a5f7480864c84b82378b0c6fddf34712279e13ddc1c893b2f9a83604f7370"
   license "MIT"
   head "https://github.com/I60R/page.git", branch: "master"
 
@@ -26,7 +26,10 @@ class Page < Formula
   end
 
   test do
+    # Disable this part of the test on Linux because display is not available.
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
     text = "test"
-    assert_match text, pipe_output("#{bin}/page -O 1", text)
+    assert_equal text, pipe_output("#{bin}/page -O 1", text)
   end
 end
