@@ -1,10 +1,9 @@
 class Irssi < Formula
   desc "Modular IRC client"
   homepage "https://irssi.org/"
-  url "https://github.com/irssi/irssi/releases/download/1.2.3/irssi-1.2.3.tar.xz"
-  sha256 "a647bfefed14d2221fa77b6edac594934dc672c4a560417b1abcbbc6b88d769f"
+  url "https://github.com/irssi/irssi/releases/download/1.4.3/irssi-1.4.3.tar.xz"
+  sha256 "b93f715223a322e67f42b61a08a512ae29e34bd4a53d7f223766660aaa5a0434"
   license "GPL-2.0-or-later"
-  revision 3
 
   # This formula uses a file from a GitHub release, so we check the latest
   # release version instead of Git tags.
