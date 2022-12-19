@@ -23,15 +23,6 @@ class Rubyfmt < Formula
   depends_on "rust" => :build
   uses_from_macos "ruby"
 
-  # This patch includes a fix for Big Sur ARM builds which was not included in the 0.8.0
-  # release. This should be removed for future releases, which should include this patch.
-  patch do
-    on_big_sur do
-      url "https://github.com/penelopezone/rubyfmt/commit/8a193552e6b8232d44347505f4cd503c800161a3.patch?full_index=1"
-      sha256 "936734916d24233c03e986ded729b2cc0a3ebce4180136bcfd845dfef8b1f4c5"
-    end
-  end
-
   def install
     system "cargo", "install", *std_cargo_args
     bin.install "target/release/rubyfmt-main" => "rubyfmt"
