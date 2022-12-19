@@ -1,8 +1,8 @@
 class Gobuster < Formula
   desc "Directory/file & DNS busting tool written in Go"
   homepage "https://github.com/OJ/gobuster"
-  url "https://github.com/OJ/gobuster/archive/refs/tags/v3.3.0.tar.gz"
-  sha256 "23ffc5418e133b0012d805c6ab93442046527bdef6b3eff96609db89e0738875"
+  url "https://github.com/OJ/gobuster/archive/refs/tags/v3.4.0.tar.gz"
+  sha256 "6c1d7a3aa9604d90ca818d6fc7a0b09501e419ecd4ab7665566c52fd0981b52d"
   license "Apache-2.0"
 
   bottle do
