@@ -3,7 +3,7 @@ class RustAnalyzer < Formula
   homepage "https://rust-analyzer.github.io/"
   url "https://github.com/rust-lang/rust-analyzer.git",
        tag:      "2022-12-19",
-       revision: "21e61bee8b74e93f14205f4a6c316db08f811e38"
+       revision: "9ed1829f1fb61695c21474361ec23b9976793b73"
   version "2022-12-19"
   license any_of: ["Apache-2.0", "MIT"]
 
