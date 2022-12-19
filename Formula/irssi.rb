@@ -4,6 +4,7 @@ class Irssi < Formula
   url "https://github.com/irssi/irssi/releases/download/1.4.3/irssi-1.4.3.tar.xz"
   sha256 "b93f715223a322e67f42b61a08a512ae29e34bd4a53d7f223766660aaa5a0434"
   license "GPL-2.0-or-later"
+  head "https://github.com/irssi/irssi.git", branch: "master"
 
   # This formula uses a file from a GitHub release, so we check the latest
   # release version instead of Git tags.
@@ -23,15 +24,11 @@ class Irssi < Formula
     sha256 x86_64_linux:   "3b1dc215132892ba386ff95486231a50e367b1866bcb6dc330811d4f5cf765f3"
   end
 
-  head do
-    url "https://github.com/irssi/irssi.git", branch: "master"
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-    depends_on "lynx" => :build
-  end
-
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
   depends_on "pkg-config" => :build
+  depends_on "libgcrypt"
+  depends_on "libotr"
   depends_on "glib"
   depends_on "openssl@1.1"
 
@@ -39,35 +36,16 @@ class Irssi < Formula
   uses_from_macos "perl"
 
   def install
-    ENV.delete "HOMEBREW_SDKROOT" if MacOS.version == :high_sierra
-
     args = %W[
-      --disable-dependency-tracking
-      --prefix=#{prefix}
-      --sysconfdir=#{etc}
-      --with-bot
-      --with-proxy
-      --enable-true-color
-      --with-socks=no
-      --with-perl=yes
-      --with-perl-lib=#{lib}/perl5/site_perl
+      -Dwith-proxy=yes
+      -Dwith-bot=yes
+      -Dwith-otr=yes
+      -Ddocdir=#{doc}
     ]
 
-    args << if OS.mac?
-      "--with-ncurses=#{MacOS.sdk_path/"usr"}"
-    else
-      "--with-ncurses=#{Formula["ncurses"].prefix}"
-    end
-
-    if build.head?
-      ENV["NOCONFIGURE"] = "yes"
-      system "./autogen.sh", *args
-    end
-
-    system "./configure", *args
-    # "make" and "make install" must be done separately on some systems
-    system "make"
-    system "make", "install"
+    system "meson", *args, *std_meson_args, "build"
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   test do
