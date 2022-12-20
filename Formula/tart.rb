@@ -19,8 +19,8 @@ class Tart < Formula
   uses_from_macos "swift"
 
   resource "softnet" do
-    url "https://github.com/cirruslabs/softnet/archive/refs/tags/0.3.2.tar.gz"
-    sha256 "7bdb4c4c1996257769f11fb1b17d50954bc083c0155cb1509ad30bd8f304ee76"
+    url "https://github.com/cirruslabs/softnet/archive/refs/tags/0.6.0.tar.gz"
+    sha256 "fd01589b9cb1497394f1fd0fbed385dca51558352b5a7d1337cb92a1a2d2f95d"
   end
 
   def install
