@@ -26,6 +26,6 @@ class Rdb < Formula
   test do
     cp_r pkgshare/"cases", testpath
     system bin/"rdb", "-c", "memory", "-o", testpath/"mem1.csv", testpath/"cases/memory.rdb"
-    assert_equal (testpath/"cases/memory.csv").read, (testpath/"mem1.csv").read
+    assert_match "0,hash,hash,131,131B,2,ziplist,", (testpath/"mem1.csv").read
   end
 end
