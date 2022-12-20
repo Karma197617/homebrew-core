@@ -18,6 +18,7 @@ class Snakefmt < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "78edb0a5016951baa7dfb845a548793c21d13e76c825931dbfe9c886430cbf09"
   end
 
+  depends_on "cmake" => :build
   depends_on "black"
   depends_on "python@3.11"
 
