@@ -1,8 +1,8 @@
 class DotenvLinter < Formula
   desc "Lightning-fast linter for .env files written in Rust"
   homepage "https://dotenv-linter.github.io"
-  url "https://github.com/dotenv-linter/dotenv-linter/archive/v3.2.0.tar.gz"
-  sha256 "c93ea23f578c2b2e7e1298d625a3b66e870c58222743657484a84415f54fcd64"
+  url "https://github.com/dotenv-linter/dotenv-linter/archive/v3.3.0.tar.gz"
+  sha256 "71328137c4bcee04226b149099a81ae3ffcfaf6c94d90d4a9ac8a82cb2c4dc10"
   license "MIT"
   head "https://github.com/dotenv-linter/dotenv-linter.git", branch: "master"
 
