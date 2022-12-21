@@ -92,19 +92,6 @@ class Gnuradio < Formula
     sha256 "9815a12e3bf6b83b2e9d8c88335fb3fa0e2b4067d7fbaaed09c3bf26c6206cc7"
   end
 
-  # Fix build with fmt 9+
-  # https://github.com/gnuradio/gnuradio/pull/6053
-  patch do
-    url "https://github.com/gnuradio/gnuradio/commit/e63ee41fd455cdd39ae983c258d8632c3ea57fc6.patch?full_index=1"
-    sha256 "be4373f13ffe8ae8ddc7216eb2b7ddb436b7be345cc0e108ae60b5010935a859"
-  end
-
-  # Fix missing includes. Fixed upstream by:
-  # https://github.com/gnuradio/gnuradio/pull/6188
-  # https://github.com/gnuradio/gnuradio/commit/463c3477549b26b32d9b73eef30044e97c4eee64
-  # Remove with next release.
-  patch :DATA
-
   def install
     python = "python3.10"
     ENV.cxx11
@@ -247,18 +234,3 @@ class Gnuradio < Formula
     system Formula["python@3.10"].opt_bin/"python3.10", testpath/"test.py"
   end
 end
-__END__
-diff --git a/gr-blocks/include/gnuradio/blocks/blockinterleaving.h b/gr-blocks/include/gnuradio/blocks/blockinterleaving.h
-index 9d4e0f2..f6b8bc6 100644
---- a/gr-blocks/include/gnuradio/blocks/blockinterleaving.h
-+++ b/gr-blocks/include/gnuradio/blocks/blockinterleaving.h
-@@ -12,7 +12,8 @@
- #define INCLUDED_GR_BLOCKS_BLOCKINTERLEAVING_H
-
- #include <gnuradio/blocks/api.h>
--
-+#include <cstddef>
-+#include <vector>
-
- namespace gr {
- namespace blocks {
