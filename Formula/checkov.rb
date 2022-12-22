@@ -4,8 +4,8 @@ class Checkov < Formula
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
   # checkov should only be updated every 15 releases on multiples of 15
-  url "https://files.pythonhosted.org/packages/53/e2/463bb8a1944819a686e984d76817183f5d69b99cadc729fb0067d4e20053/checkov-2.2.180.tar.gz"
-  sha256 "b832cf171ccc6cc59473fc27eba9bf852c28b6db0fd0f1d1d12447691aaff149"
+  url "https://files.pythonhosted.org/packages/11/d2/e5aabc1301fc3a1241cfcd9bc61d2622d50e52a280d79f197e93e7cdb10c/checkov-2.2.195.tar.gz"
+  sha256 "6ac3006ee363585a4f5dad483728687f35f4028f41e39b3aea1506285ee1ecaf"
   license "Apache-2.0"
 
   bottle do
@@ -55,8 +55,8 @@ class Checkov < Formula
   end
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/1a/cb/c4ffeb41e7137b23755a45e1bfec9cbb76ecf51874c6f1d113984ecaa32c/attrs-22.1.0.tar.gz"
-    sha256 "29adc2665447e5191d0e7c568fde78b21f9672d344281d0c6e1ab085429b22b6"
+    url "https://files.pythonhosted.org/packages/21/31/3f468da74c7de4fcf9b25591e682856389b3400b4b62f201e65f15ea3e07/attrs-22.2.0.tar.gz"
+    sha256 "c9227bfc2f01993c03f68db37d1d15c9690188323c067c641f1a35ca58185f99"
   end
 
   resource "bc-detect-secrets" do
@@ -80,13 +80,13 @@ class Checkov < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/2e/6e/4890eaf9cb614875f731d02649871feff240f9457397fa7230e9448ad913/boto3-1.26.33.tar.gz"
-    sha256 "722dccba749ee34ead7d8f52899ae270958959c509631338f2ca5e777fab3875"
+    url "https://files.pythonhosted.org/packages/9f/6d/0bd4d7330708b39cb2da3f767eaf7831238bfabca122b7d1679b8980c406/boto3-1.26.35.tar.gz"
+    sha256 "282c9aa0af39fc3f0fac9c91e05f43145ff3d5fee29189b5343490131555981a"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/2c/d9/7add2ea2563e90c9f64f78536ea1dd66dbf4ea14e817ae14cb5e90f68baf/botocore-1.29.33.tar.gz"
-    sha256 "303f8c3ba40b11563b0b6740af8c053d3ed187a4824e495a652ccdb593dd612e"
+    url "https://files.pythonhosted.org/packages/ab/9f/2b1d4b28f3c40d0827de9b9027e0e3c41967b685cdae67aa64dea746eec4/botocore-1.29.35.tar.gz"
+    sha256 "ca673347f46f03fb5f1e56326adc9c696daba860838dffbe85e9bb16a8c54d67"
   end
 
   resource "cached-property" do
