@@ -1,8 +1,8 @@
 class Tfk8s < Formula
   desc "Kubernetes YAML manifests to Terraform HCL converter"
   homepage "https://github.com/jrhouston/tfk8s"
-  url "https://github.com/jrhouston/tfk8s/archive/v0.1.8.tar.gz"
-  sha256 "2a11dc4279ec2995384cb62dbd529ebec027c01d69ab2c1d64346b8bce8987dc"
+  url "https://github.com/jrhouston/tfk8s/archive/v0.1.10.tar.gz"
+  sha256 "be2680e76311ac7dd814a1bb0dceb486e3511d8d68845421338f9fcf5a92d5f9"
   license "MIT"
   head "https://github.com/jrhouston/tfk8s.git", branch: "main"
 
