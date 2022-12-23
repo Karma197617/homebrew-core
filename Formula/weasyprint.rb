@@ -3,8 +3,8 @@ class Weasyprint < Formula
 
   desc "Convert HTML to PDF"
   homepage "https://www.courtbouillon.org/weasyprint"
-  url "https://files.pythonhosted.org/packages/32/3f/d305dc714c119e5b11c0ea1ecff9741407b6da90d6b684859d3b3e586692/weasyprint-57.1.tar.gz"
-  sha256 "397a9d11298f94485ec3b7b68aeef1c6106fb638350126d9d4a64109b73508a0"
+  url "https://files.pythonhosted.org/packages/b1/88/335dd6cb71a9d58584c975bf1db0ab9a3a9f15f9bffef1cbfac0fb1ee72e/weasyprint-57.2.tar.gz"
+  sha256 "b8e9ef2dcbcfbc82e99215acfd68f947b2b5f1999b5b156db75fabe380ba7e9a"
   license "BSD-3-Clause"
 
   bottle do
@@ -52,8 +52,8 @@ class Weasyprint < Formula
   end
 
   resource "pyphen" do
-    url "https://files.pythonhosted.org/packages/9a/53/e7f212c87f91aab928bbf0de95ebc319c4d935e59bd5ed868f2c2bfc9465/pyphen-0.13.0.tar.gz"
-    sha256 "06873cebffd65a8fca7c20c0e3dc032655c7ee8de0f552205cad3b574265c293"
+    url "https://files.pythonhosted.org/packages/46/12/aeb28a1e1a3f3cede967cea98ef3a1da844418ab8296a4bb9513f232736c/pyphen-0.13.2.tar.gz"
+    sha256 "847f57a043a58408f24670ae0184ff6edfb5fd5731743208228c028ddc514438"
   end
 
   resource "tinycss2" do
