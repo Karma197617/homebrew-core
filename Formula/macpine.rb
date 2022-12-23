@@ -15,7 +15,7 @@ class Macpine < Formula
         next if version.blank?
 
         # Naively convert tags like `v.01` to `0.1`
-        tag.match(/v\.\d+/i) ? version.chars.join(".") : version
+        tag.match?(/^v\.?\d+$/i) ? version.chars.join(".") : version
       end
     end
   end
