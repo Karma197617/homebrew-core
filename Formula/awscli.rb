@@ -3,8 +3,8 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https://aws.amazon.com/cli/"
-  url "https://github.com/aws/aws-cli/archive/2.9.9.tar.gz"
-  sha256 "9a93633233b0fba20d6917118e7f1928edadc69801388c48acdc1f6d521110c4"
+  url "https://github.com/aws/aws-cli/archive/2.9.10.tar.gz"
+  sha256 "832bdeae824adc8ffe60849075f3b119b8296fa9465a666cd47dc757dd7c1e2d"
   license "Apache-2.0"
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
@@ -31,8 +31,8 @@ class Awscli < Formula
   # 2. Ignore `six`. Update all other PyPI packages
 
   resource "awscrt" do
-    url "https://files.pythonhosted.org/packages/3f/c2/c23a860956e8b8a815ad4c0d260d4ea393b33a1835b50303d006fd259f7e/awscrt-0.16.2.tar.gz"
-    sha256 "093e4a9c70db963de4341fcdb2e39848d03a2b23f693da8067cf796b06047434"
+    url "https://files.pythonhosted.org/packages/96/c6/d352026b8fee89594d3be47e6d228e86fef72f0ef3c75704a0b0d690f484/awscrt-0.16.3.tar.gz"
+    sha256 "c37f50b74e3a7560f36ede35b7d2d530224d336b863aff554d97f7c9f59494d3"
   end
 
   resource "cffi" do
@@ -73,11 +73,6 @@ class Awscli < Formula
   resource "python-dateutil" do
     url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
     sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
-  end
-
-  resource "ruamel-yaml-clib" do
-    url "https://files.pythonhosted.org/packages/d5/31/a3e6411947eb7a4f1c669f887e9e47d61a68f9d117f10c3c620296694a0b/ruamel.yaml.clib-0.2.7.tar.gz"
-    sha256 "1f08fd5a2bea9c4180db71678e850b995d2a5f4537be0e94557668cf0f5f9497"
   end
 
   resource "ruamel-yaml" do
