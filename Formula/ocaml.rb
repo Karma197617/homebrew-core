@@ -13,18 +13,10 @@
 class Ocaml < Formula
   desc "General purpose programming language in the ML family"
   homepage "https://ocaml.org/"
+  url "https://caml.inria.fr/pub/distrib/ocaml-5.0/ocaml-5.0.0.tar.xz"
+  sha256 "cb17f0a534dd4b3fec93d011b0be1ba5c6087da033cf789e85a34b9641ecc65f"
   license "LGPL-2.1-only" => { with: "OCaml-LGPL-linking-exception" }
   head "https://github.com/ocaml/ocaml.git", branch: "trunk"
-
-  stable do
-    url "https://caml.inria.fr/pub/distrib/ocaml-4.14/ocaml-4.14.0.tar.xz"
-    sha256 "36abd8cca53ff593d5e7cd8b98eee2f1f36bd49aaf6ff26dc4c4dd21d861ac2b"
-
-    # Remove use of -flat_namespace. Upstreamed at
-    # https://github.com/ocaml/ocaml/pull/10723
-    # We embed a patch here so we don't have to regenerate configure.
-    patch :DATA
-  end
 
   livecheck do
     url "https://ocaml.org/releases"
@@ -72,16 +64,3 @@ class Ocaml < Formula
     assert_match HOMEBREW_PREFIX.to_s, shell_output("#{bin}/ocamlc -where")
   end
 end
-
-__END__
---- a/configure
-+++ b/configure
-@@ -14087,7 +14087,7 @@ if test x"$enable_shared" != "xno"; then :
-   case $host in #(
-   *-apple-darwin*) :
-     mksharedlib="$CC -shared \
--                   -flat_namespace -undefined suppress -Wl,-no_compact_unwind \
-+                   -undefined dynamic_lookup -Wl,-no_compact_unwind \
-                    \$(LDFLAGS)"
-       supports_shared_libraries=true ;; #(
-   *-*-mingw32) :
