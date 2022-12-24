@@ -24,6 +24,12 @@ class Faust < Formula
 
   fails_with gcc: "5"
 
+  # upstream patch, https://github.com/grame-cncm/faust/pull/844
+  patch do
+    url "https://github.com/chenrui333/faust/commit/7a5e1c65c2d780ca371bf52af58ea0620c363343.patch?full_index=1"
+    sha256 "ff54ab4ed23bc1886a3ceb5403782767ee83b51fc8bd37331493554224a95320"
+  end
+
   def install
     ENV.delete "TMP" # don't override Makefile variable
     system "make", "world"
