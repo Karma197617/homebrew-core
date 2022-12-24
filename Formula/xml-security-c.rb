@@ -1,11 +1,10 @@
 class XmlSecurityC < Formula
   desc "Implementation of primary security standards for XML"
   homepage "https://santuario.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=santuario/c-library/xml-security-c-2.0.2.tar.bz2"
-  mirror "https://archive.apache.org/dist/santuario/c-library/xml-security-c-2.0.2.tar.bz2"
-  sha256 "39e963ab4da477b7bda058f06db37228664c68fe68902d86e334614dd06e046b"
+  url "https://www.apache.org/dyn/closer.lua?path=santuario/c-library/xml-security-c-2.0.4.tar.bz2"
+  mirror "https://archive.apache.org/dist/santuario/c-library/xml-security-c-2.0.4.tar.bz2"
+  sha256 "c83ed1b7c0189cce27a49caa81986938e76807bf35597e6056259af30726beca"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "612e935f497f5c06a6af3ded70fd674e54c396cdfaec46a82a357069c742f88b"
