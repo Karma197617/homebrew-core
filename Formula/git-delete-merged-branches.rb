@@ -3,8 +3,8 @@ class GitDeleteMergedBranches < Formula
 
   desc "Command-line tool to delete merged Git branches"
   homepage "https://github.com/hartwork/git-delete-merged-branches"
-  url "https://files.pythonhosted.org/packages/7c/59/5bb78097446bba8e46c9931f543a256aba395c5d9fde92510d5274f535c8/git-delete-merged-branches-7.3.1.tar.gz"
-  sha256 "7b2231cb67fd08e2a05999ef00e6a7cf3ce7fa22f82869d21517af3f0f333644"
+  url "https://files.pythonhosted.org/packages/69/e1/377ded5fd14801bd7f3174ab429882d85086e34fe0a0eec308c160c803f4/git-delete-merged-branches-7.4.0.tar.gz"
+  sha256 "b976b7b2210a1dab728e654e1b023f8e5309d98dc14730bfb613e893604847e5"
   license "GPL-3.0-or-later"
 
   bottle do
