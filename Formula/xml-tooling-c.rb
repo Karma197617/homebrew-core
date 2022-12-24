@@ -1,8 +1,8 @@
 class XmlToolingC < Formula
   desc "Provides a higher level interface to XML processing"
   homepage "https://wiki.shibboleth.net/confluence/display/OpenSAML/XMLTooling-C"
-  url "https://shibboleth.net/downloads/c++-opensaml/3.2.0/xmltooling-3.2.0.tar.bz2"
-  sha256 "635ce0e912d8fbd450103c274237067923efac3e1b3662b4d3040f3ac5eb2e86"
+  url "https://shibboleth.net/downloads/c++-opensaml/3.2.1/xmltooling-3.2.2.tar.bz2"
+  sha256 "d31bebd5f783464c541f9bca8656a8730e1de8574ff77e92c72aae3dc8ee4174"
   license "Apache-2.0"
 
   livecheck do
@@ -30,12 +30,6 @@ class XmlToolingC < Formula
   depends_on "xml-security-c"
 
   uses_from_macos "curl"
-
-  # Fix -flat_namespace being used on Big Sur and later.
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
-    sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
-  end
 
   def install
     ENV.cxx11
