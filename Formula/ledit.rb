@@ -26,6 +26,7 @@ class Ledit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ec38d1627d6277d03b8a607a91d6d1d7c43b8f4287b15393e0a26cac27d04e06"
   end
 
+  depends_on "ocaml-findlib" => :build
   depends_on "camlp5"
   depends_on "ocaml"
 
