@@ -25,8 +25,8 @@ class Babeld < Formula
 
   # patch IN6_IS_ADDR_MULTICAST is not defined on macOS
   patch do
-    url "https://github.com/jech/babeld/commit/fbb31080862aca1d0afb599edbcb2b25ac79b79c.patch?full_index"
-    sha256 "76c7b3c4b3ab304c3846a1e8bf3c04fd3c322a2afc6cf192701fd10047750611"
+    url "https://github.com/jech/babeld/commit/fbb31080862aca1d0afb599edbcb2b25ac79b79c.patch?full_index=1"
+    sha256 "0f1308c2f21b64ec38b79f37782217ff21e8de85e1eaabd047fdd801b83dfa3f"
   end
 
   def install
