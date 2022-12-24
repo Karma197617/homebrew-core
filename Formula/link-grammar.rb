@@ -33,6 +33,13 @@ class LinkGrammar < Formula
   uses_from_macos "libedit"
   uses_from_macos "sqlite"
 
+  # Fix for fatal error: 'threads.h' file not found
+  # remove in next release
+  patch do
+    url "https://github.com/opencog/link-grammar/commit/725de848e4ac832ba7cd876e01f3d6a67d6e578b.patch?full_index=1"
+    sha256 "e167c0c5a2713b539099ea1839c31801709e3fd5c9368eae9aa3f480fa5f1f13"
+  end
+
   def install
     ENV["PYTHON_LIBS"] = "-undefined dynamic_lookup"
     inreplace "bindings/python/Makefile.am", "$(PYTHON_LDFLAGS) -module -no-undefined",
