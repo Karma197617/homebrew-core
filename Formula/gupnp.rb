@@ -3,10 +3,9 @@ class Gupnp < Formula
 
   desc "Framework for creating UPnP devices and control points"
   homepage "https://wiki.gnome.org/Projects/GUPnP"
-  url "https://download.gnome.org/sources/gupnp/1.4/gupnp-1.4.3.tar.xz"
-  sha256 "14eda777934da2df743d072489933bd9811332b7b5bf41626b8032efb28b33ba"
+  url "https://download.gnome.org/sources/gupnp/1.6/gupnp-1.6.3.tar.xz"
+  sha256 "4f4f418b07b81164df1f7ab612e28e4c016c2d085b8a4f39f97945f8b15ee248"
   license "LGPL-2.0-or-later"
-  revision 1
 
   bottle do
     rebuild 1
@@ -45,7 +44,10 @@ class Gupnp < Formula
   end
 
   test do
-    system bin/"gupnp-binding-tool-1.2", "--help"
+    gnupnp_version = version.major_minor.to_s
+    gssdp_version = Formula["gssdp"].version.major_minor.to_s
+
+    system bin/"gupnp-binding-tool-#{gnupnp_version}", "--help"
     (testpath/"test.c").write <<~EOS
       #include <libgupnp/gupnp-control-point.h>
 
@@ -75,9 +77,12 @@ class Gupnp < Formula
       "-I#{Formula["libxml2"].include}/libxml2"
     end
 
-    system ENV.cc, testpath/"test.c", "-I#{include}/gupnp-1.2", "-L#{lib}", "-lgupnp-1.2",
-           "-I#{Formula["gssdp"].opt_include}/gssdp-1.2",
-           "-L#{Formula["gssdp"].opt_lib}", "-lgssdp-1.2",
+    system ENV.cc, testpath/"test.c",
+           "-I#{include}/gupnp-#{gnupnp_version}",
+           "-L#{lib}",
+           "-lgupnp-#{gnupnp_version}",
+           "-I#{Formula["gssdp"].opt_include}/gssdp-#{gssdp_version}",
+           "-L#{Formula["gssdp"].opt_lib}", "-lgssdp-#{gssdp_version}",
            "-I#{Formula["glib"].opt_include}/glib-2.0",
            "-I#{Formula["glib"].opt_lib}/glib-2.0/include",
            "-L#{Formula["glib"].opt_lib}",
