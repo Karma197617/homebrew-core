@@ -15,8 +15,8 @@ class Steampipe < Formula
   end
 
   test do
-    assert_match "steampipe interactive client", shell_output(bin/"steampipe query 2>&1")
-    assert_match "Service is not running", shell_output(bin/"steampipe service status 2>&1")
+    output = shell_output(bin/"steampipe service status 2>&1")
+    assert_match "Error: could not create installation directory", output
     assert_match "steampipe version #{version}", shell_output(bin/"steampipe --version")
   end
 end
