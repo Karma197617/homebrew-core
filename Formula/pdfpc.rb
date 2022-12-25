@@ -26,7 +26,7 @@ class Pdfpc < Formula
   depends_on "json-glib"
   depends_on "libgee"
   depends_on "librsvg"
-  depends_on "libsoup@2"
+  depends_on "libsoup"
   depends_on "poppler"
   depends_on "qrencode"
 
@@ -35,12 +35,13 @@ class Pdfpc < Formula
   end
 
   def install
-    # NOTE: You can avoid the `libsoup@2` dependency by passing `-DREST=OFF`.
+    # Build with `-DREST=OFF` as it requires libsoup@2
     # https://github.com/pdfpc/pdfpc/blob/3310efbf87b5457cbff49076447fcf5f822c2269/src/CMakeLists.txt#L38-L40
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
                     "-DCMAKE_INSTALL_SYSCONFDIR=#{etc}",
                     "-DMDVIEW=#{OS.linux?}", # Needs webkitgtk
-                    "-DMOVIES=ON"
+                    "-DMOVIES=ON",
+                    "-DREST=OFF"
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
