@@ -16,7 +16,11 @@ class Steampipe < Formula
 
   test do
     output = shell_output(bin/"steampipe service status 2>&1")
-    assert_match "Error: could not create installation directory", output
+    if OS.mac?
+      assert_match "Error: could not create installation directory", output
+    else # Linux
+      assert_match "Steampipe service is not installed", output
+    end
     assert_match "steampipe version #{version}", shell_output(bin/"steampipe --version")
   end
 end
