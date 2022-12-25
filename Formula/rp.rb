@@ -5,8 +5,8 @@ class Rp < Formula
   head "https://github.com/0vercl0k/rp.git", branch: "master"
 
   stable do
-    url "https://github.com/0vercl0k/rp/archive/refs/tags/v2.0.2.tar.gz"
-    sha256 "97aa4c84045f5777951b3d34fdf6e7c9579e46aebb18422c808c537e8b1044da"
+    url "https://github.com/0vercl0k/rp/archive/refs/tags/v2.1.tar.gz"
+    sha256 "0c02ce21f546145fc2bcc4647818fd411c8f55ed8232e28efdee8dc04f150074"
 
     # Add ARM64 support. Remove in the next release.
     on_arm do
