@@ -10,6 +10,10 @@ class Sniffnet < Formula
 
   uses_from_macos "libpcap"
 
+  on_linux do
+    depends_on "pkg-config" => :build
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
   end
