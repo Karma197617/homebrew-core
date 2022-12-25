@@ -24,11 +24,11 @@ class Lerna < Formula
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
     bin.install_symlink Dir["#{libexec}/bin/*"]
 
-    # Remove incompatible pre-built binaries
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
-    libexec.glob("lib/node_modules/lerna/node_modules/@parcel/watcher/prebuilds/*")
-           .each { |dir| dir.rmtree if dir.basename.to_s != "#{os}-#{arch}" }
+    node_modules = libexec/"lib/node_modules/lerna/node_modules"
+    (node_modules/"@parcel/watcher/prebuilds/linux-x64/node.napi.musl.node").unlink
+    (node_modules/"@parcel/watcher/prebuilds").each_child { |dir| dir.rmtree if dir.basename.to_s != "#{os}-#{arch}" }
 
     # Replace universal binaries with native slices
     deuniversalize_machos
