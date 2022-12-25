@@ -24,8 +24,7 @@ class Rp < Formula
     system "cmake", "--build", "build"
 
     os = OS.mac? ? "osx" : "lin"
-    rp = buildpath.glob("build/rp-#{os}").first
-    bin.install rp
+    bin.install "build/rp-#{os}"
   end
 
   test do
