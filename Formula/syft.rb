@@ -13,7 +13,6 @@ class Syft < Formula
   def install
     ldflags = %W[
       -s -w
-
       -X github.com/anchore/syft/internal/version.version=#{version}
       -X github.com/anchore/syft/internal/version.gitCommit=#{Utils.git_head}
       -X github.com/anchore/syft/internal/version.buildDate=#{time.iso8601}
