@@ -1,8 +1,8 @@
 class Aspectj < Formula
   desc "Aspect-oriented programming for Java"
   homepage "https://www.eclipse.org/aspectj/"
-  url "https://github.com/eclipse/org.aspectj/releases/download/V1_9_9_1/aspectj-1.9.9.1.jar"
-  sha256 "922310b843d7a12a4752222791f62cadf08071273a997e364d12016de210856b"
+  url "https://github.com/eclipse/org.aspectj/releases/download/V1_9_19/aspectj-1.9.19.jar"
+  sha256 "3ae8f2834e72bed7327cb9aaa2773ef865fd03214ac1f2332133870f3d29c743"
   license "EPL-2.0"
 
   livecheck do
@@ -25,7 +25,7 @@ class Aspectj < Formula
 
   def install
     mkdir_p "#{libexec}/#{name}"
-    system "#{Formula["openjdk"].bin}/java", "-jar", "aspectj-#{version}.jar", "-to", "#{libexec}/#{name}"
+    system "#{Formula["openjdk"].bin}/java", "-jar", "#{name}-#{version}.jar", "-to", "#{libexec}/#{name}"
     bin.install Dir["#{libexec}/#{name}/bin/*"]
     bin.env_script_all_files libexec/"#{name}/bin", Language::Java.overridable_java_home_env
     chmod 0555, Dir["#{libexec}/#{name}/bin/*"] # avoid 0777
