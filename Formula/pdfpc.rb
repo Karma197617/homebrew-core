@@ -1,10 +1,10 @@
 class Pdfpc < Formula
   desc "Presenter console with multi-monitor support for PDF files"
   homepage "https://pdfpc.github.io/"
-  url "https://github.com/pdfpc/pdfpc/archive/v4.4.1.tar.gz"
-  sha256 "4adb42fd1844a7e2ab44709dd043ade618c87f2aaec03db64f7ed659e8d3ddad"
+  url "https://github.com/pdfpc/pdfpc/archive/v4.6.0.tar.gz"
+  sha256 "3b1a393f36a1b0ddc29a3d5111d8707f25fb2dd2d93b0401ff1c66fa95f50294"
   license "GPL-3.0-or-later"
-  revision 1
+  head "https://github.com/pdfpc/pdfpc.git", branch: "master"
 
   bottle do
     sha256 arm64_ventura:  "3bf28b63e9aa3d5823c76aa28a1e62f7b8866c6fd801abebdcae0e80ef91610a"
@@ -18,26 +18,21 @@ class Pdfpc < Formula
     sha256 x86_64_linux:   "7f8c4bf4f879d5785c7c0832ca121e93742d82f7c03a67e3f1648028393a7d55"
   end
 
-  head do
-    url "https://github.com/pdfpc/pdfpc.git", branch: "master"
-
-    depends_on "discount"
-    depends_on "json-glib"
-    depends_on "libsoup@2"
-    depends_on "qrencode"
-
-    on_linux do
-      depends_on "webkitgtk"
-    end
-  end
-
   depends_on "cmake" => :build
   depends_on "vala" => :build
+  depends_on "discount"
   depends_on "gst-plugins-good"
   depends_on "gtk+3"
+  depends_on "json-glib"
   depends_on "libgee"
   depends_on "librsvg"
+  depends_on "libsoup@2"
   depends_on "poppler"
+  depends_on "qrencode"
+
+  on_linux do
+    depends_on "webkitgtk"
+  end
 
   def install
     # NOTE: You can avoid the `libsoup@2` dependency by passing `-DREST=OFF`.
