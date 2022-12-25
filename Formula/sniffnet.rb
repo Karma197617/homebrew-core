@@ -12,6 +12,7 @@ class Sniffnet < Formula
 
   on_linux do
     depends_on "pkg-config" => :build
+    depends_on "fontconfig"
   end
 
   def install
