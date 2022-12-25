@@ -28,9 +28,8 @@ class Syft < Formula
   end
 
   test do
-    expected = "NAME     VERSION  TYPE   \nbusybox  1.34.1   binary"
-    assert_equal expected, shell_output("#{bin}/syft busybox").strip
-    assert_match "alpine-baselayout", shell_output("#{bin}/syft alpine:3.15")
+    output = shell_output("#{bin}/syft attest busybox 2>&1", 1)
+    assert_match "Available formats: [syft-json spdx-json cyclonedx-json]", output
 
     assert_match version.to_s, shell_output("#{bin}/syft --version")
   end
