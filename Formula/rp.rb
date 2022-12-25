@@ -1,25 +1,10 @@
 class Rp < Formula
   desc "Tool to find ROP sequences in PE/Elf/Mach-O x86/x64 binaries"
   homepage "https://github.com/0vercl0k/rp"
+  url "https://github.com/0vercl0k/rp/archive/refs/tags/v2.1.tar.gz"
+  sha256 "0c02ce21f546145fc2bcc4647818fd411c8f55ed8232e28efdee8dc04f150074"
   license "MIT"
   head "https://github.com/0vercl0k/rp.git", branch: "master"
-
-  stable do
-    url "https://github.com/0vercl0k/rp/archive/refs/tags/v2.1.tar.gz"
-    sha256 "0c02ce21f546145fc2bcc4647818fd411c8f55ed8232e28efdee8dc04f150074"
-
-    # Add ARM64 support. Remove in the next release.
-    on_arm do
-      patch do
-        url "https://github.com/0vercl0k/rp/commit/da82af33da229dc98da7f7be8b3559c557924273.patch?full_index=1"
-        sha256 "6cd21e38acbb7a4ef15272019634876bdc9c53ca218b4956abda09f9b8b3adc5"
-      end
-      patch do
-        url "https://github.com/0vercl0k/rp/commit/7a2ffb789c0bf8803b31840304bc66768f56e6cf.patch?full_index=1"
-        sha256 "ae63c6e9958fdbd55f4906cd3c53ae47d7fd160182d44fd237b123809bf9cbf0"
-      end
-    end
-  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "fcbf9fb210132a603c35746444b28de6ca8953ffb3002bbdf7eaefa10c871bd4"
@@ -39,9 +24,8 @@ class Rp < Formula
     system "cmake", "--build", "build"
 
     os = OS.mac? ? "osx" : "lin"
-    rp = buildpath.glob("build/rp-#{os}-*").first
+    rp = buildpath.glob("build/rp-#{os}").first
     bin.install rp
-    bin.install_symlink bin/rp.basename => "rp-#{os}"
   end
 
   test do
