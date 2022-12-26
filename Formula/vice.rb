@@ -1,10 +1,9 @@
 class Vice < Formula
   desc "Versatile Commodore Emulator"
   homepage "https://sourceforge.net/projects/vice-emu/"
-  url "https://downloads.sourceforge.net/project/vice-emu/releases/vice-3.6.1.tar.gz"
-  sha256 "20df84c851aaf2f5000510927f6d31b32f269916d351465c366dc0afc9dc150c"
+  url "https://downloads.sourceforge.net/project/vice-emu/releases/vice-3.7.tar.gz"
+  sha256 "35a673c7ce236b4297a887f3eb8e8e29fd44b14eea21929268ca4adec42bd446"
   license "GPL-2.0-or-later"
-  revision 2
   head "https://svn.code.sf.net/p/vice-emu/code/trunk/vice"
 
   livecheck do
@@ -71,6 +70,7 @@ class Vice < Formula
   end
 
   test do
-    assert_match "Initializing.", shell_output("#{bin}/x64sc -console -limitcycles 1000000 -logfile -", 1)
+    output = shell_output("#{bin}/x64sc -console -limitcycles 1000000 -logfile -", 1)
+    assert_match "Initializing chip model", output
   end
 end
