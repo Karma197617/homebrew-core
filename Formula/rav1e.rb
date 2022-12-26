@@ -5,12 +5,13 @@ class Rav1e < Formula
   head "https://github.com/xiph/rav1e.git", branch: "master"
 
   stable do
-    url "https://github.com/xiph/rav1e/archive/v0.6.1.tar.gz"
-    sha256 "dd12132ad9dac229ce00a9caad132c4ad23d7db2b3ad4b5a59e89658fee04d9a"
+    url "https://github.com/xiph/rav1e/archive/v0.6.2.tar.gz"
+    sha256 "8fe8d80bc80a05ee33113c0ee19779d9c57189e5434c8e1da8f67832461aa089"
 
+    # keep the version in sync
     resource "Cargo.lock" do
-      url "https://github.com/xiph/rav1e/releases/download/v0.6.1/Cargo.lock"
-      sha256 "da13dcb2ea6bc0212b077a2e2e2e55b2a674a0ae683b7a2c4cf3e4f137c920cb"
+      url "https://github.com/xiph/rav1e/releases/download/v0.6.2/Cargo.lock"
+      sha256 "5f1f34a269322b8ec6c6432d6b928c72da254e16e65a0c8f81fe252367a99ba5"
     end
   end
 
@@ -36,7 +37,7 @@ class Rav1e < Formula
     depends_on "nasm" => :build
   end
 
-  resource "bus_qcif_7.5fps.y4m" do
+  resource "homebrew-bus_qcif_7.5fps.y4m" do
     url "https://media.xiph.org/video/derf/y4m/bus_qcif_7.5fps.y4m"
     sha256 "1f5bfcce0c881567ea31c1eb9ecb1da9f9583fdb7d6bb1c80a8c9acfc6b66f6b"
   end
@@ -48,7 +49,7 @@ class Rav1e < Formula
   end
 
   test do
-    resource("bus_qcif_7.5fps.y4m").stage do
+    resource("homebrew-bus_qcif_7.5fps.y4m").stage do
       system "#{bin}/rav1e", "--tile-rows=2",
                                    "bus_qcif_7.5fps.y4m",
                                    "--output=bus_qcif_15fps.ivf"
