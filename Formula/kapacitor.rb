@@ -1,11 +1,22 @@
 class Kapacitor < Formula
   desc "Open source time series data processor"
   homepage "https://github.com/influxdata/kapacitor"
-  url "https://github.com/influxdata/kapacitor.git",
-      tag:      "v1.6.5",
-      revision: "c6c917f3097573544574ae94b5ef955a15256772"
+
   license "MIT"
   head "https://github.com/influxdata/kapacitor.git", branch: "master"
+
+  stable do
+    url "https://github.com/influxdata/kapacitor.git",
+        tag:      "v1.6.5",
+        revision: "c6c917f3097573544574ae94b5ef955a15256772"
+
+    # build patch to upgrade flux so that it can be built with rust 1.66.0
+    # upstream PR, https://github.com/influxdata/kapacitor/pull/2738
+    patch do
+      url "https://raw.githubusercontent.com/Homebrew/formula-patches/58a8918/kapacitor/1.6.5-flux.patch"
+      sha256 "6b03f69d4139ecfff128e7eac088b73b6b11ef395451e44ee33c2e7556661fa1"
+    end
+  end
 
   livecheck do
     url :stable
