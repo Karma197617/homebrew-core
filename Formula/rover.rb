@@ -14,7 +14,6 @@ class Rover < Formula
     patch :DATA
   end
 
-
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "22c6d424681c36f59cfe9587c21217ce407195a4166264033079eda86a0909a1"
