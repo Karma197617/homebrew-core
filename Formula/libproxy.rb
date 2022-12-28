@@ -1,10 +1,9 @@
 class Libproxy < Formula
   desc "Library that provides automatic proxy configuration management"
   homepage "https://libproxy.github.io/libproxy/"
-  url "https://github.com/libproxy/libproxy/archive/0.4.17.tar.gz"
-  sha256 "88c624711412665515e2800a7e564aabb5b3ee781b9820eca9168035b0de60a9"
+  url "https://github.com/libproxy/libproxy/archive/refs/tags/0.4.18.tar.gz"
+  sha256 "0b4a9218d88f6cf9fa25996a3f38329a11f688a9d026141d9d0e966d8fa63837"
   license "LGPL-2.1-or-later"
-  revision 1
   head "https://github.com/libproxy/libproxy.git", branch: "master"
 
   bottle do
@@ -27,18 +26,25 @@ class Libproxy < Formula
     depends_on "glib"
   end
 
+  # patch for `Unknown CMake command "px_check_modules"`
+  # remove in next release
+  patch do
+    url "https://github.com/libproxy/libproxy/commit/8fec01ed4b95afc71bf7710bf5b736a5de03b343.patch?full_index=1"
+    sha256 "af7f90c68f3807fefb3d8502a5180f9d71b749f21c956fc5be8a1c049ce88d05"
+  end
+
   def install
-    args = std_cmake_args + %W[
-      ..
+    ENV.cxx11
+
+    args = %W[
       -DPYTHON3_SITEPKG_DIR=#{prefix/Language::Python.site_packages("python3.11")}
       -DWITH_PERL=OFF
       -DWITH_PYTHON2=OFF
     ]
 
-    mkdir "build" do
-      system "cmake", *args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
