@@ -1,8 +1,8 @@
 class Oil < Formula
   desc "Bash-compatible Unix shell with more consistent syntax and semantics"
   homepage "https://www.oilshell.org/"
-  url "https://www.oilshell.org/download/oil-0.12.9.tar.gz"
-  sha256 "3a406f4a0ab6b110ef5aa8b306aea1ce306ca51d068cdb1ed1754d5ab292ef10"
+  url "https://www.oilshell.org/download/oil-0.13.0.tar.gz"
+  sha256 "ec4a54a31c95465ebbb22821f141220fb42302597312db368cbb0e09e66c3f85"
   license "Apache-2.0"
 
   livecheck do
