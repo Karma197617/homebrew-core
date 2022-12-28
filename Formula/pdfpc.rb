@@ -19,8 +19,8 @@ class Pdfpc < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "vala" => :build
   depends_on "pkg-config" => :build
+  depends_on "vala" => :build
   depends_on "discount"
   depends_on "gst-plugins-good"
   depends_on "gtk+3"
