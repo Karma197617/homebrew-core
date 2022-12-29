@@ -1,10 +1,9 @@
 class Handbrake < Formula
   desc "Open-source video transcoder available for Linux, Mac, and Windows"
   homepage "https://handbrake.fr/"
-  url "https://github.com/HandBrake/HandBrake/releases/download/1.5.1/HandBrake-1.5.1-source.tar.bz2"
-  sha256 "3999fe06d5309c819799a73a968a8ec3840e7840c2b64af8f5cdb7fd8c9430f0"
+  url "https://github.com/HandBrake/HandBrake/releases/download/1.6.0/HandBrake-1.6.0-source.tar.bz2"
+  sha256 "7f23c76038b7bf329089d0eb33c14898400fcc0426e310e87dc11e538c103cda"
   license "GPL-2.0-only"
-  revision 1
   head "https://github.com/HandBrake/HandBrake.git", branch: "master"
 
   bottle do
