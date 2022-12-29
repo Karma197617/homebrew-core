@@ -1,9 +1,10 @@
 class Libvncserver < Formula
   desc "VNC server and client libraries"
   homepage "https://libvnc.github.io"
-  url "https://github.com/LibVNC/libvncserver/archive/LibVNCServer-0.9.13.tar.gz"
-  sha256 "0ae5bb9175dc0a602fe85c1cf591ac47ee5247b87f2bf164c16b05f87cbfa81a"
+  url "https://github.com/LibVNC/libvncserver/archive/LibVNCServer-0.9.14.tar.gz"
+  sha256 "83104e4f7e28b02f8bf6b010d69b626fae591f887e949816305daebae527c9a5"
   license "GPL-2.0-or-later"
+  head "https://github.com/LibVNC/libvncserver.git", branch: "master"
 
   livecheck do
     url :stable
