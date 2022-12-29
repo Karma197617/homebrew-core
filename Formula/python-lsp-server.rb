@@ -3,8 +3,8 @@ class PythonLspServer < Formula
 
   desc "Python Language Server for the Language Server Protocol"
   homepage "https://github.com/python-lsp/python-lsp-server"
-  url "https://files.pythonhosted.org/packages/13/c3/02952e2465da01d2b9f3df8972ddce72fe4ac471fa9af9fcc7a89dc8f863/python-lsp-server-1.6.0.tar.gz"
-  sha256 "d75cdff9027c4212e5b9e861e9a0219219c8e2c69508d9f24949951dabd0dc1b"
+  url "https://files.pythonhosted.org/packages/b0/2a/b61699d8a1eb4adc23647e44ac4c94ccc4f5c9ddb477e3eb54a48342e666/python-lsp-server-1.7.0.tar.gz"
+  sha256 "401ce78ea2e98cadd02d94962eb32c92879caabc8055b9a2f36d7ef44acc5435"
   license "MIT"
   head "https://github.com/python-lsp/python-lsp-server.git", branch: "develop"
 
@@ -22,13 +22,13 @@ class PythonLspServer < Formula
   depends_on "python@3.11"
 
   resource "docstring-to-markdown" do
-    url "https://files.pythonhosted.org/packages/1e/c5/53e13bb0e3dd8b7fa3595c80deb40a3742dd191a9350141d4daa7ab09a9f/docstring-to-markdown-0.10.tar.gz"
-    sha256 "12f75b0c7b7572defea2d9e24b57ef7ac38c3e26e91c0e5547cfc02b1c168bf6"
+    url "https://files.pythonhosted.org/packages/e9/68/cac92c4f3f837fbeba17e8dfcdb7658fac6a1d56c007ed0d407087f1127e/docstring-to-markdown-0.11.tar.gz"
+    sha256 "5b1da2c89d9d0d09b955dec0ee111284ceadd302a938a03ed93f66e09134f9b5"
   end
 
   resource "jedi" do
-    url "https://files.pythonhosted.org/packages/c2/25/273288df952e07e3190446efbbb30b0e4871a0d63b4246475f3019d4f55e/jedi-0.18.1.tar.gz"
-    sha256 "74137626a64a99c8eb6ae5832d99b3bdd7d29a3850fe2aa80a4126b2a7d949ab"
+    url "https://files.pythonhosted.org/packages/15/02/afd43c5066de05f6b3188f3aa74136a3289e6c30e7a45f351546cab0928c/jedi-0.18.2.tar.gz"
+    sha256 "bae794c30d07f6d910d32a7048af09b5a39ed740918da923c6b780790ebac612"
   end
 
   resource "parso" do
@@ -47,8 +47,8 @@ class PythonLspServer < Formula
   end
 
   resource "ujson" do
-    url "https://files.pythonhosted.org/packages/6e/4a/03ddad85a10dd52e209993a14afa0cb0dc5c348e4647329f1c53856ad9e6/ujson-5.5.0.tar.gz"
-    sha256 "b25077a971c7da47bd6846a912a747f6963776d90720c88603b1b55d81790780"
+    url "https://files.pythonhosted.org/packages/45/48/466d672c53fcb93d64a2817e3a0306214103e3baba109821c88e1150c100/ujson-5.6.0.tar.gz"
+    sha256 "f881e2d8a022e9285aa2eab6ba8674358dbcb2b57fa68618d88d62937ac3ff04"
   end
 
   def install
