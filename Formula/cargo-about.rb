@@ -40,7 +40,7 @@ class CargoAbout < Formula
             "MIT",
         ]
       EOS
-      assert_equal expected, (crate/"About.toml").read
+      assert_equal expected, (crate/"about.toml").read
 
       output = shell_output("cargo about generate about.hbs")
       assert_match "The above copyright notice and this permission notice", output
