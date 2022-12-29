@@ -25,7 +25,13 @@ class X11vnc < Formula
   depends_on "libvncserver"
   depends_on "openssl@1.1"
 
+  uses_from_macos "libxcrypt"
+
   def install
+    # Work around failure from GCC 10+ using default of `-fno-common`
+    # /usr/bin/ld: x11vnc-xwrappers.o:(.bss+0x440): multiple definition of `pointerMutex|inputMutex|clientMutex`
+    ENV.append_to_cflags "-fcommon" if OS.linux?
+
     ENV.prepend_path "PKG_CONFIG_PATH", Formula["openssl@1.1"].opt_lib/"pkgconfig"
 
     args = %W[
