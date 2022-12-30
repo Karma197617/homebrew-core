@@ -3,7 +3,7 @@ class AgePluginYubikey < Formula
   homepage "https://github.com/str4d/age-plugin-yubikey"
   url "https://github.com/str4d/age-plugin-yubikey/archive/v0.3.1.tar.gz"
   sha256 "b5237da9cb7fd65a545b005a467d200650a00a49b32cd8ab30d2bc0c1c65550e"
-  license "MIT"
+  license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/str4d/age-plugin-yubikey.git", branch: "main"
 
   bottle do
