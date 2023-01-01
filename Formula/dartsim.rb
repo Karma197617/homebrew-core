@@ -19,18 +19,21 @@ class Dartsim < Formula
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "assimp"
-  depends_on "boost"
   depends_on "bullet"
   depends_on "eigen"
   depends_on "fcl"
   depends_on "flann"
+  depends_on "fmt"
   depends_on "ipopt"
   depends_on "libccd"
   depends_on "nlopt"
   depends_on "ode"
   depends_on "open-scene-graph"
+  depends_on "spdlog"
   depends_on "tinyxml2"
   depends_on "urdfdom"
+
+  uses_from_macos "python" => :build
 
   fails_with gcc: "5"
 
@@ -68,7 +71,7 @@ class Dartsim < Formula
                     "-L#{Formula["boost"].opt_lib}", "-lboost_system",
                     "-L#{Formula["libccd"].opt_lib}", "-lccd",
                     "-L#{Formula["fcl"].opt_lib}", "-lfcl",
-                    "-std=c++14", "-o", "test"
+                    "-std=c++17", "-o", "test"
     system "./test"
   end
 end
