@@ -43,10 +43,6 @@ class Fontforge < Formula
     sha256 "6a22acf6be4ab9e5c5a3373dc878030b4b8dc4652323395388abe43679ceba81"
   end
 
-  # Fix for rpath on ARM
-  # https://github.com/fontforge/fontforge/issues/4658
-  patch :DATA
-
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
                     "-GNinja",
@@ -86,15 +82,3 @@ class Fontforge < Formula
     assert_match "Web Open Font Format (Version 2)", fileres
   end
 end
-
-__END__
-diff --git a/contrib/fonttools/CMakeLists.txt b/contrib/fonttools/CMakeLists.txt
-index 0d3f464bc..b9f210cde 100644
---- a/contrib/fonttools/CMakeLists.txt
-+++ b/contrib/fonttools/CMakeLists.txt
-@@ -18,3 +18,5 @@ target_link_libraries(dewoff PRIVATE ZLIB::ZLIB)
- target_link_libraries(pcl2ttf PRIVATE MathLib::MathLib)
- target_link_libraries(ttf2eps PRIVATE fontforge)
- target_link_libraries(woff PRIVATE ZLIB::ZLIB)
-+
-+install(TARGETS acorn2sfd dewoff findtable pcl2ttf pfadecrypt rmligamarks showttf stripttc ttf2eps woff RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
