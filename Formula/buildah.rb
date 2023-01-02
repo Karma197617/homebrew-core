@@ -9,12 +9,20 @@ class Buildah < Formula
   depends_on "go" => :build
   depends_on "pkg-config" => :build
 
+  on_linux do
+    depends_on "gpgme" => :build
+    depends_on "libseccomp" => :build
+    depends_on "btrfs-progs"
+    depends_on "device-mapper"
+  end
+
   def install
     ENV["CGO_ENABLED"] = "1"
 
     ldflags = "-s -w"
     ldflags << "-linkmode external -extldflags \"-static -lm\"" if OS.linux?
-    tags = %w[netgo
+    tags = %w[
+      netgo
       osusergo
       exclude_graphdriver_btrfs
       exclude_graphdriver_devicemapper
