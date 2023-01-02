@@ -7,6 +7,9 @@ class Buildah < Formula
   head "https://github.com/containers/buildah.git", branch: "main"
 
   depends_on "go" => :build
+  depends_on "gpgme" => :build
+  depends_on "libassuan" => :build
+  depends_on "libgpg-error" => :build
   depends_on "pkg-config" => :build
 
   on_linux do
