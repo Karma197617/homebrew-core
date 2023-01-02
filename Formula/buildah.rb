@@ -7,13 +7,21 @@ class Buildah < Formula
   head "https://github.com/containers/buildah.git", branch: "main"
 
   depends_on "go" => :build
+  depends_on "pkg-config" => :build
 
   def install
     ENV["CGO_ENABLED"] = "1"
 
     ldflags = "-s -w"
     ldflags << "-linkmode external -extldflags \"-static -lm\"" if OS.linux?
-    tags = "netgo osusergo exclude_graphdriver_btrfs exclude_graphdriver_devicemapper seccomp apparmor selinux"
+    tags = %w[netgo
+      osusergo
+      exclude_graphdriver_btrfs
+      exclude_graphdriver_devicemapper
+      seccomp
+      apparmor
+      selinux
+    ].join(" ")
 
     system "go", "build", *std_go_args(ldflags: ldflags), "-tags", tags, "./cmd/buildah"
   end
