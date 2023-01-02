@@ -15,6 +15,7 @@ class Buildah < Formula
   on_linux do
     depends_on "btrfs-progs"
     depends_on "device-mapper"
+    depends_on "libgcrypt"
     depends_on "libseccomp"
   end
 
