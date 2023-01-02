@@ -20,7 +20,7 @@ class Buildah < Formula
     ENV["CGO_ENABLED"] = "1"
 
     ldflags = "-s -w"
-    ldflags << "-linkmode external -extldflags \"-static -lm\"" if OS.linux?
+    ldflags << " -linkmode external -extldflags \"-static -lm\"" if OS.linux?
     tags = %w[
       netgo
       osusergo
