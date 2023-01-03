@@ -3,8 +3,8 @@ class Locust < Formula
 
   desc "Scalable user load testing tool written in Python"
   homepage "https://locust.io/"
-  url "https://files.pythonhosted.org/packages/44/a0/66e91ca68dc199ce5fb571419bdd121151c2fe0159ef43e485582738b838/locust-2.14.0.tar.gz"
-  sha256 "4d558153594c3a5b4d59d8451e03a442b4b9d4c65137d5767c3575d3a1c16fcb"
+  url "https://files.pythonhosted.org/packages/cc/64/372cf109b952e1cc0503e0125b2ac6c5f307c26fbc52b3d6a0f02a07e85b/locust-2.14.1.tar.gz"
+  sha256 "4668c129a7f51538bcd2ca025a4e62809d289b57b705872400359ee9df499725"
   license "MIT"
 
   bottle do
@@ -132,8 +132,8 @@ class Locust < Formula
   end
 
   resource "zope.event" do
-    url "https://files.pythonhosted.org/packages/30/00/94ed30bfec18edbabfcbd503fcf7482c5031b0fbbc9bc361f046cb79781c/zope.event-4.5.0.tar.gz"
-    sha256 "5e76517f5b9b119acf37ca8819781db6c16ea433f7e2062c4afc2b6fbedb1330"
+    url "https://files.pythonhosted.org/packages/42/49/ba8610674cad200da2f9c87b5f52fdcf18b02dd743a8a1e90726803cc42f/zope.event-4.6.tar.gz"
+    sha256 "81d98813046fc86cc4136e3698fee628a3282f9c320db18658c21749235fce80"
   end
 
   resource "zope.interface" do
