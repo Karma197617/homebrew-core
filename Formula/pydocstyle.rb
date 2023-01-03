@@ -3,8 +3,8 @@ class Pydocstyle < Formula
 
   desc "Python docstring style checker"
   homepage "https://www.pydocstyle.org/"
-  url "https://files.pythonhosted.org/packages/da/1f/cd8bb9e67bf4030e183f480b4e6dc917f99b618caebb03f019a6b30a5fc2/pydocstyle-6.2.0.tar.gz"
-  sha256 "b2d280501a4c0d9feeb96e9171dc3f6f7d0064c55270f4c7b1baa18452019fd9"
+  url "https://files.pythonhosted.org/packages/b7/c7/01674c093a29cc83261d2cd554dd9d0debf8cfad061c05359a5d18562863/pydocstyle-6.2.1.tar.gz"
+  sha256 "5ddccabe3c9555d4afaabdba909ca2de4fa24ac31e2eede4ab3d528a4bcadd52"
   license "MIT"
   head "https://github.com/PyCQA/pydocstyle.git", branch: "master"
 
@@ -23,11 +23,6 @@ class Pydocstyle < Formula
   resource "snowballstemmer" do
     url "https://files.pythonhosted.org/packages/44/7b/af302bebf22c749c56c9c3e8ae13190b5b5db37a33d9068652e8f73b7089/snowballstemmer-2.2.0.tar.gz"
     sha256 "09b16deb8547d3412ad7b590689584cd0fe25ec8db3be37788be3810cbf19cb1"
-  end
-
-  resource "toml" do
-    url "https://files.pythonhosted.org/packages/be/ba/1f744cdc819428fc6b5084ec34d9b30660f6f9daaf70eead706e3203ec3c/toml-0.10.2.tar.gz"
-    sha256 "b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"
   end
 
   def install
