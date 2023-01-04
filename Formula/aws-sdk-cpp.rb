@@ -27,14 +27,12 @@ class AwsSdkCpp < Formula
 
   def install
     ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath}"
-    mkdir "build" do
-      args = %w[
-        -DENABLE_TESTING=OFF
-      ]
-      system "cmake", "..", *std_cmake_args, *args
-      system "make"
-      system "make", "install"
-    end
+    # Avoid OOM failure on Github runner
+    ENV.deparallelize if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DENABLE_TESTING=OFF"
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
 
     lib.install Dir[lib/"mac/Release/*"].select { |f| File.file? f }
   end
