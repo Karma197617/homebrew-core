@@ -7,8 +7,8 @@ class Libplacebo < Formula
   head "https://code.videolan.org/videolan/libplacebo.git", branch: "master"
 
   stable do
-    url "https://code.videolan.org/videolan/libplacebo/-/archive/v5.229.1/libplacebo-v5.229.1.tar.bz2"
-    sha256 "fef7000bd498921c2f6eb567a60c95fbb3ea39ff0a3d5cc68176eb27b5dd882c"
+    url "https://code.videolan.org/videolan/libplacebo/-/archive/v5.229.2/libplacebo-v5.229.2.tar.bz2"
+    sha256 "34424f509590e03b99ff1d3bc1c99e4f6bcb8999fdb27da51f25d91e375402a6"
 
     resource "glad" do
       url "https://files.pythonhosted.org/packages/e5/5f/a88837847083930e289e1eee93a9376a0a89a2a373d148abe7c804ad6657/glad2-2.0.2.tar.gz"
