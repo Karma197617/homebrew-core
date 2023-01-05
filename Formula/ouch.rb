@@ -1,8 +1,8 @@
 class Ouch < Formula
   desc "Painless compression and decompression for your terminal"
   homepage "https://github.com/ouch-org/ouch"
-  url "https://github.com/ouch-org/ouch/archive/refs/tags/0.4.0.tar.gz"
-  sha256 "3e126f00e1ad82ef4abfd28f86dac53b366a29de6a70359e734ecc8748f580fc"
+  url "https://github.com/ouch-org/ouch/archive/refs/tags/0.4.1.tar.gz"
+  sha256 "b0fcd6bbe6c66544b5bf1167d72605427c5cc6afae564f23f3eff5ea22b01b79"
   license "MIT"
   head "https://github.com/ouch-org/ouch.git", branch: "main"
 
@@ -17,7 +17,6 @@ class Ouch < Formula
   end
 
   depends_on "rust" => :build
-  depends_on :macos # Doesn't build on Linux
 
   uses_from_macos "bzip2"
   uses_from_macos "xz"
