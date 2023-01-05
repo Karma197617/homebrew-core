@@ -1,8 +1,8 @@
 class Ruff < Formula
   desc "Extremely fast Python linter, written in Rust"
   homepage "https://github.com/charliermarsh/ruff"
-  url "https://github.com/charliermarsh/ruff/archive/refs/tags/v0.0.209.tar.gz"
-  sha256 "853d7d50e9abdcaecd1471e217e02a8c1170e5fe9baccef1ecd8f99dc022f3cd"
+  url "https://github.com/charliermarsh/ruff/archive/refs/tags/v0.0.210.tar.gz"
+  sha256 "de99a88d253016d02197ff69436d6f15984bf8fcb4ccbe90d1a49df19644bc01"
   license "MIT"
   head "https://github.com/charliermarsh/ruff.git", branch: "main"
 
