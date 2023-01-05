@@ -29,6 +29,10 @@ class AwsSdkCpp < Formula
     ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath}"
     # Avoid OOM failure on Github runner
     ENV.deparallelize if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+    # Work around build failure with curl >= 7.87.0.
+    # TODO: Remove when upstream PR is merged and in release
+    # PR ref: https://github.com/aws/aws-sdk-cpp/pull/2265
+    ENV.append_to_cflags "-Wno-deprecated-declarations" unless OS.mac?
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DENABLE_TESTING=OFF"
     system "cmake", "--build", "build"
