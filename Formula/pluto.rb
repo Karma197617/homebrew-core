@@ -36,6 +36,6 @@ class Pluto < Formula
         name: homebrew-test
       spec: {}
     EOS
-    assert_match "homebrew-test", shell_output("#{bin}/pluto detect deployment.yaml", 3)
+    assert_match "homebrew-test", shell_output("#{bin}/pluto detect deployment.yaml")
   end
 end
