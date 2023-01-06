@@ -5,6 +5,7 @@ class Help2man < Formula
   mirror "https://ftpmirror.gnu.org/help2man/help2man-1.49.3.tar.xz"
   sha256 "4d7e4fdef2eca6afe07a2682151cea78781e0a4e8f9622142d9f70c083a2fd4f"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "fba233e327acdda68edc9c3af88122aeee734e6636e3da2f9af15e9730f13b0e"
@@ -16,11 +17,8 @@ class Help2man < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c3180d4a66aea5c6fc513255d36cbc34bc97d155361965cb93de87e206a1d2ea"
   end
 
-  uses_from_macos "perl", since: :mojave
-
-  on_intel do
-    depends_on "gettext"
-  end
+  depends_on "gettext"
+  depends_on "perl"
 
   resource "Locale::gettext" do
     url "https://cpan.metacpan.org/authors/id/P/PV/PVANDRY/gettext-1.07.tar.gz"
@@ -30,11 +28,9 @@ class Help2man < Formula
   def install
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
 
-    if Hardware::CPU.intel?
-      resource("Locale::gettext").stage do
-        system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}"
-        system "make", "install"
-      end
+    resource("Locale::gettext").stage do
+      system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}", "NO_MYMETA=1"
+      system "make", "install"
     end
 
     # install is not parallel safe
@@ -51,11 +47,7 @@ class Help2man < Formula
   end
 
   test do
-    out = if Hardware::CPU.intel?
-      shell_output("#{bin}/help2man --locale=en_US.UTF-8 #{bin}/help2man")
-    else
-      shell_output("#{bin}/help2man #{bin}/help2man")
-    end
+    out = shell_output("#{bin}/help2man --locale=en_US.UTF-8 #{bin}/help2man")
 
     assert_match "help2man #{version}", out
   end
