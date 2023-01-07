@@ -43,7 +43,7 @@ class Keploy < Formula
 
     output = ""
     PTY.spawn(env, executable) do |r, _w, pid|
-      sleep 1
+      sleep 2
       Process.kill("TERM", pid)
       begin
         r.each_line { |line| output += line }
