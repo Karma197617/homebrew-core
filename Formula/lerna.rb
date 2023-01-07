@@ -3,8 +3,8 @@ require "language/node"
 class Lerna < Formula
   desc "Tool for managing JavaScript projects with multiple packages"
   homepage "https://lerna.js.org"
-  url "https://registry.npmjs.org/lerna/-/lerna-6.3.0.tgz"
-  sha256 "3562a20946f5abe268f71b1c7c4b1adf569d60a631fec4ab878a3d1896cdea4e"
+  url "https://registry.npmjs.org/lerna/-/lerna-6.4.0.tgz"
+  sha256 "5f5600ad8c76a14360a1177bd4debfcfc0f463d5f1b88477eb4a4f121b48ddcb"
   license "MIT"
 
   bottle do
