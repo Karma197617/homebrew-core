@@ -232,6 +232,9 @@
   "gcalcli": {
     "exclude_packages": ["six"]
   },
+  "gi-docgen": {
+    "exclude_packages": ["pygments", "smartypants"]
+  },
   "gimme-aws-creds": {
     "package_name": "gimme-aws-creds",
     "exclude_packages": ["six"],

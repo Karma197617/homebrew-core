@@ -3,8 +3,8 @@ class GiDocgen < Formula
 
   desc "Documentation tool for GObject-based libraries"
   homepage "https://gnome.pages.gitlab.gnome.org/gi-docgen/"
-  url "https://files.pythonhosted.org/packages/4d/0d/84d2a72a79ba7874b34680cac5b81019f17d58f2b53d88f341c710f1f3cf/gi-docgen-2022.2.tar.gz"
-  sha256 "fc56df0c7d4ab9e5ed83f35b7483cb07d0bf91761e4f139eed363d7e42ffe0c0"
+  url "https://files.pythonhosted.org/packages/29/72/a319bce143e5d10677bc89b66e750c1511ec005c7a8bb098b415cc68ac68/gi-docgen-2023.1.tar.gz"
+  sha256 "88adeda9cbf882569479701eada009afa5d94fa29d728653ec388c32035f7fa3"
   license any_of: ["Apache-2.0", "GPL-3.0-or-later"]
   head "https://gitlab.gnome.org/GNOME/gi-docgen.git", branch: "main"
 
@@ -19,6 +19,7 @@ class GiDocgen < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "edd16dfe78250cbdc8ce461aa9a925c2121754539f494ad978bc4c21be77a275"
   end
 
+  depends_on "pygments"
   depends_on "python@3.11"
 
   # Source for latest version is not available on PyPI, so using GitHub tarball instead.
@@ -41,11 +42,6 @@ class GiDocgen < Formula
   resource "MarkupSafe" do
     url "https://files.pythonhosted.org/packages/1d/97/2288fe498044284f39ab8950703e88abbac2abbdf65524d576157af70556/MarkupSafe-2.1.1.tar.gz"
     sha256 "7f91197cc9e48f989d12e4e6fbc46495c446636dfc81b9ccf50bb0ec74b91d4b"
-  end
-
-  resource "Pygments" do
-    url "https://files.pythonhosted.org/packages/e0/ef/5905cd3642f2337d44143529c941cc3a02e5af16f0f65f81cbef7af452bb/Pygments-2.13.0.tar.gz"
-    sha256 "56a8508ae95f98e2b9bdf93a6be5ae3f7d8af858b43e02c5a2ff083726be40c1"
   end
 
   resource "toml" do
