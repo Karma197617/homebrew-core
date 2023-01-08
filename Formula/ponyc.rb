@@ -2,8 +2,8 @@ class Ponyc < Formula
   desc "Object-oriented, actor-model, capabilities-secure programming language"
   homepage "https://www.ponylang.io/"
   url "https://github.com/ponylang/ponyc.git",
-      tag:      "0.52.5",
-      revision: "e4febddc7ed591f6b93348e0d3531df8da70555d"
+      tag:      "0.53.0",
+      revision: "c61b0bc1280233e45039393c9cea793bc3e6d449"
   license "BSD-2-Clause"
 
   bottle do
@@ -20,7 +20,17 @@ class Ponyc < Formula
   depends_on "cmake" => :build
   depends_on "python@3.11" => :build
 
+  uses_from_macos "llvm" => :build
   uses_from_macos "zlib"
+
+  # We use LLVM to work around an error while building bundled `google-benchmark` with GCC
+  fails_with :gcc do
+    cause <<-EOS
+      .../src/gbenchmark/src/thread_manager.h:50:31: error: expected ')' before '(' token
+         50 |   GUARDED_BY(GetBenchmarkMutex()) Result results;
+            |                               ^
+    EOS
+  end
 
   def install
     inreplace "CMakeLists.txt", "PONY_COMPILER=\"${CMAKE_C_COMPILER}\"", "PONY_COMPILER=\"#{ENV.cc}\"" if OS.linux?
