@@ -1,8 +1,8 @@
 class Wiredtiger < Formula
   desc "High performance NoSQL extensible platform for data management"
   homepage "https://source.wiredtiger.com/"
-  url "https://github.com/wiredtiger/wiredtiger/archive/refs/tags/11.0.0.tar.gz"
-  sha256 "1dad4afb604fa0dbebfa8024739226d6faec1ffd9f36b1ea00de86a7ac832168"
+  url "https://github.com/wiredtiger/wiredtiger/archive/refs/tags/11.1.0.tar.gz"
+  sha256 "0d988a8256219b614d855a2504d252975240171a633b882f19149c4a2ce0ec3d"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
 
   livecheck do
@@ -23,9 +23,16 @@ class Wiredtiger < Formula
 
   depends_on "ccache" => :build
   depends_on "cmake" => :build
+  depends_on "swig" => :build
+  depends_on "lz4"
   depends_on "snappy"
+  depends_on "zstd"
 
   uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "python@3.11" => :build
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build",
