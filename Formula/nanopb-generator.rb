@@ -18,8 +18,7 @@ class NanopbGenerator < Formula
   end
 
   depends_on "protobuf"
-  # protobuf binding issue for python@3.11
-  depends_on "python@3.10"
+  depends_on "python@3.11"
 
   conflicts_with "mesos",
     because: "they depend on an incompatible version of protobuf"
@@ -30,6 +29,7 @@ class NanopbGenerator < Formula
       rewrite_shebang detected_python_shebang, "nanopb_generator.py"
       libexec.install "nanopb_generator.py", "protoc-gen-nanopb", "proto"
       bin.install_symlink libexec/"protoc-gen-nanopb", libexec/"nanopb_generator.py"
+      rewrite_shebang detected_python_shebang, libexec/"protoc-gen-nanopb"
     end
   end
 
