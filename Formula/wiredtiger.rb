@@ -35,11 +35,13 @@ class Wiredtiger < Formula
   end
 
   def install
-    system "cmake", "-S", ".", "-B", "build",
-      "-DHAVE_BUILTIN_EXTENSION_SNAPPY=1",
-      "-DHAVE_BUILTIN_EXTENSION_ZLIB=1",
-      "-DCMAKE_INSTALL_RPATH=#{rpath}",
-      *std_cmake_args
+    args = %W[
+      -DHAVE_BUILTIN_EXTENSION_SNAPPY=1
+      -DHAVE_BUILTIN_EXTENSION_ZLIB=1
+      -DCMAKE_INSTALL_RPATH=#{rpath}
+    ]
+    args << "-DCMAKE_CXX_FLAGS=-Wno-maybe-uninitialized" if OS.linux?
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
