@@ -63,7 +63,7 @@ class Restview < Formula
       sleep 3
       output = shell_output("curl -s 127.0.0.1:#{port}")
       assert_match "<p>Here we have a numbered list</p>", output
-      assert_match "<li><p>Four</p></li>", output
+      assert_match "<li>Four</li>", output
     ensure
       Process.kill("TERM", pid)
     end
