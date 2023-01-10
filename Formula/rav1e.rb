@@ -10,8 +10,8 @@ class Rav1e < Formula
 
     # keep the version in sync
     resource "Cargo.lock" do
-      url "https://github.com/xiph/rav1e/releases/download/v0.6.2/Cargo.lock"
-      sha256 "5f1f34a269322b8ec6c6432d6b928c72da254e16e65a0c8f81fe252367a99ba5"
+      url "https://github.com/xiph/rav1e/releases/download/v0.6.3/Cargo.lock"
+      sha256 "f22049598eb6f9948b4d852850eeb48c1236a7a068692db85cbfe72b94498581"
     end
   end
 
