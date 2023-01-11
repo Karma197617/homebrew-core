@@ -3,8 +3,8 @@ class LinodeCli < Formula
 
   desc "CLI for the Linode API"
   homepage "https://www.linode.com/products/cli/"
-  url "https://github.com/linode/linode-cli/archive/refs/tags/v5.28.0.tar.gz"
-  sha256 "aa913ce2883b81c4108403d8d0010abcc77bdd7c962c84b384649e37d5896b5a"
+  url "https://files.pythonhosted.org/packages/e5/3a/8ddc3d01d86bd16b225d6e16dc324b14de0894a5c1963bf6338aac217384/linode-cli-5.28.0.tar.gz"
+  sha256 "ae575331f8f4efa0c4e253b68da3de154318567eac3a112aa4c54a8b24137dba"
   license "BSD-3-Clause"
   head "https://github.com/linode/linode-cli.git", branch: "main"
 
@@ -29,8 +29,8 @@ class LinodeCli < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/cb/a4/7de7cd59e429bd0ee6521ba58a75adaec136d32f91a761b28a11d8088d44/certifi-2022.9.24.tar.gz"
-    sha256 "0d9c601124e5a6ba9712dbc60d9c53c21e34f5f641fe83002317394311bdce14"
+    url "https://files.pythonhosted.org/packages/37/f7/2b1b0ec44fdc30a3d31dfebe52226be9ddc40cd6c0f34ffc8923ba423b69/certifi-2022.12.7.tar.gz"
+    sha256 "35824b4c3a97115964b408844d64aa14db1cc518f6562e8d7261699d1350a9e3"
   end
 
   resource "charset-normalizer" do
@@ -81,7 +81,7 @@ class LinodeCli < Formula
     cp "data-3", "linodecli"
 
     inreplace "setup.py" do |s|
-      s.gsub! "version=get_version(),", "version='#{version}',"
+      s.gsub! "version=version,", "version='#{version}',"
       # Prevent setup.py from installing the bash_completion script
       s.gsub! "data_files=get_baked_files(),", ""
     end
