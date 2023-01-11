@@ -3,8 +3,8 @@ class DotnetAT6 < Formula
   homepage "https://dotnet.microsoft.com/"
   # Source-build tag announced at https://github.com/dotnet/source-build/discussions
   url "https://github.com/dotnet/installer.git",
-      tag:      "v6.0.112",
-      revision: "d311a58ee178e4084d570ae5203e22c1e5e174b7"
+      tag:      "v6.0.113",
+      revision: "4a23b50f9783e31c496e8c21b8f117351feea870"
   license "MIT"
 
   # https://github.com/dotnet/source-build/#support
