@@ -3,8 +3,8 @@ class GalleryDl < Formula
 
   desc "Command-line downloader for image-hosting site galleries and collections"
   homepage "https://github.com/mikf/gallery-dl"
-  url "https://files.pythonhosted.org/packages/99/6c/3758d0f6f08f3d1cd08cae15541fde93bb550bb750be8e12a2b4d8c8be76/gallery_dl-1.24.3.tar.gz"
-  sha256 "bb9b4508e443bca1226a89dd2ffc0f5f264ccf44def2f6ae8502d85e29b52ac1"
+  url "https://files.pythonhosted.org/packages/d6/3e/9b4218eaacba3923fbdb2f7034bdd32eed1f3b94320a20978108003f8107/gallery_dl-1.24.4.tar.gz"
+  sha256 "83e9db1e96e8e8ee33a03266e8c47009763da4cef7355ed1291e7db3ef0b335d"
   license "GPL-2.0-only"
   head "https://github.com/mikf/gallery-dl.git", branch: "master"
 
@@ -41,8 +41,8 @@ class GalleryDl < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c2/51/32da03cf19d17d46cce5c731967bf58de9bd71db3a379932f53b094deda4/urllib3-1.26.13.tar.gz"
-    sha256 "c083dd0dce68dbfbe1129d5271cb90f9447dea7d52097c6e0126120c521ddea8"
+    url "https://files.pythonhosted.org/packages/c5/52/fe421fb7364aa738b3506a2d99e4f3a56e079c0a798e9f4fa5e14c60922f/urllib3-1.26.14.tar.gz"
+    sha256 "076907bf8fd355cde77728471316625a4d2f7e713c125f51953bb5b3eecf4f72"
   end
 
   def install
