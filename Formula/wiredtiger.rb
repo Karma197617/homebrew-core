@@ -34,6 +34,12 @@ class Wiredtiger < Formula
     depends_on "python@3.11" => :build
   end
 
+  # Adds include for std::optional. Remove in version 11.2.0.
+  patch do
+    url "https://github.com/wiredtiger/wiredtiger/commit/4418f9d2d7cad3829b47566d374ee73b29d699d7.patch?full_index=1"
+    sha256 "79bc6c1f027cda7742cdca26b361471126c60e8e66198a8dae4782b2a750c1c3"
+  end
+
   def install
     args = %W[
       -DHAVE_BUILTIN_EXTENSION_SNAPPY=1
