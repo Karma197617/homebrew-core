@@ -4,7 +4,7 @@ class Klee < Formula
   desc "Symbolic Execution Engine"
   homepage "https://klee.github.io/"
   license "NCSA"
-  revision 3
+  revision 4
   head "https://github.com/klee/klee.git", branch: "master"
 
   stable do
