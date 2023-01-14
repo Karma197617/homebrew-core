@@ -31,8 +31,8 @@ class Awscli < Formula
   # 2. Ignore `six`. Update all other PyPI packages
 
   resource "awscrt" do
-    url "https://files.pythonhosted.org/packages/96/c6/d352026b8fee89594d3be47e6d228e86fef72f0ef3c75704a0b0d690f484/awscrt-0.16.3.tar.gz"
-    sha256 "c37f50b74e3a7560f36ede35b7d2d530224d336b863aff554d97f7c9f59494d3"
+    url "https://files.pythonhosted.org/packages/0d/97/5afeb22210c2133bad3560f2030b43ef7d47acee04fe32ac9004287e7dd9/awscrt-0.16.4.tar.gz"
+    sha256 "65f7e7555aa2ede7e49eab5b24561299faddadf899e0b5b7f17e54d34a95188c"
   end
 
   resource "cffi" do
@@ -41,8 +41,8 @@ class Awscli < Formula
   end
 
   resource "colorama" do
-    url "https://files.pythonhosted.org/packages/82/75/f2a4c0c94c85e2693c229142eb448840fba0f9230111faa889d1f541d12d/colorama-0.4.3.tar.gz"
-    sha256 "e96da0d330793e2cb9485e9ddfd918d456036c7149416295932478192f4436a1"
+    url "https://files.pythonhosted.org/packages/d8/53/6f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4/colorama-0.4.6.tar.gz"
+    sha256 "08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"
   end
 
   resource "cryptography" do
@@ -81,8 +81,8 @@ class Awscli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c2/51/32da03cf19d17d46cce5c731967bf58de9bd71db3a379932f53b094deda4/urllib3-1.26.13.tar.gz"
-    sha256 "c083dd0dce68dbfbe1129d5271cb90f9447dea7d52097c6e0126120c521ddea8"
+    url "https://files.pythonhosted.org/packages/c5/52/fe421fb7364aa738b3506a2d99e4f3a56e079c0a798e9f4fa5e14c60922f/urllib3-1.26.14.tar.gz"
+    sha256 "076907bf8fd355cde77728471316625a4d2f7e713c125f51953bb5b3eecf4f72"
   end
 
   resource "wcwidth" do
