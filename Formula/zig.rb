@@ -2,6 +2,7 @@ class Zig < Formula
   desc "Programming language designed for robustness, optimality, and clarity"
   homepage "https://ziglang.org/"
   license "MIT"
+  revision 1
   head "https://github.com/ziglang/zig.git", branch: "master"
 
   stable do
