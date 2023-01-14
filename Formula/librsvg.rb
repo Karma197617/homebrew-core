@@ -5,11 +5,12 @@ class Librsvg < Formula
   sha256 "6baf48a9d3a56fd13bbfbb9f1f76759b240b70a1fa220fd238474d66a926f98c"
   license "LGPL-2.1-or-later"
 
-  # We use a common regex because librsvg doesn't use GNOME's "even-numbered
-  # minor is stable" version scheme (at least as a "trial" for 2.55.x).
+  # upstream does not use common GNOME release version scheme
+  # the regex directly look for the `2.55.1 - stable`, and ignore releases like
+  # `2.55.0 - development` or `2.55.90 - development`
   livecheck do
-    url :stable
-    regex(/librsvg[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https://gitlab.gnome.org/GNOME/librsvg/-/tags"
+    regex(/v?(\d+(?:\.\d+)+) - stable/i)
   end
 
   bottle do
