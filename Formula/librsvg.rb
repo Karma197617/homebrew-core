@@ -9,8 +9,8 @@ class Librsvg < Formula
   # This regex matches any version that doesn't have a 90+ patch version, as
   # those are development releases.
   livecheck do
-    url "https://gitlab.gnome.org/GNOME/librsvg/-/tags"
-    regex(/v?(\d+(?:\.\d+)+) - stable/i)
+    url :stable
+    regex(/librsvg[._-]v?(\d+\.\d+\.(?:\d|[1-8]\d+)(?:\.\d+)*)\.t/i)
   end
 
   bottle do
