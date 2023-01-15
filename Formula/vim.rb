@@ -39,12 +39,6 @@ class Vim < Formula
   conflicts_with "macvim",
     because: "vim and macvim both install vi* binaries"
 
-  # fixes build issue with 9.0.1150, remove after next release
-  patch do
-    url "https://github.com/vim/vim/commit/5bcd29b84e4dd6435177f37a544ecbf8df02412c.patch?full_index=1"
-    sha256 "6d1ae23897088cc13b31ac22f268e74fa063364b7c9a892dbee32397d4d62faf"
-  end
-
   def install
     ENV.prepend_path "PATH", Formula["python@3.11"].opt_libexec/"bin"
 
