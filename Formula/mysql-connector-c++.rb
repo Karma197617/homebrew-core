@@ -27,9 +27,9 @@ class MysqlConnectorCxx < Formula
   depends_on "openssl@1.1"
 
   def install
-    system "cmake", ".", *std_cmake_args,
-                    "-DINSTALL_LIB_DIR=lib"
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", "-DINSTALL_LIB_DIR=lib", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
