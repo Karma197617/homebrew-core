@@ -1,9 +1,9 @@
 class Chkrootkit < Formula
   desc "Rootkit detector"
   homepage "http://www.chkrootkit.org/"
-  url "ftp://ftp.pangeia.com.br/pub/seg/pac/chkrootkit-0.55.tar.gz"
-  mirror "https://fossies.org/linux/misc/chkrootkit-0.55.tar.gz"
-  sha256 "a81c0286ec449313f953701202a00e81b204fc2cf43e278585a11c12a5e0258b"
+  url "ftp://ftp.chkrootkit.org/pub/seg/pac/chkrootkit-0.56.tar.gz"
+  mirror "https://fossies.org/linux/misc/chkrootkit-0.56.tar.gz"
+  sha256 "8767e4aa836f5b1978eb49672c119838e0b49fb36c832b871d82b2e21881b0f4"
   license "GPL-2.0-or-later"
 
   livecheck do
