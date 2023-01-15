@@ -1,10 +1,11 @@
 class Acpica < Formula
   desc "OS-independent implementation of the ACPI specification"
   homepage "https://www.acpica.org/"
-  url "https://acpica.org/sites/acpica/files/acpica-unix-20221020.tar_0.gz"
-  # Work around invalid tarball extension (.tar_0.gz). Remove when fixed.
-  version "20221020"
-  sha256 "33a2e394aca0ca57d4018afe3da340dfad5eb45b1b9300e81dd595fda07cf1c5"
+  # https://acpica.org/sites/acpica/files/acpica-unix-20221022.tar.gz is not available
+  # upstream issue report, https://github.com/acpica/acpica/issues/823
+  url "https://github.com/acpica/acpica/archive/refs/tags/R10_20_22.tar.gz"
+  version "20221022"
+  sha256 "1aa17eb1779cd171110074ce271a65c06046eacbba7be7ce5ee71df1b31c3b86"
   license any_of: ["Intel-ACPI", "GPL-2.0-only", "BSD-3-Clause"]
   head "https://github.com/acpica/acpica.git", branch: "master"
 
@@ -26,9 +27,6 @@ class Acpica < Formula
   uses_from_macos "m4" => :build
 
   def install
-    # Work around invalid tarball extension (.tar_0.gz). Remove when fixed.
-    system "tar", "--strip-components=1", "-xf", "acpica-unix-#{version}.tar_0"
-    ENV.deparallelize
     system "make", "PREFIX=#{prefix}"
     system "make", "install", "PREFIX=#{prefix}"
   end
