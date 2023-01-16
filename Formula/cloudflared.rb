@@ -1,8 +1,8 @@
 class Cloudflared < Formula
   desc "Cloudflare Tunnel client (formerly Argo Tunnel)"
   homepage "https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/tunnel-guide"
-  url "https://github.com/cloudflare/cloudflared/archive/refs/tags/2022.12.1.tar.gz"
-  sha256 "8cc5c41ea98a9d72687d5f62e733a9033191e834e4fa9b2aecc557f0ccfbda56"
+  url "https://github.com/cloudflare/cloudflared/archive/refs/tags/2023.1.0.tar.gz"
+  sha256 "68b66ec333329cda386b304a333b6f24e3ecc09696184603ca37426d522c4cd2"
   license "Apache-2.0"
   head "https://github.com/cloudflare/cloudflared.git", branch: "master"
 
