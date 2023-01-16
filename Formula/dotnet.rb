@@ -66,20 +66,15 @@ class Dotnet < Formula
   # GCC builds have limited support via community.
   fails_with :gcc
 
-  # Backport fix for error on aspnetcore version while building 'installer in tarball'.
-  # TODO: Remove when available in release.
-  # PR ref: https://github.com/dotnet/installer/pull/14938
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/f206f7a45b330cce79e6bfe9116fccd93b0d3ed8/dotnet/aspnetcore-version.patch"
-    sha256 "00103452e2f52831c04007f1b7f9fcd5ecddf0671943657104f0ac8d3a9ca613"
-  end
-
   # Fix build failure on macOS due to missing bootstrap packages
   # Fix build failure on macOS ARM due to `osx-x64` override
   # Issue ref: https://github.com/dotnet/source-build/issues/2795
   patch :DATA
 
   def install
+    ENV["DOTNET_NOLOGO"] = "1"
+    ENV["DOTNET_CLI_TELEMETRY_OPTOUT"] = "1"
+
     if OS.linux?
       ENV.append_path "LD_LIBRARY_PATH", Formula["icu4c"].opt_lib
       ENV.append_to_cflags "-I#{Formula["krb5"].opt_include}"
@@ -96,16 +91,6 @@ class Dotnet < Formula
       inreplace "src/runtime/eng/SourceBuild.props",
                 "/p:BuildDebPackage=false",
                 "\\0 --cmakeargs -DCLR_CMAKE_USE_SYSTEM_LIBUNWIND=ON"
-
-      # Rename patch fails on case-insensitive systems like macOS
-      # TODO: Remove whenever patch is no longer used
-      rename_patch = "0001-Rename-NuGet.Config-to-NuGet.config-to-account-for-a.patch"
-      (Pathname("src/nuget-client/eng/source-build-patches")/rename_patch).unlink if OS.mac?
-
-      # Work around build script getting stuck when running shutdown command on Linux
-      # TODO: Try removing in the next release
-      # Ref: https://github.com/dotnet/source-build/discussions/3105#discussioncomment-4373142
-      inreplace "build.sh", "$CLI_ROOT/dotnet build-server shutdown", "" if OS.linux?
 
       prep_args = (OS.linux? && Hardware::CPU.intel?) ? [] : ["--bootstrap"]
       system "./prep.sh", *prep_args
@@ -132,6 +117,8 @@ class Dotnet < Formula
   end
 
   test do
+    ENV["DOTNET_CLI_TELEMETRY_OPTOUT"] = "1"
+
     target_framework = "net#{version.major_minor}"
     (testpath/"test.cs").write <<~EOS
       using System;
