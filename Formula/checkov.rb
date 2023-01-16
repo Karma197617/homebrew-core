@@ -4,8 +4,8 @@ class Checkov < Formula
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
   # checkov should only be updated every 15 releases on multiples of 15
-  url "https://files.pythonhosted.org/packages/a5/af/2409576ed6effc5e5a25c39df8c61511665e6635dca772680b2598834a67/checkov-2.2.255.tar.gz"
-  sha256 "a8eab3cbb4d06783b83b8ebaf2a40c20f0b7f23b542c738a47ab8bd70309d9e2"
+  url "https://files.pythonhosted.org/packages/e0/5a/d2381d15e9df1f5e3e664d0fe9a27e5a463d809f41c4f64e866bd37f105d/checkov-2.2.270.tar.gz"
+  sha256 "55ea33a13bc84e09d17c1e74bdc156999f2aa059184375a1944adeb96e903eb6"
   license "Apache-2.0"
 
   bottle do
@@ -60,8 +60,8 @@ class Checkov < Formula
   end
 
   resource "bc-detect-secrets" do
-    url "https://files.pythonhosted.org/packages/a2/23/a92e4dd2a6d1d3532e79c77d0021ae63edce1919e2f1d537537b6422138f/bc-detect-secrets-1.4.8.tar.gz"
-    sha256 "4f6ea0e4e9ba5f449e4c97956e586d58ed3f888dd89d3520e2464f0d921a2c9e"
+    url "https://files.pythonhosted.org/packages/02/f2/d1d870d526c722f22a491ebad1680e02ce935097d42af758a7a0e278f3c4/bc-detect-secrets-1.4.9.tar.gz"
+    sha256 "445aa0b1b90c51cf289c71171f37775593fff416e3bba27956ef7279f1005106"
   end
 
   resource "bc-jsonpath-ng" do
@@ -80,13 +80,13 @@ class Checkov < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/e3/d7/b30eca7c47016ff5f263fdd9afb3bafff6b127db23c94e3c69c545edc5b6/boto3-1.26.47.tar.gz"
-    sha256 "69b2ae445a5ba3a266c706defb9ce10cb1f046af771baa53af0ae130582205b2"
+    url "https://files.pythonhosted.org/packages/c3/b9/51ad579e26c3cbb6589687b20887e30e8180866140f67d5817ff0251396b/boto3-1.26.50.tar.gz"
+    sha256 "3737d8a506f50065bb2366a6b8e7545d88034f4771527790a125e0abd307d8e8"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/6f/6a/8a954b11da74cf89115a5ecb4c7d2b9fe3e4c0f959b8ed0caaa1e9faf7a8/botocore-1.29.47.tar.gz"
-    sha256 "19807f62be89018ba751cbccdfb0312a3ec824480fec2b6c3b2103f44073ae13"
+    url "https://files.pythonhosted.org/packages/2f/90/6ef8ae718153f970fa28e019d4768b2767ec03dd8701d7df1036bf7ed4d9/botocore-1.29.50.tar.gz"
+    sha256 "5cc68b78a48217550c18b4639420b7c3b48ed9e09e749343143acbfa423ceec5"
   end
 
   resource "cached-property" do
@@ -145,8 +145,8 @@ class Checkov < Formula
   end
 
   resource "cyclonedx-python-lib" do
-    url "https://files.pythonhosted.org/packages/bf/62/9ce48d27f188ffd95c278dc03adb1f7ca2bf4aa13edbd2d386b4516efe6f/cyclonedx_python_lib-3.1.4.tar.gz"
-    sha256 "21f9991486c58833eb1903ae7d423d88f6bee51bf6a6322e7556dce83b895a27"
+    url "https://files.pythonhosted.org/packages/dd/0d/2d77978ff3ebe445c00ffc209eb205d126ef7a8ece69e7f3d014e561bada/cyclonedx_python_lib-3.1.5.tar.gz"
+    sha256 "1ccd482024a30b95c4fffb3fe567a9df97b705f34c1075f8abde8537867600c3"
   end
 
   resource "decorator" do
@@ -305,8 +305,8 @@ class Checkov < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/a5/61/a867851fd5ab77277495a8709ddda0861b28163c4613b011bc00228cc724/requests-2.28.1.tar.gz"
-    sha256 "7c5599b102feddaa661c826c56ab4fee28bfd17f5abca1ebbe3e7f19d7c97983"
+    url "https://files.pythonhosted.org/packages/9d/ee/391076f5937f0a8cdf5e53b701ffc91753e87b07d66bae4a09aa671897bf/requests-2.28.2.tar.gz"
+    sha256 "98b1b2782e3c6c4904938b84c0eb932721069dfdb9134313beff7c83c2df24bf"
   end
 
   resource "s3transfer" do
@@ -365,8 +365,8 @@ class Checkov < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/89/38/459b727c381504f361832b9e5ace19966de1a235d73cdbdea91c771a1155/wcwidth-0.2.5.tar.gz"
-    sha256 "c4d647b99872929fdb7bdcaa4fbe7f01413ed3d98077df798530e5b04f116c83"
+    url "https://files.pythonhosted.org/packages/5e/5f/1e4bd82a9cc1f17b2c2361a2d876d4c38973a997003ba5eb400e8a932b6c/wcwidth-0.2.6.tar.gz"
+    sha256 "a5220780a404dbe3353789870978e472cfe477761f06ee55077256e509b156d0"
   end
 
   resource "websocket-client" do
