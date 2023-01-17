@@ -466,6 +466,9 @@
   "protobuf": {
     "exclude_packages": ["six"]
   },
+  "prowler": {
+    "exclude_packages": ["six", "tabulate", "typing-extensions", "PyYAML"]
+  },
   "pwntools": {
     "exclude_packages": ["six"]
   },
