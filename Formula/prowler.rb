@@ -45,8 +45,8 @@ class Prowler < Formula
   end
 
   resource "azure-core" do
-    url "https://files.pythonhosted.org/packages/4f/ec/3ba46ff4deebe738b7213997fc856553282e971a767b6291e05aca9d9566/azure-core-1.26.1.zip"
-    sha256 "223b0e90cbdd1f03c41b195b03239899843f20d00964dbb85e64386873414a2d"
+    url "https://files.pythonhosted.org/packages/05/71/21dd6d5f227a5d82b869068a0b652b26edc9efb86c7a5139740a0ffeb775/azure-core-1.26.2.zip"
+    sha256 "986bfd8687889782d79481d4c5d0af04ab4a18ca2f210364804a88e4eaa1586a"
   end
 
   resource "azure-identity" do
@@ -85,13 +85,13 @@ class Prowler < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/2d/07/d0427a01e4bf4b00bd72eadc795587e22c5be064aba0aa1b60d9d2d9f1c5/boto3-1.26.37.tar.gz"
-    sha256 "82b790b1dabd0746b028d2013b5d4d636a41f3aaf25520081f4c173cb6eb395d"
+    url "https://files.pythonhosted.org/packages/c3/b9/51ad579e26c3cbb6589687b20887e30e8180866140f67d5817ff0251396b/boto3-1.26.50.tar.gz"
+    sha256 "3737d8a506f50065bb2366a6b8e7545d88034f4771527790a125e0abd307d8e8"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/c2/27/b2343f0676d636e7dbf9daf9a51422fc1f28116f4842c274c9ad43aa5aec/botocore-1.29.37.tar.gz"
-    sha256 "3afa4fec9f7713caa05116563b38f81bec7bd20585d517155484d3f25efab5aa"
+    url "https://files.pythonhosted.org/packages/2f/90/6ef8ae718153f970fa28e019d4768b2767ec03dd8701d7df1036bf7ed4d9/botocore-1.29.50.tar.gz"
+    sha256 "5cc68b78a48217550c18b4639420b7c3b48ed9e09e749343143acbfa423ceec5"
   end
 
   resource "certifi" do
@@ -105,8 +105,8 @@ class Prowler < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/a1/34/44964211e5410b051e4b8d2869c470ae8a68ae274953b1c7de6d98bbcf94/charset-normalizer-2.1.1.tar.gz"
-    sha256 "5a3d016c7c547f69d6f81fb0db9449ce888b418b5b9952cc5e6e66843e9dd845"
+    url "https://files.pythonhosted.org/packages/96/d7/1675d9089a1f4677df5eb29c3f8b064aa1e70c1251a0a8a127803158942d/charset-normalizer-3.0.1.tar.gz"
+    sha256 "ebea339af930f8ca5d7a699b921106c6e29c617fe9606fa7baa043c1cdae326f"
   end
 
   resource "click" do
@@ -125,8 +125,8 @@ class Prowler < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/e3/3f/41186b1f2fd86a542d399175f6b8e43f82cd4dfa51235a0b030a042b811a/cryptography-38.0.4.tar.gz"
-    sha256 "175c1a818b87c9ac80bb7377f5520b7f31b3ef2a0004e2420319beadedb67290"
+    url "https://files.pythonhosted.org/packages/12/e3/c46c274cf466b24e5d44df5d5cd31a31ff23e57f074a2bb30931a8c9b01a/cryptography-39.0.0.tar.gz"
+    sha256 "f964c7dcf7802d133e8dbd1565914fa0194f9d683d82411989889ecd701e8adf"
   end
 
   resource "detect-secrets" do
@@ -205,8 +205,8 @@ class Prowler < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/a5/61/a867851fd5ab77277495a8709ddda0861b28163c4613b011bc00228cc724/requests-2.28.1.tar.gz"
-    sha256 "7c5599b102feddaa661c826c56ab4fee28bfd17f5abca1ebbe3e7f19d7c97983"
+    url "https://files.pythonhosted.org/packages/9d/ee/391076f5937f0a8cdf5e53b701ffc91753e87b07d66bae4a09aa671897bf/requests-2.28.2.tar.gz"
+    sha256 "98b1b2782e3c6c4904938b84c0eb932721069dfdb9134313beff7c83c2df24bf"
   end
 
   resource "requests-oauthlib" do
@@ -225,13 +225,13 @@ class Prowler < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c2/51/32da03cf19d17d46cce5c731967bf58de9bd71db3a379932f53b094deda4/urllib3-1.26.13.tar.gz"
-    sha256 "c083dd0dce68dbfbe1129d5271cb90f9447dea7d52097c6e0126120c521ddea8"
+    url "https://files.pythonhosted.org/packages/c5/52/fe421fb7364aa738b3506a2d99e4f3a56e079c0a798e9f4fa5e14c60922f/urllib3-1.26.14.tar.gz"
+    sha256 "076907bf8fd355cde77728471316625a4d2f7e713c125f51953bb5b3eecf4f72"
   end
 
   resource "XlsxWriter" do
-    url "https://files.pythonhosted.org/packages/53/04/91ff43803c3e88c32aa272fdbda5859fc3c3b50b0de3a1e439cc57455330/XlsxWriter-3.0.3.tar.gz"
-    sha256 "e89f4a1d2fa2c9ea15cde77de95cd3fd8b0345d0efb3964623f395c8c4988b7f"
+    url "https://files.pythonhosted.org/packages/b3/24/5253b50d798674d4d3212df938ab50e2b14a672073e4308b3c46f7590ccd/XlsxWriter-3.0.7.tar.gz"
+    sha256 "1239958b12da12be6abf05b32f64ff162eb75fff0fdf00d901ca0f46dc0557cf"
   end
 
   def install
