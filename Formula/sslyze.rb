@@ -6,8 +6,8 @@ class Sslyze < Formula
   license "AGPL-3.0-only"
 
   stable do
-    url "https://files.pythonhosted.org/packages/3c/11/3d6e28c4adda725a728ea54b52acd537706802b81dc55f974b9282040a98/sslyze-5.1.0.tar.gz"
-    sha256 "5b229dc7d72734d14a4e85799a40bf1867b1ad3ea88ad6b1901517974b402b53"
+    url "https://files.pythonhosted.org/packages/a9/cf/8c5ac396f6d51cee5cfc5d4353bf64b9a1a1b00270699de09bb617177647/sslyze-5.1.1.tar.gz"
+    sha256 "17edf03121904b28be4c75938db192df706e6be1ba172b8741135921cfd661e5"
 
     resource "nassl" do
       url "https://github.com/nabla-c0d3/nassl/archive/5.0.0.tar.gz"
