@@ -4,20 +4,14 @@ class Sslyze < Formula
   desc "SSL scanner"
   homepage "https://github.com/nabla-c0d3/sslyze"
   license "AGPL-3.0-only"
-  revision 1
 
   stable do
-    url "https://files.pythonhosted.org/packages/7f/48/4181eae25c2e32d9599619af8927a6d1ce60f5650656a870de1c02e065aa/sslyze-5.0.6.tar.gz"
-    sha256 "b420aed4c3a527e015be10e0f5ea027b136d88c08697954867b9c6344f2ffab7"
+    url "https://files.pythonhosted.org/packages/3c/11/3d6e28c4adda725a728ea54b52acd537706802b81dc55f974b9282040a98/sslyze-5.1.0.tar.gz"
+    sha256 "5b229dc7d72734d14a4e85799a40bf1867b1ad3ea88ad6b1901517974b402b53"
 
     resource "nassl" do
-      url "https://github.com/nabla-c0d3/nassl/archive/4.0.2.tar.gz"
-      sha256 "440296e07ee021dc283bfe7b810f3139349e26445bc21b5e05820808e15186a2"
-
-      # Combination of https://github.com/nabla-c0d3/nassl/pull/89
-      # and https://github.com/nabla-c0d3/nassl/pull/97.
-      # This can be removed when nassl makes a new release.
-      patch :DATA
+      url "https://github.com/nabla-c0d3/nassl/archive/5.0.0.tar.gz"
+      sha256 "b1529de53e1017a4b69ad656bcef762633aec54c86c9ec016879d657bf463297"
     end
   end
 
@@ -45,13 +39,13 @@ class Sslyze < Formula
   uses_from_macos "libffi", since: :catalina
 
   resource "cffi" do
-    url "https://files.pythonhosted.org/packages/00/9e/92de7e1217ccc3d5f352ba21e52398372525765b2e0c4530e6eb2ba9282a/cffi-1.15.0.tar.gz"
-    sha256 "920f0d66a896c2d99f0adbb391f990a84091179542c205fa53ce5787aff87954"
+    url "https://files.pythonhosted.org/packages/2b/a8/050ab4f0c3d4c1b8aaa805f70e26e84d0e27004907c5b8ecc1d31815f92a/cffi-1.15.1.tar.gz"
+    sha256 "d400bfb9a37b1351253cb402671cea7e89bdecc294e8016a707f6d1d8ac934f9"
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/51/05/bb2b681f6a77276fc423d04187c39dafdb65b799c8d87b62ca82659f9ead/cryptography-37.0.2.tar.gz"
-    sha256 "f224ad253cc9cea7568f49077007d2263efa57396a2f2f78114066fd54b5c68e"
+    url "https://files.pythonhosted.org/packages/e3/3f/41186b1f2fd86a542d399175f6b8e43f82cd4dfa51235a0b030a042b811a/cryptography-38.0.4.tar.gz"
+    sha256 "175c1a818b87c9ac80bb7377f5520b7f31b3ef2a0004e2420319beadedb67290"
   end
 
   resource "pycparser" do
@@ -60,8 +54,8 @@ class Sslyze < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/7d/7d/58dd62f792b002fa28cce4e83cb90f4359809e6d12db86eedf26a752895c/pydantic-1.10.2.tar.gz"
-    sha256 "91b8e218852ef6007c2b98cd861601c6a09f1aa32bbbb74fab5b1c33d4a1e410"
+    url "https://files.pythonhosted.org/packages/53/17/34e54e352f6a3d304044e52d5ddd5cd621a62ec8fb7af08cc73af65dd3e1/pydantic-1.10.4.tar.gz"
+    sha256 "b9a3859f24eb4e097502a3be1fb4b2abb79b6103dd9e2e0edb70613a4459a648"
   end
 
   resource "tls-parser" do
@@ -87,23 +81,3 @@ class Sslyze < Formula
     refute_match("exception", shell_output("#{bin}/sslyze --certinfo letsencrypt.org"))
   end
 end
-
-__END__
-diff --git a/build_tasks.py b/build_tasks.py
-index 7821ebdc15d63caea9dee68b039dd38fbd0d314f..c9b3cfd9870fdd61a62ea22a846b48c09320b780 100644
---- a/build_tasks.py
-+++ b/build_tasks.py
-@@ -314,11 +314,11 @@ def exe_path(self) -> Path:
- class ZlibBuildConfig(BuildConfig):
-     @property
-     def src_tar_gz_url(self) -> str:
--        return "https://zlib.net/zlib-1.2.11.tar.gz"
-+        return "https://zlib.net/zlib-1.2.13.tar.gz"
-
-     @property
-     def src_path(self) -> Path:
--        return _DEPS_PATH / "zlib-1.2.11"
-+        return _DEPS_PATH / "zlib-1.2.13"
-
-     def build(self, ctx: Context) -> None:
-         if self.platform in [SupportedPlatformEnum.WINDOWS_32, SupportedPlatformEnum.WINDOWS_64]:
