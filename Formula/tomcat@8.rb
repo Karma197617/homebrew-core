@@ -16,6 +16,9 @@ class TomcatAT8 < Formula
 
   keg_only :versioned_formula
 
+  # https://tomcat.apache.org/tomcat-85-eol.html
+  deprecate! date: "2024-03-31", because: :unsupported
+
   depends_on "openjdk"
 
   def install
