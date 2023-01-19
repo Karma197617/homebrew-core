@@ -39,13 +39,13 @@ class C7n < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/f0/14/b6546142dbae744f5a288b63e0ad1c6a30049d6f99ecfa8611bc9ef10305/boto3-1.26.42.tar.gz"
-    sha256 "4cfd7e05e4033dbca2cc59bcfdafbdaef9d83dc3c0448917569b301d85766d9d"
+    url "https://files.pythonhosted.org/packages/74/e6/f5167f2c905089966e696dcd204cfcd234717bd09ee1882d625bc8aed686/boto3-1.26.52.tar.gz"
+    sha256 "0b1f82d4565ed875c7975ac0be5665e8d948613c01bcb0e49df6d4f5af670cc8"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/0e/1c/b7862ffb26cc9ceb2bba2aa85363b18cc305c936cbf6fa2e47fd3942e107/botocore-1.29.42.tar.gz"
-    sha256 "d05c62f64e76194c40f598f5f7c804ec50d9820e9f03f6e0198558e4ace167c4"
+    url "https://files.pythonhosted.org/packages/50/ee/f48701d596846dae86346a0a84f7911108bc7a38ee271e150ebf2c057dc5/botocore-1.29.52.tar.gz"
+    sha256 "a0b89a33305cfa6251c6e1142deb7567e216e37e25363159f45fb81dc5b474e5"
   end
 
   resource "docutils" do
@@ -84,8 +84,8 @@ class C7n < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c2/51/32da03cf19d17d46cce5c731967bf58de9bd71db3a379932f53b094deda4/urllib3-1.26.13.tar.gz"
-    sha256 "c083dd0dce68dbfbe1129d5271cb90f9447dea7d52097c6e0126120c521ddea8"
+    url "https://files.pythonhosted.org/packages/c5/52/fe421fb7364aa738b3506a2d99e4f3a56e079c0a798e9f4fa5e14c60922f/urllib3-1.26.14.tar.gz"
+    sha256 "076907bf8fd355cde77728471316625a4d2f7e713c125f51953bb5b3eecf4f72"
   end
 
   resource "zipp" do
