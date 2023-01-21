@@ -15,9 +15,10 @@ class Pipdeptree < Formula
 
   test do
     expected = <<~EOS
-      pip==22.3
+      pip==22.3.1
       pipdeptree==2.3.3
-      setuptools==65.5.0
+      setuptools==65.6.3
+      wheel==0.38.4
     EOS
     assert_equal expected, shell_output("#{bin}/pipdeptree --all")
 
