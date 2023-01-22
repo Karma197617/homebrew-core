@@ -56,7 +56,7 @@ class GitHound < Formula
 
     assert_match "failure", shell_output("#{diff_cmd} #{testpath}/failure-test.txt | #{bin}/git-hound sniff", 1)
     assert_match "warning", shell_output("#{diff_cmd} #{testpath}/warn-test.txt | #{bin}/git-hound sniff")
-    assert_match "", shell_output("#{diff_cmd} #{testpath}/skip-test.txt | #{bin}/git-hound sniff")
-    assert_match "", shell_output("#{diff_cmd} #{testpath}/pass-test.txt | #{bin}/git-hound sniff")
+    assert_empty shell_output("#{diff_cmd} #{testpath}/skip-test.txt | #{bin}/git-hound sniff")
+    assert_empty shell_output("#{diff_cmd} #{testpath}/pass-test.txt | #{bin}/git-hound sniff")
   end
 end
