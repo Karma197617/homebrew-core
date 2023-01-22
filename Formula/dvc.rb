@@ -3,8 +3,8 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://files.pythonhosted.org/packages/29/ef/1ca6024feb8da72823a4b378354434b5b9ec0e6f8cc1b216d64ff286b9a8/dvc-2.42.0.tar.gz"
-  sha256 "d717df1f12c90e8deda15ca10ef7d30ab2c73c9fa3151afe19690943e54b7312"
+  url "https://files.pythonhosted.org/packages/1b/4f/444fa88e9e1e0a58a2c6f5f055e74e5935502438f512e0bf5f978799cf66/dvc-2.43.0.tar.gz"
+  sha256 "7a7a963b76e1733890e60a4b58242f6fe033f5ba1c9fbedcf9ff495512c3c7e9"
   license "Apache-2.0"
 
   bottle do
@@ -166,8 +166,8 @@ class Dvc < Formula
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/3d/cf/8bab81474cb9ec7879ba28aef71c8351db92cd03587d9eac8e908b2c1c23/cachetools-5.2.1.tar.gz"
-    sha256 "5991bc0e08a1319bb618d3195ca5b6bc76646a49c21d55962977197b301cc1fe"
+    url "https://files.pythonhosted.org/packages/4d/91/5837e9f9e77342bb4f3ffac19ba216eef2cd9b77d67456af420e7bafe51d/cachetools-5.3.0.tar.gz"
+    sha256 "13dfddc7b8df938c21a940dfa6557ce6e94a2f1cdfa58eb90c805721d58f2c14"
   end
 
   resource "celery" do
@@ -266,8 +266,8 @@ class Dvc < Formula
   end
 
   resource "dvc-data" do
-    url "https://files.pythonhosted.org/packages/f4/29/321b5f66a29efd9c54156a75393a22379bc8ea720e7759e9014680c9fdb9/dvc-data-0.34.0.tar.gz"
-    sha256 "d25b2132450399603fa65f7cea0e60f90b3a71cdce64eb0b287f2f81322a1442"
+    url "https://files.pythonhosted.org/packages/3e/93/b489e9467b5d721440e754b5cdb425a53cfc444e4f9e28f993c501480a77/dvc-data-0.35.1.tar.gz"
+    sha256 "490c651855286a7ff3814d982351330ea2d72fd61c9d753ff0a873c2aa682945"
   end
 
   resource "dvc-gdrive" do
@@ -291,8 +291,8 @@ class Dvc < Formula
   end
 
   resource "dvc-objects" do
-    url "https://files.pythonhosted.org/packages/e9/25/135b10f8430a01048aadf7e06a15fe15bee3e84a2a2af6addced308aedc9/dvc-objects-0.18.1.tar.gz"
-    sha256 "04b0e6f10a6270eba04c7ea97a2c33fa28c93095938f9d4b211cb20938d3b34a"
+    url "https://files.pythonhosted.org/packages/ba/f1/4f56c64e8dd995064450c5f7a952cbeea1743baef4b830a8c5fa6e6fb396/dvc-objects-0.19.0.tar.gz"
+    sha256 "6a1b0e2b5ad861b86b50f3d866e5b973cf18cd105116205d80ecd0d710dff9f1"
   end
 
   resource "dvc-oss" do
@@ -727,8 +727,8 @@ class Dvc < Formula
   end
 
   resource "sshfs" do
-    url "https://files.pythonhosted.org/packages/35/61/7cd80d9add4dec01e7518527290c371244aa2012fbef7f02aac210898a14/sshfs-2022.6.0.tar.gz"
-    sha256 "700b78a6af6952b4333474bdb55729a0d1949acf0157a3cb6d7b50221166b26e"
+    url "https://files.pythonhosted.org/packages/50/83/8737feab01c85bf7c5b191ec06f2a807ac36eb88093844e7e9fea971bb53/sshfs-2023.1.0.tar.gz"
+    sha256 "b32215b408bb68f7953c948a1dd0c9200aec623d26b4800fd74e2f47755bd544"
   end
 
   resource "tomlkit" do
