@@ -27,14 +27,19 @@ class Libdnet < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
 
+  # Fix build dependency issue with `check`, remove in next release
+  # upstream PR ref, https://github.com/ofalk/libdnet/pull/79
+  patch do
+    url "https://github.com/ofalk/libdnet/commit/c9cf3b468511811ba4e16d9b90d726cedb5f15da.patch?full_index=1"
+    sha256 "29b1f81b69f316fd95b412bff769eb5de393b8a8a6b3b5bf9a2f7a433cca83a5"
+  end
+
   def install
     # autoreconf to get '.dylib' extension on shared lib
     ENV.append_path "ACLOCAL_PATH", "config"
     system "autoreconf", "-ivf"
 
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--mandir=#{man}"
+    system "./configure", *std_configure_args, "--mandir=#{man}", "--enable-check=no"
     system "make", "install"
   end
 
