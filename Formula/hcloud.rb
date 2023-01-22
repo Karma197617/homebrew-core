@@ -27,7 +27,7 @@ class Hcloud < Formula
   test do
     config_path = testpath/".config/hcloud/cli.toml"
     ENV["HCLOUD_CONFIG"] = config_path
-    assert_match "", shell_output("#{bin}/hcloud context active")
+    assert_empty shell_output("#{bin}/hcloud context active")
     config_path.write <<~EOS
       active_context = "test"
       [[contexts]]
