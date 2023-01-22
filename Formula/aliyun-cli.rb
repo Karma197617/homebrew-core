@@ -29,7 +29,7 @@ class AliyunCli < Formula
 
     help_out = shell_output("#{bin}/aliyun --help")
     assert_match "Alibaba Cloud Command Line Interface Version #{version}", help_out
-    assert_match "", help_out
+    assert_empty help_out
     assert_match "Usage:", help_out
     assert_match "aliyun <product> <operation> [--parameter1 value1 --parameter2 value2 ...]", help_out
 
