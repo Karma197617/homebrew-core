@@ -4,8 +4,8 @@ class Checkov < Formula
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
   # checkov should only be updated every 15 releases on multiples of 15
-  url "https://files.pythonhosted.org/packages/e0/5a/d2381d15e9df1f5e3e664d0fe9a27e5a463d809f41c4f64e866bd37f105d/checkov-2.2.270.tar.gz"
-  sha256 "55ea33a13bc84e09d17c1e74bdc156999f2aa059184375a1944adeb96e903eb6"
+  url "https://files.pythonhosted.org/packages/1c/d0/f98c640241eccdb5956ad48cf9062baab48591712802a8176debbe662756/checkov-2.2.285.tar.gz"
+  sha256 "b15c19ce71150a5e717a9c5bcbfacbce9b8b3080fd62fa71caff68c1e932b439"
   license "Apache-2.0"
 
   bottle do
@@ -80,13 +80,13 @@ class Checkov < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/c3/b9/51ad579e26c3cbb6589687b20887e30e8180866140f67d5817ff0251396b/boto3-1.26.50.tar.gz"
-    sha256 "3737d8a506f50065bb2366a6b8e7545d88034f4771527790a125e0abd307d8e8"
+    url "https://files.pythonhosted.org/packages/95/60/88c7932476b438fc4702daa0dc6f5663c8c1451898d3d7daa0f934468086/boto3-1.26.54.tar.gz"
+    sha256 "4e876ba5d64928cde0c416dd844f04f22d6b73d14002bbc3ca55591f80f49927"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/2f/90/6ef8ae718153f970fa28e019d4768b2767ec03dd8701d7df1036bf7ed4d9/botocore-1.29.50.tar.gz"
-    sha256 "5cc68b78a48217550c18b4639420b7c3b48ed9e09e749343143acbfa423ceec5"
+    url "https://files.pythonhosted.org/packages/12/8d/1a34c9f3300d80db948217b99cf26b3ad35aec7d543fec5b7298ee29053c/botocore-1.29.54.tar.gz"
+    sha256 "f2fe17ed6b8e163769a715f81cb6ce3d4628d172918de535256bdf34d29b704f"
   end
 
   resource "cached-property" do
@@ -194,6 +194,11 @@ class Checkov < Formula
     sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
   end
 
+  resource "igraph" do
+    url "https://files.pythonhosted.org/packages/81/75/d2163a383dd2d6e72d396cac6f021aafd5ec2081c66ef7f816de1d4d4f0c/igraph-0.10.3.tar.gz"
+    sha256 "b720cb88c4b9af4a968e8390355f666ba146d631298518cc4ffa1bd0e2c21eed"
+  end
+
   resource "importlib-metadata" do
     url "https://files.pythonhosted.org/packages/90/07/6397ad02d31bddf1841c9ad3ec30a693a3ff208e09c2ef45c9a8a5f85156/importlib_metadata-6.0.0.tar.gz"
     sha256 "e354bedeb60efa6affdcc8ae121b73544a7aa74156d047311948f6d711cd378d"
@@ -230,8 +235,8 @@ class Checkov < Formula
   end
 
   resource "MarkupSafe" do
-    url "https://files.pythonhosted.org/packages/1d/97/2288fe498044284f39ab8950703e88abbac2abbdf65524d576157af70556/MarkupSafe-2.1.1.tar.gz"
-    sha256 "7f91197cc9e48f989d12e4e6fbc46495c446636dfc81b9ccf50bb0ec74b91d4b"
+    url "https://files.pythonhosted.org/packages/95/7e/68018b70268fb4a2a605e2be44ab7b4dd7ce7808adae6c5ef32e34f4b55a/MarkupSafe-2.1.2.tar.gz"
+    sha256 "abcabc8c2b26036d62d4c746381a6f7cf60aafcc653198ad678306986b09450d"
   end
 
   resource "multidict" do
@@ -342,6 +347,11 @@ class Checkov < Formula
   resource "termcolor" do
     url "https://files.pythonhosted.org/packages/e5/4e/b2a54a21092ad2d5d70b0140e4080811bee06a39cc8481651579fe865c89/termcolor-2.2.0.tar.gz"
     sha256 "dfc8ac3f350788f23b2947b3e6cfa5a53b630b612e6cd8965a015a776020b99a"
+  end
+
+  resource "texttable" do
+    url "https://files.pythonhosted.org/packages/e4/84/4686ee611bb020038375c5f11fe7b6b3bb94ee78614a1faba45effe51591/texttable-1.6.7.tar.gz"
+    sha256 "290348fb67f7746931bcdfd55ac7584ecd4e5b0846ab164333f0794b121760f2"
   end
 
   resource "toml" do
