@@ -1,8 +1,8 @@
 class Bibtexconv < Formula
   desc "BibTeX file converter"
   homepage "https://github.com/dreibh/bibtexconv"
-  url "https://github.com/dreibh/bibtexconv/archive/bibtexconv-1.3.3.tar.gz"
-  sha256 "c0ce86b5f1eed75ed77cb5cf7c4f3dcea2a7bab512c4ed43489434a21a7967a4"
+  url "https://github.com/dreibh/bibtexconv/archive/bibtexconv-1.3.4.tar.gz"
+  sha256 "f921ae1a5065300bd81d36d8c8d1a0f366df049239d6f1337281de445036faf6"
   license "GPL-3.0-or-later"
   head "https://github.com/dreibh/bibtexconv.git", branch: "master"
 
