@@ -218,7 +218,7 @@ class GimmeAwsCreds < Formula
     assert_match "Okta Configuration Profile Name",
       pipe_output("#{bin}/gimme-aws-creds --profile TESTPROFILE --action-configure 2>&1",
                   "https://something.oktapreview.com\n\n\n\n\n\n\n\n\n\n\n")
-    assert_match "", config_file.read
+    assert_empty config_file.read
 
     assert_match version.to_s, shell_output("#{bin}/gimme-aws-creds --version")
   end
