@@ -18,6 +18,7 @@ class Checkov < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e269b63824b2f07c9044973afd0ae09276d8b76a693599be0d8781336c293d1"
   end
 
+  depends_on "cmake" => :build # for igraph
   depends_on "python-tabulate"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
