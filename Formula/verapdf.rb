@@ -6,10 +6,9 @@ class Verapdf < Formula
   license any_of: ["GPL-3.0-or-later", "MPL-2.0"]
   head "https://github.com/veraPDF/veraPDF-apps.git", branch: "integration"
 
-  # Even-numbered minor versions represent stable releases.
   livecheck do
     url :stable
-    regex(/^v?(\d+\.\d*[02468](?:\.\d+)*)$/i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
