@@ -1,8 +1,8 @@
 class Cmark < Formula
   desc "Strongly specified, highly compatible implementation of Markdown"
   homepage "https://commonmark.org/"
-  url "https://github.com/commonmark/cmark/archive/0.30.2.tar.gz"
-  sha256 "6c7d2bcaea1433d977d8fed0b55b71c9d045a7cdf616e3cd2dce9007da753db3"
+  url "https://github.com/commonmark/cmark/archive/0.30.3.tar.gz"
+  sha256 "85e9fb515531cc2c9ae176d693f9871774830cf1f323a6758fb187a5148d7b16"
   license "BSD-2-Clause"
 
   bottle do
