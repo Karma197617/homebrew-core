@@ -1,8 +1,8 @@
 class Tut < Formula
   desc "TUI for Mastodon with vim inspired keys"
   homepage "https://tut.anv.nu"
-  url "https://github.com/RasmusLindroth/tut/archive/refs/tags/1.0.34.tar.gz"
-  sha256 "4340e41395cb8cf56e11f500738ef85b838dbfeddf219c988a058e4789009a69"
+  url "https://github.com/RasmusLindroth/tut/archive/refs/tags/2.0.0.tar.gz"
+  sha256 "f0deeaf923c05b713a72a338684c54159a433952475656f8b46be6bc0d4489ca"
   license "MIT"
 
   bottle do
