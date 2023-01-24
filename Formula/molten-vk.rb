@@ -4,8 +4,8 @@ class MoltenVk < Formula
   license "Apache-2.0"
 
   stable do
-    url "https://github.com/KhronosGroup/MoltenVK/archive/v1.2.1.tar.gz"
-    sha256 "4742df8f35473c5a737f2b120ae06aa6b9e8a7a3753b88932e501b06b1d17ea8"
+    url "https://github.com/KhronosGroup/MoltenVK/archive/v1.2.2.tar.gz"
+    sha256 "8065a10c2d70b561f48475dedb118e643176527b162d6e439fa127270c2a07dd"
 
     # MoltenVK depends on very specific revisions of its dependencies.
     # For each resource the path to the file describing the expected
