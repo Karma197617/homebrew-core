@@ -3,8 +3,8 @@ class Tox < Formula
 
   desc "Generic Python virtualenv management and test command-line tool"
   homepage "https://tox.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/e2/a6/c4d4dbdc0e6af2c65134bd16ff3c4c0705144784643aa3df31524a476bd2/tox-4.3.5.tar.gz"
-  sha256 "307993257d792a12a63ff86a0b67a71a5ab2d4a2cc12bbae947115224d4ac3fb"
+  url "https://files.pythonhosted.org/packages/85/30/a2004e7e6fb71ce3fc3427262e23709b7ccd103dabc9f9b4bab92cb49e48/tox-4.4.2.tar.gz"
+  sha256 "3d8a8dd8a5afdc0d37af3e2b4959e427fe22530d0aa599baf0120e144b3defa3"
   license "MIT"
 
   bottle do
@@ -20,8 +20,8 @@ class Tox < Formula
   depends_on "python@3.11"
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/3d/cf/8bab81474cb9ec7879ba28aef71c8351db92cd03587d9eac8e908b2c1c23/cachetools-5.2.1.tar.gz"
-    sha256 "5991bc0e08a1319bb618d3195ca5b6bc76646a49c21d55962977197b301cc1fe"
+    url "https://files.pythonhosted.org/packages/4d/91/5837e9f9e77342bb4f3ffac19ba216eef2cd9b77d67456af420e7bafe51d/cachetools-5.3.0.tar.gz"
+    sha256 "13dfddc7b8df938c21a940dfa6557ce6e94a2f1cdfa58eb90c805721d58f2c14"
   end
 
   resource "chardet" do
