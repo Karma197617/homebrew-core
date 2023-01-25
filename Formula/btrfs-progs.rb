@@ -1,8 +1,8 @@
 class BtrfsProgs < Formula
   desc "Userspace utilities to manage btrfs filesystems"
   homepage "https://btrfs.wiki.kernel.org/index.php/Main_Page"
-  url "https://mirrors.edge.kernel.org/pub/linux/kernel/people/kdave/btrfs-progs/btrfs-progs-v6.1.2.tar.xz"
-  sha256 "6be667d97f3d65c0ba57c331c98b0bd3b13cf60d8d31fa8ad25882aad9d79d7a"
+  url "https://mirrors.edge.kernel.org/pub/linux/kernel/people/kdave/btrfs-progs/btrfs-progs-v6.1.3.tar.xz"
+  sha256 "d37fc9ec4fa5778b20aa7548fe706eb3a300338c1473318271ae54024dac7167"
   license all_of: [
     "GPL-2.0-only",
     "LGPL-2.1-or-later", # libbtrfsutil
