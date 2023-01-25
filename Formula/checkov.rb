@@ -4,8 +4,8 @@ class Checkov < Formula
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
   # checkov should only be updated every 15 releases on multiples of 15
-  url "https://files.pythonhosted.org/packages/1c/d0/f98c640241eccdb5956ad48cf9062baab48591712802a8176debbe662756/checkov-2.2.285.tar.gz"
-  sha256 "b15c19ce71150a5e717a9c5bcbfacbce9b8b3080fd62fa71caff68c1e932b439"
+  url "https://files.pythonhosted.org/packages/ea/0c/58fc41dc3cdcd083c1a0a8ef82bacc617ee673cda73a0c755df4592b1ec5/checkov-2.2.300.tar.gz"
+  sha256 "45e40318a923f7d05e899380bf3a9e96a1b4c337952e0a78e1071cdd5fd64cce"
   license "Apache-2.0"
 
   bottle do
@@ -81,13 +81,13 @@ class Checkov < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/95/60/88c7932476b438fc4702daa0dc6f5663c8c1451898d3d7daa0f934468086/boto3-1.26.54.tar.gz"
-    sha256 "4e876ba5d64928cde0c416dd844f04f22d6b73d14002bbc3ca55591f80f49927"
+    url "https://files.pythonhosted.org/packages/27/2c/f61f642b54b0b481e2a3a0c4b270dec0b45816f0c0e0a57e54feb2df3c0a/boto3-1.26.56.tar.gz"
+    sha256 "0ff8667fbfda8390cab2718a4d129374a6ddd6fd1913f79777fd4498f93c84f1"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/12/8d/1a34c9f3300d80db948217b99cf26b3ad35aec7d543fec5b7298ee29053c/botocore-1.29.54.tar.gz"
-    sha256 "f2fe17ed6b8e163769a715f81cb6ce3d4628d172918de535256bdf34d29b704f"
+    url "https://files.pythonhosted.org/packages/64/36/9ca8dd3097463dff6b88fd8015ba86e04ca22f8479b9d3bc60c21fd31ced/botocore-1.29.56.tar.gz"
+    sha256 "ca4d6403d745218270a20d9ca3ca9a33e3ad2fabb59a96ed8d6e1a824b274c86"
   end
 
   resource "cached-property" do
@@ -96,8 +96,8 @@ class Checkov < Formula
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/3d/cf/8bab81474cb9ec7879ba28aef71c8351db92cd03587d9eac8e908b2c1c23/cachetools-5.2.1.tar.gz"
-    sha256 "5991bc0e08a1319bb618d3195ca5b6bc76646a49c21d55962977197b301cc1fe"
+    url "https://files.pythonhosted.org/packages/4d/91/5837e9f9e77342bb4f3ffac19ba216eef2cd9b77d67456af420e7bafe51d/cachetools-5.3.0.tar.gz"
+    sha256 "13dfddc7b8df938c21a940dfa6557ce6e94a2f1cdfa58eb90c805721d58f2c14"
   end
 
   resource "certifi" do
