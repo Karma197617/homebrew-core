@@ -1,8 +1,8 @@
 class PrqlCompiler < Formula
   desc "Simple, powerful, pipelined SQL replacement"
   homepage "https://prql-lang.org"
-  url "https://github.com/prql/prql/archive/refs/tags/0.4.1.tar.gz"
-  sha256 "b60df362a0b823600ccc614c335f4a8876a577a7ceeb6d162f16540fd9340f73"
+  url "https://github.com/prql/prql/archive/refs/tags/0.4.2.tar.gz"
+  sha256 "dd2fca1b8413cccaaac9a072a5da7012011cf29269178e420e3e755510e62055"
   license "Apache-2.0"
 
   bottle do
