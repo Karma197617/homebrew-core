@@ -2,7 +2,7 @@ class Tox < Formula
   include Language::Python::Virtualenv
 
   desc "Generic Python virtualenv management and test command-line tool"
-  homepage "https://tox.readthedocs.io/"
+  homepage "https://tox.wiki/en/latest/"
   url "https://files.pythonhosted.org/packages/85/30/a2004e7e6fb71ce3fc3427262e23709b7ccd103dabc9f9b4bab92cb49e48/tox-4.4.2.tar.gz"
   sha256 "3d8a8dd8a5afdc0d37af3e2b4959e427fe22530d0aa599baf0120e144b3defa3"
   license "MIT"
