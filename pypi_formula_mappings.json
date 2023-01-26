@@ -2,6 +2,9 @@
   "anime-downloader": {
     "exclude_packages": ["six", "tabulate"]
   },
+  "animdl": {
+    "exclude_packages": ["pygments", "pyyaml"]
+  },
   "ansible": {
     "extra_packages": [
       "apache-libcloud", "boto3", "dnspython", "docker", "junos-eznc", "jxmlease", "kerberos", "ntc-templates",
