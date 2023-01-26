@@ -1,8 +1,8 @@
 class NagaCli < Formula
   desc "Shader translation command-line tool"
   homepage "https://github.com/gfx-rs/naga"
-  url "https://github.com/gfx-rs/naga/archive/refs/tags/v0.10.0.tar.gz"
-  sha256 "9ad07283157af424d130f598be636211188e3ee553bcdf5a9809a40ee28d57c3"
+  url "https://github.com/gfx-rs/naga/archive/refs/tags/v0.11.0.tar.gz"
+  sha256 "b59cfa8e11895fa5badf053dede122185afa9f4e48779ec0b4b163daff4427b2"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/gfx-rs/naga.git", branch: "master"
 
