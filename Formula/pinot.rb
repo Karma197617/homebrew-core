@@ -10,7 +10,7 @@ class Pinot < Formula
     sha256 cellar: :any_skip_relocation, all: "8323dd5ffe20cd57eb84997675d05ccb927668c7717b37e31a41ec41dc27293a"
   end
 
-  depends_on "openjdk"
+  depends_on "openjdk@11"
 
   def install
     (var/"lib/pinot/data").mkpath
@@ -19,7 +19,7 @@ class Pinot < Formula
     libexec.install "plugins"
 
     prefix.install "bin"
-    bin.env_script_all_files(libexec/"bin", Language::Java.java_home_env)
+    bin.env_script_all_files(libexec/"bin", Language::Java.java_home_env("11"))
     bin.glob("*.sh").each { |f| mv f, bin/f.basename(".sh") }
   end
 
