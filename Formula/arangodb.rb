@@ -1,8 +1,8 @@
 class Arangodb < Formula
   desc "Multi-Model NoSQL Database"
   homepage "https://www.arangodb.com/"
-  url "https://download.arangodb.com/Source/ArangoDB-3.10.2.tar.bz2"
-  sha256 "bb7824f15e3ab0f6140f1cf5abf9891652326140957e204c23e58f982388a772"
+  url "https://download.arangodb.com/Source/ArangoDB-3.10.3.tar.bz2"
+  sha256 "9c47305451e6ccb9386416245986011fad8b9da3b61cd35bbeb15ee1e3806e66"
   license "Apache-2.0"
   head "https://github.com/arangodb/arangodb.git", branch: "devel"
 
@@ -59,8 +59,8 @@ class Arangodb < Formula
   # with a unified CLI
   resource "starter" do
     url "https://github.com/arangodb-helper/arangodb.git",
-        tag:      "0.15.5",
-        revision: "7832707bbf7d1ab76bb7f691828cfda2a7dc76cb"
+        tag:      "0.15.6",
+        revision: "6eaf220a66662125ccb27d3df9289d526b80109c"
   end
 
   def install
