@@ -3,7 +3,7 @@ class Mesheryctl < Formula
   homepage "https://meshery.io"
   url "https://github.com/meshery/meshery.git",
       tag:      "v0.6.46",
-      revision: "886473f79ebd2dc1517d52afa59716796eb1ef8f"
+      revision: "e8561686f507fb8766f7b16ab8a9e48b86475993"
   license "Apache-2.0"
   head "https://github.com/meshery/meshery.git", branch: "master"
 
