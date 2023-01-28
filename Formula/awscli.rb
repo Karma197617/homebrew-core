@@ -31,8 +31,8 @@ class Awscli < Formula
   # 2. Ignore `six`. Update all other PyPI packages
 
   resource "awscrt" do
-    url "https://files.pythonhosted.org/packages/0d/97/5afeb22210c2133bad3560f2030b43ef7d47acee04fe32ac9004287e7dd9/awscrt-0.16.4.tar.gz"
-    sha256 "65f7e7555aa2ede7e49eab5b24561299faddadf899e0b5b7f17e54d34a95188c"
+    url "https://files.pythonhosted.org/packages/67/c6/3b43e2749efcec7ae3a823f9ad971efb467cc31f3d135eb4dd6f70f7cda8/awscrt-0.16.8.tar.gz"
+    sha256 "dba26352514bc8db66f77fd492f10ef9e576d991c8d60c5679c7f672e0627e01"
   end
 
   resource "cffi" do
