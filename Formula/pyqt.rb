@@ -1,10 +1,9 @@
 class Pyqt < Formula
   desc "Python bindings for v6 of Qt"
   homepage "https://www.riverbankcomputing.com/software/pyqt/intro"
-  url "https://files.pythonhosted.org/packages/b2/c9/266b12a9826452e387f0ff4f0b4bbd29e11d2de81a5f60c0975933b34e7f/PyQt6-6.4.0.tar.gz"
-  sha256 "91392469be1f491905fa9e78fa4e4059a89ab616ddf2ecfd525bc1d65c26bb93"
+  url "https://files.pythonhosted.org/packages/8a/a6/12565a8b14faaeb3ecf3edb5bc1e6bcb622dab776c23ea4eb4c369176c75/PyQt6-6.4.1.tar.gz"
+  sha256 "0c1dcadf161331cfdbde0906c05f7f8048dc4907d717647c33bbc4404146f59f"
   license "GPL-3.0-only"
-  revision 2
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "fd1773dedf980b58840d1d66fbe867b63c06bc7f61e00795305db6adf82cade1"
@@ -46,8 +45,8 @@ class Pyqt < Formula
   end
 
   resource "PyQt6-sip" do
-    url "https://files.pythonhosted.org/packages/39/fc/f889254efda90418e367df28da9d14ac64ca19a9d93f44355d21ac562b0f/PyQt6_sip-13.4.0.tar.gz"
-    sha256 "6d87a3ee5872d7511b76957d68a32109352caf3b7a42a01d9ee20032b350d979"
+    url "https://files.pythonhosted.org/packages/1e/24/99d1f9938afd58cf2d6120454cb36214bd76e18443b130b80b09fb368579/PyQt6_sip-13.4.1.tar.gz"
+    sha256 "e00e287ea05bbc293fc6e2198301962af9b7b622bd2daf4288f925a88ae35dc9"
   end
 
   resource "PyQt6-WebEngine" do
