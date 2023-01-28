@@ -1,8 +1,8 @@
 class Jruby < Formula
   desc "Ruby implementation in pure Java"
   homepage "https://www.jruby.org/"
-  url "https://search.maven.org/remotecontent?filepath=org/jruby/jruby-dist/9.3.9.0/jruby-dist-9.3.9.0-bin.tar.gz"
-  sha256 "251e6dd8d1d2f82922c8c778d7857e1bef82fe5ca2cf77bc09356421d0b05ab8"
+  url "https://search.maven.org/remotecontent?filepath=org/jruby/jruby-dist/9.4.0.0/jruby-dist-9.4.0.0-bin.tar.gz"
+  sha256 "897bb8a98ad43adcbf5fd3aa75ec85b3312838c949592ca3f623dc1f569d2870"
   license any_of: ["EPL-2.0", "GPL-2.0-only", "LGPL-2.1-only"]
 
   livecheck do
@@ -40,6 +40,15 @@ class Jruby < Formula
     libexec.install Dir["*"]
     bin.install Dir["#{libexec}/bin/*"]
     bin.env_script_all_files libexec/"bin", Language::Java.overridable_java_home_env
+
+    # Remove incompatible libfixposix library
+    os = OS.kernel_name.downcase
+    if OS.linux?
+      arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
+    end
+    libfixposix_binary = libexec/"lib/ruby/stdlib/libfixposix/binary"
+    libfixposix_binary.children
+                      .each { |dir| dir.rmtree if dir.basename.to_s != "#{arch}-#{os}" }
 
     # Replace (prebuilt!) universal binaries with their native slices
     # FIXME: Build libjffi-1.2.jnilib from source.
