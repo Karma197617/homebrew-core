@@ -4,8 +4,8 @@ class Checkov < Formula
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
   # checkov should only be updated every 15 releases on multiples of 15
-  url "https://files.pythonhosted.org/packages/ea/0c/58fc41dc3cdcd083c1a0a8ef82bacc617ee673cda73a0c755df4592b1ec5/checkov-2.2.300.tar.gz"
-  sha256 "45e40318a923f7d05e899380bf3a9e96a1b4c337952e0a78e1071cdd5fd64cce"
+  url "https://files.pythonhosted.org/packages/1e/c9/279a18eab65b570c830fcfbf801dd7751e9b567a5725334cf1cf9345efb3/checkov-2.2.315.tar.gz"
+  sha256 "bf320d264c781111de87eee3845f1e84ab2a87f08aa4881d6de460a67cc83ceb"
   license "Apache-2.0"
 
   bottle do
@@ -81,13 +81,13 @@ class Checkov < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/27/2c/f61f642b54b0b481e2a3a0c4b270dec0b45816f0c0e0a57e54feb2df3c0a/boto3-1.26.56.tar.gz"
-    sha256 "0ff8667fbfda8390cab2718a4d129374a6ddd6fd1913f79777fd4498f93c84f1"
+    url "https://files.pythonhosted.org/packages/69/48/5ed869a1d6d515962ec0f7446bdc4759f17e7ce8c1b047570643cb3eb8c8/boto3-1.26.59.tar.gz"
+    sha256 "7d9cebb507fc96e6eb429621ccb2e731b75e7bbb8d6d9f0cf0c08089ee3c1ab7"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/64/36/9ca8dd3097463dff6b88fd8015ba86e04ca22f8479b9d3bc60c21fd31ced/botocore-1.29.56.tar.gz"
-    sha256 "ca4d6403d745218270a20d9ca3ca9a33e3ad2fabb59a96ed8d6e1a824b274c86"
+    url "https://files.pythonhosted.org/packages/05/42/7fa8a5090a7381cfdea10f3bad3fea3c867e248caca1f8ee2e6722568db0/botocore-1.29.59.tar.gz"
+    sha256 "bc75d41c5eecf624a2f9875483135aa78088a50c8d29847793f92756697cfed5"
   end
 
   resource "cached-property" do
@@ -196,8 +196,8 @@ class Checkov < Formula
   end
 
   resource "igraph" do
-    url "https://files.pythonhosted.org/packages/81/75/d2163a383dd2d6e72d396cac6f021aafd5ec2081c66ef7f816de1d4d4f0c/igraph-0.10.3.tar.gz"
-    sha256 "b720cb88c4b9af4a968e8390355f666ba146d631298518cc4ffa1bd0e2c21eed"
+    url "https://files.pythonhosted.org/packages/8d/3d/86afa1a688b9b1e614ad19054c71004b165a6610e291d695f06621b44b8a/igraph-0.10.4.tar.gz"
+    sha256 "4786e05919ee93f6479fe8ca697d68537edfe47549ed09dfb33bda4daced1fb9"
   end
 
   resource "importlib-metadata" do
@@ -381,8 +381,8 @@ class Checkov < Formula
   end
 
   resource "websocket-client" do
-    url "https://files.pythonhosted.org/packages/75/af/1d13b93e7a21aca7f8ab8645fcfcfad21fc39716dc9dce5dc2a97f73ff78/websocket-client-1.4.2.tar.gz"
-    sha256 "d6e8f90ca8e2dd4e8027c4561adeb9456b54044312dba655e7cae652ceb9ae59"
+    url "https://files.pythonhosted.org/packages/02/cd/1adc1276f1e8f6a929783f4c2992ec7a4934a81f8ced3d4a87191cc168c2/websocket-client-1.5.0.tar.gz"
+    sha256 "561ca949e5bbb5d33409a37235db55c279235c78ee407802f1d2314fff8a8536"
   end
 
   resource "yarl" do
@@ -391,8 +391,8 @@ class Checkov < Formula
   end
 
   resource "zipp" do
-    url "https://files.pythonhosted.org/packages/8e/b3/8b16a007184714f71157b1a71bbe632c5d66dd43bc8152b3c799b13881e1/zipp-3.11.0.tar.gz"
-    sha256 "a7a22e05929290a67401440b39690ae6563279bced5f314609d9d03798f56766"
+    url "https://files.pythonhosted.org/packages/35/05/f81a74656c04e94f05c1ef186127cceb913493f1f8a21bb142a93c786ee8/zipp-3.12.0.tar.gz"
+    sha256 "73efd63936398aac78fd92b6f4865190119d6c91b531532e798977ea8dd402eb"
   end
 
   def install
