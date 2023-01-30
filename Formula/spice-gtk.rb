@@ -3,10 +3,9 @@ class SpiceGtk < Formula
 
   desc "GTK client/libraries for SPICE"
   homepage "https://www.spice-space.org"
-  url "https://www.spice-space.org/download/gtk/spice-gtk-0.41.tar.xz"
-  sha256 "d8f8b5cbea9184702eeb8cc276a67d72acdb6e36e7c73349fb8445e5bca0969f"
+  url "https://www.spice-space.org/download/gtk/spice-gtk-0.42.tar.xz"
+  sha256 "9380117f1811ad1faa1812cb6602479b6290d4a0d8cc442d44427f7f6c0e7a58"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later", "BSD-3-Clause"]
-  revision 1
 
   livecheck do
     url "https://www.spice-space.org/download/gtk/"
