@@ -61,6 +61,7 @@ class SpiceGtk < Formula
     sha256 "2b020ecf7d21b687f219b71ecad3631f644a47f01403fa1d1036b0c6416d70fb"
   end
 
+  # https://gitlab.com/keycodemap/keycodemapdb/-/merge_requests/18
   patch :DATA
 
   def install
