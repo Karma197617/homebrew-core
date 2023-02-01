@@ -60,6 +60,8 @@ class SpiceGtk < Formula
     url "https://files.pythonhosted.org/packages/71/22/207523d16464c40a0310d2d4d8926daffa00ac1f5b1576170a32db749636/pyparsing-3.0.9.tar.gz"
     sha256 "2b020ecf7d21b687f219b71ecad3631f644a47f01403fa1d1036b0c6416d70fb"
   end
+  
+  patch :DATA
 
   def install
     venv = virtualenv_create(buildpath/"venv", "python3.11")
@@ -98,3 +100,14 @@ class SpiceGtk < Formula
     system "./test"
   end
 end
+__END__
+diff --git a/subprojects/keycodemapdb/tools/keymap-gen b/subprojects/keycodemapdb/tools/keymap-gen
+index b6cc95b..d05e945 100755
+--- a/subprojects/keycodemapdb/tools/keymap-gen
++++ b/subprojects/keycodemapdb/tools/keymap-gen
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python3
++#!/usr/bin/env python3
+ # -*- python -*-
+ #
+ # Keycode Map Generator
