@@ -1,8 +1,8 @@
 class Davix < Formula
   desc "Library and tools for advanced file I/O with HTTP-based protocols"
   homepage "https://github.com/cern-fts/davix"
-  url "https://github.com/cern-fts/davix/releases/download/R_0_8_3/davix-0.8.3.tar.gz"
-  sha256 "7e30b5541e08d32dbf5ae03c6bcabeaec063aec10a6647787822227b4541ae3e"
+  url "https://github.com/cern-fts/davix/releases/download/R_0_8_4/davix-0.8.4.tar.gz"
+  sha256 "519d56f746e86ea3fd615bc49e559b520df07e051e1ca3d8c092067958f3b2b7"
   license "LGPL-2.1-or-later"
   head "https://github.com/cern-fts/davix.git", branch: "devel"
 
