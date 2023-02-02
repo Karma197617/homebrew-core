@@ -1,8 +1,8 @@
 class Xapian < Formula
   desc "C++ search engine library"
   homepage "https://xapian.org/"
-  url "https://oligarchy.co.uk/xapian/1.4.21/xapian-core-1.4.21.tar.xz"
-  sha256 "80f86034d2fb55900795481dfae681bfaa10efbe818abad3622cdc0c55e06f88"
+  url "https://oligarchy.co.uk/xapian/1.4.22/xapian-core-1.4.22.tar.xz"
+  sha256 "05884af00b06702ce486057d62a3bfbe6606cf965ada0f5ea570b328a2fa1ea8"
   license "GPL-2.0-or-later"
   version_scheme 1
 
@@ -22,6 +22,8 @@ class Xapian < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c13c59d710c79b257cff9ca1bb60fa9c9345cceddb6b7706932e6dd2d85ba62b"
   end
 
+  depends_on "docutils" => :build
+  depends_on "pygments" => :build
   depends_on "python@3.11" => [:build, :test]
   depends_on "sphinx-doc" => :build
 
@@ -34,8 +36,8 @@ class Xapian < Formula
   skip_clean :la
 
   resource "bindings" do
-    url "https://oligarchy.co.uk/xapian/1.4.20/xapian-bindings-1.4.20.tar.xz"
-    sha256 "786cc28d05660b227954413af0e2f66e4ead2a06d3df6dabaea484454b601ef5"
+    url "https://oligarchy.co.uk/xapian/1.4.22/xapian-bindings-1.4.22.tar.xz"
+    sha256 "6b5454833ac52a3e32c0bb3a7290a5a2b50488d8918f2a45269557e4de9a31e5"
   end
 
   # Fix -flat_namespace being used on Big Sur and later.
@@ -61,6 +63,10 @@ class Xapian < Formula
 
       ENV.append_path "PYTHONPATH", Formula["sphinx-doc"].opt_libexec/site_packages
       ENV.append_path "PYTHONPATH", Formula["sphinx-doc"].opt_libexec/"vendor"/site_packages
+      ENV.append_path "PYTHONPATH", Formula["docutils"].opt_libexec/site_packages
+      ENV.append_path "PYTHONPATH", Formula["docutils"].opt_libexec/"vendor"/site_packages
+      ENV.append_path "PYTHONPATH", Formula["pygments"].opt_libexec/site_packages
+      ENV.append_path "PYTHONPATH", Formula["pygments"].opt_libexec/"vendor"/site_packages
 
       system "./configure", *std_configure_args, "--disable-silent-rules", "--with-python3"
       system "make", "install"
