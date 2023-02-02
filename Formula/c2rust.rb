@@ -18,7 +18,7 @@ class C2rust < Formula
 
   depends_on "cmake" => [:build, :test]
   depends_on "rust" => :build
-  depends_on "llvm@14"
+  depends_on "llvm"
 
   fails_with gcc: "5"
 
