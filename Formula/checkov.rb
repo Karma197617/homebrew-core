@@ -4,8 +4,8 @@ class Checkov < Formula
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
   # checkov should only be updated every 15 releases on multiples of 15
-  url "https://files.pythonhosted.org/packages/1e/c9/279a18eab65b570c830fcfbf801dd7751e9b567a5725334cf1cf9345efb3/checkov-2.2.315.tar.gz"
-  sha256 "bf320d264c781111de87eee3845f1e84ab2a87f08aa4881d6de460a67cc83ceb"
+  url "https://files.pythonhosted.org/packages/f9/07/7c1bb650f6cd23ebc3b237a83e17cbcfcfde816daf5bbb1893b8bb8e76b9/checkov-2.2.330.tar.gz"
+  sha256 "8c2df4ea2239347a2af7fb2be4080552476bb004469e514699f6341d6b28e637"
   license "Apache-2.0"
 
   bottle do
@@ -76,18 +76,18 @@ class Checkov < Formula
   end
 
   resource "beautifulsoup4" do
-    url "https://files.pythonhosted.org/packages/e8/b0/cd2b968000577ec5ce6c741a54d846dfa402372369b8b6861720aa9ecea7/beautifulsoup4-4.11.1.tar.gz"
-    sha256 "ad9aa55b65ef2808eb405f46cf74df7fcb7044d5cbc26487f96eb2ef2e436693"
+    url "https://files.pythonhosted.org/packages/75/f8/de84282681c5a8307f3fff67b64641627b2652752d49d9222b77400d02b8/beautifulsoup4-4.11.2.tar.gz"
+    sha256 "bc4bdda6717de5a2987436fb8d72f45dc90dd856bdfd512a1314ce90349a0106"
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/69/48/5ed869a1d6d515962ec0f7446bdc4759f17e7ce8c1b047570643cb3eb8c8/boto3-1.26.59.tar.gz"
-    sha256 "7d9cebb507fc96e6eb429621ccb2e731b75e7bbb8d6d9f0cf0c08089ee3c1ab7"
+    url "https://files.pythonhosted.org/packages/19/af/d999f8a0b93d13c1ae5fa14e77c0cd52e177f1b4dcde385edcc34397bdfe/boto3-1.26.62.tar.gz"
+    sha256 "0271e05cf962de53deb4ee5c6e37433c8284584a26f45275cf43de3f99410aa4"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/05/42/7fa8a5090a7381cfdea10f3bad3fea3c867e248caca1f8ee2e6722568db0/botocore-1.29.59.tar.gz"
-    sha256 "bc75d41c5eecf624a2f9875483135aa78088a50c8d29847793f92756697cfed5"
+    url "https://files.pythonhosted.org/packages/b3/12/4809feb1033504581655cce477026aab24f0efcaffc9a9035af439d56bb8/botocore-1.29.62.tar.gz"
+    sha256 "8c7fdc6b14d9ef48ee8d1070700ab4204c121bc04ee57874e8419a9cdbe51144"
   end
 
   resource "cached-property" do
@@ -266,8 +266,8 @@ class Checkov < Formula
   end
 
   resource "policy-sentry" do
-    url "https://files.pythonhosted.org/packages/af/73/b12aba7c724feab12918aef54fa0f958db34c92d7560f62dfcca02e33b50/policy_sentry-0.12.5.tar.gz"
-    sha256 "0f3c23a90a3236b9355ffdd55e5a8c53ba8ce5120ca521afde69132901d94bfb"
+    url "https://files.pythonhosted.org/packages/8a/15/6bcba96ebd5c30b6ec07d690919c918cb66b30c035a177829a1d88e115d2/policy_sentry-0.12.6.tar.gz"
+    sha256 "98856c7e1be353674f9a09f22fe6a259fa9fdc2062b7d65de2bce01ca522c83a"
   end
 
   resource "policyuniverse" do
