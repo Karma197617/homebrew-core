@@ -3,8 +3,8 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/11/c4/a2fc8fad1a37519c60e09db51b511f901066da5cce35e4ae317ec7f31cf2/snakemake-7.20.0.tar.gz"
-  sha256 "f5b45191f1d419ebf28606880cb9bfac3bfa7c5949d1d2b64f551586d4212a2a"
+  url "https://files.pythonhosted.org/packages/4b/e4/8d851251f0b0da99ba99ff34be2f29f6ce4dba901565b74af6b0def0f965/snakemake-7.21.0.tar.gz"
+  sha256 "ebf91f4ca5c70809fcbfd2e8cbc982096cdadac1ec34138bb147b4a8c975c85b"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
@@ -100,8 +100,8 @@ class Snakemake < Formula
   end
 
   resource "jupyter-core" do
-    url "https://files.pythonhosted.org/packages/1f/05/7c8e5e534f1c0833512fa82f47d50733043b11adb4688d33dfbf89a645a6/jupyter_core-5.1.3.tar.gz"
-    sha256 "82e1cff0ef804c38677eff7070d5ff1d45037fef01a2d9ba9e6b7b8201831e9f"
+    url "https://files.pythonhosted.org/packages/aa/81/f1700beb330c715e3ecf72c6713849f18ed653d49fb2f621705cae2d3b56/jupyter_core-5.2.0.tar.gz"
+    sha256 "1407cdb4c79ee467696c04b76633fc1884015fa109323365a6372c8e890cc83f"
   end
 
   resource "MarkupSafe" do
@@ -175,8 +175,8 @@ class Snakemake < Formula
   end
 
   resource "traitlets" do
-    url "https://files.pythonhosted.org/packages/be/58/2d930cfab2caca22c827229ca61aabd8102423f7e817805cba706dce1598/traitlets-5.8.1.tar.gz"
-    sha256 "32500888f5ff7bbf3b9267ea31748fa657aaf34d56d85e60f91dda7dc7f5785b"
+    url "https://files.pythonhosted.org/packages/39/c3/205e88f02959712b62008502952707313640369144a7fded4cbc61f48321/traitlets-5.9.0.tar.gz"
+    sha256 "f6cde21a9c68cf756af02035f72d5a723bf607e862e7be33ece505abf4a3bad9"
   end
 
   resource "urllib3" do
