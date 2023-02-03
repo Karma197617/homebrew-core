@@ -1,8 +1,8 @@
 class Zet < Formula
   desc "CLI utility to find the union, intersection, and set difference of files"
   homepage "https://github.com/yarrow/zet"
-  url "https://github.com/yarrow/zet/archive/refs/tags/0.2.5.tar.gz"
-  sha256 "82d369f3f2538f9d9f8e20b07ae0d26153714f71c9994aa96466ab3758ac1554"
+  url "https://github.com/yarrow/zet/archive/refs/tags/v0.2.6.tar.gz"
+  sha256 "09480557797737155edee62c58dd02a7f634d351ea67d02aeb351bace75786bc"
   license any_of: ["Apache-2.0", "MIT"]
 
   livecheck do
