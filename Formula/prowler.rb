@@ -3,8 +3,8 @@ class Prowler < Formula
 
   desc "Open Source Security tool to perform Cloud Security best practices"
   homepage "https://prowler.pro/"
-  url "https://files.pythonhosted.org/packages/f9/88/fef5519739846321fbc6bcf60ae6efeb227bf93b0392ea909561ee4a3fa3/prowler-3.1.2.tar.gz"
-  sha256 "c3a623c2858e29389a756863c2752009ea6e8b51035f897b407c7d6753bb3b1b"
+  url "https://files.pythonhosted.org/packages/ee/27/81fa9b6ac286c1c5b5278e86e95cd922c28ef5401918537485a627acbdb8/prowler-3.1.3.tar.gz"
+  sha256 "96bf5dbbe68feaac07b2519d071306540c0ce87932d6217ff06f460ba5960183"
   license "Apache-2.0"
 
   bottle do
@@ -45,8 +45,8 @@ class Prowler < Formula
   end
 
   resource "azure-core" do
-    url "https://files.pythonhosted.org/packages/05/71/21dd6d5f227a5d82b869068a0b652b26edc9efb86c7a5139740a0ffeb775/azure-core-1.26.2.zip"
-    sha256 "986bfd8687889782d79481d4c5d0af04ab4a18ca2f210364804a88e4eaa1586a"
+    url "https://files.pythonhosted.org/packages/0e/53/8983f401b153a5d8482880b3155cac7d8f313a3c69a01fdb4442f635fc1a/azure-core-1.26.3.zip"
+    sha256 "acbd0daa9675ce88623da35c80d819cdafa91731dee6b2695c64d7ca9da82db4"
   end
 
   resource "azure-identity" do
@@ -85,13 +85,13 @@ class Prowler < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/d2/22/a2ac9f49e495bbc4a53cd11048dd0d8d9825d51b2b4d246df33660e47251/boto3-1.26.57.tar.gz"
-    sha256 "9c34ceac30a0672d2b6b030d459eb87f1a02d48f86f347fb4b054de85fb8a4b1"
+    url "https://files.pythonhosted.org/packages/f5/06/b3723636e094e833bba96b33cee496cd47ccc7362f5f3422d15d96644f7f/boto3-1.26.64.tar.gz"
+    sha256 "b0e3d078ec56bc858cc5edae4cda3eed2b1872055828cf5f22d83fc6f79a6d40"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/d0/89/4029d11264088b0baf48bd7acb0311581a9ee16ed306a84d3fde11b1faef/botocore-1.29.57.tar.gz"
-    sha256 "02078e37d6b3626794f821385f3357195d87610fa1b25355577ed5393f16f7b8"
+    url "https://files.pythonhosted.org/packages/60/91/cda3984eed3ad1cd58c192184b647ab45a5f696c19555959076e7be81cd2/botocore-1.29.64.tar.gz"
+    sha256 "2424c96547eeb9b76eb5bcee5b5bc01741834f525ecc4d538d71d269c7ba6662"
   end
 
   resource "certifi" do
@@ -160,8 +160,8 @@ class Prowler < Formula
   end
 
   resource "msal" do
-    url "https://files.pythonhosted.org/packages/c5/f8/05c343f2652b5b32f063bc908f428ffd14da65939d96b7adc48986f242a8/msal-1.20.0.tar.gz"
-    sha256 "78344cd4c91d6134a593b5e3e45541e666e37b747ff8a6316c3668dd1e6ab6b2"
+    url "https://files.pythonhosted.org/packages/06/ec/002278ed40a1ec6c85f72330cac2699dc7e9b3a36af686783c0fd8d05c7a/msal-1.21.0.tar.gz"
+    sha256 "96b5c867830fd116e5f7d0ec8ef1b238b4cda4d1aea86d8fecf518260e136fbf"
   end
 
   resource "msal-extensions" do
@@ -240,8 +240,8 @@ class Prowler < Formula
   end
 
   resource "XlsxWriter" do
-    url "https://files.pythonhosted.org/packages/b3/24/5253b50d798674d4d3212df938ab50e2b14a672073e4308b3c46f7590ccd/XlsxWriter-3.0.7.tar.gz"
-    sha256 "1239958b12da12be6abf05b32f64ff162eb75fff0fdf00d901ca0f46dc0557cf"
+    url "https://files.pythonhosted.org/packages/6a/31/f94f5707827ecd84f3fa03e55e263b9aeddb7da4ae0f7f1541e214e81b15/XlsxWriter-3.0.8.tar.gz"
+    sha256 "ec77335fb118c36bc5ed1c89e33904d649e4989df2d7980f7d6a9dd95ee5874e"
   end
 
   def install
