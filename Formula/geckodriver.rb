@@ -11,7 +11,7 @@ class Geckodriver < Formula
     hg_revision = "b7f07512450399f35fc38a7e94241b19a4c2693c"
     url "https://hg.mozilla.org/mozilla-central/archive/#{hg_revision}.zip/testing/geckodriver/"
     version "0.32.1"
-    sha256 "c0df793640f8cb7ee1c585cc82448e7d4b291c91f8a1b8c689ca987e6a2a3a9b"
+    sha256 "f33e3bbbc4530a9efaf2edb20cdc469c83c5e29c58e17d26a24a7ffe1ed6fd2c"
 
     resource "webdriver" do
       url "https://hg.mozilla.org/mozilla-central/archive/#{hg_revision}.zip/testing/webdriver/"
