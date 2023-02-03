@@ -23,6 +23,7 @@ class Jupyterlab < Formula
 
   depends_on "hatch" => :build
   depends_on "python-build" => :build
+  depends_on "rust" => :build
   depends_on "ipython"
   depends_on "node"
   depends_on "pandoc"
