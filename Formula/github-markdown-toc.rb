@@ -1,8 +1,8 @@
 class GithubMarkdownToc < Formula
   desc "Easy TOC creation for GitHub README.md (in go)"
   homepage "https://github.com/ekalinin/github-markdown-toc.go"
-  url "https://github.com/ekalinin/github-markdown-toc.go/archive/1.2.0.tar.gz"
-  sha256 "6bfeab2b28e5c7ad1d5bee9aa6923882a01f56a7f2d0f260f01acde2111f65af"
+  url "https://github.com/ekalinin/github-markdown-toc.go/archive/refs/tags/v1.2.1.tar.gz"
+  sha256 "64e0fc1b87860ced2697ace61e1a91d9b1a14829df08f0da08e797efe5e91440"
   license "MIT"
 
   bottle do
