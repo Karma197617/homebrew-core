@@ -40,8 +40,6 @@ class Cjdns < Formula
 
   test do
     sample_conf = JSON.parse(shell_output("#{bin}/cjdroute --genconf"))
-    sample_private_key = sample_conf["privateKey"]
-    sample_public_key = sample_conf["publicKey"]
-    sample_ipv6 = IPAddr.new(sample_conf["ipv6"]).to_s
+    assert_equal "NONE", sample_conf["admin"]["password"]
   end
 end
