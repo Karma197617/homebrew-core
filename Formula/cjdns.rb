@@ -1,8 +1,8 @@
 class Cjdns < Formula
   desc "Advanced mesh routing system with cryptographic addressing"
   homepage "https://github.com/cjdelisle/cjdns/"
-  url "https://github.com/cjdelisle/cjdns/archive/cjdns-v21.4.tar.gz"
-  sha256 "1511249451949c8b9800722d115a5906fb49e0d9e5c15139855aa0e4e183ad3c"
+  url "https://github.com/cjdelisle/cjdns/archive/cjdns-v22.tar.gz"
+  sha256 "21b555f7850f94cc42134f59cb99558baaaa18acf4c5544e8647387d4a5019ec"
   license all_of: ["GPL-3.0-or-later", "GPL-2.0-or-later", "BSD-3-Clause", "MIT"]
   head "https://github.com/cjdelisle/cjdns.git", branch: "master"
 
@@ -28,15 +28,11 @@ class Cjdns < Formula
 
     # Avoid using -march=native
     inreplace "node_build/make.js",
-              "var NO_MARCH_FLAG = ['arm', 'ppc', 'ppc64'];",
+              "var NO_MARCH_FLAG = ['arm', 'ppc', 'ppc64', 'arm64'];",
               "var NO_MARCH_FLAG = ['x64', 'arm', 'arm64', 'ppc', 'ppc64'];"
 
     system "./do"
-    bins = %w[cjdroute makekeys privatetopublic publictoip6 randombytes sybilsim]
-    bin.install(*bins)
-
-    # Avoid conflict with mkpasswd from `expect`
-    bin.install "mkpasswd" => "cjdmkpasswd"
+    bin.install("cjdroute")
 
     man1.install "doc/man/cjdroute.1"
     man5.install "doc/man/cjdroute.conf.5"
@@ -47,13 +43,5 @@ class Cjdns < Formula
     sample_private_key = sample_conf["privateKey"]
     sample_public_key = sample_conf["publicKey"]
     sample_ipv6 = IPAddr.new(sample_conf["ipv6"]).to_s
-
-    expected_output = <<~EOS
-      Input privkey: #{sample_private_key}
-      Matching pubkey: #{sample_public_key}
-      Resulting address: #{sample_ipv6}
-    EOS
-
-    assert_equal expected_output, pipe_output(bin/"privatetopublic", sample_private_key)
   end
 end
