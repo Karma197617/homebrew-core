@@ -28,11 +28,12 @@ class Qcachegrind < Formula
   fails_with gcc: "5"
 
   def install
-    args = ["-config", "release", "-spec"]
-    os = OS.mac? ? "macx" : OS.kernel_name.downcase
-    compiler = ENV.compiler.to_s.start_with?("gcc") ? "g++" : ENV.compiler
-    arch = Hardware::CPU.intel? ? "" : "-#{Hardware::CPU.arch}"
-    args << "#{os}-#{compiler}#{arch}"
+    args = []
+    if OS.mac?
+      # TODO: when using qt 6, modify the spec
+      spec = (ENV.compiler == :clang) ? "macx-clang" : "macx-g++"
+      args = %W[-config release -spec #{spec}]
+    end
 
     system Formula["qt@5"].opt_bin/"qmake", *args
     system "make"
