@@ -3,8 +3,8 @@ class Moto < Formula
 
   desc "Mock AWS services"
   homepage "http://getmoto.org/"
-  url "https://files.pythonhosted.org/packages/90/28/9bca5de096abcb2f3dbc33aae389c66aa8ca9e72282b4ff846feecd59df5/moto-4.1.1.tar.gz"
-  sha256 "6c45755e541a85e5382f809c75255d0b6335de334e7e8eb717f8fdc755830a8c"
+  url "https://files.pythonhosted.org/packages/f8/b3/65a80cc1e6cc3c1dce7d1da390e1f4c2712038c2ba06d1e16cf6944e5d2f/moto-4.1.2.tar.gz"
+  sha256 "63431733d2a02c7bd652ad71ec1da442a0e0d580cbac5eeb50d440a2ce066eac"
   license "Apache-2.0"
 
   bottle do
@@ -29,8 +29,8 @@ class Moto < Formula
   end
 
   resource "aws-sam-translator" do
-    url "https://files.pythonhosted.org/packages/95/dd/b8f4cf982a303fc8b0268a45cea14966208965f294dc2c86bf60a0fccdac/aws-sam-translator-1.57.0.tar.gz"
-    sha256 "5953b973468f72c11ce6fe3ae4c5bea11fb774bf46c91970e3ab4460c5e1798e"
+    url "https://files.pythonhosted.org/packages/b5/9c/1061fce18ff0442fa004e464299f8c5c2eb119ce7ee5f5eee1d8034e1b3d/aws-sam-translator-1.58.1.tar.gz"
+    sha256 "cd60a19085d432bc00769b597bc2e6854f546ff9928f8067fc5fbcb5a1ed74ff"
   end
 
   resource "aws-xray-sdk" do
@@ -39,13 +39,13 @@ class Moto < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/56/f3/df2608da2c159789494247897715d06db84c62b57b4a83c6df33ccafa5ec/boto3-1.26.55.tar.gz"
-    sha256 "d68576dcb1c520474eafb64b996661068a369f40bbd104ccb9502cad71849e57"
+    url "https://files.pythonhosted.org/packages/f5/06/b3723636e094e833bba96b33cee496cd47ccc7362f5f3422d15d96644f7f/boto3-1.26.64.tar.gz"
+    sha256 "b0e3d078ec56bc858cc5edae4cda3eed2b1872055828cf5f22d83fc6f79a6d40"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/78/1a/1324dae2454f4fca30e47c62999353ba465430d52a97f5c3afcde0e3d142/botocore-1.29.55.tar.gz"
-    sha256 "5fe6b8809292bb178a9378fea4f96bc969003d1048cf6de8ad3c5a73690fefa9"
+    url "https://files.pythonhosted.org/packages/60/91/cda3984eed3ad1cd58c192184b647ab45a5f696c19555959076e7be81cd2/botocore-1.29.64.tar.gz"
+    sha256 "2424c96547eeb9b76eb5bcee5b5bc01741834f525ecc4d538d71d269c7ba6662"
   end
 
   resource "certifi" do
@@ -59,8 +59,8 @@ class Moto < Formula
   end
 
   resource "cfn-lint" do
-    url "https://files.pythonhosted.org/packages/4c/d2/bcf2053decae8c42bd3291f363dc2d1ccd40faf5ee4a131f158b4fb1d54c/cfn-lint-0.72.9.tar.gz"
-    sha256 "7a4e46e004da81f65ce0d583191db9060dd3b13a79c4969670db5dc8fd505dd9"
+    url "https://files.pythonhosted.org/packages/22/69/b104c633488900b85d7f4435dd153f0da5e183923409b902bee1860192ae/cfn-lint-0.72.10.tar.gz"
+    sha256 "dc4a0f8227a8026561dd55003fdcc3b5ab947c03c1900855d00c820d66342aef"
   end
 
   resource "charset-normalizer" do
@@ -154,8 +154,8 @@ class Moto < Formula
   end
 
   resource "jsonschema-spec" do
-    url "https://files.pythonhosted.org/packages/3d/17/670f9890b25945c08e431534c4ea19cc0da74e6f6b2e16599d8262215402/jsonschema-spec-0.1.2.tar.gz"
-    sha256 "780a22d517cdc857d9714a80d8349c546945063f20853ea32ba7f85bc643ec7d"
+    url "https://files.pythonhosted.org/packages/e4/41/a345820b5d426d6a6c37749607aa034691d945ec1d3c948d559a6b4d7e56/jsonschema_spec-0.1.3.tar.gz"
+    sha256 "8d8db7c255e524fab1016a952a9143e5b6e3c074f4ed25d1878f8e97806caec0"
   end
 
   resource "junit-xml" do
@@ -179,13 +179,13 @@ class Moto < Formula
   end
 
   resource "openapi-schema-validator" do
-    url "https://files.pythonhosted.org/packages/aa/5a/62f6da86de867b00188a730daded44eb8fdbebb8c28b448987c5084e3b0d/openapi_schema_validator-0.4.0.tar.gz"
-    sha256 "fb591258bbe1e24f381d83cff2e9a1a6fc547936adb46143fdd089f6ea411cc8"
+    url "https://files.pythonhosted.org/packages/06/4e/e024ba8579ac1a88aac90bebb9eec9c0e62a4122cc8ad11b1ec92890ff26/openapi_schema_validator-0.4.3.tar.gz"
+    sha256 "6940dba9f4906c97078fea6fd9d5a3a3384207db368c4e32f6af6abd7c5c560b"
   end
 
   resource "openapi-spec-validator" do
-    url "https://files.pythonhosted.org/packages/9f/8d/1e3e410652afc46c9ebec07635202ce85cbd1232910ebdc9d525086db2a4/openapi_spec_validator-0.5.2.tar.gz"
-    sha256 "ebed7f1c567780859402ad64b128e17f519d15f605f1b41d1e9a4a7a1690be07"
+    url "https://files.pythonhosted.org/packages/47/e1/057d6886455a62f58055e8909c98ef96908a364a1cfb94b36e39accb9d51/openapi_spec_validator-0.5.4.tar.gz"
+    sha256 "68654e81cc56c71392dba31bf55d11e1c03c99458bebcb0018959a7134e104da"
   end
 
   resource "packaging" do
@@ -248,6 +248,11 @@ class Moto < Formula
     sha256 "396acb2a13d25297789a5866b4881cf4e46ffd49cc26c43ab1117f40b973102e"
   end
 
+  resource "rfc3339-validator" do
+    url "https://files.pythonhosted.org/packages/28/ea/a9387748e2d111c3c2b275ba970b735e04e15cdb1eb30693b6b5708c4dbd/rfc3339_validator-0.1.4.tar.gz"
+    sha256 "138a2abdf93304ad60530167e51d2dfb9549521a836871b88d7f4695d0022f6b"
+  end
+
   resource "rsa" do
     url "https://files.pythonhosted.org/packages/aa/65/7d973b89c4d2351d7fb232c2e452547ddfa243e93131e7cfa766da627b52/rsa-4.9.tar.gz"
     sha256 "e38464a49c6c85d7f1351b0126661487a7e0a14a50f1675ec50eb34d4f20ef21"
@@ -274,8 +279,8 @@ class Moto < Formula
   end
 
   resource "types-toml" do
-    url "https://files.pythonhosted.org/packages/c6/8b/a8544990966e9b475c1767f21272cbbdc2b470d4e690e04b5510b129b311/types-toml-0.10.8.1.tar.gz"
-    sha256 "171bdb3163d79a520560f24ba916a9fc9bff81659c5448a9fea89240923722be"
+    url "https://files.pythonhosted.org/packages/01/59/966378cfc0cb02e24ccaa7c1029cca5821f94f40a9c4649095b61890cd9a/types-toml-0.10.8.2.tar.gz"
+    sha256 "51d428666b30e9cc047791f440d0f11a82205e789c40debbb86f3add7472cf3e"
   end
 
   resource "urllib3" do
@@ -284,8 +289,8 @@ class Moto < Formula
   end
 
   resource "websocket-client" do
-    url "https://files.pythonhosted.org/packages/75/af/1d13b93e7a21aca7f8ab8645fcfcfad21fc39716dc9dce5dc2a97f73ff78/websocket-client-1.4.2.tar.gz"
-    sha256 "d6e8f90ca8e2dd4e8027c4561adeb9456b54044312dba655e7cae652ceb9ae59"
+    url "https://files.pythonhosted.org/packages/8b/94/696484b0c13234c91b316bc3d82d432f9b589a9ef09d016875a31c670b76/websocket-client-1.5.1.tar.gz"
+    sha256 "3f09e6d8230892547132177f575a4e3e73cfdf06526e20cc02aa1c3b47184d40"
   end
 
   resource "Werkzeug" do
