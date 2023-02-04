@@ -57,10 +57,11 @@ class Xmrig < Formula
         # GNU/Linux raises EIO when read is done on closed pty
       end
     end
+
     assert_match(/POOL #1\s+#{Regexp.escape(test_server)} algo auto/, output)
-    pattern = "#{test_server} DNS error: \"unknown node or service\""
+
     if OS.mac?
-      assert_match pattern, output
+      assert_match "#{test_server} DNS error: \"unknown node or service\"", output
     else
       assert_match "#{test_server} 127.0.0.1 connect error: \"connection refused\"", output
     end
