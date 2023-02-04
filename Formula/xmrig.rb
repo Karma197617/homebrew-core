@@ -62,7 +62,7 @@ class Xmrig < Formula
     if OS.mac?
       assert_match pattern, output
     else
-      assert_match Regexp.union(pattern, "#{test_server} connect error: \"connection refused\""), output
+      assert_match "#{test_server} 127.0.0.1 connect error: \"connection refused\"", output
     end
   end
 end
