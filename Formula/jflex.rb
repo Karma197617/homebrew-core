@@ -1,9 +1,8 @@
 class Jflex < Formula
   desc "Lexical analyzer generator for Java, written in Java"
   homepage "https://jflex.de/"
-  url "https://jflex.de/release/jflex-1.8.2.tar.gz"
-  sha256 "a1e0d25e341d01de6b93ec32b45562905e69d06598113934b74f76b1be7927ab"
-  revision 1
+  url "https://github.com/jflex-de/jflex/releases/download/v1.9.0/jflex-1.9.0.tar.gz"
+  sha256 "4fd77f6bde675c3fc2892051819c7b86358679072a858fbd39471d1289ac51f3"
 
   livecheck do
     url "https://jflex.de/download.html"
