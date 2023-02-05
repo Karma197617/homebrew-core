@@ -3,6 +3,7 @@ class Jflex < Formula
   homepage "https://jflex.de/"
   url "https://github.com/jflex-de/jflex/releases/download/v1.9.0/jflex-1.9.0.tar.gz"
   sha256 "4fd77f6bde675c3fc2892051819c7b86358679072a858fbd39471d1289ac51f3"
+  license "BSD-3-Clause"
 
   livecheck do
     url "https://jflex.de/download.html"
