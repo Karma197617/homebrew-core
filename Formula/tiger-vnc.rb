@@ -58,6 +58,6 @@ class TigerVnc < Formula
 
   test do
     output = shell_output("#{bin}/vncviewer -h 2>&1", 1)
-    assert_match "TigerVNC Viewer 64-bit v#{version}", output
+    assert_match "TigerVNC Viewer v#{version}", output
   end
 end
