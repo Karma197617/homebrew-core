@@ -1,8 +1,8 @@
 class Difftastic < Formula
   desc "Diff that understands syntax"
   homepage "https://github.com/Wilfred/difftastic"
-  url "https://github.com/Wilfred/difftastic/archive/refs/tags/0.43.0.tar.gz"
-  sha256 "9cbe305a7b4f6b3c98bc9c3d157bf26daad234f22ea92780094aa20fbc17374b"
+  url "https://github.com/Wilfred/difftastic/archive/refs/tags/0.43.1.tar.gz"
+  sha256 "4fb73145923e6fc41ece74fd3b5697a826e30b2fa4ff959b10b8f9786bb95571"
   license "MIT"
 
   bottle do
