@@ -1,8 +1,8 @@
 class Pyqt < Formula
   desc "Python bindings for v6 of Qt"
   homepage "https://www.riverbankcomputing.com/software/pyqt/intro"
-  url "https://files.pythonhosted.org/packages/8a/a6/12565a8b14faaeb3ecf3edb5bc1e6bcb622dab776c23ea4eb4c369176c75/PyQt6-6.4.1.tar.gz"
-  sha256 "0c1dcadf161331cfdbde0906c05f7f8048dc4907d717647c33bbc4404146f59f"
+  url "https://files.pythonhosted.org/packages/c3/e0/e1b592a6253712721612e2e64a323930a724e1f5cf297ed5ec6d6c86dda1/PyQt6-6.4.2.tar.gz"
+  sha256 "740244f608fe15ee1d89695c43f31a14caeca41c4f02ac36c86dfba4a5d5813d"
   license "GPL-3.0-only"
 
   bottle do
