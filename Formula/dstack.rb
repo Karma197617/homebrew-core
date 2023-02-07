@@ -258,11 +258,12 @@ class Dstack < Formula
   end
 
   test do
-    assert_equal "Call 'dstack config' first", shell_output("#{bin}/dstack tags list 2>&1", 1).chomp
-
     system "git", "init", "--initial-branch=main"
     expected = "No tracked branch configured for branch main"
     assert_equal expected, shell_output("#{bin}/dstack init 2>&1", 1).chomp
+
+    output = shell_output("#{bin}/dstack tags add -a #{testpath} 2>&1 brewtest", 1).chomp
+    assert_equal "No tracked branch configured for branch main", output
 
     assert_match version.to_s, shell_output("#{bin}/dstack --version")
   end
