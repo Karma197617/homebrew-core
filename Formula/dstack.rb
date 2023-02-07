@@ -3,8 +3,8 @@ class Dstack < Formula
 
   desc "ML workflow orchestration system designed for reproducibility and collaboration"
   homepage "https://docs.dstack.ai/"
-  url "https://files.pythonhosted.org/packages/81/0e/37b306b6aa1d43a5e982d7ea02c4ca6f93cbc850c2558fe4d4f7c9ec57dd/dstack-0.0.14.tar.gz"
-  sha256 "217bab45d3104236916333e3bb1942c9d3bef7868574827ca733931aecc4c884"
+  url "https://files.pythonhosted.org/packages/92/de/8fa6143ce22dd1f8c4506308372b121113d25ad48f27f06e933af244951e/dstack-0.1.tar.gz"
+  sha256 "4812eae5589d14cd8962185dfe7bfa109d1d41045a082d1d06a8743648bb8d69"
   license "MPL-2.0"
 
   bottle do
@@ -39,13 +39,13 @@ class Dstack < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/7c/dd/bb5763394e574b2960e9bfa8783365bcfb5dc7c41b7cd4cd2aa2e0fb257c/boto3-1.26.51.tar.gz"
-    sha256 "d599ce626b03e7236b0cda051c3cedc128fd75e0ec2f799fab9b2eabdf32d945"
+    url "https://files.pythonhosted.org/packages/c1/3d/539e09c417c8e72dd128a71f6b0973ef1c215160ddbbd46e6a586a966827/boto3-1.26.65.tar.gz"
+    sha256 "9fc94b3078f5047c1fc40529fa12eb82a2432bb1dca0ee37b1c54f902f46191f"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/c3/e4/4225ec06a7bea8e579ff0bd68f826731a8930dce4a3d2f7b9485c4833f31/botocore-1.29.51.tar.gz"
-    sha256 "f2f521fbd2343879f3c2d42392c88f1e7f15ea147a6dc5a3dab7b8686d90fcb6"
+    url "https://files.pythonhosted.org/packages/55/0a/6633ace298b023264bd89c0f28e97d8daceae0cea6dc4f8dcf88595238a6/botocore-1.29.65.tar.gz"
+    sha256 "6b7ae2dee621cb863935461ba4b8aa32420e945f5b7d94bb2852b79f90b9f8de"
   end
 
   resource "certifi" do
@@ -66,11 +66,6 @@ class Dstack < Formula
   resource "click" do
     url "https://files.pythonhosted.org/packages/59/87/84326af34517fca8c58418d148f2403df25303e02736832403587318e9e8/click-8.1.3.tar.gz"
     sha256 "7682dc8afb30297001674575ea00d1814d808d6a36af415a82bd481d37ba7b8e"
-  end
-
-  resource "commonmark" do
-    url "https://files.pythonhosted.org/packages/60/48/a60f593447e8f0894ebb7f6e6c1f25dafc5e89c5879fdc9360ae93ff83f0/commonmark-0.9.1.tar.gz"
-    sha256 "452f9dc859be7f06631ddcb328b6919c67984aca654e5fefb3914d54691aed60"
   end
 
   resource "cryptography" do
@@ -128,14 +123,24 @@ class Dstack < Formula
     sha256 "0f864437ab8b6076ba6707453ef8f98a6a0d512a80e93f8abdb676f737ecb60d"
   end
 
+  resource "markdown-it-py" do
+    url "https://files.pythonhosted.org/packages/33/e9/ac8a93e9eda3891ecdfecf5e01c060bbd2c44d4e3e77efc83b9c7ce9db32/markdown-it-py-2.1.0.tar.gz"
+    sha256 "cf7e59fed14b5ae17c0006eff14a2d9a00ed5f3a846148153899a0224e2c07da"
+  end
+
   resource "MarkupSafe" do
     url "https://files.pythonhosted.org/packages/95/7e/68018b70268fb4a2a605e2be44ab7b4dd7ce7808adae6c5ef32e34f4b55a/MarkupSafe-2.1.2.tar.gz"
     sha256 "abcabc8c2b26036d62d4c746381a6f7cf60aafcc653198ad678306986b09450d"
   end
 
+  resource "mdurl" do
+    url "https://files.pythonhosted.org/packages/d6/54/cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90/mdurl-0.1.2.tar.gz"
+    sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
+  end
+
   resource "paramiko" do
-    url "https://files.pythonhosted.org/packages/98/75/e78ddbe671a4a59514b59bc6a321263118e4ac3fe88175dd784d1a47a00f/paramiko-2.12.0.tar.gz"
-    sha256 "376885c05c5d6aa6e1f4608aac2a6b5b0548b1add40274477324605903d9cd49"
+    url "https://files.pythonhosted.org/packages/3b/6b/554c00e5e68cd573bda345322a4e895e22686e94c7fa51848cd0e0442a71/paramiko-3.0.0.tar.gz"
+    sha256 "fedc9b1dd43bc1d45f67f1ceca10bc336605427a46dcdf8dec6bfea3edf57965"
   end
 
   resource "pbr" do
@@ -163,6 +168,16 @@ class Dstack < Formula
     sha256 "b9a3859f24eb4e097502a3be1fb4b2abb79b6103dd9e2e0edb70613a4459a648"
   end
 
+  resource "Pygments" do
+    url "https://files.pythonhosted.org/packages/da/6a/c427c06913204e24de28de5300d3f0e809933f376e0b7df95194b2bb3f71/Pygments-2.14.0.tar.gz"
+    sha256 "b3ed06a9e8ac9a9aae5a6f5dbe78a8a58655d17b43b93c078f094ddc476ae297"
+  end
+
+  resource "pygtail" do
+    url "https://files.pythonhosted.org/packages/b0/89/437120e303d5d2c81107ed3415d5f3c9975f7dfdeef9e4440cef364e3bf9/pygtail-0.14.0.tar.gz"
+    sha256 "55616d31a081eaaeb069d0946f2bc7e530ebf505d4c3c050f8e941786a3449d3"
+  end
+
   resource "PyNaCl" do
     url "https://files.pythonhosted.org/packages/a7/22/27582568be639dfe22ddb3902225f91f2f17ceff88ce80e4db396c8986da/PyNaCl-1.5.0.tar.gz"
     sha256 "8ac7448f09ab85811607bdd21ec2464495ac8b7c66d146bf545b0f08fb9220ba"
@@ -184,8 +199,8 @@ class Dstack < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/20/db/fb6f586e2869440d99601b30f6874842015b0c8ca1a6a094abf4e24163f5/rich-13.1.0.tar.gz"
-    sha256 "81c73a30b144bbcdedc13f4ea0b6ffd7fdc3b0d3cc259a9402309c8e4aee1964"
+    url "https://files.pythonhosted.org/packages/68/31/b8934896818c885001aeb7df388ba0523ea3ec88ad31805983d9b0480a50/rich-13.3.1.tar.gz"
+    sha256 "125d96d20c92b946b983d0d392b84ff945461e5a06d3867e9f9e575f8697b67f"
   end
 
   resource "s3transfer" do
@@ -208,9 +223,14 @@ class Dstack < Formula
     sha256 "e60305c5e5d314f5389259b7f22aaa33d8f7dee49763119234af3755c55b9101"
   end
 
+  resource "SQLAlchemy" do
+    url "https://files.pythonhosted.org/packages/22/af/b7b5c4952923cade206d1c1809eeebfdec07096201d7473dd70faa5ffaa1/SQLAlchemy-2.0.2.tar.gz"
+    sha256 "e4d3cf5352f724237e27463de4bf19888235342af2efa37ef1cd391d8b702a16"
+  end
+
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/0c/d2/a2898deb36d12e40e84e83b7728628a04013cb0cfc545932c4605185bf2d/starlette-0.23.1.tar.gz"
-    sha256 "8510e5b3d670326326c5c1d4cb657cc66832193fe5d5b7015a51c7b1e1b1bf42"
+    url "https://files.pythonhosted.org/packages/fc/b1/314fc4a9c937f5eac43ca2a5123aa886180482adb9a79716cd9f9c6365c5/starlette-0.24.0.tar.gz"
+    sha256 "7925947f177a19e906c6ace10f07c64c4f9fdf7d509caaac6589f7cc0cfd95f3"
   end
 
   resource "tqdm" do
@@ -229,8 +249,8 @@ class Dstack < Formula
   end
 
   resource "websocket-client" do
-    url "https://files.pythonhosted.org/packages/75/af/1d13b93e7a21aca7f8ab8645fcfcfad21fc39716dc9dce5dc2a97f73ff78/websocket-client-1.4.2.tar.gz"
-    sha256 "d6e8f90ca8e2dd4e8027c4561adeb9456b54044312dba655e7cae652ceb9ae59"
+    url "https://files.pythonhosted.org/packages/8b/94/696484b0c13234c91b316bc3d82d432f9b589a9ef09d016875a31c670b76/websocket-client-1.5.1.tar.gz"
+    sha256 "3f09e6d8230892547132177f575a4e3e73cfdf06526e20cc02aa1c3b47184d40"
   end
 
   def install
