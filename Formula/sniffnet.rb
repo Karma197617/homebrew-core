@@ -22,6 +22,7 @@ class Sniffnet < Formula
 
   on_linux do
     depends_on "pkg-config" => :build
+    depends_on "alsa-lib"
     depends_on "fontconfig"
   end
 
