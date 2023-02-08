@@ -1,8 +1,8 @@
 class Hermit < Formula
   desc "Manages isolated, self-bootstrapping sets of tools in software projects"
   homepage "https://cashapp.github.io/hermit"
-  url "https://github.com/cashapp/hermit/archive/refs/tags/v0.32.0.tar.gz"
-  sha256 "8dee269c6ee4045ee31676c3619ad1884c182a92e1b64441b8f0cf3fca005749"
+  url "https://github.com/cashapp/hermit/archive/refs/tags/v0.33.0.tar.gz"
+  sha256 "4a50bf5baa5727bee1c5176b252eb4b713af3e3926031838527f26ec40f2403b"
   license "Apache-2.0"
 
   bottle do
@@ -18,7 +18,12 @@ class Hermit < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(output: bin/"hermit", ldflags: "-X main.version=#{version} -X main.channel=stable"), "./cmd/hermit"
+    ldflags = %W[
+      -s -w
+      -X main.version=#{version}
+      -X main.channel=stable
+    ]
+    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/hermit"
   end
 
   def caveats
@@ -35,7 +40,7 @@ class Hermit < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/hermit version")
-    system "hermit", "init"
+    system bin/"hermit", "init", "."
     assert_predicate testpath/"bin/hermit.hcl", :exist?
   end
 end
