@@ -1,8 +1,8 @@
 class PythonAT310 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.10.9/Python-3.10.9.tgz"
-  sha256 "4ccd7e46c8898f4c7862910a1703aa0e63525913a519abb2f55e26220a914d88"
+  url "https://www.python.org/ftp/python/3.10.10/Python-3.10.10.tgz"
+  sha256 "fba64559dde21ebdc953e4565e731573bb61159de8e4d4cedee70fb1196f610d"
   license "Python-2.0"
 
   livecheck do
@@ -66,13 +66,13 @@ class PythonAT310 < Formula
 
   # Always update to latest release
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/b6/21/cb9a8d0b2c8597c83fce8e9c02884bce3d4951e41e807fc35791c6b23d9a/setuptools-65.6.3.tar.gz"
-    sha256 "a7620757bf984b58deaf32fc8a4577a9bbc0850cf92c20e1ce41c38c19e5fb75"
+    url "https://files.pythonhosted.org/packages/5f/36/7374297692bb9dbd7569a0f84887c7e5e314c41d5d9518cb76fbb130620d/setuptools-67.2.0.tar.gz"
+    sha256 "b440ee5f7e607bb8c9de15259dba2583dd41a38879a7abc1d43a71c59524da48"
   end
 
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/a3/50/c4d2727b99052780aad92c7297465af5fe6eec2dbae490aa9763273ffdc1/pip-22.3.1.tar.gz"
-    sha256 "65fd48317359f3af8e593943e6ae1506b66325085ea64b706a998c6e83eeaf38"
+    url "https://files.pythonhosted.org/packages/b5/16/5e24bf63cff51dcc169f43bd43b86b005c49941e09cc3482a5b370db239e/pip-23.0.tar.gz"
+    sha256 "aee438284e82c8def684b0bcc50b1f6ed5e941af97fa940e83e2e8ef1a59da9b"
   end
 
   resource "wheel" do
