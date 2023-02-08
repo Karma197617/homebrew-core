@@ -3,8 +3,8 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/af/06/52c287f8948198d94bf89e8ef2ff9eec522aed8f84979eec11f296b20dcf/schemathesis-3.18.1.tar.gz"
-  sha256 "b936e504722d6fd4dfb8b32bb275f25b7a0eff2589b674b6a789d332b215790a"
+  url "https://files.pythonhosted.org/packages/55/55/ca9020b43016aefd0c961583e930699152110d03e1ec6bf33d8ab072db77/schemathesis-3.18.2.tar.gz"
+  sha256 "11c59cb3c2cdf705e4b3fd2aecb70ed7be9248d7aa8c7ee66c04a02785d108b2"
   license "MIT"
 
   bottle do
@@ -93,8 +93,8 @@ class Schemathesis < Formula
   end
 
   resource "hypothesis-jsonschema" do
-    url "https://files.pythonhosted.org/packages/81/e0/c2802558d47e179e234f45c5d9dc39ff45d30d28692839a10be391d892fd/hypothesis-jsonschema-0.22.0.tar.gz"
-    sha256 "359504080a422924a77263789a00c4995b061991558ff6a8243949f94a4d74fc"
+    url "https://files.pythonhosted.org/packages/8b/d7/47d7c208ca0f8a2ce6535d6cf0a167d9120ccfc00d6c5ff5fae7936a4654/hypothesis-jsonschema-0.22.1.tar.gz"
+    sha256 "5dd7449009f323e408a9aa64afb4d18bd1f60ea2eabf5bf152a510da728b34f2"
   end
 
   resource "idna" do
@@ -173,8 +173,8 @@ class Schemathesis < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/0c/d2/a2898deb36d12e40e84e83b7728628a04013cb0cfc545932c4605185bf2d/starlette-0.23.1.tar.gz"
-    sha256 "8510e5b3d670326326c5c1d4cb657cc66832193fe5d5b7015a51c7b1e1b1bf42"
+    url "https://files.pythonhosted.org/packages/fc/b1/314fc4a9c937f5eac43ca2a5123aa886180482adb9a79716cd9f9c6365c5/starlette-0.24.0.tar.gz"
+    sha256 "7925947f177a19e906c6ace10f07c64c4f9fdf7d509caaac6589f7cc0cfd95f3"
   end
 
   resource "starlette-testclient" do
