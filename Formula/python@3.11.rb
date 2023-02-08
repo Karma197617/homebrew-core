@@ -1,8 +1,8 @@
 class PythonAT311 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.11.1/Python-3.11.1.tgz"
-  sha256 "baed518e26b337d4d8105679caf68c5c32630d702614fc174e98cb95c46bdfa4"
+  url "https://www.python.org/ftp/python/3.11.2/Python-3.11.2.tgz"
+  sha256 "2411c74bda5bbcfcddaf4531f66d1adc73f247f529aee981b029513aefdbf849"
   license "Python-2.0"
 
   livecheck do
