@@ -4,7 +4,6 @@
 class Vault < Formula
   desc "Secures, stores, and tightly controls access to secrets"
   homepage "https://vaultproject.io/"
-  # TODO: Migrate to `python@3.11` in v1.13
   url "https://github.com/hashicorp/vault.git",
       tag:      "v1.12.3",
       revision: "209b3dd99fe8ca320340d08c70cff5f620261f9b"
@@ -29,13 +28,13 @@ class Vault < Formula
   depends_on "go" => :build
   depends_on "gox" => :build
   depends_on "node@18" => :build
-  depends_on "python@3.10" => :build # TODO: Migrate to `python@3.11` in v1.13
+  depends_on "python@3.11" => :build
   depends_on "yarn" => :build
 
   def install
     # Needs both `npm` and `python` in PATH
     ENV.prepend_path "PATH", Formula["node@18"].opt_libexec/"bin"
-    ENV.prepend_path "PATH", Formula["python@3.10"].opt_libexec/"bin" if OS.mac?
+    ENV.prepend_path "PATH", Formula["python@3.11"].opt_libexec/"bin" if OS.mac?
     ENV.prepend_path "PATH", "#{ENV["GOPATH"]}/bin"
     system "make", "bootstrap", "static-dist", "dev-ui"
     bin.install "bin/vault"
