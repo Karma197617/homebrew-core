@@ -6,8 +6,8 @@ class Vault < Formula
   homepage "https://vaultproject.io/"
   # TODO: Migrate to `python@3.11` in v1.13
   url "https://github.com/hashicorp/vault.git",
-      tag:      "v1.12.2",
-      revision: "415e1fe3118eebd5df6cb60d13defdc01aa17b03"
+      tag:      "v1.12.3",
+      revision: "209b3dd99fe8ca320340d08c70cff5f620261f9b"
   license "MPL-2.0"
   head "https://github.com/hashicorp/vault.git", branch: "main"
 
