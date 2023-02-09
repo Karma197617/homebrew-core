@@ -5,6 +5,11 @@ class EcflowUi < Formula
   sha256 "8e53879a4dbc498162674b88202d588b043126db215089d0daea5068c19ea497"
   license "Apache-2.0"
 
+  livecheck do
+    url "https://confluence.ecmwf.int/display/ECFLOW/Releases"
+    regex(/href=.*?ecFlow[._-]v?(\d+(?:\.\d+)+)[._-]Source\.t/i)
+  end
+
   bottle do
     sha256                               arm64_ventura:  "061d4e267e0345e24396cbff4f77a400bd4f867bc60a468a0ec7087025ccdf78"
     sha256                               arm64_monterey: "2f1a0b96cdea40d0164b44d818926f0b30e5c24887b0956ffa6b421aab10bdf6"
