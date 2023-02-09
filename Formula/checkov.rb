@@ -4,8 +4,8 @@ class Checkov < Formula
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
   # checkov should only be updated every 15 releases on multiples of 15
-  url "https://files.pythonhosted.org/packages/6a/db/98d24daca0d648ab930c22edbe8907739429cd4bf1c13ae27cd60c9e1694/checkov-2.2.345.tar.gz"
-  sha256 "419ec2bff046be812e92e3daa4649c6e19082b5b6ca7787ea3b1450bf1ce20e6"
+  url "https://files.pythonhosted.org/packages/58/1d/547e637c6f568d74e037bc7f1cfc547548496257705cce534bb507cfe053/checkov-2.3.0.tar.gz"
+  sha256 "1244cb0d65cc6c92bc8ef7ec5e7169e316fa396a8c6009f9e09a4e63bc047c0d"
   license "Apache-2.0"
 
   bottle do
@@ -66,8 +66,8 @@ class Checkov < Formula
   end
 
   resource "bc-jsonpath-ng" do
-    url "https://files.pythonhosted.org/packages/f3/71/11faab6bd73cb53798aa67a6c457495a7f2525115cf1ef1946e05c8725df/bc-jsonpath-ng-1.5.8.tar.gz"
-    sha256 "c79388a3bfd00b52d8dd6cd600b637c377c9fca22faa7d30bbbc38cca9b06ee2"
+    url "https://files.pythonhosted.org/packages/f8/77/9a5ca9b848f57900f40ef1499cfabc27d62ecc3377a1e5f793c401e4cf60/bc-jsonpath-ng-1.5.9.tar.gz"
+    sha256 "5e72d78887521469f8a52966f6f0664ec3d59dcb2cebf85b8131867a241c84ec"
   end
 
   resource "bc-python-hcl2" do
@@ -81,13 +81,13 @@ class Checkov < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/34/21/73b77bf9eb850992b9b36e0d79d2bfb48f71b1892be2deeb0c6503a56441/boto3-1.26.66.tar.gz"
-    sha256 "ebea98f3054b467caf6c8aead9f0ef78395a78bce78b04db12fde452c02b3734"
+    url "https://files.pythonhosted.org/packages/8d/59/72ed66c45aacdc1339423ed2f4e350594ed233deabac726dbcd69b4d847f/boto3-1.26.67.tar.gz"
+    sha256 "c2e21ac64370fee1f3dccd97b4767e89d046c45c00faec27c36405618e34c7e5"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/f3/19/3c6522dc37d8b002a64dc19c777022de908552feb7d63ddd9caa49d739a2/botocore-1.29.66.tar.gz"
-    sha256 "4d1ac019e677cc39e615f9d473fa658ea22a8d906c1c562f9406b5d0cd854cbd"
+    url "https://files.pythonhosted.org/packages/fb/e3/5557a3301221e8c984344acce43af61ed2ff99cf39aefa4305e400ef3620/botocore-1.29.67.tar.gz"
+    sha256 "0ccec4a906b6b8c7bb6bc5226509059ee9ed94d3cf1014487ef5b8e56801e6a3"
   end
 
   resource "cached-property" do
