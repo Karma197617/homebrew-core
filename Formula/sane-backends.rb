@@ -2,11 +2,10 @@ class SaneBackends < Formula
   desc "Backends for scanner access"
   homepage "http://www.sane-project.org/"
   license "GPL-2.0-or-later"
-  revision 1
 
   stable do
-    url "https://gitlab.com/sane-project/backends/uploads/7d30fab4e115029d91027b6a58d64b43/sane-backends-1.1.1.tar.gz"
-    sha256 "dd4b04c37a42f14c4619e8eea6a957f4c7c617fe59e32ae2872b373940a8b603"
+    url "https://gitlab.com/sane-project/backends/uploads/110fc43336d0fb5e514f1fdc7360dd87/sane-backends-1.2.1.tar.gz"
+    sha256 "f832395efcb90bb5ea8acd367a820c393dda7e0dd578b16f48928b8f5bdd0524"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
