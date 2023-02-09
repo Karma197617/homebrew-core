@@ -3,8 +3,8 @@ class SaltLint < Formula
 
   desc "Check for best practices in SaltStack"
   homepage "https://github.com/warpnet/salt-lint"
-  url "https://files.pythonhosted.org/packages/5e/93/20ed28be32d01ac594cc3f78a797be5caf5e32157d85f374c675ce0782ad/salt-lint-0.9.1.tar.gz"
-  sha256 "898afdb8af9b2e09ba1deb0fd62c1a94250ef4301cf531f59e6c0c0493309c60"
+  url "https://files.pythonhosted.org/packages/e5/e9/4df64ca147c084ca1cdbea9210549758d07f4ed94ac37d1cd1c99288ef5c/salt-lint-0.9.2.tar.gz"
+  sha256 "7f74e682e7fd78722a6d391ea8edc9fc795113ecfd40657d68057d404ee7be8e"
   license "MIT"
 
   bottle do
@@ -21,8 +21,8 @@ class SaltLint < Formula
   depends_on "pyyaml"
 
   resource "pathspec" do
-    url "https://files.pythonhosted.org/packages/32/1a/6baf904503c3e943cae9605c9c88a43b964dea5b59785cf956091b341b08/pathspec-0.10.3.tar.gz"
-    sha256 "56200de4077d9d0791465aa9095a01d421861e405b5096955051deefd697d6f6"
+    url "https://files.pythonhosted.org/packages/f4/8e/f91cffb32740b251cff04cad1e7cdd2c710582c735a01f56307316c148f2/pathspec-0.11.0.tar.gz"
+    sha256 "64d338d4e0914e91c1792321e6907b5a593f1ab1851de7fc269557a21b30ebbc"
   end
 
   def install
