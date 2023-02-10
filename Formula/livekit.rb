@@ -1,8 +1,8 @@
 class Livekit < Formula
   desc "Scalable, high-performance WebRTC server"
   homepage "https://livekit.io"
-  url "https://github.com/livekit/livekit/archive/refs/tags/v1.3.3.tar.gz"
-  sha256 "9569e5203d7f4d3089517e390f21971fc1b3bf9255ba3e4c27eaafdba55ac403"
+  url "https://github.com/livekit/livekit/archive/refs/tags/v1.3.4.tar.gz"
+  sha256 "8d588375e723be749f36dd0f7669e667d0910cb21bc5d9bb3b4ce08f3ab944f3"
   license "Apache-2.0"
   head "https://github.com/livekit/livekit.git", branch: "master"
 
@@ -24,13 +24,14 @@ class Livekit < Formula
 
   test do
     http_port = free_port
+    random_key = "R4AA2dwX3FrMbyY@My3X&Hsmz7W)LuQy"
     fork do
-      exec bin/"livekit-server", "--keys", "test: key", "--config-body", "port: #{http_port}"
+      exec bin/"livekit-server", "--keys", "test: #{random_key}", "--config-body", "port: #{http_port}"
     end
     sleep 3
-    assert_match "OK", shell_output("curl localhost:#{http_port}")
+    assert_match "OK", shell_output("curl -s http://localhost:#{http_port}")
 
-    output = shell_output("#{bin}/livekit-server --version")
+    output = shell_output("#{bin}/livekit-server --version", 1)
     assert_match "livekit-server version #{version}", output
   end
 end
