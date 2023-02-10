@@ -1,8 +1,8 @@
 class RdiffBackup < Formula
   desc "Reverse differential backup tool, over a network or locally"
   homepage "https://rdiff-backup.net/"
-  url "https://files.pythonhosted.org/packages/cd/04/f0b845259e91da83a24d32656974616ac0001d57ed6039e720babb6c5faa/rdiff-backup-2.2.2.tar.gz"
-  sha256 "4ce1ddd8ab15f4faed8cf547397b77ef10405c084bd61cb2a999f0ed1f78c1b9"
+  url "https://files.pythonhosted.org/packages/2e/8a/2cae44db2063a678937b68f24300b60aed15488ce1eb1a6da56052bf86ba/rdiff-backup-2.2.3.tar.gz"
+  sha256 "0ec0e7c75277fa3f1d02fcc9c91c0b58e10c5e625cefd5ffd6b56ec293878fc9"
   license "GPL-2.0-or-later"
 
   bottle do
