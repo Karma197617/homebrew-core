@@ -3,8 +3,8 @@ class AnsibleLint < Formula
 
   desc "Checks ansible playbooks for practices and behaviour"
   homepage "https://github.com/ansible/ansible-lint/"
-  url "https://files.pythonhosted.org/packages/24/22/0814ea4b02b0884e31e5d6d8102617524136ed62d3e96787751bbec0bef7/ansible-lint-6.12.1.tar.gz"
-  sha256 "bbb1953aa563baa2587edb6efa94bf4805846ab01fb596e718c48f9a79a99a89"
+  url "https://files.pythonhosted.org/packages/ab/a6/6d8030aa2f8f338f1b2810c814b0957d66942ab73b55a58ee98bf51e1187/ansible-lint-6.12.2.tar.gz"
+  sha256 "ab33152834c95fcfc4fb65ecd53c9cd1bf1c9b3ead179edd6304274b82b34852"
   license all_of: ["MIT", "GPL-3.0-or-later"]
 
   bottle do
@@ -24,11 +24,6 @@ class AnsibleLint < Formula
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "yamllint"
-
-  resource "ansible-compat" do
-    url "https://files.pythonhosted.org/packages/90/a2/a7228ad38339ac104d70e3a2e70744557c41fa34e8d4773382c852991ef9/ansible-compat-3.0.1.tar.gz"
-    sha256 "d7dc5e4b7fade9b7375c568a24475b7be81024cac2a20caef3260ef0b51287b4"
-  end
 
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/21/31/3f468da74c7de4fcf9b25591e682856389b3400b4b62f201e65f15ea3e07/attrs-22.2.0.tar.gz"
