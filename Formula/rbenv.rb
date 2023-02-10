@@ -24,19 +24,26 @@ class Rbenv < Formula
 
   def install
     inreplace "libexec/rbenv" do |s|
-      s.gsub! '"${BASH_SOURCE%/*}"/../libexec', libexec
+      # TODO: The following line can be removed in the next release.
+      # rbenv/rbenv/pull/1428 (`brew audit` doesn't like URLs of merged PRs.)
+      s.gsub! '"${BASH_SOURCE%/*}"/../libexec', libexec if build.stable?
       s.gsub! ":/usr/local/etc/rbenv.d", ":#{HOMEBREW_PREFIX}/etc/rbenv.d\\0" if HOMEBREW_PREFIX.to_s != "/usr/local"
     end
-
-    # Compile optional bash extension.
-    system "src/configure"
-    system "make", "-C", "src"
 
     if build.head?
       # Record exact git revision for `rbenv --version` output
       git_revision = Utils.git_short_head
       inreplace "libexec/rbenv---version", /^(version=)"([^"]+)"/,
                                            %Q(\\1"\\2-g#{git_revision}")
+
+      # Install manpage
+      man1.install "share/man/man1/rbenv.1"
+    else
+      # Compile optional bash extension.
+      # TODO: This can probably be removed in the next release.
+      # rbenv/rbenv/pull/1428 (`brew audit` doesn't like URLs of merged PRs.)
+      system "src/configure"
+      system "make", "-C", "src"
     end
 
     prefix.install ["bin", "completions", "libexec", "rbenv.d"]
@@ -50,8 +57,8 @@ class Rbenv < Formula
     foo_script.write "echo hello"
     chmod "+x", foo_script
 
-    # Test versions.
-    versions = shell_output("eval \"$(#{bin}/rbenv init -)\" && #{bin}/rbenv versions").split("\n")
+    # Test versions. The second `rbenv` call is a shell function; do not add a `bin` prefix.
+    versions = shell_output("eval \"$(#{bin}/rbenv init -)\" && rbenv versions").split("\n")
     assert_equal 2, versions.length
     assert_match(/\* system/, versions[0])
     assert_equal("  1.2.3", versions[1])
@@ -59,6 +66,7 @@ class Rbenv < Formula
     # Test rehash.
     system bin/"rbenv", "rehash"
     refute_match "Cellar", (rbenv_root/"shims/foo").read
-    assert_equal "hello", shell_output("eval \"$(#{bin}/rbenv init -)\" && #{bin}/rbenv shell 1.2.3 && foo").chomp
+    # The second `rbenv` call is a shell function; do not add a `bin` prefix.
+    assert_equal "hello", shell_output("eval \"$(#{bin}/rbenv init -)\" && rbenv shell 1.2.3 && foo").chomp
   end
 end
