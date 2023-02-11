@@ -39,13 +39,13 @@ class Dstack < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/c1/3d/539e09c417c8e72dd128a71f6b0973ef1c215160ddbbd46e6a586a966827/boto3-1.26.65.tar.gz"
-    sha256 "9fc94b3078f5047c1fc40529fa12eb82a2432bb1dca0ee37b1c54f902f46191f"
+    url "https://files.pythonhosted.org/packages/c0/63/5dd782da5653528c35ca2ec7f44a41ec3121cda8701f14c6416912118dc6/boto3-1.26.69.tar.gz"
+    sha256 "eb8cde24a4c5755c35126e8cd460e6b51c63d04292419e7e95721232720c7e5b"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/55/0a/6633ace298b023264bd89c0f28e97d8daceae0cea6dc4f8dcf88595238a6/botocore-1.29.65.tar.gz"
-    sha256 "6b7ae2dee621cb863935461ba4b8aa32420e945f5b7d94bb2852b79f90b9f8de"
+    url "https://files.pythonhosted.org/packages/db/31/720ac07bd096fdd24fbeb42111638b41fd220e618790b94ada77a6bd1f3e/botocore-1.29.69.tar.gz"
+    sha256 "7e1bebca013544fbc298cb58603bfccd5f71b49c720a5c33c07cf5dfc8145a1f"
   end
 
   resource "certifi" do
@@ -69,8 +69,8 @@ class Dstack < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/12/e3/c46c274cf466b24e5d44df5d5cd31a31ff23e57f074a2bb30931a8c9b01a/cryptography-39.0.0.tar.gz"
-    sha256 "f964c7dcf7802d133e8dbd1565914fa0194f9d683d82411989889ecd701e8adf"
+    url "https://files.pythonhosted.org/packages/6a/f5/a729774d087e50fffd1438b3877a91e9281294f985bda0fd15bf99016c78/cryptography-39.0.1.tar.gz"
+    sha256 "d1f6198ee6d9148405e49887803907fe8962a23e6c6f83ea7d98f1c0de375695"
   end
 
   resource "cursor" do
@@ -79,8 +79,8 @@ class Dstack < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/fb/ca/e336cae3818f843392ce9e1e6f8cfc4b8dbdc1c2fcf81b34f7e6255ea05f/fastapi-0.1.17.tar.gz"
-    sha256 "a9a9b6cc32c38bab27a6549b94c44a30c70b485bc789d03de3aa8725f3394be5"
+    url "https://files.pythonhosted.org/packages/dd/03/bf64108dfff38ed6d6201caca18bfeaf1edb3a8a2a4ab1702a7d092b3baf/fastapi-0.91.0.tar.gz"
+    sha256 "ff2fa93af3f2f982b07b5f96e8512565b3ef0e5f8f02469dbfd6bc27f6fd9a9e"
   end
 
   resource "git-url-parse" do
@@ -224,8 +224,8 @@ class Dstack < Formula
   end
 
   resource "SQLAlchemy" do
-    url "https://files.pythonhosted.org/packages/22/af/b7b5c4952923cade206d1c1809eeebfdec07096201d7473dd70faa5ffaa1/SQLAlchemy-2.0.2.tar.gz"
-    sha256 "e4d3cf5352f724237e27463de4bf19888235342af2efa37ef1cd391d8b702a16"
+    url "https://files.pythonhosted.org/packages/f1/e7/0152db23d667385d6be69d189de6a3c63d660096faa906b7fb013ee46b23/SQLAlchemy-2.0.3.tar.gz"
+    sha256 "c2b924f6d0162ed1c0d8f47db1e56498702b1c3c953ad84f0eefbf5b4e53bb05"
   end
 
   resource "starlette" do
