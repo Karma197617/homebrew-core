@@ -253,6 +253,13 @@ class Dstack < Formula
     sha256 "3f09e6d8230892547132177f575a4e3e73cfdf06526e20cc02aa1c3b47184d40"
   end
 
+  on_intel do
+    resource "greenlet" do
+      url "https://files.pythonhosted.org/packages/1e/1e/632e55a04d732c8184201238d911207682b119c35cecbb9a573a6c566731/greenlet-2.0.2.tar.gz"
+      sha256 "e7c8dc13af7db097bed64a051d2dd49e9f0af495c26995c00a9ee842690d34c0"
+    end
+  end
+
   def install
     virtualenv_install_with_resources
   end
