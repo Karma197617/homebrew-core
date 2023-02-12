@@ -63,7 +63,7 @@ class Openj9 < Formula
   end
 
   # From https://github.com/eclipse-openj9/openj9/blob/openj9-#{version}/doc/build-instructions/
-  # We use JDK 17 to bootstrap on Apple Silicon since there is no JDK 16 prebuilt.
+  # We use JDK 17 to bootstrap.
   resource "boot-jdk" do
     on_macos do
       on_arm do
@@ -71,26 +71,26 @@ class Openj9 < Formula
         sha256 "50e4c324e7ffcf18c2e3ea7b1bfa870672203dab3fe61520c09fb2bdbe81f2c0"
       end
       on_intel do
-        url "https://github.com/AdoptOpenJDK/semeru16-binaries/releases/download/jdk-16.0.2%2B7_openj9-0.27.0/ibm-semeru-open-jdk_x64_mac_16.0.2_7_openj9-0.27.0.tar.gz"
-        sha256 "89e807261145243a358a2a626f64340944c03622f34eaa35429053e2085d7aef"
+        url "https://github.com/AdoptOpenJDK/semeru17-binaries/releases/download/jdk-17.0.5%2B8_openj9-0.35.0/ibm-semeru-open-jdk_x64_mac_17.0.5_8_openj9-0.35.0.tar.gz"
+        sha256 "a8b5aefd73cfee2f46ece159728b3d22af10e841e4a7bb55aaef6dba3aa09e2c"
       end
     end
     on_linux do
-      url "https://github.com/AdoptOpenJDK/semeru16-binaries/releases/download/jdk-16.0.2%2B7_openj9-0.27.0/ibm-semeru-open-jdk_x64_linux_16.0.2_7_openj9-0.27.0.tar.gz"
-      sha256 "1349eb9a1d9af491a1984d66a80126730357c4a5c4fcbe7112a2c832f6c0886e"
+      url "https://github.com/AdoptOpenJDK/semeru17-binaries/releases/download/jdk-17.0.5%2B8_openj9-0.35.0/ibm-semeru-open-jdk_x64_linux_17.0.5_8_openj9-0.35.0.tar.gz"
+      sha256 "b46de9cd00af8a0223f4b50deb2627ab91fe515a69383a96fd2c12757cef24fe"
     end
   end
 
   resource "omr" do
     url "https://github.com/eclipse-openj9/openj9-omr.git",
         tag:      "openj9-0.36.1",
-        revision: "85a21674fdf30403b75c3000a4dc10605ca52ba2"
+        revision: "f491bbf6f6f3f87bfd38a65055589125c13de555"
   end
 
   resource "openj9-openjdk-jdk" do
     url "https://github.com/ibmruntimes/openj9-openjdk-jdk17.git",
-        tag:      "openj9-0.36.1",
-        revision: "32d2c409a3325231f58eed81de0f0f1a229b43d6"
+        tag:      "openj9-0.36.0",
+        revision: "927b34f84c8c5ff380df16f2df8dd84a44b8c79e"
   end
 
   def install
