@@ -3,8 +3,8 @@ class B2Tools < Formula
 
   desc "B2 Cloud Storage Command-Line Tools"
   homepage "https://github.com/Backblaze/B2_Command_Line_Tool"
-  url "https://files.pythonhosted.org/packages/06/9b/2f5e207a898458172e53ecddb5be8e6728a877441d7a300cd0f381424c43/b2-3.7.0.tar.gz"
-  sha256 "b16ea0699594877597fb4faa1d1950e20673294e1b2fc78f3cd296a3dadd17ce"
+  url "https://files.pythonhosted.org/packages/d6/64/ea8699244dfa15ddb1b92d93f386955a2d9f66a5c0fa28f95ea4b5445f96/b2-3.7.1.tar.gz"
+  sha256 "68b10511447576c3286159f5fe66ee180dddb4547dcb4a423fa964454720019f"
   license "MIT"
 
   bottle do
