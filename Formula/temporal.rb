@@ -19,7 +19,8 @@ class Temporal < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/temporal"
+    ldflags = "-s -w -X github.com/temporalio/cli/headers.Version=#{version}"
+    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/temporal"
   end
 
   test do
