@@ -7,11 +7,6 @@ class Woob < Formula
   sha256 "9d8b0ee0d3d357fc8a01e78b80a64b87c5cb0cc8c5ea8bb82f5831296f73dc6b"
   license "LGPL-3.0-or-later"
 
-  livecheck do
-    url "https://gitlab.com/woob/woob.git"
-    regex(/^v?(\d+(?:\.(?:\d+|[a-z])+))$/i)
-  end
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ce7386a9b8bb8e7724042873597c05f07e6e1f319cfc6b4a22882e70c993e2da"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "609d0c2b15339330c114973ecdc7f85f65b73755a448fc497de936d5abfd9950"
