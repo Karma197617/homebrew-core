@@ -93,23 +93,19 @@ class Logstash < Formula
   end
 
   test do
-    # workaround https://github.com/elastic/logstash/issues/6378
-    (testpath/"config").mkpath
-    ["jvm.options", "log4j2.properties", "startup.options"].each do |f|
-      cp prefix/"libexec/config/#{f}", testpath/"config"
-    end
-    (testpath/"config/logstash.yml").write <<~EOS
-      path.queue: #{testpath}/queue
+    (testpath/"simple.conf").write <<-EOS
+      input { stdin { type => stdin } }
+      output { stdout { codec => rubydebug } }
     EOS
+
     (testpath/"data").mkpath
     (testpath/"logs").mkpath
-    (testpath/"queue").mkpath
 
     data = "--path.data=#{testpath}/data"
     logs = "--path.logs=#{testpath}/logs"
-    settings = "--path.settings=#{testpath}/config"
 
-    output = pipe_output("#{bin}/logstash -e '' #{data} #{logs} #{settings} --log.level=fatal", "hello world\n")
+    output = pipe_output("#{bin}/logstash -e '' #{data} #{logs} " \
+                         "--log.level=fatal", "hello world\n")
     assert_match "hello world", output
   end
 end
