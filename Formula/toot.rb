@@ -3,8 +3,8 @@ class Toot < Formula
 
   desc "Mastodon CLI & TUI"
   homepage "https://toot.readthedocs.io/en/latest/index.html"
-  url "https://files.pythonhosted.org/packages/31/17/a5b0352ecb8ad8177377e08bd324fad11e9e94e882c8ade375b08704507e/toot-0.34.0.tar.gz"
-  sha256 "619c861e50950746673b107665997e325998276585c19a6dd42b86e1054328ce"
+  url "https://files.pythonhosted.org/packages/43/b3/4d31016f6a30d3c1720d6e5af6f02833d787e3912c82a6ea5e5002f1f5a4/toot-0.34.1.tar.gz"
+  sha256 "e44feff7c924111f42e0f49f93b4b9a306bc9a3c5531d0271d8e1555df5871ba"
   license "GPL-3.0-only"
   head "https://github.com/ihabunek/toot.git", branch: "master"
 
@@ -46,8 +46,8 @@ class Toot < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/f3/03/bac179d539362319b4779a00764e95f7542f4920084163db6b0fd4742d38/soupsieve-2.3.2.post1.tar.gz"
-    sha256 "fc53893b3da2c33de295667a0e19f078c14bf86544af307354de5fcf12a3f30d"
+    url "https://files.pythonhosted.org/packages/1b/cb/34933ebdd6bf6a77daaa0bd04318d61591452eb90ecca4def947e3cb2165/soupsieve-2.4.tar.gz"
+    sha256 "e28dba9ca6c7c00173e34e4ba57448f0688bb681b7c5e8bf4971daafc093d69a"
   end
 
   resource "urllib3" do
