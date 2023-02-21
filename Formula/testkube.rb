@@ -2,8 +2,8 @@ class Testkube < Formula
   desc "Kubernetes-native framework for test definition and execution"
   homepage "https://testkube.io"
   # testkube should only be updated every 5 releases on multiples of 5
-  url "https://github.com/kubeshop/testkube/archive/v1.9.10.tar.gz"
-  sha256 "357844cc0b8dea0dcf94b73da5f73c377042cc54a84775b33da65848c690f29b"
+  url "https://github.com/kubeshop/testkube/archive/v1.9.15.tar.gz"
+  sha256 "d7b3177c7360a7f2513fa2eda3ab8c1abc73fcec2a09d31ae43e54805a8b714c"
   license "MIT"
   head "https://github.com/kubeshop/testkube.git", branch: "main"
 
