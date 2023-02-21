@@ -1,8 +1,8 @@
 class Bcftools < Formula
   desc "Tools for BCF/VCF files and variant calling from samtools"
   homepage "https://www.htslib.org/"
-  url "https://github.com/samtools/bcftools/releases/download/1.16/bcftools-1.16.tar.bz2"
-  sha256 "90bf647c9ad79e10a243b8058c873de057fd7012e250d5ae6574839787a2ecd6"
+  url "https://github.com/samtools/bcftools/releases/download/1.17/bcftools-1.17.tar.bz2"
+  sha256 "01f75d8e701d85b2c759172412009cc04f29b61616ace2fa75116123de4596cc"
   # The bcftools source code is MIT/Expat-licensed, but when it is configured
   # with --enable-libgsl the resulting executable is GPL-licensed.
   license "GPL-3.0-or-later"
