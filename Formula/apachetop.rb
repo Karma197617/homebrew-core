@@ -1,13 +1,9 @@
 class Apachetop < Formula
   desc "Top-like display of Apache log"
-  homepage "https://web.archive.org/web/20170809160553/freecode.com/projects/apachetop"
-  url "https://deb.debian.org/debian/pool/main/a/apachetop/apachetop_0.19.7.orig.tar.gz"
-  sha256 "88abf58ee5d7882e4cc3fa2462865ebbf0e8f872fdcec5186abe16e7bff3d4a5"
+  homepage "https://github.com/tessus/apachetop"
+  url "https://github.com/tessus/apachetop/releases/download/0.23.2/apachetop-0.23.2.tar.gz"
+  sha256 "f94a34180808c3edb24c1779f72363246dd4143a89f579ef2ac168a45b04443f"
   license "BSD-3-Clause"
-
-  livecheck do
-    url "https://github.com/tessus/apachetop.git"
-  end
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "89f9013994449c4578521ac95055fa3961d181a42592f795bde318daf4b26fd9"
@@ -27,21 +23,20 @@ class Apachetop < Formula
   depends_on "pkg-config" => :build
   depends_on "adns"
   depends_on "ncurses"
-  depends_on "pcre"
+  depends_on "pcre2"
 
   on_linux do
     depends_on "readline"
   end
 
   def install
-    system "./autogen.sh"
-    system "./configure", "--prefix=#{prefix}",
+    ENV.append "CXX", "-std=gnu++17"
+
+    system "./configure", *std_configure_args,
                           "--mandir=#{man}",
-                          "--disable-debug",
-                          "--disable-dependency-tracking",
                           "--with-logfile=/var/log/apache2/access_log",
                           "--with-adns=#{Formula["adns"].opt_prefix}",
-                          "--with-pcre=#{Formula["pcre"].opt_prefix}"
+                          "--with-pcre2=#{Formula["pcre2"].opt_prefix}"
     system "make", "install"
   end
 
