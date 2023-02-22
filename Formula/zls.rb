@@ -7,7 +7,7 @@ class Zls < Formula
   license "MIT"
   head "https://github.com/zigtools/zls.git", branch: "master"
 
-  depends_on "zig" => :build
+  depends_on "zig"
 
   def install
     system "zig", "build"
