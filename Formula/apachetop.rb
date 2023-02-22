@@ -34,7 +34,7 @@ class Apachetop < Formula
 
     system "./configure", *std_configure_args,
                           "--mandir=#{man}",
-                          "--with-logfile=/var/log/apache2/access_log",
+                          "--with-logfile=#{var}/log/apache2/access_log",
                           "--with-adns=#{Formula["adns"].opt_prefix}",
                           "--with-pcre2=#{Formula["pcre2"].opt_prefix}"
     system "make", "install"
