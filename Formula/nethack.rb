@@ -3,9 +3,9 @@
 class Nethack < Formula
   desc "Single-player roguelike video game"
   homepage "https://www.nethack.org/"
-  url "https://www.nethack.org/download/3.6.6/nethack-366-src.tgz"
-  version "3.6.6"
-  sha256 "cfde0c3ab6dd7c22ae82e1e5a59ab80152304eb23fb06e3129439271e5643ed2"
+  url "https://www.nethack.org/download/3.6.7/nethack-367-src.tgz"
+  version "3.6.7"
+  sha256 "98cf67df6debf9668a61745aa84c09bcab362e5d33f5b944ec5155d44d2aacb2"
   license "NGPL"
   head "https://github.com/NetHack/NetHack.git", branch: "NetHack-3.7"
 
