@@ -5,6 +5,14 @@ class Bwidget < Formula
   sha256 "bfe0036374b84293d23620a7f6dda86571813d0c7adfed983c1f337e5ce81ae0"
   license "TCL"
 
+  # tcllib project contains many packages, i.e. bwidget, tcllib, tklib, and tclunit.
+  # Currently the default livecheck returns the latest version of tcllib, not bwidget.
+  # Adding this livecheck block to specifically check bwidget.
+  livecheck do
+    url :stable
+    regex(%r{url=.*?/bwidget[._-]v?(\d+(?:\.\d+)+)\.t}i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, all: "d3a68fa38b1fca601feaf9f7891b6fa611dfee8d68e7e83319e8864a5ac9a75d"
   end
