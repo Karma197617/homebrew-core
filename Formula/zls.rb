@@ -10,8 +10,17 @@ class Zls < Formula
   depends_on "zig"
 
   def install
-    system "zig", "build"
-    bin.install "zig-out/bin/zls"
+    # Fix illegal instruction errors when using bottles on older CPUs.
+    # https://github.com/Homebrew/homebrew-core/issues/92282
+    cpu = case Hardware.oldest_cpu
+    when :arm_vortex_tempest then "apple_m1" # See `zig targets`.
+    else Hardware.oldest_cpu
+    end
+
+    args = %W[--prefix #{prefix} -Drelease-fast=true]
+    args << "-Dcpu=#{cpu}" if build.bottle?
+
+    system "zig", "build", *args
   end
 
   test do
