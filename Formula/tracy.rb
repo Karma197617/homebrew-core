@@ -11,6 +11,10 @@ class Tracy < Formula
   depends_on "glfw"
   depends_on "tbb"
 
+  on_linux do
+    depends_on "dbus"
+  end
+
   fails_with gcc: "5" # C++17
 
   def install
