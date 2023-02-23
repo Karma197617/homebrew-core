@@ -7,12 +7,24 @@ class Mesa < Formula
   head "https://gitlab.freedesktop.org/mesa/mesa.git", branch: "main"
 
   stable do
-    url "https://mesa.freedesktop.org/archive/mesa-22.3.6.tar.xz"
-    sha256 "4ec8ec65dbdb1ee9444dba72970890128a19543a58cf05931bd6f54f124e117f"
+    url "https://mesa.freedesktop.org/archive/mesa-23.0.0.tar.xz"
+    sha256 "01f3cff3763f09e0adabcb8011e4aebc6ad48f6a4dd4bae904fe918707d253e4"
 
     patch do
       url "https://raw.githubusercontent.com/Homebrew/formula-patches/f0a40cf7d70ee5a25639b91d9a8088749a2dd04e/mesa/fix-build-on-macOS.patch"
       sha256 "a9b646e48d4e4228c3e06d8ca28f65e01e59afede91f58d4bd5a9c42a66b338d"
+    end
+
+    # patch for fbconfig ref, remove in next release
+    patch do
+      url "https://gitlab.freedesktop.org/mesa/mesa/-/commit/9ca5a81a6eab703c64bce66baef2e880339d6680.diff"
+      sha256 "ad7c3bbe2dc2f477c38f8d092cfa50071030f3775532be1e28f3edaa99e71b17"
+    end
+
+    # patch to disable dri2 interface
+    patch do
+      url "https://gitlab.freedesktop.org/mesa/mesa/-/commit/6cb68a2bd8e19baa1ca45d5a75610baa35641c1e.diff"
+      sha256 "5592da6668091691f307a5d9a1d87541e4e8282655244b78584c8c02eb6c2bfe"
     end
   end
 
