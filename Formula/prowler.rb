@@ -3,8 +3,8 @@ class Prowler < Formula
 
   desc "Open Source Security tool to perform Cloud Security best practices"
   homepage "https://prowler.pro/"
-  url "https://files.pythonhosted.org/packages/e4/6c/4a4c39ef21a5e109384821b2c01ec8d5f997b85e4659a9b7d7bfcf9008aa/prowler-3.2.1.tar.gz"
-  sha256 "6937c4162256d8cf190f3ae404381ac8774034dad754eb27605964809990e1ac"
+  url "https://files.pythonhosted.org/packages/32/0a/5ad5cd66e46905abf264e1fa1636466b9a236c458b135976af3f229c2994/prowler-3.2.2.tar.gz"
+  sha256 "d9f349dbed2d710dbb6309eed9f2635eabed84680fe03c8760d743260a1b6c0e"
   license "Apache-2.0"
 
   bottle do
@@ -85,13 +85,13 @@ class Prowler < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/0d/bf/642df2c3fc35290809f81a77a1a9b9c970cb4a153a4e4bcf9e8ae4255b13/boto3-1.26.75.tar.gz"
-    sha256 "702efaf333ddd9a1520283a22bd74b6c3a890ab38df5afcf4e821a2f3d707688"
+    url "https://files.pythonhosted.org/packages/e3/3f/d6c306834e79189cc7af84f097a27ba2568763a52edcc386c8375a6daba0/boto3-1.26.74.tar.gz"
+    sha256 "a3cf126d18194e5d350ec46f99f1fff15beacdf091d1979e8471681688e14ba1"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/88/d8/7ae59f07451146acf9f81978d7e855c9a0ff9ce3d1db1be1ec7f75fe0e2c/botocore-1.29.75.tar.gz"
-    sha256 "eef47ca90d02dbc92296208e24ac5e02bdf5cfa45f10d160fdc19612e141bce2"
+    url "https://files.pythonhosted.org/packages/32/98/3bb3b395b6bb6f3ae78c14e31b1ca73f56d429fe6f0904320ab780dd412f/botocore-1.29.74.tar.gz"
+    sha256 "bf1515908c8ffdffa249e112fd9bbb54d919ce8fb5ee88baf9c198dda6172fd5"
   end
 
   resource "certifi" do
@@ -120,8 +120,8 @@ class Prowler < Formula
   end
 
   resource "colorama" do
-    url "https://files.pythonhosted.org/packages/d8/53/6f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4/colorama-0.4.6.tar.gz"
-    sha256 "08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"
+    url "https://files.pythonhosted.org/packages/2b/65/24d033a9325ce42ccbfa3ca2d0866c7e89cc68e5b9d92ecaba9feef631df/colorama-0.4.5.tar.gz"
+    sha256 "e6c6b4334fc50988a639d9b98aa429a0b57da6e17b9a44f0451f930b6967b7a4"
   end
 
   resource "contextlib2" do
@@ -195,8 +195,8 @@ class Prowler < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/fd/8f/3f7e88b507dbdfec8f1f914294aa8831edffb03d668799c65b4b46331c8a/pydantic-1.9.2.tar.gz"
-    sha256 "8cb0bc509bfb71305d7a59d00163d5f9fc4530f0881ea32c74ff4f74c85f3d3d"
+    url "https://files.pythonhosted.org/packages/28/59/5d2fc3499d9ce8ce48ee7e00f043d5cc429a9198bd96c3512809428ade15/pydantic-1.10.5.tar.gz"
+    sha256 "9e337ac83686645a46db0e825acceea8e02fca4062483f40e9ae178e8bd1103a"
   end
 
   resource "PyJWT" do
