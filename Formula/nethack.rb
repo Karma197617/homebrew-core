@@ -40,6 +40,7 @@ class Nethack < Formula
   def install
     # Build everything in-order; no multi builds.
     ENV.deparallelize
+    # see https://github.com/Homebrew/brew/issues/14763.
     ENV.O0
 
     cd "sys/unix" do
