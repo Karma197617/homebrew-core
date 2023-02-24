@@ -38,8 +38,7 @@ class Cayley < Formula
         -X github.com/cayleygraph/cayley/version.GitHash=#{Utils.git_short_head}
       ]
 
-      # Build the binary
-      system "go", "build", "-o", bin/"cayley", "-ldflags", ldflags.join(" "), "./cmd/cayley"
+      system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/cayley"
 
       inreplace "cayley_example.yml", "./cayley.db", var/"cayley/cayley.db"
       etc.install "cayley_example.yml" => "cayley.yml"
