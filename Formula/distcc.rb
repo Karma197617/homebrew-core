@@ -35,9 +35,6 @@ class Distcc < Formula
   def install
     ENV["PYTHON"] = python3 = which("python3.11")
     site_packages = prefix/Language::Python.site_packages(python3)
-    # Use Python stdlib's distutils to work around install issue:
-    # /opt/homebrew/Cellar/distcc/3.4_1/lib/python3.11/site-packages/ does NOT support .pth files
-    ENV["SETUPTOOLS_USE_DISTUTILS"] = "stdlib"
 
     # While libiberty recommends that packages vendor libiberty into their own source,
     # distcc wants to have a package manager-installed version.
