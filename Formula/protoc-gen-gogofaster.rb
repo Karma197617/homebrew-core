@@ -23,7 +23,7 @@ class ProtocGenGogofaster < Formula
   depends_on "protobuf"
 
   def install
-    system "go", "build", *std_go_args, "-ldflags", "-s -w", "./protoc-gen-gogofaster"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./protoc-gen-gogofaster"
   end
 
   test do
