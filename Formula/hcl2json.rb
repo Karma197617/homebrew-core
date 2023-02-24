@@ -19,11 +19,12 @@ class Hcl2json < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args
+    system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do
-    test_hcl = <<~HCL
+    test_hcl = testpath/"test.hcl"
+    test_hcl.write <<~HCL
       resource "my_resource_type" "test_resource" {
         input = "magic_test_value"
       }
@@ -41,7 +42,7 @@ class Hcl2json < Formula
       },
     }.to_json
 
-    assert_equal test_json, pipe_output("#{bin}/hcl2json", test_hcl).gsub(/\s+/, "")
-    assert_match "Failed to convert", pipe_output("#{bin}/hcl2json 2>&1", "Hello, Homebrew!", 1)
+    assert_equal test_json, shell_output("#{bin}/hcl2json #{test_hcl}").gsub(/\s+/, "")
+    assert_match "Failed to open brewtest", shell_output("#{bin}/hcl2json brewtest 2>&1", 1)
   end
 end
