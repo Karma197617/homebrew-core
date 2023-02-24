@@ -29,9 +29,8 @@ class Rke < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", "-ldflags",
-            "-w -X main.VERSION=v#{version}",
-            "-o", bin/"rke"
+    ldflags = "-s -w -X main.VERSION=v#{version}"
+    system "go", "build", *std_go_args(ldflags: ldflags)
   end
 
   test do
