@@ -31,10 +31,15 @@ class Nethack < Formula
   uses_from_macos "flex" => :build
   uses_from_macos "ncurses"
 
-  def install
-    ENV.deparallelize
+  # add macos patch, upstream PR ref, https://github.com/NetHack/NetHack/pull/988
+  patch do
+    url "https://github.com/NetHack/NetHack/commit/79cf1e902483c070b209b55059159da5f2120b97.patch?full_index=1"
+    sha256 "5daf984512d9c512818e0376cf2b57a5cd9eefaa626ea286bfd70d899995b5de"
+  end
 
-    # Fixes https://github.com/NetHack/NetHack/issues/274
+  def install
+    # Build everything in-order; no multi builds.
+    ENV.deparallelize
     ENV.O0
 
     cd "sys/unix" do
