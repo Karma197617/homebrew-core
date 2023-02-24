@@ -38,7 +38,7 @@ class Terraform < Formula
     # https://github.com/hashicorp/terraform/issues/26532#issuecomment-720570774
     ENV["CGO_ENABLED"] = "1"
 
-    system "go", "build", *std_go_args, "-ldflags", "-s -w"
+    system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do
