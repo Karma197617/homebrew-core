@@ -19,7 +19,7 @@ class Tflint < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", "-ldflags", "-s -w", "-o", bin/"tflint"
+    system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do
