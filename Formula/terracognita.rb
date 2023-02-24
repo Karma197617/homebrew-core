@@ -20,8 +20,8 @@ class Terracognita < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-X github.com/cycloidio/terracognita/cmd.Version=v#{version}"
-    system "go", "build", *std_go_args, "-ldflags", ldflags
+    ldflags = "-s -w -X github.com/cycloidio/terracognita/cmd.Version=v#{version}"
+    system "go", "build", *std_go_args(ldflags: ldflags)
   end
 
   test do
