@@ -37,7 +37,8 @@ class Ola < Formula
   end
 
   def install
-    # https://github.com/protocolbuffers/protobuf/issues/9947
+    # https://github.com/Homebrew/homebrew-core/pull/123791
+    # remove when the above PR is merged
     ENV.append_to_cflags "-DNDEBUG"
 
     args = %W[
