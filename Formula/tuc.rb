@@ -1,8 +1,8 @@
 class Tuc < Formula
   desc "Text manipulation and cutting tool"
   homepage "https://github.com/riquito/tuc"
-  url "https://github.com/riquito/tuc/archive/refs/tags/v0.11.0.tar.gz"
-  sha256 "e8208e0cb92bd17b36e1d43f0ea9d45f4573222fa40ca576775b4ebbb6442adf"
+  url "https://github.com/riquito/tuc/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "47848b23268c5d22efcc9f7f6a6da73f27483b336005c2ace350bff575e51d67"
   license "GPL-3.0-or-later"
   head "https://github.com/riquito/tuc.git", branch: "master"
 
