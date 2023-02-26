@@ -32,12 +32,6 @@ class Ola < Formula
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
 
-  # remove in version 0.10.9
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/add0354bf13253a4cc89e151438a630314df0efa/ola/protobuf3.diff"
-    sha256 "e06ffef1610c3b09807212d113138dae8bdc7fc8400843c25c396fa486594ebf"
-  end
-
   def python3
     "python3.11"
   end
