@@ -1,9 +1,8 @@
 class Watchman < Formula
   desc "Watch files and take action when they change"
   homepage "https://github.com/facebook/watchman"
-  # TODO: Remove `inreplace` at version bump.
-  url "https://github.com/facebook/watchman/archive/v2023.02.20.00.tar.gz"
-  sha256 "b192a36ca1be43e70d32cb189988c3f801326f344fd160ba439e6a953e49e398"
+  url "https://github.com/facebook/watchman/archive/v2023.02.27.00.tar.gz"
+  sha256 "e03fbcdcba1240bc5d62785edc4bc6dadaf6e81616832a8cc787743ae593bb2c"
   license "MIT"
   head "https://github.com/facebook/watchman.git", branch: "main"
 
@@ -44,11 +43,6 @@ class Watchman < Formula
     inreplace "CMakeLists.txt",
               /gtest_discover_tests\((.*)\)/,
               "gtest_discover_tests(\\1 DISCOVERY_TIMEOUT 30)"
-
-    # Workaround for build failure. Reported at:
-    # https://github.com/facebook/watchman/issues/1099
-    # Remove in next release.
-    inreplace "watchman/cli/Cargo.toml", 'default = ["fb"]', "default = []" if build.stable?
 
     # NOTE: Setting `BUILD_SHARED_LIBS=ON` will generate DSOs for Eden libraries.
     #       These libraries are not part of any install targets and have the wrong
