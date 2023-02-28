@@ -1,8 +1,8 @@
 class Conmon < Formula
   desc "OCI container runtime monitor"
   homepage "https://github.com/containers/conmon"
-  url "https://github.com/containers/conmon/archive/refs/tags/v2.1.6.tar.gz"
-  sha256 "340453f7aac43e6a1f9a5efe31f24471f8a7a997a849ad6d1ff3fb530a9e2874"
+  url "https://github.com/containers/conmon/archive/refs/tags/v2.1.7.tar.gz"
+  sha256 "7d0f9a2f7cb8a76c51990128ac837aaf0cc89950b6ef9972e94417aa9cf901fe"
   license "Apache-2.0"
 
   bottle do
