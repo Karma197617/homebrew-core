@@ -41,8 +41,9 @@ class Ispc < Formula
       -DISPC_INCLUDE_TESTS=OFF
       -DISPC_INCLUDE_UTILS=OFF
       -DLLVM_TOOLS_BINARY_DIR=#{llvm.opt_bin}
-      -DISPC_NO_DUMPS=ON
     ]
+    # We can target ARM for free on macOS, so let's use the upstream default there.
+    args << "-DARM_ENABLED=OFF" if OS.linux? && Hardware::CPU.intel?
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
