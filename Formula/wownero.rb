@@ -33,10 +33,12 @@ class Wownero < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "miniupnpc" => :build
   depends_on "pkg-config" => :build
   depends_on "boost"
   depends_on "hidapi"
   depends_on "libsodium"
+  depends_on "libusb"
   depends_on "openssl@1.1"
   depends_on "protobuf"
   depends_on "readline"
@@ -45,22 +47,18 @@ class Wownero < Formula
 
   conflicts_with "monero", because: "both install a wallet2_api.h header"
 
-  # patch build issue (missing includes)
-  # remove when wownero syncs fixes from monero
-  patch do
-    url "https://github.com/monero-project/monero/commit/96677fffcd436c5c108718b85419c5dbf5da9df2.patch?full_index=1"
-    sha256 "e39914d425b974bcd548a3aeefae954ab2f39d832927ffb97a1fbd7ea03316e0"
-  end
-
   def install
+    args = std_cmake_args
+
     # Need to help CMake find `readline` when not using /usr/local prefix
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DReadline_ROOT_DIR=#{Formula["readline"].opt_prefix}"
+    args << "-DReadline_ROOT_DIR=#{Formula["readline"].opt_prefix}"
+
+    # Build a portable binary (don't set -march=native)
+    args << "-DARCH=default"
+
+    system "cmake", "-S", ".", "-B", "build", *args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-
-    # Fix conflict with miniupnpc.
-    # This has been reported at https://github.com/monero-project/monero/issues/3862
-    (lib/"libminiupnpc.a").unlink
   end
 
   service do
