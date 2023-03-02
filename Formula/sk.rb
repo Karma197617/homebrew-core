@@ -1,8 +1,8 @@
 class Sk < Formula
   desc "Fuzzy Finder in rust!"
   homepage "https://github.com/lotabout/skim"
-  url "https://github.com/lotabout/skim/archive/v0.10.2.tar.gz"
-  sha256 "a46b670848b9b083cd45cd1db36387efc73f856972531d9f156988e83a0c3c07"
+  url "https://github.com/lotabout/skim/archive/v0.10.4.tar.gz"
+  sha256 "eb5609842ad7c19b1267e77682ee5ae11aa8e84e46c27d9d198cc22d00c5e924"
   license "MIT"
   head "https://github.com/lotabout/skim.git", branch: "master"
 
