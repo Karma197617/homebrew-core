@@ -4,8 +4,8 @@ class Strongswan < Formula
   license "GPL-2.0-or-later"
 
   stable do
-    url "https://download.strongswan.org/strongswan-5.9.9.tar.bz2"
-    sha256 "5e16580998834658c17cebfb31dd637e728669cf2fdd325460234a4643b8d81d"
+    url "https://download.strongswan.org/strongswan-5.9.10.tar.bz2"
+    sha256 "3b72789e243c9fa6f0a01ccaf4f83766eba96a5e5b1e071d36e997572cf34654"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
