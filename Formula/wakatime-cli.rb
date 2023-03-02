@@ -2,8 +2,8 @@ class WakatimeCli < Formula
   desc "Command-line interface to the WakaTime api"
   homepage "https://wakatime.com/"
   url "https://github.com/wakatime/wakatime-cli.git",
-    tag:      "v1.68.1",
-    revision: "0369af52cb8a5e806ef14fc7f3d08f54ef41e279"
+    tag:      "v1.68.3",
+    revision: "6b995f090d4458221b9b383833f3b02f9427604d"
   license "BSD-3-Clause"
   version_scheme 1
 
