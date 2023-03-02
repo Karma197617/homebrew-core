@@ -27,7 +27,7 @@ class Rocksdb < Formula
 
   fails_with :gcc do
     version "6"
-    cause "Requires C++17 compatible compiler. See https://github.com/facebook/rocksdb/issues/9388"
+    cause "Requires C++17 compatible compiler."
   end
 
   def install
