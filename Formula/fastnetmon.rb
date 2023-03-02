@@ -31,29 +31,9 @@ class Fastnetmon < Formula
     depends_on "elfutils"
     depends_on "libbpf"
     depends_on "libpcap"
-
-    patch do
-      url "https://github.com/pavel-odintsov/fastnetmon/commit/c48497a6f109fc1a9f5da596b055c3b7cffb96d4.patch?full_index=1"
-      sha256 "2e3eabf7727e12d2f1d57f1db84d1272468abd67989cc8d9a8624035c36aa8c8"
-    end
-    patch do
-      url "https://github.com/pavel-odintsov/fastnetmon/commit/c718e88d0b25dcfbd724e9820f592fd5782eca6c.patch?full_index=1"
-      sha256 "bd7e7e1de406b0918a192dcc8a058e82bee4195c3f00157902f0c998f9b3d0e2"
-    end
-    patch do
-      url "https://github.com/pavel-odintsov/fastnetmon/commit/3b912332801c85dd5840cedb6bb248a339056187.patch?full_index=1"
-      sha256 "bbdbfed272efcd05959479636857c89721379ec5585f5e5ff8a1523e1b32ee1d"
-    end
   end
 
   fails_with gcc: "5"
-
-  # patch macOS build, remove in next release
-  # upstream PR ref, https://github.com/pavel-odintsov/fastnetmon/pull/950
-  patch do
-    url "https://github.com/pavel-odintsov/fastnetmon/commit/b3895208c9aab27881c97e1181e7622ea3ea84b0.patch?full_index=1"
-    sha256 "8ee473b8b44765af6ad5bb9e9ffec7cb6b47bec196fb96de12f21bf890f778a1"
-  end
 
   def install
     system "cmake", "-S", "src", "-B", "build",
