@@ -1,10 +1,6 @@
-# Please don't update this formula until the release is official via
-# mailing list or blog post. There's a history of GitHub tags moving around.
-# https://github.com/hashicorp/vault/issues/1051
 class Vault < Formula
   desc "Secures, stores, and tightly controls access to secrets"
   homepage "https://vaultproject.io/"
-  # TODO: Migrate to `python@3.11` in v1.13
   url "https://github.com/hashicorp/vault.git",
       tag:      "v1.13.0",
       revision: "a4cf0dc4437de35fce4860857b64569d092a9b5a"
@@ -29,7 +25,7 @@ class Vault < Formula
   depends_on "go" => :build
   depends_on "gox" => :build
   depends_on "node@18" => :build
-  depends_on "python@3.10" => :build # TODO: Migrate to `python@3.11` in v1.13
+  depends_on "python@3.11" => :build
   depends_on "yarn" => :build
 
   def install
