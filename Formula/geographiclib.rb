@@ -1,9 +1,10 @@
 class Geographiclib < Formula
   desc "C++ geography library"
   homepage "https://geographiclib.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/geographiclib/distrib-C++/GeographicLib-2.1.2.tar.gz"
-  sha256 "b062b472dae3d371b3005f4ea2fc59af687b8ea76eb23df732ec11c500fba959"
+  url "https://github.com/geographiclib/geographiclib/archive/refs/tags/v2.1.2.tar.gz"
+  sha256 "6833c4b33b2aa37b0c4c9fe1b36f958b44afafaafd1b16d7742d80c5e7737777"
   license "MIT"
+  head "https://github.com/geographiclib/geographiclib.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "10cf6efab39f38c196766b1834ae4f38fa0e5a95cebe8d55c8948619e39635cb"
@@ -18,13 +19,11 @@ class Geographiclib < Formula
   depends_on "cmake" => :build
 
   def install
-    mkdir "build" do
-      args = std_cmake_args
-      args << "-DCMAKE_OSX_SYSROOT=#{MacOS.sdk_path}" if OS.mac?
-      args << "-DEXAMPLEDIR="
-      system "cmake", "..", *args
-      system "make", "install"
-    end
+    args = "-DEXAMPLEDIR="
+    args << "-DCMAKE_OSX_SYSROOT=#{MacOS.sdk_path}" if OS.mac?
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
