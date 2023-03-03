@@ -25,10 +25,6 @@ class Odin < Formula
   def install
     llvm = deps.map(&:to_formula).find { |f| f.name.match?(/^llvm(@\d+(\.\d+)*)?$/) }
 
-    # Keep version number consistent and reproducible for tagged releases.
-    # Issue ref: https://github.com/odin-lang/Odin/issues/1772
-    inreplace "build_odin.sh", "dev-$(date +\"%Y-%m\")", "dev-#{version}" unless build.head?
-
     system "make", "release"
     libexec.install "odin", "core", "shared"
     (bin/"odin").write <<~EOS
