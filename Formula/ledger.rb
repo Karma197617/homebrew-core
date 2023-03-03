@@ -1,10 +1,9 @@
 class Ledger < Formula
   desc "Command-line, double-entry accounting tool"
   homepage "https://ledger-cli.org/"
-  url "https://github.com/ledger/ledger/archive/v3.3.0.tar.gz"
-  sha256 "42307121666b5195a122857ec572e554b77ecf6b12c53e716756c9dae20dc7c1"
+  url "https://github.com/ledger/ledger/archive/v3.3.1.tar.gz"
+  sha256 "c18341020552fa221203afdf0c0eade1bfa9aa4b7e1ab82a0e456c06b56d1ce4"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/ledger/ledger.git", branch: "master"
 
   livecheck do
