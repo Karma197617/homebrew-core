@@ -1,10 +1,10 @@
 class Kubescape < Formula
   desc "Kubernetes testing according to Hardening Guidance by NSA and CISA"
-  homepage "https://github.com/armosec/kubescape"
-  url "https://github.com/armosec/kubescape/archive/v2.0.161.tar.gz"
-  sha256 "165222d24db46b70a664fd70e8918f478c39c05ef30bbcbfb57c05307d88ce6a"
+  homepage "https://github.com/kubescape/kubescape"
+  url "https://github.com/kubescape/kubescape/archive/refs/tags/v2.2.3.tar.gz"
+  sha256 "3b81836f850e02fd0a2b4918ed398e14ab324885486a4d374cb7069a5fbb0502"
   license "Apache-2.0"
-  head "https://github.com/armosec/kubescape.git", branch: "master"
+  head "https://github.com/kubescape/kubescape.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_monterey: "69ef7dc344edda8dc0cf2cebdf86169a63675fd0fbe08c9e57707add42839a3a"
@@ -15,16 +15,12 @@ class Kubescape < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a8f380152c0c592450d46da3f3731853a452de6fe0a2fe824212465711ff6a9d"
   end
 
-  # Kubescape has been disabled since it fails to build with libgit2 upstream
-  # https://github.com/Homebrew/homebrew-core/pull/106523
-  disable! date: "2022-08-11", because: :does_not_build
-
   depends_on "go" => :build
 
   def install
     ldflags = %W[
       -s -w
-      -X github.com/armosec/kubescape/v2/core/cautils.BuildNumber=v#{version}
+      -X github.com/kubescape/kubescape/v2/core/cautils.BuildNumber=v#{version}
     ]
 
     system "go", "build", *std_go_args(ldflags: ldflags)
