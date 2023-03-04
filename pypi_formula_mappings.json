@@ -368,6 +368,9 @@
   "liquidctl": {
     "exclude_packages": ["pillow"]
   },
+  "litani": {
+    "exclude_packages": ["PyYAML"]
+  },
   "litecli": {
     "exclude_packages": ["six", "tabulate", "Pygments"]
   },
