@@ -18,8 +18,7 @@ class Cpr < Formula
   end
 
   depends_on "cmake" => :build
-
-  uses_from_macos "curl"
+  depends_on "curl"
 
   on_linux do
     depends_on "openssl@3"
