@@ -16,12 +16,10 @@ class Railway < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "bce8a96cfa75c3c5e15a9ec2df3d2695b1fa20df38e5fe1864d1ef5555c0c206"
   end
 
-  depends_on "go" => :build
+  depends_on "rust" => :build
 
   def install
-    ENV["CGO_ENABLED"] = "0"
-    ldflags = "-s -w -X github.com/railwayapp/cli/constants.Version=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags)
+    system "cargo", "install", *std_cargo_args
 
     # Install shell completions
     generate_completions_from_executable(bin/"railway", "completion")
@@ -29,6 +27,8 @@ class Railway < Formula
 
   test do
     output = shell_output("#{bin}/railway init 2>&1", 1)
-    assert_match "Account required to init project", output
+    assert_match "Error: Unauthorized. Please login with `railway login`", output
+
+    assert_equal "railwayapp #{version}", shell_output("#{bin}/railway --version").chomp
   end
 end
