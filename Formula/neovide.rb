@@ -4,6 +4,7 @@ class Neovide < Formula
   url "https://github.com/neovide/neovide/archive/tags/0.10.3.tar.gz"
   sha256 "ea5a78caa7b87036950e4124e49e50f17b83677a29c251ffbbdc942a6768f022"
   license "MIT"
+  revision 1
   head "https://github.com/neovide/neovide.git", branch: "main"
 
   bottle do
