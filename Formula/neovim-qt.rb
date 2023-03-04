@@ -4,6 +4,7 @@ class NeovimQt < Formula
   url "https://github.com/equalsraf/neovim-qt/archive/v0.2.17.tar.gz"
   sha256 "ac538c2e5d63572dd0543c13fafb4d428e67128ea676467fcda68965b2aacda1"
   license "ISC"
+  revision 1
   head "https://github.com/equalsraf/neovim-qt.git", branch: "master"
 
   bottle do
