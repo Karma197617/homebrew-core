@@ -4,6 +4,7 @@ class Groonga < Formula
   url "https://packages.groonga.org/source/groonga/groonga-13.0.0.tar.gz"
   sha256 "5c59bec3eb04eb77051b956ddde3411d3be25175cd39a4f952ff46596ca14632"
   license "LGPL-2.1-or-later"
+  revision 1
 
   livecheck do
     url :homepage
