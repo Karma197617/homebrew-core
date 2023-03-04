@@ -4,6 +4,7 @@ class Page < Formula
   url "https://github.com/I60R/page/archive/v4.6.3.tar.gz"
   sha256 "51cf01933180499b27027fcdbda067f0cf80cebaa06d62400b655419f1806d46"
   license "MIT"
+  revision 1
   head "https://github.com/I60R/page.git", branch: "master"
 
   bottle do
