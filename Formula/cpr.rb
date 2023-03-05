@@ -18,7 +18,7 @@ class Cpr < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "curl"
+  uses_from_macos "curl", since: :monterey # Curl 7.68+
 
   on_linux do
     depends_on "openssl@3"
@@ -57,8 +57,11 @@ class Cpr < Formula
       }
     EOS
 
-    system ENV.cxx, "-I#{Formula["curl"].opt_include}", "test.cpp", "-std=c++17",
-                    "-I#{include}", "-L#{lib}", "-lcpr", "-o", testpath/"test"
+    curl_include = if MacOS.version <= :big_sur
+      "-I#{Formula["curl"].opt_include}"
+    end
+    system ENV.cxx, curl_include, "test.cpp", "-std=c++17", "-I#{include}", 
+                    "-L#{lib}", "-lcpr", "-o", testpath/"test"
     assert_match "200", shell_output("./test")
   end
 end
