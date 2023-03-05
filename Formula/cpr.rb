@@ -33,6 +33,7 @@ class Cpr < Formula
       -DCMAKE_INSTALL_RPATH=#{rpath}
     ] + std_cmake_args
 
+    ENV.append_to_cflags "-Wno-error=deprecated-declarations"
     system "cmake", "-S", ".", "-B", "build-shared", "-DBUILD_SHARED_LIBS=ON", *args
     system "cmake", "--build", "build-shared"
     system "cmake", "--install", "build-shared"
@@ -45,6 +46,7 @@ class Cpr < Formula
   test do
     (testpath/"test.cpp").write <<~EOS
       #include <iostream>
+      #include <curl/curl.h>
       #include <cpr/cpr.h>
 
       int main(int argc, char** argv) {
@@ -55,8 +57,8 @@ class Cpr < Formula
       }
     EOS
 
-    system ENV.cxx, "test.cpp", "-std=c++17", "-I#{include}", "-L#{lib}",
-                    "-lcpr", "-o", testpath/"test"
+    system ENV.cxx, "-I#{Formula["curl"].opt_include}", "test.cpp", "-std=c++17",
+                    "-I#{include}", "-L#{lib}", "-lcpr", "-o", testpath/"test"
     assert_match "200", shell_output("./test")
   end
 end
