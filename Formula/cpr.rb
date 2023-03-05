@@ -57,11 +57,14 @@ class Cpr < Formula
       }
     EOS
 
-    curl_include = if MacOS.version <= :big_sur
-      "-I#{Formula["curl"].opt_include}"
-    end
-    system ENV.cxx, curl_include, "test.cpp", "-std=c++17", "-I#{include}", 
-                    "-L#{lib}", "-lcpr", "-o", testpath/"test"
+    args = %W[
+      -I#{include}
+      -L#{lib}
+      -lcpr
+    ]
+    args << "-I#{Formula["curl"].opt_include}" if MacOS.version <= :big_sur
+
+    system ENV.cxx, "test.cpp", "-std=c++17", *args "-o", testpath/"test"
     assert_match "200", shell_output("./test")
   end
 end
