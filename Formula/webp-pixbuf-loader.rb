@@ -1,8 +1,8 @@
 class WebpPixbufLoader < Formula
   desc "WebP Image format GdkPixbuf loader"
   homepage "https://github.com/aruiz/webp-pixbuf-loader"
-  url "https://github.com/aruiz/webp-pixbuf-loader/archive/0.2.1.tar.gz"
-  sha256 "da967d3984e836cede32bb4f64413116889950d98e7804ac75597b62532e11c4"
+  url "https://github.com/aruiz/webp-pixbuf-loader/archive/0.2.2.tar.gz"
+  sha256 "a5515697f0703c85fd1651e2b0df3caa5ae4cbfb3393e84a229cd61b91905f76"
   license "LGPL-2.0-or-later"
   head "https://github.com/aruiz/webp-pixbuf-loader.git", branch: "mainline"
 
