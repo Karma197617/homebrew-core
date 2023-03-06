@@ -19,6 +19,8 @@ class Weaver < Formula
 
   uses_from_macos "swift"
 
+  conflicts_with "service-weaver", because: "both install a `weaver` binary"
+
   def install
     system "make", "install", "PREFIX=#{prefix}"
   end
