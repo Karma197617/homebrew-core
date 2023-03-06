@@ -1,8 +1,8 @@
 class Libhdhomerun < Formula
   desc "C library for controlling SiliconDust HDHomeRun TV tuners"
   homepage "https://www.silicondust.com/support/linux/"
-  url "https://download.silicondust.com/hdhomerun/libhdhomerun_20221205.tgz"
-  sha256 "29eb09ca528abf45d3feed512a847b98cdfff89609f133855a8dc6cecb8b62f9"
+  url "https://download.silicondust.com/hdhomerun/libhdhomerun_20230303.tgz"
+  sha256 "7e872558f42818b1cd2f0ba0a0c6613315c4656b484fd2906d0b8f3ce7e0711a"
   license "LGPL-2.1-or-later"
 
   livecheck do
