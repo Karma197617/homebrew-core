@@ -44,7 +44,7 @@ class Testkube < Formula
 
   test do
     output = shell_output("#{bin}/kubectl-testkube get tests 2>&1", 1)
-    assert_match("unknown context type", output)
+    assert_match("no configuration has been provided", output)
 
     output = shell_output("#{bin}/kubectl-testkube help")
     assert_match("Testkube entrypoint for kubectl plugin", output)
