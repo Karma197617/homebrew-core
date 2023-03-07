@@ -2,8 +2,8 @@ class V8 < Formula
   desc "Google's JavaScript engine"
   homepage "https://github.com/v8/v8/wiki"
   # Track V8 version from Chrome stable: https://omahaproxy.appspot.com
-  url "https://github.com/v8/v8/archive/11.0.226.16.tar.gz"
-  sha256 "c6754d01161722875c4d02a2566a237d022754a1ad95331915d93883320d4284"
+  url "https://github.com/v8/v8/archive/11.1.277.13.tar.gz"
+  sha256 "a4d419c43decb7fb3ab815d8133b67a4b331ad444766add50df1f37022272f38"
   license "BSD-3-Clause"
 
   livecheck do
@@ -37,20 +37,20 @@ class V8 < Formula
   fails_with gcc: "5"
 
   # Look up the correct resource revisions in the DEP file of the specific releases tag
-  # e.g. for CIPD dependency gn: https://chromium.googlesource.com/v8/v8.git/+/refs/tags/11.0.226.13/DEPS#56
+  # e.g. for CIPD dependency gn: https://chromium.googlesource.com/v8/v8.git/+/refs/tags/11.1.277.13/DEPS#59
   resource "gn" do
     url "https://gn.googlesource.com/gn.git",
-        revision: "70d6c60823c0233a0f35eccc25b2b640d2980bdc"
+        revision: "5e19d2fb166fbd4f6f32147fbb2f497091a54ad8"
   end
 
   resource "v8/base/trace_event/common" do
     url "https://chromium.googlesource.com/chromium/src/base/trace_event/common.git",
-        revision: "521ac34ebd795939c7e16b37d9d3ddb40e8ed556"
+        revision: "68e6038b5350cba18c341cc7c572170af5c5b20c"
   end
 
   resource "v8/build" do
     url "https://chromium.googlesource.com/chromium/src/build.git",
-        revision: "3d4b0c1e773d659da18710fc4984b8195f6d5aea"
+        revision: "3ed59a96db823534faa93dbedce1891bef3e1ad5"
   end
 
   resource "v8/third_party/googletest/src" do
@@ -60,12 +60,12 @@ class V8 < Formula
 
   resource "v8/third_party/icu" do
     url "https://chromium.googlesource.com/chromium/deps/icu.git",
-        revision: "1b7d391f0528fb3a4976b7541b387ee04f915f83"
+        revision: "2c51e5cc7e0a06cd4cd7cb2ddbac445af9b475ba"
   end
 
   resource "v8/third_party/jinja2" do
     url "https://chromium.googlesource.com/chromium/src/third_party/jinja2.git",
-        revision: "4633bf431193690c3491244f5a0acbe9ac776233"
+        revision: "264c07d7e64f2874434a3b8039e101ddf1b01e7e"
   end
 
   resource "v8/third_party/markupsafe" do
@@ -75,7 +75,7 @@ class V8 < Formula
 
   resource "v8/third_party/zlib" do
     url "https://chromium.googlesource.com/chromium/src/third_party/zlib.git",
-        revision: "18d27fa10b237fdfcbd8f0c65c19fe009981a3bc"
+        revision: "dca2b915e29ee8d0bb25cd44a84b32e67c8cabd0"
   end
 
   def install
