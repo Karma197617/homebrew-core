@@ -1,14 +1,10 @@
 class Halide < Formula
   desc "Language for fast, portable data-parallel computation"
   homepage "https://halide-lang.org"
+  url "https://github.com/halide/Halide/archive/v15.0.0.tar.gz"
+  sha256 "6680424f80c5731a85d977c06327096afe5af31da3667e91d4d36a25fabdda15"
   license "MIT"
-
-  # Remove `stable` when we switch to `llvm`.
-  stable do
-    url "https://github.com/halide/Halide/archive/v15.0.0.tar.gz"
-    sha256 "6680424f80c5731a85d977c06327096afe5af31da3667e91d4d36a25fabdda15"
-    depends_on "llvm@14"
-  end
+  head "https://github.com/halide/Halide.git", branch: "main"
 
   livecheck do
     url :stable
@@ -27,15 +23,11 @@ class Halide < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "73d56ba4ab967050852357cb08f1625e9956134aeeb86abdd070c02bf1d27469"
   end
 
-  head do
-    url "https://github.com/halide/Halide.git", branch: "main"
-    depends_on "llvm"
-  end
-
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
   depends_on "jpeg-turbo"
   depends_on "libpng"
+  depends_on "llvm"
   depends_on "python@3.11"
 
   fails_with :gcc do
@@ -63,7 +55,7 @@ class Halide < Formula
     system ENV.cxx, "-std=c++17", "lesson_01_basics.cpp", "-L#{lib}", "-lHalide", "-o", "test"
     assert_match "Success!", shell_output("./test")
 
-    cp share/"doc/Halide/tutorial-python/lesson_01_basics.py", testpath
+    cp share/"doc/Halide_Python/tutorial-python/lesson_01_basics.py", testpath
     assert_match "Success!", shell_output("#{python3} lesson_01_basics.py")
   end
 end
