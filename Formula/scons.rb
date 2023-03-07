@@ -3,8 +3,8 @@ class Scons < Formula
 
   desc "Substitute for classic 'make' tool with autoconf/automake functionality"
   homepage "https://www.scons.org/"
-  url "https://files.pythonhosted.org/packages/44/08/ac630938e24fa0747109c098edfd45a3200dc27444b2fb70594fc70fc742/SCons-4.5.0.tar.gz"
-  sha256 "5579b8c022265b87bf026c64ba75c77084480c5557f08cf810fbc93b1a1ddb52"
+  url "https://files.pythonhosted.org/packages/7f/1e/7ec69d54762bc2d41e85d461548e8a35011c3626173f8472f05411b79a3f/SCons-4.5.1.tar.gz"
+  sha256 "9daeabe4d87ba2bd4ea15410765fc1ed2d931b723e4dc730a487a3911b9a1738"
   license "MIT"
 
   bottle do
