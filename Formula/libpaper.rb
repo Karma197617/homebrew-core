@@ -8,7 +8,7 @@ class Libpaper < Formula
   depends_on "help2man" => :build
 
   def install
-    system "./configure", *std_configure_args
+    system "./configure", *std_configure_args, "--sysconfdir=#{etc}"
     system "make", "install"
   end
 
