@@ -19,23 +19,18 @@ class A2ps < Formula
     sha256 x86_64_linux:   "063b4b31a62c4d5bd905bc4faab09ac2a50c77291de52ab216fc6a7a56f8e406"
   end
 
+  depends_on "pkg-config" => :build
+  depends_on "bdw-gc"
+  depends_on "libpaper"
   uses_from_macos "gperf"
 
-  # https://trac.macports.org/ticket/20867
-  patch :p0 do
-    on_macos do
-      url "https://raw.githubusercontent.com/Homebrew/formula-patches/0ae366e6/a2ps/patch-lib__xstrrpl.c"
-      sha256 "89fa3c95c329ec326e2e76493471a7a974c673792725059ef121e6f9efb05bf4"
-    end
-  end
-
   def install
-    # Work around configure issues with Xcode 12
-    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
-
-    system "./configure", "--disable-debug", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}", "--sysconfdir=#{etc}",
-                          "--with-lispdir=#{elisp}"
+    system "./configure", *std_configure_args,
+                          "--sysconfdir=#{etc}",
+                          "--with-lispdir=#{elisp}",
+                          "--with-packager=#{tap.user}",
+                          "--with-packager-version=#{pkg_version}",
+                          "--with-packager-bug-reports=#{tap.issues_url}"
     system "make", "install"
   end
 
