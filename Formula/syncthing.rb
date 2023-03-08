@@ -22,10 +22,7 @@ class Syncthing < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "fe9b690ed914f9ea87bbead57374b9a7bf948a271435be3593d187b2a72621fc"
   end
 
-  # Support for go 1.20 is merged upstream but not yet landed in a tag:
-  # https://github.com/syncthing/syncthing/pull/8769
-  # Remove on next release.
-  depends_on "go@1.19" => :build
+  depends_on "go" => :build
 
   def install
     build_version = build.head? ? "v0.0.0-#{version}" : "v#{version}"
