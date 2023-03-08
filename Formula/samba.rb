@@ -161,7 +161,7 @@ class Samba < Formula
 
     sleep 5
     mkdir_p "got"
-    system "smbclient", "-p", port.to_s, "-N", "//127.0.0.1/test", "-c", "get hello #{testpath}/got/hello"
+    system bin/"smbclient", "-p", port.to_s, "-N", "//127.0.0.1/test", "-c", "get hello #{testpath}/got/hello"
     assert_equal "hello", (testpath/"got/hello").read
   end
 end
