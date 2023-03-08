@@ -3,8 +3,8 @@ class Folderify < Formula
 
   desc "Generate pixel-perfect macOS folder icons in the native style"
   homepage "https://github.com/lgarron/folderify"
-  url "https://files.pythonhosted.org/packages/11/cc/d8a2f0610f5c6ec9a876d692ceca1ead7f3d783bd57d6476794fd039cdd7/folderify-2.3.2.tar.gz"
-  sha256 "de59077ce0c8f00fe06a30156fc0f3df2d8f608036e09be7354ca6a50e66ccc1"
+  url "https://files.pythonhosted.org/packages/4c/18/a4d6491e4f64cbff4821cefa9fec1cfcb3048e19fc806d7e9af876654b94/folderify-2.4.0.tar.gz"
+  sha256 "daf1f5c64d59528d61d5a223d9ad2ba8f0e10ffd0d9cc2286ccd65b7fa516c24"
   license "MIT"
   head "https://github.com/lgarron/folderify.git", branch: "main"
 
