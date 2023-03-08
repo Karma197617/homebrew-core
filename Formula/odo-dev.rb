@@ -2,8 +2,8 @@ class OdoDev < Formula
   desc "Developer-focused CLI for Kubernetes and OpenShift"
   homepage "https://odo.dev"
   url "https://github.com/redhat-developer/odo.git",
-      tag:      "v3.6.0",
-      revision: "5b4959272f71b2113f6d29f17d035bfd83781575"
+      tag:      "v3.8.0",
+      revision: "9c592c4f04afbeeccf2131491d2ed2f6fb2ba581"
   license "Apache-2.0"
   head "https://github.com/redhat-developer/odo.git", branch: "main"
 
@@ -49,6 +49,6 @@ class OdoDev < Formula
     assert_predicate testpath/"devfile.yaml", :exist?
 
     dev_output = shell_output("#{bin}/odo dev 2>&1", 1).strip
-    assert_match "no connection to cluster defined", dev_output
+    assert_match "✗  unable to access the cluster", dev_output
   end
 end
