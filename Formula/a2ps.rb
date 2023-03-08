@@ -21,9 +21,9 @@ class A2ps < Formula
 
   uses_from_macos "gperf"
 
-  on_macos do
-    # https://trac.macports.org/ticket/20867
-    patch :p0 do
+  # https://trac.macports.org/ticket/20867
+  patch :p0 do
+    on_macos do
       url "https://raw.githubusercontent.com/Homebrew/formula-patches/0ae366e6/a2ps/patch-lib__xstrrpl.c"
       sha256 "89fa3c95c329ec326e2e76493471a7a974c673792725059ef121e6f9efb05bf4"
     end
