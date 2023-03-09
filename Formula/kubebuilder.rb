@@ -17,7 +17,6 @@ class Kubebuilder < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "baa5b916968af2b81b20947537303dfbd46908fa609ea34e5b6ac7a166c313c0"
   end
 
-  depends_on "git-lfs" => :build
   depends_on "go"
 
   def install
