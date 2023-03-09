@@ -1,8 +1,8 @@
 class OpenAdventure < Formula
   desc "Colossal Cave Adventure, the 1995 430-point version"
   homepage "http://www.catb.org/~esr/open-adventure/"
-  url "http://www.catb.org/~esr/open-adventure/advent-1.13.tar.gz"
-  sha256 "cd5e1e9682cf75c12ea915ed3e8a3eb26fcaceef8f1cfbf59011a0e4bb5fcc88"
+  url "http://www.catb.org/~esr/open-adventure/advent-1.14.tar.gz"
+  sha256 "6682b8c45788615d7ed38efe9b24eb8f47c1754047cff8591756ac49c90d7f8f"
   license "BSD-2-Clause"
   head "https://gitlab.com/esr/open-adventure.git", branch: "master"
 
