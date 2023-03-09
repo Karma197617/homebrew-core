@@ -4,8 +4,8 @@ class Checkov < Formula
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
   # checkov should only be updated every 15 releases on multiples of 15
-  url "https://files.pythonhosted.org/packages/22/d7/139fecd4e54f7ad049d6f8c606e737b5c9236e47a1a61ada52ceb3ba4c84/checkov-2.3.60.tar.gz"
-  sha256 "a6093adfaa16091fe73a6947f215ffc599dc8bbfe4ad2e814d96e40763bd4ad6"
+  url "https://files.pythonhosted.org/packages/93/46/5a96469d5ee4a477e199dcbf4bb4b0e27f9720de9066f49fb173fe171951/checkov-2.3.75.tar.gz"
+  sha256 "40833413b193ed837abab7ca99cf3f23247c955ab9e1bbf73c2cfb6e0931ca26"
   license "Apache-2.0"
 
   bottle do
@@ -46,8 +46,8 @@ class Checkov < Formula
   end
 
   resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/76/25/a841206f677d3b3f6b85cbc99495823683c96f28e726419438d99e99351e/argcomplete-2.0.5.tar.gz"
-    sha256 "1cfd12928d62e41901783e4dc7d7ca03eccd589840face4c020693b13f754312"
+    url "https://files.pythonhosted.org/packages/ac/43/b4ac2e533f86b96414a471589948da660925b95b50b1296bd25cd50c0e3e/argcomplete-2.1.1.tar.gz"
+    sha256 "72e08340852d32544459c0c19aad1b48aa2c3a96de8c6e5742456b4f538ca52f"
   end
 
   resource "async-timeout" do
@@ -81,13 +81,13 @@ class Checkov < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/1e/27/51c9b88c4c8cd2001efa3f628085553ecea9bcdad95baade3cc187f0980f/boto3-1.26.84.tar.gz"
-    sha256 "7ab7bb335b726e2f472b5c050028198d16338560c83c40b2bd2bd4e4018ec802"
+    url "https://files.pythonhosted.org/packages/7e/60/8778d71c827e14965a141e1b605d67da9e9b9924ec837bdff4e60d4c54f7/boto3-1.26.87.tar.gz"
+    sha256 "b0f7e801d6d5cb96ed89e1d39326bb072b5d9175bb6c986850c77b640474d297"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/cc/70/baa9c9383e52da51fc52b508770ccbff6c203027f27b4959feeb3000bffe/botocore-1.29.84.tar.gz"
-    sha256 "a36f7f6f8eae5dbd4a1cc8cb6fc747f6315500541181eff2093ee0529fc8e4bc"
+    url "https://files.pythonhosted.org/packages/90/e8/19b4b72b31265cefd4fe2498b91ce7556171f0e4b2a2cb640ca9be576554/botocore-1.29.87.tar.gz"
+    sha256 "2b981c3ebb347bdf2a8c3c0ce7e7712c76bfe43ae87d30776a3ab469e305f469"
   end
 
   resource "cached-property" do
@@ -111,8 +111,8 @@ class Checkov < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/96/d7/1675d9089a1f4677df5eb29c3f8b064aa1e70c1251a0a8a127803158942d/charset-normalizer-3.0.1.tar.gz"
-    sha256 "ebea339af930f8ca5d7a699b921106c6e29c617fe9606fa7baa043c1cdae326f"
+    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
+    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
   end
 
   resource "click" do
