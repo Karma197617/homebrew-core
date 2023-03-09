@@ -3,8 +3,8 @@ class CheckJsonschema < Formula
 
   desc "JSON Schema CLI"
   homepage "https://github.com/python-jsonschema/check-jsonschema"
-  url "https://files.pythonhosted.org/packages/fb/c6/abcd484d6f7682c1316a374c5808f8040cf6cfc73995f38734deecce7e42/check-jsonschema-0.21.0.tar.gz"
-  sha256 "691579e3c849af01e7a15e17c0ef39b85c68395a214dffa3bd92a8be99021744"
+  url "https://files.pythonhosted.org/packages/91/98/eefa061295a35dba06e898e1afd36ae355979a75bff512b9d6a83f02734d/check-jsonschema-0.22.0.tar.gz"
+  sha256 "3485965e13b0c665f86f307915eab52ace5740dcec30e1a82d79f639938a9474"
   license "Apache-2.0"
   head "https://github.com/python-jsonschema/check-jsonschema.git", branch: "main"
 
@@ -37,8 +37,8 @@ class CheckJsonschema < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/96/d7/1675d9089a1f4677df5eb29c3f8b064aa1e70c1251a0a8a127803158942d/charset-normalizer-3.0.1.tar.gz"
-    sha256 "ebea339af930f8ca5d7a699b921106c6e29c617fe9606fa7baa043c1cdae326f"
+    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
+    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
   end
 
   resource "click" do
