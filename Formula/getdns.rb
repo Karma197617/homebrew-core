@@ -1,11 +1,19 @@
 class Getdns < Formula
   desc "Modern asynchronous DNS API"
   homepage "https://getdnsapi.net"
-  url "https://getdnsapi.net/releases/getdns-1-7-0/getdns-1.7.0.tar.gz"
-  sha256 "ea8713ce5e077ac76b1418ceb6afd25e6d4e39e9600f6f5e81d3a3a13a60f652"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/getdnsapi/getdns.git", branch: "develop"
+
+  stable do
+    url "https://getdnsapi.net/releases/getdns-1-7-3/getdns-1.7.3.tar.gz"
+    sha256 "f1404ca250f02e37a118aa00cf0ec2cbe11896e060c6d369c6761baea7d55a2c"
+
+    # build patch to find libuv, remove in next release
+    patch do
+      url "https://github.com/getdnsapi/getdns/commit/ee534d10bf1aff0ff62b7ea8c0e2f894e015e429.patch?full_index=1"
+      sha256 "7e3afaaaf89fd914eb425de33c3e097ef3df4f467f26434706108ebcda3db10b"
+    end
+  end
 
   # We check the GitHub releases instead of https://getdnsapi.net/releases/,
   # since the aforementioned first-party URL has a tendency to lead to an
