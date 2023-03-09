@@ -1,8 +1,8 @@
 class Countdown < Formula
   desc "Terminal countdown timer"
   homepage "https://github.com/antonmedv/countdown"
-  url "https://github.com/antonmedv/countdown/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "a7b037988a4602196bffaa2cae0fa7d03b27197ccc1c6f96d258777472b76d87"
+  url "https://github.com/antonmedv/countdown/archive/refs/tags/v1.4.0.tar.gz"
+  sha256 "73f05360b7d937d5b1ac922dc1f2d311c5baef791117ca8e0fa09628749e843b"
   license "MIT"
 
   bottle do
