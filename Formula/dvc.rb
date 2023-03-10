@@ -3,8 +3,8 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://files.pythonhosted.org/packages/04/5e/072f561ca278f5ce0c6a589cca0405aecdb3c43f5a1db27c6b6ac6bd7933/dvc-2.46.0.tar.gz"
-  sha256 "2652679d2ab6803f4f4fe091278eef4bbf79b4e2e3e58fbf713522ada7ad6e78"
+  url "https://files.pythonhosted.org/packages/a9/c0/2332bb0b6e511322c844ceffc52a2cae13cab43af8f92d6c6b570aabfc23/dvc-2.47.0.tar.gz"
+  sha256 "dd1bbae4ae2df56864d0d74f62da6aa1750a6c806705a1ca5586f924f77c3212"
   license "Apache-2.0"
 
   bottle do
@@ -313,8 +313,8 @@ class Dvc < Formula
   end
 
   resource "dvc-studio-client" do
-    url "https://files.pythonhosted.org/packages/ee/d2/0e84e23341e8dc99dda14ab4a1da63a0dec846a222cecd804efce076a466/dvc-studio-client-0.5.1.tar.gz"
-    sha256 "3bb96123f190ca701eeb51ace1052e7f28e5fb960a65c058860230cd88965004"
+    url "https://files.pythonhosted.org/packages/58/60/843f3064dea98e84fd55bbaf24b62db76ba8ae670e8fa34b8b4f14d13977/dvc-studio-client-0.5.3.tar.gz"
+    sha256 "a4921826f566ffbc7df906e14973b69d412cef86ecd5e2bbaddf4fddc18f66cf"
   end
 
   resource "dvc-task" do
@@ -543,8 +543,8 @@ class Dvc < Formula
   end
 
   resource "oss2" do
-    url "https://files.pythonhosted.org/packages/7a/d2/33b2607395c625f685c9e225d94fa2f56a4debabfe53b9b00c9eaed22f6d/oss2-2.16.0.tar.gz"
-    sha256 "a08ca287dbadb19767a204297540c185f5ccccad7ef6f9ca3a180f77b6dc8376"
+    url "https://files.pythonhosted.org/packages/86/e7/017f8a5948d70e130815eebd14c25dfad916bd574590f2d7e046f19eee3f/oss2-2.17.0.tar.gz"
+    sha256 "da4489b89c76ec72c9dd4888bd2787c9e106cdd412cf6e14be00898e7dbcc859"
   end
 
   resource "ossfs" do
@@ -560,6 +560,11 @@ class Dvc < Formula
   resource "pathspec" do
     url "https://files.pythonhosted.org/packages/f4/8e/f91cffb32740b251cff04cad1e7cdd2c710582c735a01f56307316c148f2/pathspec-0.11.0.tar.gz"
     sha256 "64d338d4e0914e91c1792321e6907b5a593f1ab1851de7fc269557a21b30ebbc"
+  end
+
+  resource "platformdirs" do
+    url "https://files.pythonhosted.org/packages/8f/5f/01180534cebac14f3a792bf2f74fc99d34531c950c308fdebd9721e85550/platformdirs-3.1.0.tar.gz"
+    sha256 "accc3665857288317f32c7bebb5a8e482ba717b474f3fc1d18ca7f9214be0cef"
   end
 
   resource "portalocker" do
@@ -698,8 +703,8 @@ class Dvc < Formula
   end
 
   resource "sqltrie" do
-    url "https://files.pythonhosted.org/packages/cc/10/651842f053840e9d78dc182f26564c1945d931b3ce75c69ffde8891048ff/sqltrie-0.1.0.tar.gz"
-    sha256 "fb2d45b35cac70963c9a0c12bd459c2b8b82a72b555720aaccee11afb753f719"
+    url "https://files.pythonhosted.org/packages/8c/9b/a2a1880ec7b0239a82e67ec6b80d95c1b1c12b5733bac9cfacb33d7f7e54/sqltrie-0.1.1.tar.gz"
+    sha256 "68cef67532d45809c0d51a9c14c911ac91d6de8e643445f5c36f28680c81fe9c"
   end
 
   resource "sshfs" do
