@@ -13,8 +13,15 @@ class Trippy < Formula
   end
 
   test do
+    # https://github.com/fujiapple852/trippy#privileges
+    expected = if OS.mac?
+      "root user required to use raw sockets"
+    else
+      "capability CAP_NET_RAW is required"
+    end
+
     output = shell_output("#{bin}/trip brew.sh 2>&1", 255)
-    assert_match "root user required to use raw sockets", output
+    assert_match expected, output
 
     assert_match "trippy #{version}", shell_output("#{bin}/trip --version")
   end
