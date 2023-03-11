@@ -37,6 +37,6 @@ class Dagger < Formula
     assert_match "dagger v#{version}", shell_output("#{bin}/dagger version")
 
     output = shell_output("#{bin}/dagger query brewtest 2>&1", 1)
-    assert_match "Unknown operation named \"brewtest\"", output
+    assert_match "Cannot connect to the Docker daemon", output
   end
 end
