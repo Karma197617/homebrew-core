@@ -32,6 +32,8 @@ class Dagger < Formula
   end
 
   test do
+    ENV["DOCKER_HOST"] = "unix://#{testpath}/invalid.sock"
+
     assert_match "dagger v#{version}", shell_output("#{bin}/dagger version")
 
     output = shell_output("#{bin}/dagger query brewtest 2>&1", 1)
