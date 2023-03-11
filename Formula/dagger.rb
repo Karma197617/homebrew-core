@@ -2,8 +2,8 @@ class Dagger < Formula
   desc "Portable devkit for CI/CD pipelines"
   homepage "https://dagger.io"
   url "https://github.com/dagger/dagger.git",
-      tag:      "v0.2.36",
-      revision: "ea275a3bafbc5b5c611e0b81bf2dd8a8add72f6b"
+      tag:      "v0.4.0",
+      revision: "4a69cbf3da7d044fdfaf427f80ab8495e997cae8"
   license "Apache-2.0"
   head "https://github.com/dagger/dagger.git", branch: "main"
 
@@ -22,11 +22,9 @@ class Dagger < Formula
   depends_on "docker" => :test
 
   def install
-    ENV["CGO_ENABLED"] = "0"
     ldflags = %W[
       -s -w
-      -X go.dagger.io/dagger/version.Revision=#{Utils.git_head(length: 8)}
-      -X go.dagger.io/dagger/version.Version=v#{version}
+      -X github.com/dagger/dagger/internal/engine.Version=v#{version}
     ]
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/dagger"
 
@@ -34,13 +32,9 @@ class Dagger < Formula
   end
 
   test do
-    assert_match "v#{version}", shell_output("#{bin}/dagger version")
+    assert_match "dagger v#{version}", shell_output("#{bin}/dagger version")
 
-    system bin/"dagger", "project", "init", "--template=hello"
-    system bin/"dagger", "project", "update"
-    assert_predicate testpath/"cue.mod/module.cue", :exist?
-
-    output = shell_output("#{bin}/dagger do hello 2>&1", 1)
-    assert_match(/(denied while trying to|Cannot) connect to the Docker daemon/, output)
+    output = shell_output("#{bin}/dagger query brewtest 2>&1", 1)
+    assert_match "Unknown operation named \"brewtest\"", output
   end
 end
