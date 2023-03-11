@@ -6,10 +6,15 @@ class Gfold < Formula
   license "Apache-2.0"
   head "https://github.com/nickgerace/gfold.git", branch: "main"
 
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build
+  depends_on "libgit2"
+
   uses_from_macos "zlib"
 
   def install
+    ENV["LIBGIT2_SYS_USE_PKG_CONFIG"] = "1"
+
     system "cargo", "install", *std_cargo_args(path: "crates/gfold")
   end
 
