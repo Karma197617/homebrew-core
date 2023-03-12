@@ -5,6 +5,11 @@ class MscGenerator < Formula
   sha256 "643efd48958f4fc20d40af56ea1be6c2d2e2c80c055b622c91971a3e1e5252ca"
   license "AGPL-3.0-or-later"
 
+  livecheck do
+    url "https://gitlab.com/msc-generator/msc-generator.git"
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 arm64_ventura:  "2c679958ca3bf418b7c70729ebbe86a37b8c835e0bf43c4ff61ff86c88f90c02"
     sha256 arm64_monterey: "f9746df56efcfd9b2e6084306587e9ac7ab8a05931f6c6e1a7ead4ca783506ad"
