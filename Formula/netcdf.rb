@@ -25,6 +25,8 @@ class Netcdf < Formula
   depends_on "cmake" => :build
   depends_on "hdf5"
 
+  uses_from_macos "m4" => :build
+  uses_from_macos "bzip2"
   uses_from_macos "curl"
   uses_from_macos "libxml2"
   uses_from_macos "zlib"
