@@ -1,10 +1,10 @@
 class GitBranchless < Formula
   desc "High-velocity, monorepo-scale workflow for Git"
   homepage "https://github.com/arxanas/git-branchless"
-  url "https://github.com/arxanas/git-branchless/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "13a7441be5c002b5a645dd9ad359dad5bdd46950b51b49e3cddccd9041deb5f5"
+  url "https://github.com/arxanas/git-branchless/archive/refs/tags/v0.7.1.tar.gz"
+  sha256 "90a69356573acd0984607749cc18706c5a2410e1d59b553df5271ad3e4147dbf"
+  # dual license change would be available in v0.8.0+
   license "GPL-2.0-only"
-  revision 1
   head "https://github.com/arxanas/git-branchless.git", branch: "master"
 
   bottle do
@@ -23,6 +23,7 @@ class GitBranchless < Formula
 
   def install
     system "cargo", "install", *std_cargo_args(path: "git-branchless")
+    system "git", "branchless", "install-man-pages", man1
   end
 
   test do
