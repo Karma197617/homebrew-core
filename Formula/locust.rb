@@ -160,6 +160,6 @@ class Locust < Formula
     ENV["LOCUST_HOST"] = "http://httpbin.org"
     ENV["LOCUST_USERS"] = "2"
 
-    system bin/"locust", "--headless", "--run-time", "10s"
+    system bin/"locust", "--headless", "--run-time", "3s"
   end
 end
