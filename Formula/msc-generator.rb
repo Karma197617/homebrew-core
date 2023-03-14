@@ -6,8 +6,14 @@ class MscGenerator < Formula
   license "AGPL-3.0-or-later"
 
   livecheck do
-    url "https://gitlab.com/msc-generator/msc-generator.git"
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    url "https://gitlab.com/api/v4/projects/31167732/packages"
+    strategy :json do |json|
+      json.map do |item|
+        next unless item["name"]&.downcase&.include?("msc-generator")
+
+        item["version"]
+      end
+    end
   end
 
   bottle do
