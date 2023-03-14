@@ -23,9 +23,7 @@ class TyposCli < Formula
   depends_on "rust" => :build
 
   def install
-    cd "crates/typos-cli" do
-      system "cargo", "install", *std_cargo_args
-    end
+    system "cargo", "install", *std_cargo_args(path: "crates/typos-cli")
   end
 
   test do
