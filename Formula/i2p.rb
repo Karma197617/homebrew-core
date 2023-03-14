@@ -1,8 +1,8 @@
 class I2p < Formula
   desc "Anonymous overlay network - a network within a network"
   homepage "https://geti2p.net"
-  url "https://files.i2p-projekt.de/2.1.0/i2psource_2.1.0.tar.bz2"
-  sha256 "83098c1277204c5569284b32b37ef137656b27bfe15ef903eca2da7c269288d1"
+  url "https://files.i2p-projekt.de/2.2.0/i2psource_2.2.0.tar.bz2"
+  sha256 "e4ba06a6e2935a17990f057a72b8d79e452a2556a6cefe5012d5dd63466feebf"
   license :cannot_represent
 
   livecheck do
