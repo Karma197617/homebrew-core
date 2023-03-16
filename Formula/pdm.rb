@@ -3,8 +3,8 @@ class Pdm < Formula
 
   desc "Modern Python package and dependency manager supporting the latest PEP standards"
   homepage "https://pdm.fming.dev"
-  url "https://files.pythonhosted.org/packages/a9/d2/d1e4523802d6614ea3b956b0b517284891be71b188cd3a429821cbf77f69/pdm-2.4.8.tar.gz"
-  sha256 "029d5cf8145bf3405e77bba68bbe4969d65b74c165c7352013069b7faad945e8"
+  url "https://files.pythonhosted.org/packages/4b/6b/8363b9dca9039674b9bbbe4f57f9f0ed775b150c80ba2d1319862e0d9f02/pdm-2.4.9.tar.gz"
+  sha256 "dbc6ffb195f39ab24b4bcb507fe99789a61a32159d8bf227f3117b94f327f2f2"
   license "MIT"
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
@@ -47,8 +47,8 @@ class Pdm < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/0b/dc/eac02350f06c6ed78a655ceb04047df01b02c6b7ea3fc02d4df24ca87d24/filelock-3.9.0.tar.gz"
-    sha256 "7b319f24340b51f55a2bf7a12ac0755a9b03e718311dac567a0f4f7fabd2f5de"
+    url "https://files.pythonhosted.org/packages/4f/1f/6e1b740698069650b245744957a25957d599b953550a959ab2a584a8825b/filelock-3.10.0.tar.gz"
+    sha256 "3199fd0d3faea8b911be52b663dfccceb84c95949dd13179aa21436d1a79c4ce"
   end
 
   resource "findpython" do
@@ -87,8 +87,8 @@ class Pdm < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/8f/5f/01180534cebac14f3a792bf2f74fc99d34531c950c308fdebd9721e85550/platformdirs-3.1.0.tar.gz"
-    sha256 "accc3665857288317f32c7bebb5a8e482ba717b474f3fc1d18ca7f9214be0cef"
+    url "https://files.pythonhosted.org/packages/79/c4/f98a05535344f79699bbd494e56ac9efc986b7a253fe9f4dba7414a7f505/platformdirs-3.1.1.tar.gz"
+    sha256 "024996549ee88ec1a9aa99ff7f8fc819bb59e2c3477b410d90a16d32d6e707aa"
   end
 
   resource "pyproject_hooks" do
@@ -137,18 +137,18 @@ class Pdm < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c5/52/fe421fb7364aa738b3506a2d99e4f3a56e079c0a798e9f4fa5e14c60922f/urllib3-1.26.14.tar.gz"
-    sha256 "076907bf8fd355cde77728471316625a4d2f7e713c125f51953bb5b3eecf4f72"
+    url "https://files.pythonhosted.org/packages/21/79/6372d8c0d0641b4072889f3ff84f279b738cd8595b64c8e0496d4e848122/urllib3-1.26.15.tar.gz"
+    sha256 "8a388717b9476f934a21484e8c8e61875ab60644d29b9b39e11e4b9dc1c6b305"
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/e7/32/925d0ee72929865228d5160ec86c7967aea3f7f257f6f2226fcf08cc2352/virtualenv-20.20.0.tar.gz"
-    sha256 "a8a4b8ca1e28f864b7514a253f98c1d62b64e31e77325ba279248c65fb4fcef4"
+    url "https://files.pythonhosted.org/packages/87/14/ca9890d58cd33d9122eb87ffec2f3c6be0714785f992a0fd3b56a3b6c993/virtualenv-20.21.0.tar.gz"
+    sha256 "f50e3e60f990a0757c9b68333c9fdaa72d7188caa417f96af9e52407831a3b68"
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/a2/b8/6a06ff0f13a00fc3c3e7d222a995526cbca26c1ad107691b6b1badbbabf1/wheel-0.38.4.tar.gz"
-    sha256 "965f5259b566725405b05e7cf774052044b1ed30119b5d586b2703aafe8719ac"
+    url "https://files.pythonhosted.org/packages/fc/ef/0335f7217dd1e8096a9e8383e1d472aa14717878ffe07c4772e68b6e8735/wheel-0.40.0.tar.gz"
+    sha256 "cd1196f3faee2b31968d626e1731c94f99cbdb67cf5a46e4f5656cbee7738873"
   end
 
   def install
