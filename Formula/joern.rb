@@ -23,7 +23,7 @@ class Joern < Formula
   depends_on "sbt" => :build
   depends_on "astgen"
   depends_on "coreutils"
-  depends_on "openjdk"
+  depends_on "openjdk@17"
   depends_on "php"
 
   def install
@@ -35,8 +35,8 @@ class Joern < Formula
   end
 
   test do
-    ENV["JAVA_HOME"] = Formula["openjdk"].opt_prefix
-    ENV.append_path "PATH", Formula["openjdk"].opt_bin
+    ENV["JAVA_HOME"] = Formula["openjdk@17"].opt_prefix
+    ENV.append_path "PATH", Formula["openjdk@17"].opt_bin
 
     (testpath/"test.cpp").write <<~EOS
       #include <iostream>
