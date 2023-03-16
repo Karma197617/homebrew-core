@@ -43,6 +43,12 @@ class Opencascade < Formula
     depends_on "mesa" # For OpenGL
   end
 
+  # Fix a missing <limits> header. Try removing on next release.
+  patch do
+    url "https://git.dev.opencascade.org/gitweb/?p=occt.git;a=patch;h=2a8c5ad46cfef8114b13c3a33dcd88a81e522c1e;hp=7ea3eff4f88640ca23e5b1a6dad82ab4fda4a8c6"
+    sha256 "3aff4835faf75d7d48aaa53db88e00df527b65b0a930746e1b8d1534c9b368b1"
+  end
+
   def install
     tcltk = Formula["tcl-tk"]
     libtcl = tcltk.opt_lib/shared_library("libtcl#{tcltk.version.major_minor}")
