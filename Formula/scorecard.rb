@@ -38,7 +38,7 @@ class Scorecard < Formula
   test do
     ENV["GITHUB_AUTH_TOKEN"] = "test"
     output = shell_output("#{bin}/scorecard --repo=github.com/kubernetes/kubernetes --checks=Maintained 2>&1", 1)
-    expected_output = "InitRepo: repo unreachable: GET https://api.github.com/repos/google/oss-fuzz: 401"
+    expected_output = "Error: RunScorecard: repo unreachable: GET https://api.github.com/repos/kubernetes/kubernetes"
     assert_match expected_output, output
 
     assert_match version.to_s, shell_output("#{bin}/scorecard version 2>&1")
