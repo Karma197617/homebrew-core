@@ -29,15 +29,17 @@ class Joern < Formula
   def install
     system "sbt", "stage"
 
-    libexec.install "joern-cli/target/universal/stage/.installation_root"
-    libexec.install Dir["joern-cli/target/universal/stage/*"]
-    bin.write_exec_script Dir[libexec/"*"].select { |f| File.executable? f }
+    cd "joern-cli/target/universal/stage" do
+      rm_f Dir["**/*.bat"]
+      libexec.install Pathname.pwd.children
+    end
+
+    libexec.children.select { |f| f.file? && f.executable? }.each do |f|
+      (bin/f.basename).write_env_script f, Language::Java.overridable_java_home_env
+    end
   end
 
   test do
-    ENV["JAVA_HOME"] = Formula["openjdk@17"].opt_prefix
-    ENV.append_path "PATH", Formula["openjdk@17"].opt_bin
-
     (testpath/"test.cpp").write <<~EOS
       #include <iostream>
       void print_number(int x) {
