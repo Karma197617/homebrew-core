@@ -2,8 +2,8 @@ class Revive < Formula
   desc "Fast, configurable, extensible, flexible, and beautiful linter for Go"
   homepage "https://revive.run"
   url "https://github.com/mgechev/revive.git",
-      tag:      "v1.3.0",
-      revision: "5db07b5c971648c8c59d0c84d176e94f11dfbcec"
+      tag:      "v1.3.1",
+      revision: "b03e54f617491984b41f0411b69326f94d03a76f"
   license "MIT"
   head "https://github.com/mgechev/revive.git", branch: "master"
 
