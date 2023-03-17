@@ -41,11 +41,13 @@ class Gpgme < Formula
     # error: 'auto' not allowed in lambda parameter
     ENV.append "CXXFLAGS", "-std=c++14"
 
+    site_packages = prefix/Language::Python.site_packages(python3)
+    ENV.append_path "PYTHONPATH", site_packages
     # Work around Homebrew's "prefix scheme" patch which causes non-pip installs
     # to incorrectly try to write into HOMEBREW_PREFIX/lib since Python 3.10.
     inreplace "lang/python/Makefile.in",
               /^\s*install\s*\\\n\s*--prefix "\$\(DESTDIR\)\$\(prefix\)"/,
-              "\\0 --install-lib=#{prefix/Language::Python.site_packages(python3)}"
+              "\\0 --install-lib=#{site_packages}"
 
     system "./configure", *std_configure_args,
                           "--disable-silent-rules",
