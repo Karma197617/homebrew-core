@@ -27,6 +27,7 @@ class Lgogdownloader < Formula
   depends_on "boost"
   depends_on "htmlcxx"
   depends_on "jsoncpp"
+  depends_on "rhash"
   depends_on "tinyxml2"
 
   uses_from_macos "curl"
