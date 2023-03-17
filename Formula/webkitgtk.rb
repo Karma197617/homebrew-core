@@ -36,6 +36,7 @@ class Webkitgtk < Formula
   depends_on "libpng"
   depends_on "libsecret"
   depends_on "libsoup"
+  depends_on "libwpe"
   depends_on "libxcomposite"
   depends_on "libxt"
   depends_on :linux # Use JavaScriptCore.Framework on macOS.
