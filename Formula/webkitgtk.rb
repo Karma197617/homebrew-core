@@ -23,6 +23,7 @@ class Webkitgtk < Formula
   depends_on "fontconfig"
   depends_on "freetype"
   depends_on "glib"
+  depends_on "gst-plugins-bad"
   depends_on "gst-plugins-base"
   depends_on "gstreamer"
   depends_on "gtk+3"
