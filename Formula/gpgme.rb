@@ -55,6 +55,9 @@ class Gpgme < Formula
     system "make"
     system "make", "install"
 
+    # Rename the `easy-install.pth` file to avoid `brew link` conflicts.
+    site_packages.install site_packages/"easy-install.pth" => "homebrew-gpgme-#{version}.pth"
+
     # avoid triggering mandatory rebuilds of software that hard-codes this path
     inreplace bin/"gpgme-config", prefix, opt_prefix
   end
