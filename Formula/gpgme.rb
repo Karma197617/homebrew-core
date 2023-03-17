@@ -27,15 +27,6 @@ class Gpgme < Formula
   depends_on "libassuan"
   depends_on "libgpg-error"
 
-  # Fix detection of Python 3.10 version string. We use Arch Linux's configure
-  # patch to avoid having to regenerate with autoconf. There is an open upstream
-  # PR for m4 and configure.ac changes, but it is still pending review.
-  # Ref: https://dev.gnupg.org/D546
-  patch do
-    url "https://raw.githubusercontent.com/archlinux/svntogit-packages/6a4d7746de4670dbd245e1855584f7bb5ae10934/trunk/python310.patch"
-    sha256 "5de2f6bcb6b30642d0cbc3fbd86803c9460d732f44a526f44cedee8bb78d291a"
-  end
-
   def python3
     "python3.11"
   end
