@@ -27,16 +27,16 @@ class Lgogdownloader < Formula
   depends_on "boost"
   depends_on "htmlcxx"
   depends_on "jsoncpp"
-  depends_on "liboauth"
-  depends_on "rhash"
   depends_on "tinyxml2"
 
   uses_from_macos "curl"
 
   def install
-    system "cmake", ".", *std_cmake_args, "-DJSONCPP_INCLUDE_DIR=#{Formula["jsoncpp"].opt_include}"
-
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DJSONCPP_INCLUDE_DIR=#{Formula["jsoncpp"].opt_include}",
+                    *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
@@ -47,6 +47,7 @@ class Lgogdownloader < Formula
     writer.write <<~EOS
       test@example.com
       secret
+      https://auth.gog.com/auth?client_id=xxx
     EOS
     writer.close
     lastline = ""
@@ -55,7 +56,7 @@ class Lgogdownloader < Formula
     rescue Errno::EIO
       # GNU/Linux raises EIO when read is done on closed pty
     end
-    assert_equal "HTTP: Login failed", lastline.chomp
+    assert_equal "Galaxy: Login failed", lastline.chomp
     reader.close
   end
 end
