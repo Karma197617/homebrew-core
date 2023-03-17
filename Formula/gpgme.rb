@@ -37,10 +37,6 @@ class Gpgme < Formula
     # hardcoded, the Arch Linux patch that changed 3.9 to 3.10 can't detect 3.11
     inreplace "configure", /# Reset everything.*\n\s*unset PYTHON$/, ""
 
-    # setuptools>=60 prefers its own bundled distutils, which breaks the installation
-    # Remove when distutils is no longer used. Related PR: https://dev.gnupg.org/D545
-    ENV["SETUPTOOLS_USE_DISTUTILS"] = "stdlib"
-
     # Uses generic lambdas.
     # error: 'auto' not allowed in lambda parameter
     ENV.append "CXXFLAGS", "-std=c++14"
