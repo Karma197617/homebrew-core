@@ -3,7 +3,7 @@ class K3d < Formula
   homepage "https://k3d.io"
   url "https://github.com/k3d-io/k3d.git",
     tag:      "v5.4.9",
-    revision: "4fe408feb649c8344701548a3ad5c3b861a1251c"
+    revision: "18967282633144120abcf75a3dacc110543cc00c"
   license "MIT"
 
   livecheck do
