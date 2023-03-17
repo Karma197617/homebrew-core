@@ -46,6 +46,7 @@ class Webkitgtk < Formula
   depends_on "systemd"
   depends_on "webp"
   depends_on "woff2"
+  depends_on "wpebackend-fdo"
 
   uses_from_macos "perl" => :build
   uses_from_macos "ruby" => :build
