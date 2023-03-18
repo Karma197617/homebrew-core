@@ -3,7 +3,7 @@ class Libtrace < Formula
   homepage "https://github.com/LibtraceTeam/libtrace"
   url "https://github.com/LibtraceTeam/libtrace/archive/refs/tags/4.0.20-1.tar.gz"
   sha256 "df6d9dc66d9e3a9e46a153e07e8d13967a327db547ce8ef3f2de691d7081344e"
-  license "GPL-3.0-or-later"
+  license "LGPL-3.0-or-later"
 
   bottle do
     sha256 cellar: :any,                 arm64_monterey: "f9edccc796e56af2f95bbbcffa1e791f7a17192e010ca4034b45ffa2427a0ae1"
