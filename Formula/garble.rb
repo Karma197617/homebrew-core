@@ -31,8 +31,6 @@ class Garble < Formula
              -compiler gc
              -trimpath true
            CGO_ENABLED 1
-                GOARCH arm64
-                  GOOS darwin
     EOS
     assert_match expected, shell_output("#{bin}/garble version")
   end
