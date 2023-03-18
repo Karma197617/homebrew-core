@@ -21,6 +21,7 @@ class Libtrace < Formula
   depends_on "openssl@1.1"
   depends_on "wandio"
 
+  uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
   uses_from_macos "libpcap"
 
