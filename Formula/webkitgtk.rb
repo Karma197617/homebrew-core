@@ -70,7 +70,6 @@ class Webkitgtk < Formula
       -DUSE_GSTREAMER_GL=OFF
       -DUSE_JPEGXL=ON
       -DUSE_LIBHYPHEN=OFF
-      -DUSE_WPE_RENDERER=OFF
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
