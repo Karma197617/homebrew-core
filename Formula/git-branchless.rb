@@ -23,6 +23,9 @@ class GitBranchless < Formula
 
   def install
     system "cargo", "install", *std_cargo_args(path: "git-branchless")
+  end
+
+  def post_install
     system "git", "branchless", "install-man-pages", man1
   end
 
