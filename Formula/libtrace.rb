@@ -31,6 +31,10 @@ class Libtrace < Formula
   end
 
   def install
+    # Make sure we can find `libfl.so`.
+    # TODO: Report this upstream.
+    ENV["ac_cv_lib_lex"] = "-L#{Formula["flex"].opt_lib} -lfl" if OS.linux?
+
     system "./bootstrap.sh"
     system "./configure", *std_configure_args
     system "make", "install"
