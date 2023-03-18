@@ -1,14 +1,9 @@
 class Libprotoident < Formula
-  desc "Performs application layer protocol identification for flows"
-  homepage "https://research.wand.net.nz/software/libprotoident.php"
-  url "https://research.wand.net.nz/software/libprotoident/libprotoident-2.0.13.tar.gz"
-  sha256 "8ca7ccd95b3f23457c3f9eff480364565b553bbcab9b39969f964910738e5672"
-  revision 2
-
-  livecheck do
-    url :homepage
-    regex(/href=.*?libprotoident[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
+  desc "Network traffic classification library that requires minimal application payload"
+  homepage "https://github.com/LibtraceTeam/libprotoident"
+  url "https://github.com/LibtraceTeam/libprotoident/archive/refs/tags/2.0.15-1.tar.gz"
+  sha256 "cfa7c2d8db8e701db9f991e4f58fd9a284db65e866194ad54e413202163b7289"
+  license all_of: ["GPL-2.0-or-later", "LGPL-3.0-or-later"]
 
   bottle do
     sha256 cellar: :any,                 arm64_monterey: "d93974ec737d62f1b54f6aafeec74cccf2632954e81daa60043632e5446292f2"
@@ -20,19 +15,17 @@ class Libprotoident < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "24938f68759726bc0549a5388e71184d56795bfbaff25f9d341b5cd0f79bc9a0"
   end
 
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
+  depends_on "pkg-config" => :build
   depends_on "libflowmanager"
   depends_on "libtrace"
 
-  # Fix -flat_namespace being used on Big Sur and later.
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
-    sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
-  end
-
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system "./bootstrap.sh"
+    system "./configure", "--disable-silent-rules",
+                          *std_configure_args
     system "make", "install"
   end
 
