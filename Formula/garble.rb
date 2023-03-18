@@ -25,12 +25,16 @@ class Garble < Formula
     system bin/"garble", "-literals", "-tiny", "build", testpath/"hello.go"
     assert_equal "Hello World\n", shell_output("#{testpath}/hello")
 
+    goos = Utils.safe_popen_read("#{Formula["go"].bin}/go", "env", "GOOS").chomp
+    goarch = Utils.safe_popen_read("#{Formula["go"].bin}/go", "env", "GOARCH").chomp
     expected = <<~EOS
       Build settings:
             -buildmode exe
              -compiler gc
              -trimpath true
            CGO_ENABLED 1
+                GOARCH #{goarch}
+                  GOOS #{goos}
     EOS
     assert_match expected, shell_output("#{bin}/garble version")
   end
