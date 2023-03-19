@@ -1,8 +1,8 @@
 class Xplr < Formula
   desc "Hackable, minimal, fast TUI file explorer"
   homepage "https://github.com/sayanarijit/xplr"
-  url "https://github.com/sayanarijit/xplr/archive/v0.20.2.tar.gz"
-  sha256 "19e7f9d2c9644f3a88cda98cab5b1780b55df68ce3e2323555537837e6630583"
+  url "https://github.com/sayanarijit/xplr/archive/v0.21.0.tar.gz"
+  sha256 "0daa8cd12f543d10fcff20779c72166d23090a149c9523043512eeaedbbab3fb"
   license "MIT"
   head "https://github.com/sayanarijit/xplr.git", branch: "main"
 
