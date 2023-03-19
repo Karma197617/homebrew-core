@@ -22,10 +22,11 @@ class GitBranchless < Formula
   depends_on "libgit2@1.5"
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "git-branchless")
-  end
+    # make sure git can find git-branchless
+    ENV.prepend_path "PATH", bin
 
-  def post_install
+    system "cargo", "install", *std_cargo_args(path: "git-branchless")
+
     system "git", "branchless", "install-man-pages", man1
   end
 
