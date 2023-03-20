@@ -1,8 +1,8 @@
 class Stencil < Formula
   desc "Smart templating engine for service development"
   homepage "https://engineering.outreach.io/stencil/"
-  url "https://github.com/getoutreach/stencil/archive/refs/tags/v1.31.0.tar.gz"
-  sha256 "3de265b06d597206fcad98fd1b936dba51f15e08dfa943e32b9ed64001244b2a"
+  url "https://github.com/getoutreach/stencil/archive/refs/tags/v1.32.0.tar.gz"
+  sha256 "80921d02d73272956cb65c0dce96afbd06e5c6ff51f9686639a831ec8095f5b3"
   license "Apache-2.0"
   head "https://github.com/getoutreach/stencil.git", branch: "main"
 
