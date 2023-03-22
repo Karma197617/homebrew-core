@@ -10,7 +10,7 @@
   ["apache-arrow", "apache-arrow-glib"],
   ["avro-c", "avro-cpp", "avro-tools"],
   ["aws-console", "cfn-format", "rain"],
-  ["baresip", "libre", "librem"],
+  ["baresip", "libre"],
   ["boost", "boost-bcp", "boost-build", "boost-mpi", "boost-python3"],
   ["bundler-completion", "gem-completion", "rails-completion", "ruby-completion"],
   ["buildifier", "buildozer"],
@@ -27,7 +27,7 @@
   ["ghz", "ghz-web"],
   ["git", "git-credential-libsecret", "git-gui", "git-svn"],
   [
-    "gstreamer", "gst-devtools", "gst-editing-services", "gst-libav", "gst-plugins-bad", 
+    "gstreamer", "gst-devtools", "gst-editing-services", "gst-libav", "gst-plugins-bad",
     "gst-plugins-base", "gst-plugins-good", "gst-plugins-ugly", "gst-python", "gst-rtsp-server"
   ],
   ["hdf5", "hdf5-mpi"],
