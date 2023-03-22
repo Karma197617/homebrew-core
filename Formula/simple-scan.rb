@@ -16,6 +16,7 @@ class SimpleScan < Formula
     sha256 x86_64_linux:   "8a15d4a1a86f60b6ce011c1ef46a59d2768b05316fd76fde118375d516ef1538"
   end
 
+  depends_on "gettext" => :build # for msgfmt
   depends_on "itstool" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
