@@ -18,16 +18,15 @@ class Baresip < Formula
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "libre"
-  depends_on "librem"
+
+  uses_from_macos "zlib"
 
   def install
     libre = Formula["libre"]
-    librem = Formula["librem"]
     args = %W[
       -DCMAKE_BUILD_TYPE=Release
       -DCMAKE_INSTALL_RPATH=#{rpath}
       -DRE_INCLUDE_DIR=#{libre.opt_include}/re
-      -DREM_INCLUDE_DIR=#{librem.opt_include}/rem
     ]
     system "cmake", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build", "-j"
