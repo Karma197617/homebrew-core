@@ -1,8 +1,8 @@
 class LibxmlxxAT5 < Formula
   desc "C++ wrapper for libxml"
   homepage "https://libxmlplusplus.sourceforge.io/"
-  url "https://download.gnome.org/sources/libxml++/5.0/libxml++-5.0.2.tar.xz"
-  sha256 "7c17cc3e5a2214314dee5a1354f4b436f266ded6185232a0534f352a76240d5a"
+  url "https://download.gnome.org/sources/libxml++/5.0/libxml++-5.0.3.tar.xz"
+  sha256 "13074f59e3288a378cafe9e6847df17f764c23fa29bc94f3305b8bf81efb2cf7"
   license "LGPL-2.1-or-later"
 
   livecheck do
