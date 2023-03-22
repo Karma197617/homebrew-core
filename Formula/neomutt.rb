@@ -18,6 +18,7 @@ class Neomutt < Formula
   end
 
   depends_on "docbook-xsl" => :build
+  depends_on "pkg-config" => :build
   depends_on "gettext"
   depends_on "gpgme"
   depends_on "libidn2"
@@ -32,10 +33,6 @@ class Neomutt < Formula
   uses_from_macos "cyrus-sasl"
   uses_from_macos "krb5"
   uses_from_macos "zlib"
-
-  on_linux do
-    depends_on "pkg-config" => :build
-  end
 
   def install
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
