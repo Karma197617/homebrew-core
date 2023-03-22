@@ -1,8 +1,8 @@
 class GlibNetworking < Formula
   desc "Network related modules for glib"
   homepage "https://gitlab.gnome.org/GNOME/glib-networking"
-  url "https://download.gnome.org/sources/glib-networking/2.74/glib-networking-2.74.0.tar.xz"
-  sha256 "1f185aaef094123f8e25d8fa55661b3fd71020163a0174adb35a37685cda613b"
+  url "https://download.gnome.org/sources/glib-networking/2.76/glib-networking-2.76.0.tar.xz"
+  sha256 "149a05a179e629a538be25662aa324b499d7c4549c5151db5373e780a1bf1b9a"
   license "LGPL-2.1-or-later"
 
   bottle do
