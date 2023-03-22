@@ -34,6 +34,6 @@ class Libre < Formula
         return libre_init();
       }
     EOS
-    system ENV.cc, "test.c", "-L#{lib}", "-I#{include}", "-lre"
+    system ENV.cc, "test.c", "-L#{lib}", "-I#{include}/re", "-lre"
   end
 end
