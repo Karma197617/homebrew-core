@@ -3,8 +3,8 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/97/e7/6779a9a0e960b3113dfb8bbb8e023dbbeb9dce99e842450c24316a2772da/snakemake-7.24.2.tar.gz"
-  sha256 "3e9bcbb9743aa2a073922e90659e9209edbea89e6d22bf7b29ea538e60983908"
+  url "https://files.pythonhosted.org/packages/99/db/15229fefe6100958a77d4acf95e0b244c9c1e7cdfd6f4ac0aa67be1ff63a/snakemake-7.25.0.tar.gz"
+  sha256 "98982c210a2077e54a4e58eba11ed7811dd91885d63782d760f21837f4ff35cd"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
@@ -100,8 +100,8 @@ class Snakemake < Formula
   end
 
   resource "jupyter-core" do
-    url "https://files.pythonhosted.org/packages/aa/81/f1700beb330c715e3ecf72c6713849f18ed653d49fb2f621705cae2d3b56/jupyter_core-5.2.0.tar.gz"
-    sha256 "1407cdb4c79ee467696c04b76633fc1884015fa109323365a6372c8e890cc83f"
+    url "https://files.pythonhosted.org/packages/9a/d3/b80e7179e9615f5a7f055edc55eb665fa2534f11a4599349db3bab6fdeb5/jupyter_core-5.3.0.tar.gz"
+    sha256 "6db75be0c83edbf1b7c9f91ec266a9a24ef945da630f3120e1a0046dc13713fc"
   end
 
   resource "MarkupSafe" do
@@ -110,8 +110,8 @@ class Snakemake < Formula
   end
 
   resource "nbformat" do
-    url "https://files.pythonhosted.org/packages/ce/42/fae44dfe70960c488e5b9b53c617dedd1c7932aff1962c59b2a923e82bb8/nbformat-5.7.3.tar.gz"
-    sha256 "4b021fca24d3a747bf4e626694033d792d594705829e5e35b14ee3369f9f6477"
+    url "https://files.pythonhosted.org/packages/08/b7/8b964e977438037b57de31d312d67046e215295899107576e3708b0ea223/nbformat-5.8.0.tar.gz"
+    sha256 "46dac64c781f1c34dfd8acba16547024110348f9fc7eab0f31981c2a3dc48d1f"
   end
 
   resource "plac" do
