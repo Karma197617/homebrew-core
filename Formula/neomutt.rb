@@ -19,6 +19,8 @@ class Neomutt < Formula
 
   depends_on "docbook-xsl" => :build
   depends_on "pkg-config" => :build
+  # The build breaks when it tries to use system `tclsh`.
+  depends_on "tcl-tk" => :build
   # FIXME: Should be `uses_from_macos`, but `./configure` can't find system `libsasl2`.
   depends_on "cyrus-sasl"
   depends_on "gettext"
