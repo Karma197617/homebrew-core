@@ -6,9 +6,12 @@ class Cadence < Formula
   license "Apache-2.0"
   head "https://github.com/onflow/cadence.git", branch: "master"
 
+  # Upstream uses GitHub releases to indicate that a version is released
+  # (there's also sometimes a notable gap between when a version is tagged and
+  # and the release is created), so the `GithubLatest` strategy is necessary.
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_latest
   end
 
   bottle do
