@@ -4,6 +4,7 @@
   "checkov": 15,
   "contentful-cli": 5,
   "gatsby-cli": 10,
+  "joern": 10,
   "netlify-cli": 5,
   "quicktype": 10,
   "ruff": 5,
