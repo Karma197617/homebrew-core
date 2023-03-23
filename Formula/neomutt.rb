@@ -19,6 +19,8 @@ class Neomutt < Formula
 
   depends_on "docbook-xsl" => :build
   depends_on "pkg-config" => :build
+  # FIXME: Should be `uses_from_macos`, but `./configure` can't find system `libsasl2`.
+  depends_on "cyrus-sasl"
   depends_on "gettext"
   depends_on "gpgme"
   depends_on "libidn2"
@@ -30,7 +32,6 @@ class Neomutt < Formula
   depends_on "tokyo-cabinet"
 
   uses_from_macos "libxslt" => :build # for xsltproc
-  uses_from_macos "cyrus-sasl"
   uses_from_macos "krb5"
   uses_from_macos "zlib"
 
