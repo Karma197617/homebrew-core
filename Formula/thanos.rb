@@ -17,6 +17,10 @@ class Thanos < Formula
 
   depends_on "go" => :build
 
+  # patch to work with go1.20, remove in next release
+  # patch ref, https://github.com/thanos-io/thanos/commit/8da34a1
+  patch :DATA
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/thanos"
   end
@@ -32,3 +36,33 @@ class Thanos < Formula
     assert_match "| ULID |", output
   end
 end
+
+__END__
+diff --git a/go.mod b/go.mod
+index 753af22944b10318963c5cc46ab58ee15f247232..dc0a2da25dc6e72483f3559fd4f84d8007b35b60 100644
+--- a/go.mod
++++ b/go.mod
+@@ -126,7 +126,7 @@ require (
+ 	golang.org/x/exp v0.0.0-20230124195608-d38c7dcee874
+ )
+
+-require go4.org/unsafe/assume-no-moving-gc v0.0.0-20220617031537-928513b29760 // indirect
++require go4.org/unsafe/assume-no-moving-gc v0.0.0-20230209150437-ee73d164e760 // indirect
+
+ require (
+ 	cloud.google.com/go/compute/metadata v0.2.3 // indirect
+diff --git a/go.sum b/go.sum
+index 2a5b129368ee171768f3d96bc216dcb5401a871d..6f46b376add38ed06207db90d6f72e0f7f404fc0 100644
+--- a/go.sum
++++ b/go.sum
+@@ -1024,8 +1024,9 @@ go.uber.org/zap v1.10.0/go.mod h1:vwi/ZaCAaUcBkycHslxD9B2zi4UTXhF60s6SWpuDF0Q=
+ go.uber.org/zap v1.13.0/go.mod h1:zwrFLgMcdUuIBviXEYEH1YKNaOBnKXsx2IPda5bBwHM=
+ go4.org/intern v0.0.0-20220617035311-6925f38cc365 h1:t9hFvR102YlOqU0fQn1wgwhNvSbHGBbbJxX9JKfU3l0=
+ go4.org/intern v0.0.0-20220617035311-6925f38cc365/go.mod h1:WXRv3p7T6gzt0CcJm43AAKdKVZmcQbwwC7EwquU5BZU=
+-go4.org/unsafe/assume-no-moving-gc v0.0.0-20220617031537-928513b29760 h1:FyBZqvoA/jbNzuAWLQE2kG820zMAkcilx6BMjGbL/E4=
+ go4.org/unsafe/assume-no-moving-gc v0.0.0-20220617031537-928513b29760/go.mod h1:FftLjUGFEDu5k8lt0ddY+HcrH/qU/0qk+H8j9/nTl3E=
++go4.org/unsafe/assume-no-moving-gc v0.0.0-20230209150437-ee73d164e760 h1:gH0IO5GDYAcawu+ThKrvAofVTgJjYaoOZ5rrC4pS2Xw=
++go4.org/unsafe/assume-no-moving-gc v0.0.0-20230209150437-ee73d164e760/go.mod h1:FftLjUGFEDu5k8lt0ddY+HcrH/qU/0qk+H8j9/nTl3E=
+ golang.org/x/crypto v0.0.0-20180904163835-0709b304e793/go.mod h1:6SG95UA2DQfeDnfUPMdvaQW0Q7yPrPDi9nlGo2tz2b4=
+ golang.org/x/crypto v0.0.0-20181029021203-45a5f77698d3/go.mod h1:6SG95UA2DQfeDnfUPMdvaQW0Q7yPrPDi9nlGo2tz2b4=
+ golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
