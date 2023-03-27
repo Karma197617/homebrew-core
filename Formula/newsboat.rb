@@ -37,7 +37,7 @@ class Newsboat < Formula
   # https://github.com/Homebrew/homebrew-core/pull/89981
   # They do not want to be the new upstream, but use that fork as a temporary
   # workaround until they migrate to some rust crate
-  # https://github.com/newsboat/newsboat/issues/1881
+  # https://github.com/newsboat/newsboat/issues/232
   resource("libstfl") do
     url "https://github.com/newsboat/stfl.git",
         revision: "c2c10b8a50fef613c0aacdc5d06a0fa610bf79e9"
