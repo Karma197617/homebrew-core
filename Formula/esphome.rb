@@ -17,6 +17,7 @@ class Esphome < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4bddf4963e9b6e598b69d3d9119a8a0c6680b328c38422b0ee709375313f6b42"
   end
 
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build # for cryptography
   depends_on "protobuf"
   depends_on "python-tabulate"
