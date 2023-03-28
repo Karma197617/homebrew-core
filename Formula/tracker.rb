@@ -1,10 +1,9 @@
 class Tracker < Formula
   desc "Library and daemon that is an efficient search engine and triplestore"
   homepage "https://gnome.pages.gitlab.gnome.org/tracker/"
-  url "https://download.gnome.org/sources/tracker/3.4/tracker-3.4.2.tar.xz"
-  sha256 "4e6df142a4f704878fca98ebb5a224750e5ea546aa2aaabaa726a73540bd1731"
+  url "https://gitlab.gnome.org/GNOME/tracker/-/archive/3.5.2/tracker-3.5.2.tar.bz2"
+  sha256 "241d61afc32c34ab23d5d6a357f991c46d40127d29212a28e4eeefb2e12a6ff2"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
-  revision 1
 
   # Tracker doesn't follow GNOME's "even-numbered minor is stable" version scheme.
   livecheck do
@@ -38,8 +37,19 @@ class Tracker < Formula
   uses_from_macos "python" => :build, since: :catalina
   uses_from_macos "libxml2"
 
+  resource "gvdb" do
+    url "https://gitlab.gnome.org/GNOME/gvdb.git",
+        revision: "0854af0fdb6d527a8d1999835ac2c5059976c210"
+  end
+
+  # patch to use vendored gvdb
+  # upstream PR ref, https://gitlab.gnome.org/GNOME/tracker/-/merge_requests/597
+  patch :DATA
+
   def install
-    args = std_meson_args + %w[
+    (buildpath/"subprojects/gvdb").install resource("gvdb")
+
+    args = %w[
       -Dman=false
       -Ddocs=false
       -Dsystemd_user_services=false
@@ -48,12 +58,9 @@ class Tracker < Formula
     ]
 
     ENV["DESTDIR"] = "/"
-    mkdir "build" do
-      system "meson", *args, ".."
-      # Disable parallel build due to error: 'libtracker-sparql/tracker-sparql-enum-types.h' file not found
-      system "ninja", "-v", "-j1"
-      system "ninja", "install", "-v"
-    end
+    system "meson", ".", "build", *args, *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   def post_install
@@ -109,3 +116,25 @@ class Tracker < Formula
     system "./test"
   end
 end
+
+__END__
+diff --git a/meson.build b/meson.build
+index 7b22cb1..e5087d9 100644
+--- a/meson.build
++++ b/meson.build
+@@ -55,7 +55,14 @@ libxml2 = dependency('libxml-2.0', version: '> 2.6')
+ sqlite = dependency('sqlite3', version: '>' + sqlite_required)
+ dbus = dependency('dbus-1')
+
+-gvdb_dep = dependency('gvdb')
++# Try to find the dependency in the system
++gvdb_dep = dependency('gvdb', required: false)
++
++# Use subproject as a fallback if the dependency is not found
++if not gvdb_dep.found()
++  gvdb_proj = subproject('gvdb')
++  gvdb_dep = gvdb_proj.get_variable('gvdb_dep')
++endif
+
+ soup = get_option('soup')
+ if soup.contains('soup2') or soup.contains('auto')
