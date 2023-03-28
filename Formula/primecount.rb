@@ -1,8 +1,8 @@
 class Primecount < Formula
   desc "Fast prime counting function program and C/C++ library"
   homepage "https://github.com/kimwalisch/primecount"
-  url "https://github.com/kimwalisch/primecount/archive/refs/tags/v7.7.tar.gz"
-  sha256 "b12ca96f9ad89b4fa328d1495bcb121a6320d2eda51108b71eefce7547a11a1a"
+  url "https://github.com/kimwalisch/primecount/archive/refs/tags/v7.8.tar.gz"
+  sha256 "7588b241cd268f4cc6c836135088a143ca65c181278ee0ba3b3309ac055d5ae8"
   license "BSD-2-Clause"
 
   bottle do
