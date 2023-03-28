@@ -7,7 +7,7 @@ class Txt2man < Formula
 
   livecheck do
     url :stable
-    regex(/^txt2man[._-]v?(\d+(?:\.\d+)+)$/i)
+    regex(/^(?:txt2man[._-])?v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
