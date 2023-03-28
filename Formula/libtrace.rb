@@ -5,6 +5,10 @@ class Libtrace < Formula
   sha256 "df6d9dc66d9e3a9e46a153e07e8d13967a327db547ce8ef3f2de691d7081344e"
   license "LGPL-3.0-or-later"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:[.-]\d+)+)$/i)
+  end
   bottle do
     sha256 cellar: :any,                 arm64_monterey: "f9edccc796e56af2f95bbbcffa1e791f7a17192e010ca4034b45ffa2427a0ae1"
     sha256 cellar: :any,                 arm64_big_sur:  "1726bfafd1b98709f408d17495827e1884f5e0bdc3a1933c80da04116dfd9bca"
