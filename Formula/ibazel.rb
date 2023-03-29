@@ -1,8 +1,8 @@
 class Ibazel < Formula
   desc "Tools for building Bazel targets when source files change"
   homepage "https://github.com/bazelbuild/bazel-watcher"
-  url "https://github.com/bazelbuild/bazel-watcher/archive/refs/tags/v0.21.4.tar.gz"
-  sha256 "57e87637f86f7260c8619525c470e2379b6e7cf7a51bfa1b2342b1f29d306777"
+  url "https://github.com/bazelbuild/bazel-watcher/archive/refs/tags/v0.22.0.tar.gz"
+  sha256 "31a6606bbceda98bddebe5d0316fa0590f588ba7fa04318eb9d485228b2adb44"
   license "Apache-2.0"
 
   bottle do
