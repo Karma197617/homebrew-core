@@ -1,9 +1,10 @@
 class Projectm < Formula
   desc "Milkdrop-compatible music visualizer"
   homepage "https://github.com/projectM-visualizer/projectm"
-  url "https://github.com/projectM-visualizer/projectm/releases/download/v3.1.12/projectM-3.1.12.tar.gz"
-  sha256 "b6b99dde5c8f0822ae362606a0429628ee478f4ec943a156723841b742954707"
+  url "https://github.com/projectM-visualizer/projectm/archive/refs/tags/v4.0.0.tar.gz"
+  sha256 "4f4147f72b8e7578847d96f0f4b8bd3c8900ce6181a7a167912ce7a2626030d8"
   license "LGPL-2.1-or-later"
+  head "https://github.com/projectM-visualizer/projectm.git", branch: "master"
 
   bottle do
     sha256 arm64_ventura:  "f3f6b5e3b0d40bcc55658e7f06f16ae49eb4cdc449772b5dc526a84e40c965e0"
@@ -17,14 +18,7 @@ class Projectm < Formula
     sha256 x86_64_linux:   "05caf42b3d5a023b4c22e2f51e7699645cc5077fbd37c7c27f1f8260025d608b"
   end
 
-  head do
-    url "https://github.com/projectM-visualizer/projectm.git", branch: "master"
-
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-  end
-
+  depends_on "cmake" => :build
   depends_on "pkg-config" => [:build, :test]
   depends_on "sdl2"
 
@@ -33,16 +27,15 @@ class Projectm < Formula
   end
 
   def install
-    system "./configure", *std_configure_args, "--disable-silent-rules"
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
-    assert_predicate prefix/"share/projectM/config.inp", :exist?
-    assert_predicate prefix/"share/projectM/presets", :exist?
-
     (testpath/"test.cpp").write <<~EOS
-      #include <libprojectM/projectM.hpp>
+      #include <projectM-4/playlist.h>
+      #include <projectM-4/projectM.h>
       #include <SDL2/SDL.h>
       #include <stdlib.h>
       #include <stdio.h>
@@ -61,15 +54,17 @@ class Projectm < Formula
                                           SDL_WINDOW_OPENGL | SDL_WINDOW_ALLOW_HIGHDPI);
         SDL_GLContext glCtx = SDL_GL_CreateContext(win);
 
-        auto *settings = new projectM::Settings();
-        auto *pm = new projectM(*settings, projectM::FLAG_DISABLE_PLAYLIST_LOAD);
+        auto *projectM = projectm_create();
 
         // if we get this far without crashing we're in good shape
         return 0;
       }
     EOS
-    flags = shell_output("pkg-config libprojectM sdl2 --cflags --libs").split
-    system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", *flags
+    open_gl = OS.mac? ? ["-framework", "OpenGL"] : ["-lGL"]
+    flags = shell_output("pkg-config sdl2 --cflags --libs").split
+    system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test",
+                    "-I#{include}", "-L#{lib}", "-lprojectM-4",
+                    *open_gl, *flags
 
     # Fails in Linux CI with "Video init failed: No available video device"
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
