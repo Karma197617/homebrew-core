@@ -26,6 +26,7 @@ class Libdnet < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
+  depends_on "pkg-config" => :build
 
   # Fix build dependency issue with `check`, remove in next release
   # upstream PR ref, https://github.com/ofalk/libdnet/pull/79
