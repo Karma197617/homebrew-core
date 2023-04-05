@@ -3,8 +3,9 @@ class Pyside < Formula
 
   desc "Official Python bindings for Qt"
   homepage "https://wiki.qt.io/Qt_for_Python"
-  url "https://download.qt.io/official_releases/QtForPython/pyside6/PySide6-6.4.2-src/pyside-setup-opensource-src-6.4.2.tar.xz"
-  sha256 "1ec9d0936332efd229650cf10fed36cadddff7a613a2ea6e897de4d504c1b505"
+  # TODO: Check if we can use unversioned `llvm` at version bump.
+  url "https://download.qt.io/official_releases/QtForPython/pyside6/PySide6-6.5.0-src/pyside-setup-everywhere-src-6.5.0.tar.xz"
+  sha256 "6ef53b29127267e381917e6f9399ce760edc0644cd5831988b1de72c9d583ab4"
   license all_of: ["GFDL-1.3-only", "GPL-2.0-only", "GPL-3.0-only", "LGPL-3.0-only"]
 
   livecheck do
@@ -24,7 +25,7 @@ class Pyside < Formula
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on xcode: :build
-  depends_on "llvm"
+  depends_on "llvm@15" # Upstream issue ref: https://bugreports.qt.io/browse/PYSIDE-2268"
   depends_on "python@3.11"
   depends_on "qt"
 
