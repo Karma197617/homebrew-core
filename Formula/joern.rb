@@ -2,8 +2,8 @@ class Joern < Formula
   desc "Open-source code analysis platform based on code property graphs"
   homepage "https://joern.io/"
   # joern should only be updated every 10 releases on multiples of 10
-  url "https://github.com/joernio/joern/archive/refs/tags/v1.1.1570.tar.gz"
-  sha256 "2210cff96be19edec93e8cc2c4ca2948b7a2902490cf7e55ab9d56a653a9a00f"
+  url "https://github.com/joernio/joern/archive/refs/tags/v1.1.1580.tar.gz"
+  sha256 "c68f3a0ab1277bc2c36fe7f77e7b6698c22e959e6b66df0ed2d88c5e7e012d4c"
   license "Apache-2.0"
 
   livecheck do
@@ -38,6 +38,8 @@ class Joern < Formula
     libexec.children.select { |f| f.file? && f.executable? }.each do |f|
       (bin/f.basename).write_env_script f, Language::Java.overridable_java_home_env("17")
     end
+
+    rm libexec/"frontends/jssrc2cpg/bin/astgen/astgen-macos"
   end
 
   test do
