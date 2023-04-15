@@ -34,9 +34,10 @@ class Pymupdf < Formula
   end
 
   def install
-    if OS.linux?
-      ENV.append_path "CPATH", Formula["mupdf"].include/"mupdf"
-      ENV.append_path "CPATH", Formula["freetype2"].include/"freetype2"
+    # Fix hardcoded paths so they work on Linux and non-default prefixes.
+    inreplace "setup.py" do |s|
+      s.gsub! "/usr/local", HOMEBREW_PREFIX
+      s.gsub! %r{/usr(?!/local)}, HOMEBREW_PREFIX
     end
 
     # Makes setup skip build stage for mupdf
