@@ -39,7 +39,8 @@ class Joern < Formula
       (bin/f.basename).write_env_script f, Language::Java.overridable_java_home_env("17")
     end
 
-    rm libexec/"frontends/jssrc2cpg/bin/astgen/astgen-macos"
+    # remove `astgen-macos` and `astgen-macos-arm` binary files
+    rm_rf libexec/"frontends/jssrc2cpg/bin/astgen/astgen-macos*"
   end
 
   test do
