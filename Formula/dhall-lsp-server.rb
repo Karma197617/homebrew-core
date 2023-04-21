@@ -3,8 +3,8 @@ class DhallLspServer < Formula
   homepage "https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-lsp-server"
   # TODO: Switch `ghc@9.2` to `ghc` once cborg has a new release that supports
   # ghc-prim 0.9.0. PR ref: https://github.com/well-typed/cborg/pull/304
-  url "https://hackage.haskell.org/package/dhall-lsp-server-1.1.2/dhall-lsp-server-1.1.2.tar.gz"
-  sha256 "f013992d7dfd8f40d149737d04a8772308014ccc5d52c27d72dc1c1185882bf3"
+  url "https://hackage.haskell.org/package/dhall-lsp-server-1.1.3/dhall-lsp-server-1.1.3.tar.gz"
+  sha256 "885595eb731bd2eab28073751b9981e0406e69c4a8288748675439d0b0968ded"
   license "BSD-3-Clause"
   head "https://github.com/dhall-lang/dhall-haskell.git", branch: "master"
 
