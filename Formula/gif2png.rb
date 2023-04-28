@@ -23,6 +23,7 @@ class Gif2png < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a7b0bd58ff5306f1624a6854cf51d42411f489a5223f5c70ae44fb42bd3c7537"
   end
 
+  depends_on "go" => :build
   depends_on "libpng"
 
   def install
