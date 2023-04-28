@@ -1,8 +1,8 @@
 class Gif2png < Formula
   desc "Convert GIFs to PNGs"
   homepage "http://www.catb.org/~esr/gif2png/"
-  url "http://www.catb.org/~esr/gif2png/gif2png-2.5.13.tar.gz"
-  sha256 "997275b20338e6cfe3bd4adb084f82627c34c856bc1d67c915c397cf55146924"
+  url "http://www.catb.org/~esr/gif2png/gif2png-3.0.1.tar.gz"
+  sha256 "018fcb0c89732f7a3402d9bc608988a12549c6480bc6964a0c7d75550c7a0835"
 
   livecheck do
     url :homepage
