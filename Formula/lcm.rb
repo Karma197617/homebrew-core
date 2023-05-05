@@ -1,22 +1,10 @@
 class Lcm < Formula
   desc "Libraries and tools for message passing and data marshalling"
   homepage "https://lcm-proj.github.io/"
+  url "https://github.com/lcm-proj/lcm/archive/refs/tags/v1.5.0.tar.gz"
+  sha256 "590a7d996daa3d33a7f3094e4054c35799a3d7a4780d732be78971323e730eeb"
   license "LGPL-2.1-or-later"
-  revision 7
   head "https://github.com/lcm-proj/lcm.git", branch: "master"
-
-  stable do
-    url "https://github.com/lcm-proj/lcm/releases/download/v1.4.0/lcm-1.4.0.zip"
-    sha256 "e249d7be0b8da35df8931899c4a332231aedaeb43238741ae66dc9baf4c3d186"
-
-    # Fix compatibility with Python 3.11. Remove in the next release
-    # .../lcm-python/module.c:46:34: error: expression is not assignable
-    #     Py_TYPE(&pylcmeventlog_type) = &PyType_Type;
-    patch do
-      url "https://github.com/lcm-proj/lcm/commit/0289aa9efdf043dd69d65b7d01273e8108dd79f7.patch?full_index=1"
-      sha256 "c20661ed66e917e90f8130c0f54139250203e42b62e910e15c0b3998432304b7"
-    end
-  end
 
   livecheck do
     url :stable
