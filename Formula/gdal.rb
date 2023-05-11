@@ -1,10 +1,9 @@
 class Gdal < Formula
   desc "Geospatial Data Abstraction Library"
   homepage "https://www.gdal.org/"
-  url "http://download.osgeo.org/gdal/3.6.4/gdal-3.6.4.tar.xz"
-  sha256 "889894cfff348c04ac65b462f629d03efc53ea56cf04de7662fbe81a364e3df1"
+  url "http://download.osgeo.org/gdal/3.7.0/gdal-3.7.0.tar.xz"
+  sha256 "af4b26a6b6b3509ae9ccf1fcc5104f7fe015ef2110f5ba13220816398365adce"
   license "MIT"
-  revision 4
 
   livecheck do
     url "https://download.osgeo.org/gdal/CURRENT/"
@@ -29,6 +28,7 @@ class Gdal < Formula
   depends_on "boost" => :build  # for `libkml`
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
+  depends_on "swig" => :build
   depends_on "apache-arrow"
   depends_on "cfitsio"
   depends_on "epsilon"
@@ -101,8 +101,10 @@ class Gdal < Formula
       -DCMAKE_CXX_STANDARD=17
     ]
 
-    # JavaVM.framework in SDK causing Java bindings to be built
-    args << "-DBUILD_JAVA_BINDINGS=OFF" if MacOS.version <= :catalina
+    # Disable java bindings
+    # `Source option 7 is no longer supported. Use 8 or later.`
+    # See this commit, https://github.com/OSGeo/gdal/commit/363a5f1d1d3827ba46c5b1477cbbc27ef2f52f17
+    args << "-DBUILD_JAVA_BINDINGS=OFF"
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
