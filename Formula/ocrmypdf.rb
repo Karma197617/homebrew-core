@@ -3,8 +3,8 @@ class Ocrmypdf < Formula
 
   desc "Adds an OCR text layer to scanned PDF files"
   homepage "https://ocrmypdf.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/a0/0a/b32ca31bda41098df211fff0634d0cfb53be47e90e65ffbf20c209613976/ocrmypdf-14.1.0.tar.gz"
-  sha256 "3f69d24febb94b31b61b0a82d2a82f7af1e4876f2162c095ae0e49e1bc2a4653"
+  url "https://files.pythonhosted.org/packages/36/01/ac651ee9a275ecdb908903359d5553997bd831adea0af064ed60402d4248/ocrmypdf-14.2.0.tar.gz"
+  sha256 "eb78822c725c2c6143d4fd642f73e6d3c7a032651ac5fa1a9a741f019f21a714"
   license "MPL-2.0"
 
   bottle do
@@ -17,14 +17,18 @@ class Ocrmypdf < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "bedddc8010eb9e0ffc5aa0b7bb74e20ecce74e672c95bfe03699e6a082121caf"
   end
 
+  depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
+
+  depends_on "cffi"
   depends_on "freetype"
   depends_on "ghostscript"
   depends_on "jbig2enc"
   depends_on "libpng"
   depends_on "pillow"
   depends_on "pngquant"
+  depends_on "py3cairo"
   depends_on "pybind11"
   depends_on "pycparser"
   depends_on "python@3.11"
@@ -37,11 +41,6 @@ class Ocrmypdf < Formula
   uses_from_macos "libxslt"
 
   fails_with gcc: "5"
-
-  resource "cffi" do
-    url "https://files.pythonhosted.org/packages/2b/a8/050ab4f0c3d4c1b8aaa805f70e26e84d0e27004907c5b8ecc1d31815f92a/cffi-1.15.1.tar.gz"
-    sha256 "d400bfb9a37b1351253cb402671cea7e89bdecc294e8016a707f6d1d8ac934f9"
-  end
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
@@ -61,6 +60,11 @@ class Ocrmypdf < Formula
   resource "deprecation" do
     url "https://files.pythonhosted.org/packages/5a/d3/8ae2869247df154b64c1884d7346d412fed0c49df84db635aab2d1c40e62/deprecation-2.1.0.tar.gz"
     sha256 "72b3bde64e5d778694b0cf68178aed03d15e15477116add3fb773e581f9518ff"
+  end
+
+  resource "freetype-py" do
+    url "https://files.pythonhosted.org/packages/5d/77/341e6c61795a827390f394c7d5f682561c9fd79cc0b650937d3d5885e3cc/freetype-py-2.3.0.zip"
+    sha256 "f9b64ce3272a5c358dcee824800a32d70997fb872a0965a557adca20fce7a5d0"
   end
 
   resource "humanfriendly" do
@@ -83,7 +87,7 @@ class Ocrmypdf < Formula
     sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
-  resource "pdfminer.six" do
+  resource "pdfminer-six" do
     url "https://files.pythonhosted.org/packages/ac/6e/89c532d108e362cbaf76fdb972e7a5e85723c225f08e1646fb86878d4f7f/pdfminer.six-20221105.tar.gz"
     sha256 "8448ab7b939d18b64820478ecac5394f482d7a79f5f7eaa7703c6c959c175e1d"
   end
@@ -99,8 +103,13 @@ class Ocrmypdf < Formula
   end
 
   resource "reportlab" do
-    url "https://files.pythonhosted.org/packages/b8/ac/10d68a650b321bd8c4d8cbefd9994e7727d57b381c9bdb0a013273011e62/reportlab-3.6.12.tar.gz"
-    sha256 "b13cebf4e397bba14542bcd023338b6ff2c151a3a12aabca89eecbf972cb361a"
+    url "https://files.pythonhosted.org/packages/af/cc/032b5069fd7ebec7dbb33a36d0041b8b283981c649f57eaea9a2b7481f12/reportlab-4.0.0.tar.gz"
+    sha256 "3ea3b2954cb434b024dac61e9f270f2a4c0f9e0cc8b2cf2e310273307b2ba05c"
+  end
+
+  resource "rlpycairo" do
+    url "https://files.pythonhosted.org/packages/41/1c/92b68514640869e554252a1c454b654abea8f9a58567062b96ea254bd7ad/rlPyCairo-0.2.0.tar.gz"
+    sha256 "7cd1eac30fe69d98f75d67a54892f9c10534a047b9a959ef17bb3926a196e50a"
   end
 
   resource "tqdm" do
