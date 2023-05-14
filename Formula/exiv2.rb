@@ -1,8 +1,8 @@
 class Exiv2 < Formula
   desc "EXIF and IPTC metadata manipulation library and tools"
   homepage "https://exiv2.org/"
-  url "https://github.com/Exiv2/exiv2/releases/download/v0.27.6/exiv2-0.27.6-Source.tar.gz"
-  sha256 "4c192483a1125dc59a3d70b30d30d32edace9e14adf52802d2f853abf72db8a6"
+  url "https://github.com/Exiv2/exiv2/releases/download/v0.28.0/exiv2-0.28.0-Source.tar.gz"
+  sha256 "89af3b5ef7277753ef7a7b5374ae017c6b9e304db3b688f1948e73e103491f3d"
   license "GPL-2.0-or-later"
   head "https://github.com/Exiv2/exiv2.git", branch: "main"
 
@@ -22,7 +22,9 @@ class Exiv2 < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "brotli"
   depends_on "gettext"
+  depends_on "inih"
   depends_on "libssh"
 
   uses_from_macos "curl"
@@ -30,8 +32,7 @@ class Exiv2 < Formula
   uses_from_macos "zlib"
 
   def install
-    args = std_cmake_args
-    args += %W[
+    args = %W[
       -DEXIV2_ENABLE_XMP=ON
       -DEXIV2_ENABLE_VIDEO=ON
       -DEXIV2_ENABLE_PNG=ON
@@ -47,12 +48,11 @@ class Exiv2 < Formula
       -DSSH_LIBRARY=#{Formula["libssh"].opt_lib}/#{shared_library("libssh")}
       -DSSH_INCLUDE_DIR=#{Formula["libssh"].opt_include}
       -DCMAKE_INSTALL_NAME_DIR:STRING=#{lib}
-      ..
     ]
-    mkdir "build.cmake" do
-      system "cmake", "-G", "Unix Makefiles", ".", *args
-      system "make", "install"
-    end
+
+    system "cmake", "-G", "Unix Makefiles", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
