@@ -4,6 +4,7 @@ class Gexiv2 < Formula
   url "https://download.gnome.org/sources/gexiv2/0.14/gexiv2-0.14.1.tar.xz"
   sha256 "ec3ee3ec3860b9c78958a55da89cf76ae2305848e12f41945b7b52124d8f6cf9"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
     sha256 cellar: :any, arm64_ventura:  "0ad8f1ab36aba81270108f1e0efd0f1cbf52071e8728dfd3c84e4ff6d290ec6f"
