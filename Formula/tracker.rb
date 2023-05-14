@@ -58,7 +58,7 @@ class Tracker < Formula
     ]
 
     ENV["DESTDIR"] = "/"
-    system "meson", ".", "build", *args, *std_meson_args
+    system "meson", "setup", ".", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end
