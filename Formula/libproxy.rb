@@ -16,34 +16,27 @@ class Libproxy < Formula
     sha256 x86_64_linux:   "9e610ba5049b018c45b4c2a8eeae8f01391227dc30189d54ecd476496d6fdbba"
   end
 
-  depends_on "cmake" => :build
+  depends_on "gi-docgen" => :build
+  depends_on "gobject-introspection" => :build
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.11"
+  depends_on "vala" => :build # for vapigen
+
+  depends_on "duktape"
+  depends_on "glib"
+  depends_on "libsoup"
+
+  uses_from_macos "curl"
 
   on_linux do
     depends_on "dbus"
-    depends_on "glib"
-  end
-
-  # patch for `Unknown CMake command "px_check_modules"`
-  # remove in next release
-  patch do
-    url "https://github.com/libproxy/libproxy/commit/8fec01ed4b95afc71bf7710bf5b736a5de03b343.patch?full_index=1"
-    sha256 "af7f90c68f3807fefb3d8502a5180f9d71b749f21c956fc5be8a1c049ce88d05"
   end
 
   def install
-    ENV.cxx11
-
-    args = %W[
-      -DPYTHON3_SITEPKG_DIR=#{prefix/Language::Python.site_packages("python3.11")}
-      -DWITH_PERL=OFF
-      -DWITH_PYTHON2=OFF
-    ]
-
-    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
-    system "cmake", "--build", "build"
-    system "cmake", "--install", "build"
+    system "meson", "setup", "build", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   test do
