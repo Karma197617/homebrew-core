@@ -4,7 +4,7 @@ class Qmmp < Formula
   url "https://qmmp.ylsoftware.com/files/qmmp/2.1/qmmp-2.1.3.tar.bz2"
   sha256 "f9b1e7bf05d499d05b41c3b7527c9baa8bbf31981c7fa09786501c06334508d4"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://qmmp.ylsoftware.com/downloads.php"
@@ -68,6 +68,13 @@ class Qmmp < Formula
   resource "qmmp-plugin-pack" do
     url "https://qmmp.ylsoftware.com/files/qmmp-plugin-pack/2.1/qmmp-plugin-pack-2.1.1.tar.bz2"
     sha256 "f68484426579f2a0bc68b6be06e7a019fd1c266fca35b764d5788661ddf9bcc4"
+  end
+
+  # Support projectm4, upstream build patch ref, https://sourceforge.net/p/qmmp-dev/code/11031/
+  # remove in next release
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/76f2986/qmmp/qmmp-2.1.3-projectm4.patch"
+    sha256 "3d50fd946931267b534b82451c06a0564ad80471c6c37831af29840bfda8ec96"
   end
 
   def install
