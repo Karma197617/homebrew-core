@@ -29,6 +29,7 @@ class PerconaToolkit < Formula
   depends_on "openssl@1.1"
 
   uses_from_macos "perl"
+  uses_from_macos "zlib"
 
   # Should be installed before DBD::mysql
   resource "Devel::CheckLib" do
