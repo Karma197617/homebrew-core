@@ -4,6 +4,7 @@ class Brpc < Formula
   url "https://dlcdn.apache.org/brpc/1.5.0/apache-brpc-1.5.0-src.tar.gz"
   sha256 "8afa1367d0c0ddb471decc8660ab7bdbfd45a027f7dfb6d18303990954f70105"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/apache/brpc.git", branch: "master"
 
   bottle do
@@ -20,7 +21,7 @@ class Brpc < Formula
   depends_on "gflags"
   depends_on "leveldb"
   depends_on "openssl@3"
-  depends_on "protobuf"
+  depends_on "protobuf@21"
 
   def install
     args = %w[
@@ -62,10 +63,12 @@ class Brpc < Formula
         return 0;
       }
     EOS
+    protobuf = Formula["protobuf@21"]
     flags = %W[
       -I#{include}
+      -I#{protobuf.opt_include}
       -L#{lib}
-      -L#{Formula["protobuf"].opt_lib}
+      -L#{protobuf.opt_lib}
       -lbrpc
       -lprotobuf
     ]
