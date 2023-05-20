@@ -5,6 +5,7 @@ class Monero < Formula
       tag:      "v0.18.2.2",
       revision: "e06129bb4d1076f4f2cebabddcee09f1e9e30dcc"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -37,7 +38,11 @@ class Monero < Formula
   conflicts_with "wownero", because: "both install a wallet2_api.h header"
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    # Keep this in sync with C++ standard in abseil.rb
+    abseil_cxx_standard = 17
+    inreplace_files = %w[CMakeLists.txt cmake/CheckTrezor.cmake]
+    inreplace inreplace_files, /(CMAKE_CXX_STANDARD(?:\s|=))\d{2}/, "\\1#{abseil_cxx_standard}"
+    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_CXX_STANDARD=#{abseil_cxx_standard}", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
