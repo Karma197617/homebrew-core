@@ -1,9 +1,12 @@
 class Ola < Formula
+  include Language::Python::Shebang
+
   desc "Open Lighting Architecture for lighting control information"
   homepage "https://www.openlighting.org/ola/"
   url "https://github.com/OpenLightingProject/ola/releases/download/0.10.9/ola-0.10.9.tar.gz"
   sha256 "44073698c147fe641507398253c2e52ff8dc7eac8606cbf286c29f37939a4ebf"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
+  revision 1
   head "https://github.com/OpenLightingProject/ola.git", branch: "master"
 
   bottle do
@@ -24,7 +27,7 @@ class Ola < Formula
   depends_on "libmicrohttpd"
   depends_on "libusb"
   depends_on "numpy"
-  depends_on "protobuf"
+  depends_on "protobuf@21"
   depends_on "python@3.11"
 
   uses_from_macos "bison" => :build
@@ -34,10 +37,19 @@ class Ola < Formula
     "python3.11"
   end
 
+  # Remove when we use unversioned protobuf
+  def extra_python_path
+    Formula["protobuf@21"].opt_prefix/Language::Python.site_packages(python3)
+  end
+
   def install
     # https://github.com/Homebrew/homebrew-core/pull/123791
     # remove when the above PR is merged
     ENV.append_to_cflags "-DNDEBUG"
+
+    # protobuf@21 is keg-only.
+    # Remove when we use unversioned protobuf
+    ENV.prepend_path "PYTHONPATH", extra_python_path
 
     args = %W[
       --disable-fatal-warnings
@@ -53,9 +65,22 @@ class Ola < Formula
     system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", *std_configure_args, *args
     system "make", "install"
+
+    rewrite_shebang detected_python_shebang, *bin.children
+  end
+
+  # Remove when we use unversioned protobuf
+  def caveats
+    <<~EOS
+      To use the bundled Python libraries:
+        export PYTHONPATH=#{extra_python_path}
+    EOS
   end
 
   test do
+    # `protobuf@21` is keg-only.
+    # Remove when we use unversioned protobuf
+    ENV.prepend_path "PYTHONPATH", extra_python_path
     system bin/"ola_plugin_state", "-h"
     system python3, "-c", "from ola.ClientWrapper import ClientWrapper"
   end
