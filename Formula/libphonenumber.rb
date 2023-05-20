@@ -4,6 +4,7 @@ class Libphonenumber < Formula
   url "https://github.com/google/libphonenumber/archive/v8.13.12.tar.gz"
   sha256 "7e7d4beba57ff222466ca2cf23a4b73e88bd5928ef39741407ba2f3c06e07b79"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -26,7 +27,7 @@ class Libphonenumber < Formula
   depends_on "abseil"
   depends_on "boost"
   depends_on "icu4c"
-  depends_on "protobuf"
+  depends_on "protobuf@21"
   depends_on "re2"
 
   fails_with gcc: "5" # For abseil and C++17
@@ -66,7 +67,8 @@ class Libphonenumber < Formula
         }
       }
     EOS
-    system ENV.cxx, "-std=c++17", "test.cpp", "-L#{lib}", "-lphonenumber", "-o", "test"
+    system ENV.cxx, "-std=c++17", "-I#{Formula["protobuf@21"].opt_include}", "test.cpp",
+                    "-L#{lib}", "-lphonenumber", "-o", "test"
     system "./test"
   end
 end
