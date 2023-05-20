@@ -5,6 +5,7 @@ class Libpulsar < Formula
   mirror "https://archive.apache.org/dist/pulsar/pulsar-client-cpp-3.2.0/apache-pulsar-client-cpp-3.2.0.tar.gz"
   sha256 "e1d007d140906e4e7fc2b47414d551f3c7024bd9d35c8be1bbde3078dc2bddbc"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "08ede2fa1b7e6995c97083b329757c147144b3d46534e174f191a89010048f52"
@@ -20,7 +21,7 @@ class Libpulsar < Formula
   depends_on "pkg-config" => :build
   depends_on "boost"
   depends_on "openssl@1.1"
-  depends_on "protobuf"
+  depends_on "protobuf@21"
   depends_on "snappy"
   depends_on "zstd"
 
@@ -30,8 +31,8 @@ class Libpulsar < Formula
     system "cmake", ".", *std_cmake_args,
                     "-DBUILD_TESTS=OFF",
                     "-DBoost_INCLUDE_DIRS=#{Formula["boost"].include}",
-                    "-DProtobuf_INCLUDE_DIR=#{Formula["protobuf"].include}",
-                    "-DProtobuf_LIBRARIES=#{Formula["protobuf"].lib/shared_library("libprotobuf")}"
+                    "-DProtobuf_INCLUDE_DIR=#{Formula["protobuf@21"].include}",
+                    "-DProtobuf_LIBRARIES=#{Formula["protobuf@21"].lib/shared_library("libprotobuf")}"
     system "make", "pulsarShared", "pulsarStatic"
     system "make", "install"
   end
@@ -46,7 +47,9 @@ class Libpulsar < Formula
       }
     EOS
 
-    system ENV.cxx, "-std=gnu++11", "test.cc", "-L#{lib}", "-lpulsar", "-o", "test"
+    # Protobuf include can be removed when this depends on unversioned protobuf.
+    system ENV.cxx, "-std=gnu++11", "-I#{Formula["protobuf@21"].opt_include}",
+                    "test.cc", "-L#{lib}", "-lpulsar", "-o", "test"
     system "./test"
   end
 end
