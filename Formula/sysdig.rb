@@ -2,7 +2,7 @@ class Sysdig < Formula
   desc "System-level exploration and troubleshooting tool"
   homepage "https://sysdig.com/"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   stable do
     url "https://github.com/draios/sysdig/archive/refs/tags/0.31.5.tar.gz"
@@ -65,9 +65,9 @@ class Sysdig < Formula
   on_linux do
     depends_on "libb64" => :build
     depends_on "elfutils"
-    depends_on "grpc"
+    depends_on "grpc@1.54"
     depends_on "jq"
-    depends_on "protobuf"
+    depends_on "protobuf@21"
   end
 
   fails_with gcc: "5" # C++17
