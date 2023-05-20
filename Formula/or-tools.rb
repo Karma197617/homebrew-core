@@ -4,6 +4,7 @@ class OrTools < Formula
   url "https://github.com/google/or-tools/archive/v9.6.tar.gz"
   sha256 "bc4b07dc9c23f0cca43b1f5c889f08a59c8f2515836b03d4cc7e0f8f2c879234"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/google/or-tools.git", branch: "stable"
 
   livecheck do
@@ -31,7 +32,7 @@ class OrTools < Formula
   depends_on "eigen"
   depends_on "openblas"
   depends_on "osi"
-  depends_on "protobuf"
+  depends_on "protobuf@21"
   depends_on "re2"
 
   uses_from_macos "zlib"
@@ -56,22 +57,23 @@ class OrTools < Formula
   end
 
   test do
+    # manual protobuf includes can be removed when this uses unversioned protobuf.
     # Linear Solver & Glop Solver
-    system ENV.cxx, "-std=c++17", pkgshare/"simple_lp_program.cc",
+    system ENV.cxx, "-std=c++17", "-I#{Formula["protobuf@21"].opt_include}", pkgshare/"simple_lp_program.cc",
            "-I#{include}", "-L#{lib}", "-lortools",
            *shell_output("pkg-config --cflags --libs absl_check absl_log").chomp.split,
            "-o", "simple_lp_program"
     system "./simple_lp_program"
 
     # Routing Solver
-    system ENV.cxx, "-std=c++17", pkgshare/"simple_routing_program.cc",
+    system ENV.cxx, "-std=c++17", "-I#{Formula["protobuf@21"].opt_include}", pkgshare/"simple_routing_program.cc",
            "-I#{include}", "-L#{lib}", "-lortools",
            *shell_output("pkg-config --cflags --libs absl_check absl_log").chomp.split,
            "-o", "simple_routing_program"
     system "./simple_routing_program"
 
     # Sat Solver
-    system ENV.cxx, "-std=c++17", pkgshare/"simple_sat_program.cc",
+    system ENV.cxx, "-std=c++17", "-I#{Formula["protobuf@21"].opt_include}", pkgshare/"simple_sat_program.cc",
            "-I#{include}", "-L#{lib}", "-lortools",
            *shell_output("pkg-config --cflags --libs absl_log absl_raw_hash_set").chomp.split,
            "-o", "simple_sat_program"
