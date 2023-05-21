@@ -1,8 +1,8 @@
 class Nmap < Formula
   desc "Port scanning utility for large networks"
   homepage "https://nmap.org/"
-  url "https://nmap.org/dist/nmap-7.93.tar.bz2"
-  sha256 "55bcfe4793e25acc96ba4274d8c4228db550b8e8efd72004b38ec55a2dd16651"
+  url "https://nmap.org/dist/nmap-7.94.tar.bz2"
+  sha256 "d71be189eec43d7e099bac8571509d316c4577ca79491832ac3e1217bc8f92cc"
   license :cannot_represent
   head "https://svn.nmap.org/nmap/"
 
@@ -25,7 +25,7 @@ class Nmap < Formula
   depends_on "liblinear"
   depends_on "libssh2"
   # Check supported Lua version at https://github.com/nmap/nmap/tree/master/liblua.
-  depends_on "lua@5.3"
+  depends_on "lua"
   depends_on "openssl@1.1"
   depends_on "pcre"
 
@@ -36,24 +36,12 @@ class Nmap < Formula
   conflicts_with "cern-ndiff", "ndiff", because: "both install `ndiff` binaries"
 
   def install
-    # Needed for compatibility with `openssl@1.1`.
-    # https://www.openssl.org/docs/manmaster/man7/OPENSSL_API_COMPAT.html
-    # TODO: Remove when resolved upstream, or switching to `openssl@3`.
-    #   https://github.com/nmap/nmap/issues/2516
-    ENV.append_to_cflags "-DOPENSSL_API_COMPAT=10101"
-
-    (buildpath/"configure").read.lines.grep(/lua/) do |line|
-      lua_minor_version = line[%r{lua/?5\.?(\d+)}, 1]
-      next if lua_minor_version.blank?
-
-      odie "Lua dependency needs updating!" if lua_minor_version.to_i > 3
-    end
-
     ENV.deparallelize
 
+    lua = Formula["lua"]
     args = %W[
       --prefix=#{prefix}
-      --with-liblua=#{Formula["lua@5.3"].opt_prefix}
+      --with-liblua=#{lua.opt_prefix}
       --with-libpcre=#{Formula["pcre"].opt_prefix}
       --with-openssl=#{Formula["openssl@1.1"].opt_prefix}
       --without-nmap-update
@@ -61,6 +49,7 @@ class Nmap < Formula
       --without-zenmap
     ]
 
+    ENV.append_to_cflags "-I#{lua.opt_include}/lua"
     system "./configure", *args
     system "make" # separate steps required otherwise the build fails
     system "make", "install"
