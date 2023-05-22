@@ -38,10 +38,9 @@ class Nmap < Formula
   def install
     ENV.deparallelize
 
-    lua = Formula["lua"]
     args = %W[
       --prefix=#{prefix}
-      --with-liblua=#{lua.opt_prefix}
+      --with-liblua=#{Formula["lua"].opt_prefix}
       --with-libpcre=#{Formula["pcre"].opt_prefix}
       --with-openssl=#{Formula["openssl@1.1"].opt_prefix}
       --without-nmap-update
@@ -49,8 +48,10 @@ class Nmap < Formula
       --without-zenmap
     ]
 
-    ENV.append_to_cflags "-I#{lua.opt_include}/lua"
     system "./configure", *args
+    # Workaround for "./nse_main.h:25:26: error: unknown type name 'lua_State'"
+    # TODO: Report this upstream.
+    ENV.append_to_cflags "-DHAVE_LUA5_4_LUA_H"
     system "make" # separate steps required otherwise the build fails
     system "make", "install"
 
