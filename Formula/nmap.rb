@@ -48,10 +48,10 @@ class Nmap < Formula
       --without-zenmap
     ]
 
-    system "./configure", *args
     # Workaround for "./nse_main.h:25:26: error: unknown type name 'lua_State'"
     # TODO: Report this upstream.
     ENV.append_to_cflags "-DHAVE_LUA5_4_LUA_H"
+    system "./configure", *args
     system "make" # separate steps required otherwise the build fails
     system "make", "install"
 
