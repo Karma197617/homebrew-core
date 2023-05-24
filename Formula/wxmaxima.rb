@@ -1,8 +1,8 @@
 class Wxmaxima < Formula
   desc "Cross platform GUI for Maxima"
   homepage "https://wxmaxima-developers.github.io/wxmaxima/"
-  url "https://github.com/wxMaxima-developers/wxmaxima/archive/refs/tags/Version-23.04.1.tar.gz"
-  sha256 "869e20a02e0da97bd92da20e8a9b8a04facaea387feb09c16c5f23445b4e163f"
+  url "https://github.com/wxMaxima-developers/wxmaxima/archive/refs/tags/Version-23.05.1.tar.gz"
+  sha256 "0c26d1439f5aba30cae94d5718d9c35bf83490953cc8696c371658ed13fd57c1"
   license "GPL-2.0-or-later"
   head "https://github.com/wxMaxima-developers/wxmaxima.git", branch: "main"
 
@@ -22,12 +22,11 @@ class Wxmaxima < Formula
 
   depends_on "cmake" => :build
   depends_on "gettext" => :build
-  depends_on "ninja" => :build
   depends_on "maxima"
   depends_on "wxwidgets"
 
   def install
-    system "cmake", "-S", ".", "-B", "build-wxm", "-G", "Ninja", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build-wxm", *std_cmake_args
     system "cmake", "--build", "build-wxm"
     system "cmake", "--install", "build-wxm"
     bash_completion.install "data/wxmaxima"
