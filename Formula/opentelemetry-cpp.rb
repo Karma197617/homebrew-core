@@ -4,6 +4,7 @@ class OpentelemetryCpp < Formula
   url "https://github.com/open-telemetry/opentelemetry-cpp/archive/refs/tags/v1.8.2.tar.gz"
   sha256 "20fa97e507d067e9e2ab0c1accfc334f5a4b10d01312e55455dc3733748585f4"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/open-telemetry/opentelemetry-cpp.git", branch: "main"
 
   bottle do
@@ -17,6 +18,7 @@ class OpentelemetryCpp < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "abseil" # already a dep of protobuf
   depends_on "boost"
   depends_on "grpc"
   depends_on "nlohmann-json"
@@ -39,6 +41,8 @@ class OpentelemetryCpp < Formula
                     "-DWITH_OTLP_GRPC=ON",
                     "-DWITH_OTLP_HTTP=ON",
                     "-DWITH_PROMETHEUS=ON",
+                    "-DWITH_STL=ON", # Use a new C++ standard for Protobuf
+                    "-DWITH_ABSEIL=ON", # Recursive dependency of Protobuf
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
@@ -72,13 +76,13 @@ class OpentelemetryCpp < Formula
         auto scoped_span = trace_api::Scope(tracer->StartSpan("test"));
       }
     EOS
-    system ENV.cxx, "test.cc", "-std=c++11", "-I#{include}", "-L#{lib}",
-           "-lopentelemetry_resources",
-           "-lopentelemetry_trace",
-           "-lopentelemetry_exporter_ostream_span",
-           "-lopentelemetry_common",
-           "-pthread",
-           "-o", "simple-example"
+    system ENV.cxx, "test.cc", "-std=c++20", "-I#{include}", "-L#{lib}",
+                    "-lopentelemetry_resources",
+                    "-lopentelemetry_trace",
+                    "-lopentelemetry_exporter_ostream_span",
+                    "-lopentelemetry_common",
+                    "-pthread",
+                    "-o", "simple-example"
     system "./simple-example"
   end
 end
