@@ -6,6 +6,7 @@ class Trzsz < Formula
   url "https://files.pythonhosted.org/packages/0c/e5/00c95527d18445cbd3b3b2c5c28a383c94c9ac5291e886796004727b25aa/trzsz-1.1.2.tar.gz"
   sha256 "dfc9606fb7ae76490c8559ec297b307a788688351ab57108f6a733105b206052"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "dfdc64f012d48589793eb056c5954466c3f6e5f985a7f7bff2457635aa662349"
@@ -17,7 +18,7 @@ class Trzsz < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7183da3e45ab5a3bcd18085b5286493adb00260829ebaddec0c791545250527e"
   end
 
-  depends_on "protobuf"
+  depends_on "protobuf@21"
   depends_on "python@3.11"
 
   resource "iterm2" do
@@ -50,6 +51,13 @@ class Trzsz < Formula
     bin.install_symlink libexec/"bin/trz"
     bin.install_symlink libexec/"bin/tsz"
     bin.install_symlink libexec/"bin/trzsz-iterm2"
+
+    # Remove the lines below when we depend on unversioned protobuf.
+    # This is needed because protobuf@21 is keg-only.
+    odie "`.pth` file writing can be removed!" if deps.none? { |d| d.name.start_with?("protobuf@") }
+    site_packages = Language::Python.site_packages("python3")
+    protobuf = Formula["protobuf@21"].opt_prefix
+    (libexec/site_packages/"homebrew-protobuf.pth").write protobuf/site_packages
   end
 
   test do
