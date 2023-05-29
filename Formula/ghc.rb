@@ -10,8 +10,8 @@ class Ghc < Formula
   head "https://gitlab.haskell.org/ghc/ghc.git", branch: "master"
 
   stable do
-    url "https://downloads.haskell.org/~ghc/9.4.4/ghc-9.4.4-src.tar.xz"
-    sha256 "e8cef25a6ded1531cda7a90488d0cfb6d780657d16636daa59430be030cd67e2"
+    url "https://downloads.haskell.org/~ghc/9.6.2/ghc-9.6.2-src.tar.xz"
+    sha256 "1b510c5f8753c3ba24851702c6c9da7d81dc5e47fe3ecb7af39c7c2613abf170"
 
     # Fix build with sphinx-doc 6+. Remove patch when available in release.
     patch do
