@@ -42,18 +42,20 @@ class Snapcraft < Formula
 
   on_linux do
     depends_on "intltool" => :build # for python-distutils-extra
+    depends_on "pkg-config" => :build
     depends_on "apt"
+    depends_on "openssl@1.1"
 
     # Extra non-PyPI Python resources
 
     resource "python-distutils-extra" do
-      url "https://deb.debian.org/debian/pool/main/p/python-distutils-extra/python-distutils-extra_2.45.tar.xz"
-      sha256 "9db7e00e609a762ac5541532816aa028475cb715a8be8ee8d615a5ab63dd7344"
+      url "https://ftp.debian.org/debian/pool/main/p/python-distutils-extra/python-distutils-extra_2.50.tar.xz"
+      sha256 "998cdd5ca3cfc7a1b4b5c2fdc571639264fe0f79193a16fe95a9b66df7ac56e1"
     end
 
     resource "python-apt" do
-      url "https://ftp.debian.org/debian/pool/main/p/python-apt/python-apt_2.2.1.tar.xz"
-      sha256 "b9336cc92dc0a3bcc7be05b40f6752d10220cc968b19061f6c7fc12bf22a97f2"
+      url "https://ftp.debian.org/debian/pool/main/p/python-apt/python-apt_2.6.0.tar.xz"
+      sha256 "557a705723f8acbb62c8af2989d0258dccb0a71f35e34aca53a9b492dbfbcfdd"
     end
 
     # Extra PyPI Python resources for Linux
@@ -61,6 +63,16 @@ class Snapcraft < Formula
     resource "chardet" do
       url "https://files.pythonhosted.org/packages/41/32/cdc91dcf83849c7385bf8e2a5693d87376536ed000807fa07f5eab33430d/chardet-5.1.0.tar.gz"
       sha256 "0d62712b956bc154f85fb0a266e2a3c5913c2967e00348701b32411d6def31e5"
+    end
+
+    resource "catkin-pkg" do
+      url "https://files.pythonhosted.org/packages/b0/c3/c2f0de6be573b2209e229f7c65e54123f1a49a24e2d25698e5de05148a17/catkin_pkg-0.5.2.tar.gz"
+      sha256 "5d643eeafbce4890fcceaf9db197eadf2ca5a187d25593f65b6e5c57935f5da2"
+    end
+
+    resource "cryptography" do
+      url "https://files.pythonhosted.org/packages/ea/d8/2afd2890fe451a3c109d2bdb6bc4ded55ec43059e524344d5e0004e36412/cryptography-3.4.tar.gz"
+      sha256 "9f7aa11ea95723359f914be3217d8b378bc3897f65a1ec1ab4e0118c336f51fc"
     end
 
     resource "jeepney" do
@@ -71,6 +83,11 @@ class Snapcraft < Formula
     resource "pylxd" do
       url "https://files.pythonhosted.org/packages/26/13/cd06edfccf667c348022b72c5177f127129a51de64d115b766decd2890e2/pylxd-2.3.1.tar.gz"
       sha256 "556a2127d51dd8d1559989cb8257183910d397156f5ebe59fe4f6289ea014154"
+    end
+
+    resource "python-dateutil" do
+      url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
+      sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
     end
 
     resource "python-debian" do
