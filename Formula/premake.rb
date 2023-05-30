@@ -1,8 +1,8 @@
 class Premake < Formula
   desc "Write once, build anywhere Lua-based build system"
   homepage "https://premake.github.io/"
-  url "https://github.com/premake/premake-core/releases/download/v5.0.0-beta1/premake-5.0.0-beta1-src.zip"
-  sha256 "07b77cac3aacd4bcacd5ce0d1269332cb260363b78c2a8ae7718f4016bf2892f"
+  url "https://github.com/premake/premake-core/releases/download/v5.0.0-beta2/premake-5.0.0-beta2-src.zip"
+  sha256 "4c1100f5170ae1c3bd1b4fd9458b3b02ae841aefbfc41514887b80996436dee2"
   license "BSD-3-Clause"
   version_scheme 1
   head "https://github.com/premake/premake-core.git", branch: "master"
@@ -23,7 +23,14 @@ class Premake < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f18473b6bf3eb65b2b8e36f35e2166bfe6f859abae5e63806f7bcb5ec675f2bf"
   end
 
+  on_linux do
+    depends_on "util-linux" # for uuid
+  end
+
   def install
+    # Workaround for Xcode 14.3
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+
     if build.head?
       platform = OS.mac? ? "osx" : "linux"
       system "make", "-f", "Bootstrap.mak", platform
