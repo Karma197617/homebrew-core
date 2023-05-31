@@ -1,8 +1,8 @@
 class VulkanExtensionlayer < Formula
   desc "Layer providing Vulkan features when native support is unavailable"
   homepage "https://github.com/KhronosGroup/Vulkan-ExtensionLayer"
-  url "https://github.com/KhronosGroup/Vulkan-ExtensionLayer/archive/refs/tags/v1.3.250.tar.gz"
-  sha256 "9c77604b06df1e2f2432cd0c3b3c0df8cf0a3fdfe63c4aac65020a6429929aff"
+  url "https://github.com/KhronosGroup/Vulkan-ExtensionLayer/archive/refs/tags/v1.3.251.tar.gz"
+  sha256 "c4a53bd61ad09c295264d7f09a1581e1d56078acb7db17ea5b9879bc1b5087e4"
   license "Apache-2.0"
   head "https://github.com/KhronosGroup/Vulkan-ExtensionLayer.git", branch: "main"
 
@@ -57,12 +57,11 @@ class VulkanExtensionlayer < Formula
     ENV["VK_ICD_FILENAMES"] = Formula["vulkan-tools"].lib/"mock_icd/VkICD_mock_icd.json"
 
     expected = <<~EOS
-      Instance Layers: count = 4
+      Instance Layers: count = 3
       --------------------------
-      VK_LAYER_KHRONOS_memory_decompression Khronos Memory Decompression layer \\d\\.\\d\\.\\d+  version 1
-      VK_LAYER_KHRONOS_shader_object        Shader object layer                \\d\\.\\d\\.\\d+  version 1
-      VK_LAYER_KHRONOS_synchronization2     Khronos Synchronization2 layer     \\d\\.\\d\\.\\d+  version 1
-      VK_LAYER_KHRONOS_timeline_semaphore   Khronos timeline Semaphore layer   \\d\\.\\d\\.\\d+  version 1
+      VK_LAYER_KHRONOS_shader_object      Shader object layer              \\d\\.\\d\\.\\d+  version 1
+      VK_LAYER_KHRONOS_synchronization2   Khronos Synchronization2 layer   \\d\\.\\d\\.\\d+  version 1
+      VK_LAYER_KHRONOS_timeline_semaphore Khronos timeline Semaphore layer \\d\\.\\d\\.\\d+  version 1
     EOS
     actual = shell_output("vulkaninfo --summary")
     assert_match Regexp.new(expected), actual
