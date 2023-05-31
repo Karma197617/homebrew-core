@@ -1,9 +1,9 @@
 class Re2 < Formula
   desc "Alternative to backtracking PCRE-style regular expression engines"
   homepage "https://github.com/google/re2"
-  url "https://github.com/google/re2/archive/refs/tags/2023-03-01.tar.gz"
-  version "20230301"
-  sha256 "7a9a4824958586980926a300b4717202485c4b4115ac031822e29aa4ef207e48"
+  url "https://github.com/google/re2/archive/refs/tags/2023-06-01.tar.gz"
+  version "20230601"
+  sha256 "8b4a8175da7205df2ad02e405a950a02eaa3e3e0840947cd598e92dca453199b"
   license "BSD-3-Clause"
   head "https://github.com/google/re2.git", branch: "main"
 
@@ -29,10 +29,9 @@ class Re2 < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "abseil"
 
   def install
-    ENV.cxx11
-
     # Run this for pkg-config files
     system "make", "common-install", "prefix=#{prefix}"
 
@@ -57,7 +56,7 @@ class Re2 < Formula
         return 0;
       }
     EOS
-    system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test",
+    system ENV.cxx, "-std=c++17", "test.cpp", "-o", "test",
                     "-I#{include}", "-L#{lib}", "-lre2"
     system "./test"
   end
