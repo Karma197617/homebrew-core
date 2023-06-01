@@ -1,9 +1,14 @@
 class Sqlcmd < Formula
   desc "Microsoft SQL Server command-line interface"
   homepage "https://github.com/microsoft/go-sqlcmd"
-  url "https://github.com/microsoft/go-sqlcmd/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "dc0d6aa4006347640dc3948fbdcab73b4766a36b255c1597b82b623ac551b15f"
+  url "https://github.com/microsoft/go-sqlcmd/archive/refs/tags/v1.1.0.tar.gz"
+  sha256 "39a964ffaec8004cb6b8b6cd5abdf46bbbfb2c03bf608bf0988cb8b5e17bf5ce"
   license "MIT"
+
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "79bd4e89e4392040ecfdc3974b12d1a4c9efd57e7332aeb60a8b9d1368b7902a"
@@ -25,9 +30,9 @@ class Sqlcmd < Formula
   end
 
   test do
-    out = shell_output("#{bin}/sqlcmd -S 127.0.0.1 -E -Q 'SELECT @@version'", 1)
+    out = shell_output(bin/"sqlcmd -S 127.0.0.1 -E -Q 'SELECT @@version'", 1)
     assert_match "connection refused", out
 
-    assert_match "sqlcmd: #{version}", shell_output("#{bin}/sqlcmd --version")
+    assert_match version.to_s, shell_output(bin/"sqlcmd --version")
   end
 end
